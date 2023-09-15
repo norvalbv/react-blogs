@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Subtitle /> should render correctly with all props 1`] = `
+<h4
+  className="text-sm"
+  data-testid="Custom subtitle test id"
+>
+  Test subtitle
+</h4>
+`;
+
+exports[`<Subtitle /> should render nothing if subtitle is not provided 1`] = `null`;

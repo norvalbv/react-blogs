@@ -1,4 +1,3 @@
-/* eslint-disable custom-rules/no-px-in-tailwind */
 /* eslint-disable global-require */
 
 /** @type {import('tailwindcss').Config} */

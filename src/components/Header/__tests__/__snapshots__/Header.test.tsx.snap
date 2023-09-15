@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render correctly with all props 1`] = `
+<header
+  className="grid grid-cols-1 gap-1"
+>
+  <section
+    className="flex w-full flex-col gap-1"
+  >
+    <h2
+      className="text-h2"
+    >
+      Test title
+    </h2>
+    <h4
+      className="text-sm"
+      data-testid="Test subtitle Subtitle"
+    >
+      Test subtitle
+    </h4>
+    <p
+      className="text-neutral-N00"
+      data-testid="Test Description Description"
+    >
+      Test Description
+    </p>
+  </section>
+</header>
+`;
+
+exports[`<Header /> should render correctly with subtitle provided 1`] = `
+<header>
+  <section
+    className="flex w-full flex-col gap-1"
+  >
+    <h1
+      className="mb-[4.5rem] w-max border-b pb-2 text-5xl font-semibold md:text-6xl"
+    >
+      H
+      e
+      l
+      l
+      o
+       
+      W
+      o
+      r
+      l
+      d
+      !
+    </h1>
+    <h4
+      data-testid="Test subtitle Subtitle"
+    >
+      Test subtitle
+    </h4>
+  </section>
+</header>
+`;
+
+exports[`<Header /> should render correctly with title provided 1`] = `
+<header>
+  <section
+    className="flex w-full flex-col gap-1"
+  >
+    <h1
+      className="mb-[4.5rem] w-max border-b pb-2 text-5xl font-semibold md:text-6xl"
+    >
+      H
+      e
+      l
+      l
+      o
+       
+      W
+      o
+      r
+      l
+      d
+      !
+    </h1>
+  </section>
+</header>
+`;
+
+exports[`<Header /> should render nothing if title and subtitle are not provided 1`] = `null`;
