@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Checks whether the files changed are in the **/management-portal-web-app folder
+path_of_changes=$(git diff --name-only --staged)
+
+if echo "$path_of_changes" | grep -q '^services\/management-portal\/management-portal-web-app\/'; then
+    echo "Running pre-commit linting... 🤞🏼"
+    cd ./services/management-portal/management-portal-webapp && yarn lint-staged
+else
+    echo "No management-portal-web-app files have been changed"
+fi

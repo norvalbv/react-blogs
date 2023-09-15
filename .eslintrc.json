@@ -1,0 +1,82 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "node": true
+  },
+  "root": true,
+  "plugins": ["react", "@typescript-eslint", "custom-rules"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "src/globals.d.ts",
+          "**/*.config.{js,ts}" // configs
+        ],
+        "optionalDependencies": false
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/unbound-method": "error",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": ["interface", "typeAlias", "class"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase"],
+        "types": ["function"]
+      },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+      }
+    ],
+    "no-console": "error",
+    "no-unused-vars": "off",
+    "consistent-return": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": ["off", { "namedComponents": "arrow-function" }],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/no-redundant-roles": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "no-nested-ternary": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "@typescript-eslint/prefer-namespace-keyword": "off",
+    "@typescript-eslint/no-namespace": "off"
+  }
+}
