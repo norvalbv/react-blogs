@@ -7,12 +7,12 @@
   "private": true,
   "version": "0.0.0",
   "author": "Benji",
-  "main": "./dist/react-blogs.umd.js",
+  "main": "./dist/react-blogs.umd.cjs",
   "module": "./dist/react-blogs.cj",
   "exports": {
     ".": {
       "import": "./dist/react-blogs.js",
-      "require": "./dist/react-blogs.umd.js"
+      "require": "./dist/react-blogs.umd.cjs"
     }
   },
   "scripts": {
