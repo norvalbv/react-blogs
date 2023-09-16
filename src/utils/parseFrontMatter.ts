@@ -1,4 +1,4 @@
-const praseFrontMatter = (str) => {
+const praseFrontMatter = (str): unknown => {
   const obj = {};
   let currentKey = null;
 
