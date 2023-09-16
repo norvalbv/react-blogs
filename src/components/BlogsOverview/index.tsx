@@ -49,7 +49,7 @@ const BlogsOverview = ({
 
   return (
     <section>
-      <Header title={title} subtitle={subtitle} description={description} animation={false} />
+      <Header title={title} subtitle={subtitle} description={description} />
       <div className="flex flex-col gap-6 divide-y">
         {sortedBlogs.map((blog) => (
           <a href={`?${paramKey}=${blog.url}`} key={blog.id} className="pt-6">
