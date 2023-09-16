@@ -2,9 +2,8 @@
   "name": "react-blogs",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "author": "Benji",
-  "module": "./src/index.tsx",
+  "main": "dist/react-blogs.js",
   "scripts": {
     "start": "vite",
     "build": "vite build",
