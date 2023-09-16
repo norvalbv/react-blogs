@@ -13,17 +13,9 @@ type BlogProps = {
 const Blog = ({ allBlogs, paramKey = 'title', headers }: BlogProps): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
-  // Have Set styles
-  // Ability to override styles
-
-  // For simple set up, simply just use the component and pass in allBlogs
-
-  // For more dynamic control, use hook.
-
   return hasTitle ? (
-    <div>hi</div>
+    <div>helllll123112352023llo</div>
   ) : (
-    // <BlogPage allBlogs={allBlogs} paramKey={paramKey} />
     <BlogsOverview allBlogs={allBlogs} paramKey={paramKey} />
   );
 };
