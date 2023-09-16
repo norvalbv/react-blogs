@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import CardWrapper from 'components/CardWrapper';
 import Markdown from 'markdown-to-jsx';
 import { Link, useLocation } from 'react-router-dom';
 import Loader from 'components/Loader';
@@ -98,7 +97,7 @@ const CodeComponent = ({ children, ...props }: { children: string }): ReactEleme
       {children}
     </SyntaxHighlighter>
   ) : (
-    <pre className="inline-block w-max rounded-lg bg-light-code px-2 dark:bg-dark-code">
+    <pre className="bg-light-code dark:bg-dark-code inline-block w-max rounded-lg px-2">
       <code>{children}</code>
     </pre>
   );
@@ -167,9 +166,9 @@ const Blog = ({ allBlogs, paramKey }: BlogProps): ReactElement => {
   if (!blog) return <Loader />;
 
   return (
-    <CardWrapper className="font-sans lg:w-7/12">
+    <section>
       <article>
-        <h1 className="text-2xl capitalize text-accent-main underline md:text-4xl">
+        <h1 className="text-accent-main text-2xl capitalize underline md:text-4xl">
           {currentBlog?.title}
         </h1>
         <div
@@ -244,13 +243,13 @@ const Blog = ({ allBlogs, paramKey }: BlogProps): ReactElement => {
         </div>
       </article>
 
-      <section className="mt-10 flex items-center gap-4 border-t border-dark-dark pt-4 text-sm dark:border-light-dark">
+      <section className="border-dark-dark dark:border-light-dark mt-10 flex items-center gap-4 border-t pt-4 text-sm">
         <p>Any comments about this blog?</p>
         <Link to="/contact" className="text-accent-secondary underline">
           Contact Me
         </Link>
       </section>
-    </CardWrapper>
+    </section>
   );
 };
 

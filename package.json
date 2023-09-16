@@ -3,19 +3,20 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Benji",
+  "module": "./src/index.tsx",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "postinstall": "husky install .husky",
     "lint": "eslint src",
     "format:check": "prettier --check src",
     "format:fix": "prettier --write src"
   },
   "dependencies": {
+    "markdown-to-jsx": "^7.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
@@ -35,13 +36,14 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
-    "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "eslintConfig": {
     "extends": [

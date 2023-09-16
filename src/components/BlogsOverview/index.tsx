@@ -1,5 +1,4 @@
-import { DefBlogs } from 'blog/src/types';
-import CardWrapper from 'components/CardWrapper';
+import { DefBlogs } from 'types';
 import React, { ReactElement } from 'react';
 import { convertToDate } from 'utils/date';
 import Header, { HeaderProps } from '../Header';
@@ -49,7 +48,7 @@ const BlogsOverview = ({
   };
 
   return (
-    <CardWrapper className="mx-auto w-10/12 md:w-8/12">
+    <section>
       <Header title={title} subtitle={subtitle} description={description} animation={false} />
       <div className="flex flex-col gap-6 divide-y">
         {sortedBlogs.map((blog) => (
@@ -79,7 +78,7 @@ const BlogsOverview = ({
           </a>
         ))}
       </div>
-    </CardWrapper>
+    </section>
   );
 };
 

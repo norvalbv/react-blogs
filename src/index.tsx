@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import BlogPage from './components/Blog';
+// import BlogPage from './components/Blog';
 import BlogsOverview from './components/BlogsOverview';
 import { DefBlogs } from './types';
 
@@ -21,8 +21,9 @@ const Blog = ({ allBlogs, paramKey = 'title', headers }: BlogProps): ReactElemen
   // For more dynamic control, use hook.
 
   return hasTitle ? (
-    <BlogPage allBlogs={allBlogs} paramKey={paramKey} />
+    <div>hi</div>
   ) : (
+    // <BlogPage allBlogs={allBlogs} paramKey={paramKey} />
     <BlogsOverview allBlogs={allBlogs} paramKey={paramKey} />
   );
 };
