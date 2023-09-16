@@ -1,7 +1,7 @@
-import { DefBlogs } from 'types';
+import Header, { HeaderProps } from 'components/Header';
 import React, { ReactElement } from 'react';
+import { DefBlogs } from 'types';
 import { convertToDate } from 'utils/date';
-import Header, { HeaderProps } from '../Header';
 
 type BlogsPageProps = {
   allBlogs: DefBlogs[];
