@@ -7,14 +7,9 @@
   "private": true,
   "version": "0.0.0",
   "author": "Benji",
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.cj",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
-    }
-  },
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.cj",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -50,6 +45,7 @@
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
+    "react": "^18.2.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
