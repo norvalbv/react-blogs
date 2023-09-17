@@ -2,17 +2,17 @@
   "name": "react-blogs",
   "type": "module",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "private": true,
   "version": "0.0.0",
   "author": "Benji",
-  "main": "./dist/react-blogs.umd.cjs",
-  "module": "./dist/react-blogs.cj",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.cj",
   "exports": {
     ".": {
-      "import": "./dist/react-blogs.js",
-      "require": "./dist/react-blogs.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "scripts": {
@@ -25,6 +25,9 @@
   },
   "dependencies": {
     "markdown-to-jsx": "^7.3.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
@@ -47,7 +50,6 @@
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
-    "react": "^18.2.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",

@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react({ include: /\.(ts|tsx)$/ }), viteTsconfigPaths(), dts({ rollupTypes: true })],
   assetsInclude: ['**/*.md'],
   build: {
-    lib: { entry: './src/index.tsx', name: 'index' },
+    lib: { entry: './src/index.tsx', name: 'react-blogs', fileName: 'index' },
     rollupOptions: {
       external: ['react'],
       output: {
