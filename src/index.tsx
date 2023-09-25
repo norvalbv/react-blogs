@@ -9,7 +9,6 @@ type BlogProps = {
   headers?: unknown;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Blog = ({ allBlogs, paramKey = 'title', headers }: BlogProps): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
@@ -21,3 +20,4 @@ const Blog = ({ allBlogs, paramKey = 'title', headers }: BlogProps): ReactElemen
 };
 
 export default Blog;
+export * from './types';

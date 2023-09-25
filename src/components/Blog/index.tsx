@@ -1,14 +1,12 @@
-import React, { ReactElement, useEffect, useState } from 'react';
-import Markdown from 'markdown-to-jsx';
-import { Link, useLocation } from 'react-router-dom';
+import Badge from 'components/Badge';
 import Loader from 'components/Loader';
+import Markdown from 'markdown-to-jsx';
+import React, { ReactElement, useEffect, useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { arta } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import useTheme from 'hooks/useTheme';
-import Badge from 'components/Badge';
+import { DefBlogs } from 'types';
+import classNames from 'utils/classNames';
 import processLink from 'utils/processLinks';
-import { DefBlogs } from 'blog/src/types';
-import { classNames } from 'utils';
 
 type FrontMatter = {
   Aliases: string[] | null;
@@ -79,7 +77,6 @@ const ListComponent = ({ children, ...props }: { children: JSX.Element[] }): Rea
 );
 
 const CodeComponent = ({ children, ...props }: { children: string }): ReactElement => {
-  const { isDarkMode } = useTheme();
   const isMultiline = /\n/.test(children);
 
   return isMultiline ? (
@@ -88,7 +85,7 @@ const CodeComponent = ({ children, ...props }: { children: string }): ReactEleme
       customStyle={{
         borderRadius: '8px',
         boxShadow: '2px 6px 3px #00646630',
-        backgroundColor: isDarkMode ? '#111' : '#D0D0DD',
+        backgroundColor: '#111',
         margin: '8px 0 8px 0',
       }}
       showLineNumbers
@@ -97,7 +94,7 @@ const CodeComponent = ({ children, ...props }: { children: string }): ReactEleme
       {children}
     </SyntaxHighlighter>
   ) : (
-    <pre className="bg-light-code dark:bg-dark-code inline-block w-max rounded-lg px-2">
+    <pre className="inline-block w-max rounded-lg px-2">
       <code>{children}</code>
     </pre>
   );
@@ -111,7 +108,6 @@ type BlogProps = {
 const Blog = ({ allBlogs, paramKey }: BlogProps): ReactElement => {
   const [blog, setBlog] = useState<string | null>(null);
   const [frontMatter, setFrontMatter] = useState<FrontMatter | null>(null);
-  const { pathname } = useLocation();
 
   const blogParam = new URLSearchParams(window.location.search).get(paramKey) || '';
 
@@ -168,9 +164,7 @@ const Blog = ({ allBlogs, paramKey }: BlogProps): ReactElement => {
   return (
     <section>
       <article>
-        <h1 className="text-accent-main text-2xl capitalize underline md:text-4xl">
-          {currentBlog?.title}
-        </h1>
+        <h1 className="text-2xl capitalize underline md:text-4xl">{currentBlog?.title}</h1>
         <div
           className={classNames(
             'flex',
