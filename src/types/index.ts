@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
 
+import * as themes from 'styles/Themes';
+
+export type Themes = keyof typeof themes;
+
 type MetadataKeys = 'date posted' | 'read time' | 'level';
 
 type DatePostedType = Date | number | string;
@@ -18,7 +22,7 @@ export type Metadata = {
 
 export type KeyIsMetadata<K extends string> = K extends keyof Metadata ? true : false;
 
-export type DefBlogs = {
+type Blogs = {
   readonly id: Lowercase<string>;
   file: string | URL;
   title: string;
@@ -29,4 +33,9 @@ export type DefBlogs = {
   containsFrontMatter?: boolean;
   frontMatterPosition?: 'top' | 'bottom';
   metadata?: Partial<Metadata> & Record<string, string | number | Date>;
+};
+
+export type DefBlogs = {
+  style: string;
+  blogs: Blogs[];
 };

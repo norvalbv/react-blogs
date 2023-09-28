@@ -1,11 +1,14 @@
 import Header, { HeaderProps } from 'components/Header';
 import React, { ReactElement } from 'react';
 import { DefBlogs } from 'types';
+import classNames from 'utils/classNames';
 import { convertToDate } from 'utils/date';
+import * as themes from 'styles/Themes';
 
 type BlogsPageProps = {
-  allBlogs: DefBlogs[];
+  allBlogs: DefBlogs;
   paramKey?: string;
+  theme: keyof typeof themes;
 } & Pick<HeaderProps, 'title' | 'subtitle' | 'description'>;
 
 const BlogsOverview = ({
@@ -14,8 +17,9 @@ const BlogsOverview = ({
   subtitle,
   description,
   paramKey,
+  theme,
 }: BlogsPageProps): ReactElement => {
-  const sortedBlogs = [...allBlogs].sort((a, b) => {
+  const sortedBlogs = [...allBlogs.blogs].sort((a, b) => {
     const dateA = new Date(a.metadata?.['date posted'] ?? 0);
     const dateB = new Date(b.metadata?.['date posted'] ?? 0);
     return dateB.getTime() - dateA.getTime();
@@ -48,7 +52,7 @@ const BlogsOverview = ({
   };
 
   return (
-    <section>
+    <section className={themes[theme].container}>
       <Header title={title} subtitle={subtitle} description={description} />
       <div className="flex flex-col gap-6 divide-y">
         {sortedBlogs.map((blog) => (
@@ -58,7 +62,7 @@ const BlogsOverview = ({
               title={{
                 text: `- ${blog.title}`,
                 level: 2,
-                className: 'text-accent-secondary font-semibold underline text-xl md:text-2xl',
+                className: 'font-semibold underline text-xl md:text-2xl',
               }}
               {...(blog.subtitle ? { subtitle: { text: blog.subtitle } } : {})}
               {...(blog.description
@@ -66,10 +70,10 @@ const BlogsOverview = ({
                 : {})}
             />
             {blog.metadata && (
-              <p className="flex gap-2 text-xs capitalize italic text-slate-500 dark:text-slate-400">
+              <p className={classNames('flex gap-2 text-xs capitalize italic')}>
                 {Object.entries(blog.metadata).map(([key, value], i, arr) => (
                   <>
-                    <span key={key}>{`${key}: ${extractMetadata(key, value)}`}</span>
+                    <span key={key} className="">{`${key}: ${extractMetadata(key, value)}`}</span>
                     {i < arr.length - 1 && <span>•</span>}
                   </>
                 ))}
