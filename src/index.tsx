@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-// import BlogPage from './components/Blog';
 import { ThemeProvider } from '@emotion/react';
 import * as themes from 'styles/Themes';
 import BlogsOverview from './components/BlogsOverview';
@@ -19,7 +18,7 @@ const Blog = ({ allBlogs, paramKey = 'title', theme = 'DARK_THEME' }: BlogProps)
       {hasTitle ? (
         <div>helllll123112352023llo</div>
       ) : (
-        <BlogsOverview allBlogs={allBlogs} paramKey={paramKey} theme={theme} />
+        <BlogsOverview allBlogs={allBlogs} paramKey={paramKey} />
       )}
     </ThemeProvider>
   );

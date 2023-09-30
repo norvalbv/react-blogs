@@ -1,7 +1,6 @@
 import { useTheme } from '@emotion/react';
 import Header, { HeaderProps } from 'components/Header';
 import React, { ReactElement } from 'react';
-import * as themes from 'styles/Themes';
 import { DefBlogs } from 'types';
 import classNames from 'utils/classNames';
 import { convertToDate } from 'utils/date';
@@ -9,7 +8,6 @@ import { convertToDate } from 'utils/date';
 type BlogsPageProps = {
   allBlogs: DefBlogs;
   paramKey?: string;
-  theme: keyof typeof themes;
 } & Pick<HeaderProps, 'title' | 'subtitle' | 'description'>;
 
 const BlogsOverview = ({
@@ -17,7 +15,7 @@ const BlogsOverview = ({
   title,
   subtitle,
   description,
-  paramKey, // theme = 'DARK_THEME',
+  paramKey,
 }: BlogsPageProps): ReactElement => {
   const theme = useTheme();
   const sortedBlogs = [...allBlogs.blogs].sort((a, b) => {
@@ -53,20 +51,14 @@ const BlogsOverview = ({
   };
 
   return (
-    <section
-      css={{
-        backgroundColor: 'red',
-        '        &:hover': {
-          backgroundColor: theme.container,
-        },
-      }}
-    >
+    <section css={{ color: theme.container }}>
       <Header title={title} subtitle={subtitle} description={description} />
-      <div className="flex flex-col gap-6 divide-y">
+      <div css={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         {sortedBlogs.map((blog) => (
-          <a href={`?${paramKey}=${blog.url}`} key={blog.id} className="pt-6">
+          <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
             <Header
-              className="mb-2 md:w-8/12"
+              css={{ marginBottom: '8px' }}
+              className="md:w-8/12"
               title={{
                 text: `- ${blog.title}`,
                 level: 2,
@@ -78,10 +70,18 @@ const BlogsOverview = ({
                 : {})}
             />
             {blog.metadata && (
-              <p className={classNames('flex gap-2 text-xs capitalize italic')}>
+              <p
+                css={{
+                  display: 'flex',
+                  gap: '0.5rem',
+                  fontSize: '0.75rem',
+                  textTransform: 'capitalize',
+                  fontStyle: 'italic',
+                }}
+              >
                 {Object.entries(blog.metadata).map(([key, value], i, arr) => (
                   <>
-                    <span key={key} className="">{`${key}: ${extractMetadata(key, value)}`}</span>
+                    <span key={key}>{`${key}: ${extractMetadata(key, value)}`}</span>
                     {i < arr.length - 1 && <span>•</span>}
                   </>
                 ))}
