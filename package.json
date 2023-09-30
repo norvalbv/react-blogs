@@ -19,13 +19,16 @@
     "format:fix": "prettier --write src"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "markdown-to-jsx": "^7.3.2",
+    "prism-react-renderer": "^2.1.0",
     "react-syntax-highlighter": "^15.5.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@emotion/eslint-plugin": "^11.11.0",
     "@types/react": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",

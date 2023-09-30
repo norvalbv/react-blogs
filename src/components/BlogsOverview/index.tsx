@@ -1,9 +1,10 @@
+import { useTheme } from '@emotion/react';
 import Header, { HeaderProps } from 'components/Header';
 import React, { ReactElement } from 'react';
+import * as themes from 'styles/Themes';
 import { DefBlogs } from 'types';
 import classNames from 'utils/classNames';
 import { convertToDate } from 'utils/date';
-import * as themes from 'styles/Themes';
 
 type BlogsPageProps = {
   allBlogs: DefBlogs;
@@ -16,9 +17,9 @@ const BlogsOverview = ({
   title,
   subtitle,
   description,
-  paramKey,
-  theme,
+  paramKey, // theme = 'DARK_THEME',
 }: BlogsPageProps): ReactElement => {
+  const theme = useTheme();
   const sortedBlogs = [...allBlogs.blogs].sort((a, b) => {
     const dateA = new Date(a.metadata?.['date posted'] ?? 0);
     const dateB = new Date(b.metadata?.['date posted'] ?? 0);
@@ -52,7 +53,14 @@ const BlogsOverview = ({
   };
 
   return (
-    <section className={themes[theme].container}>
+    <section
+      css={{
+        backgroundColor: 'red',
+        '        &:hover': {
+          backgroundColor: theme.container,
+        },
+      }}
+    >
       <Header title={title} subtitle={subtitle} description={description} />
       <div className="flex flex-col gap-6 divide-y">
         {sortedBlogs.map((blog) => (

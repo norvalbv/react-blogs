@@ -7,7 +7,7 @@
     "node": true
   },
   "root": true,
-  "plugins": ["react", "@typescript-eslint", "custom-rules"],
+  "plugins": ["react", "@typescript-eslint", "custom-rules", "@emotion"],
   "extends": [
     "airbnb",
     "airbnb-typescript",
@@ -26,6 +26,7 @@
     }
   },
   "rules": {
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "import/no-extraneous-dependencies": [
       "error",
       {
