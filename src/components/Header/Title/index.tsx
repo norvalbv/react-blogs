@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import classNames from 'utils/classNames';
 
 export type TitleProps = {
   children?: string | JSX.Element;
@@ -15,35 +14,50 @@ const Title = ({ children, className, level = 2 }: TitleProps): ReactElement | n
     return null;
   }
 
-  // Level 1
   if (level === 1) {
     return (
       <h1
-        className={classNames(
-          className || 'mb-[4.5rem] w-max border-b pb-2 text-5xl font-semibold md:text-6xl'
-        )}
+        css={{
+          marginBottom: '4.5rem',
+          width: 'max-content',
+          bordeBottom: '1px solid',
+          paddingBottom: '0.5rem',
+          fontSize: '3rem',
+          fontWeight: 600,
+        }}
+        className={className}
       >
         {children}
       </h1>
     );
   }
 
-  // Level 2. Default
   if (level === 2) {
     return (
       <h2
-        className={classNames(
-          className || 'mb-8 border-b pb-2 text-3xl font-semibold md:mb-[4.5rem] md:text-6xl'
-        )}
+        css={{
+          textDecoration: 'underline',
+          textUnderlineOffset: '8px',
+          marginBottom: '1rem',
+          fontSize: '2rem',
+          fontWeight: 600,
+        }}
+        className={className}
       >
         {children}
       </h2>
     );
   }
 
-  // Level 3
   return (
-    <h3 className={classNames(className || 'mb-10 text-2xl font-semibold md:text-4xl')}>
+    <h3
+      css={{
+        marginBottom: '2.5rem',
+        fontSize: '1.75rem',
+        fontWeight: 600,
+      }}
+      className={className}
+    >
       {children}
     </h3>
   );

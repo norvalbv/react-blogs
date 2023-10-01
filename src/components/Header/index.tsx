@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
-import Title from 'components/Header/Title';
 import Subtitle from 'components/Header/SubTitle';
+import Title from 'components/Header/Title';
+import React, { ReactElement } from 'react';
 import Description, { DescriptionProps } from './Description';
-import { TitleProps } from './Title';
 import { SubtitleProps } from './SubTitle';
+import { TitleProps } from './Title';
 
 export type HeaderProps = {
   // Own props
@@ -21,11 +21,9 @@ const Header = ({ className, description, subtitle, title }: HeaderProps): React
   return (
     <header className={className}>
       <section className="flex w-full flex-col gap-1">
-        <Title className={title?.className} level={title?.level}>
-          {title?.text}
-        </Title>
-        <Subtitle className={subtitle?.className}>{subtitle?.text}</Subtitle>
-        <Description className={description?.className}>{description?.text}</Description>
+        <Title {...title}>{title?.text}</Title>
+        <Subtitle {...subtitle}>{subtitle?.text}</Subtitle>
+        <Description {...description}>{description?.text}</Description>
       </section>
     </header>
   );

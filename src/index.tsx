@@ -4,6 +4,7 @@ import * as themes from 'styles/Themes';
 import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
 import { Themes } from './types';
 
+
 type BlogProps = {
   theme?: Themes;
 } & BlogsPageProps;
@@ -23,4 +24,4 @@ const Blog = ({ paramKey = 'title', theme = 'DARK_THEME', ...props }: BlogProps)
 };
 
 export default Blog;
-export * from './types';
+export * from 'types/index'

@@ -1,6 +1,8 @@
+import { HeaderProps } from 'components/Header';
 import { ReactNode } from 'react';
 
 import * as themes from 'styles/Themes';
+import { Require } from './utils';
 
 export type Themes = keyof typeof themes;
 
@@ -25,15 +27,12 @@ export type KeyIsMetadata<K extends string> = K extends keyof Metadata ? true : 
 type Blogs = {
   readonly id: Lowercase<string>;
   file: string | URL;
-  title: string;
-  subtitle?: string | JSX.Element;
-  description?: string | JSX.Element;
   url: string;
   accessor?: ReactNode;
   containsFrontMatter?: boolean;
   frontMatterPosition?: 'top' | 'bottom';
   metadata?: Partial<Metadata> & Record<string, string | number | Date>;
-};
+} & Require<HeaderProps, 'title'>;
 
 export type DefBlogs = {
   style: string;

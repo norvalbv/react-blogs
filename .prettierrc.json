@@ -8,6 +8,5 @@
   "arrowParens": "always",
   "bracketSameLine": false,
   "trailingComma": "es5",
-  "htmlWhitespaceSensitivity": "ignore",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "htmlWhitespaceSensitivity": "ignore"
 }
