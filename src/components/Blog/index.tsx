@@ -2,8 +2,6 @@ import Badge from 'components/Badge';
 import Loader from 'components/Loader';
 import Markdown from 'markdown-to-jsx';
 import React, { ReactElement, useEffect, useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { arta } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { DefBlogs } from 'types';
 import classNames from 'utils/classNames';
 import processLink from 'utils/processLinks';
