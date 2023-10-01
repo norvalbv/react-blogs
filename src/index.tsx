@@ -1,16 +1,14 @@
 import React, { ReactElement } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import * as themes from 'styles/Themes';
-import BlogsOverview from './components/BlogsOverview';
-import { DefBlogs, Themes } from './types';
+import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
+import { Themes } from './types';
 
 type BlogProps = {
-  allBlogs: DefBlogs;
-  paramKey?: Lowercase<string>;
   theme?: Themes;
-};
+} & BlogsPageProps;
 
-const Blog = ({ allBlogs, paramKey = 'title', theme = 'DARK_THEME' }: BlogProps): ReactElement => {
+const Blog = ({ paramKey = 'title', theme = 'DARK_THEME', ...props }: BlogProps): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
   return (
@@ -18,7 +16,7 @@ const Blog = ({ allBlogs, paramKey = 'title', theme = 'DARK_THEME' }: BlogProps)
       {hasTitle ? (
         <div>helllll123112352023llo</div>
       ) : (
-        <BlogsOverview allBlogs={allBlogs} paramKey={paramKey} />
+        <BlogsOverview paramKey={paramKey} {...props} />
       )}
     </ThemeProvider>
   );

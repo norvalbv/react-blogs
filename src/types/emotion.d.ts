@@ -2,7 +2,7 @@ import '@emotion/react';
 
 declare module '@emotion/react' {
   export interface Theme {
-    container: string;
+    metadata: string;
     header: string;
   }
 }

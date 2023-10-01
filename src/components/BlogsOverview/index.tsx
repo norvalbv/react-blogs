@@ -2,12 +2,11 @@ import { useTheme } from '@emotion/react';
 import Header, { HeaderProps } from 'components/Header';
 import React, { ReactElement } from 'react';
 import { DefBlogs } from 'types';
-import classNames from 'utils/classNames';
 import { convertToDate } from 'utils/date';
 
-type BlogsPageProps = {
+export type BlogsPageProps = {
   allBlogs: DefBlogs;
-  paramKey?: string;
+  paramKey: Lowercase<string>;
 } & Pick<HeaderProps, 'title' | 'subtitle' | 'description'>;
 
 const BlogsOverview = ({
@@ -51,7 +50,7 @@ const BlogsOverview = ({
   };
 
   return (
-    <section css={{ color: theme.container }}>
+    <section>
       <Header title={title} subtitle={subtitle} description={description} />
       <div css={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         {sortedBlogs.map((blog) => (
@@ -77,6 +76,8 @@ const BlogsOverview = ({
                   fontSize: '0.75rem',
                   textTransform: 'capitalize',
                   fontStyle: 'italic',
+                  flexWrap: 'wrap',
+                  color: theme.metadata,
                 }}
               >
                 {Object.entries(blog.metadata).map(([key, value], i, arr) => (
