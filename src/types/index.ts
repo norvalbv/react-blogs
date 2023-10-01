@@ -1,10 +1,9 @@
 import { HeaderProps } from 'components/Header';
 import { ReactNode } from 'react';
 
-import * as themes from 'styles/Themes';
 import { Require } from './utils';
 
-export type Themes = keyof typeof themes;
+export type Theme = 'DARK_THEME' | 'LIGHT_THEME';
 
 type MetadataKeys = 'date posted' | 'read time' | 'level';
 
@@ -38,3 +37,4 @@ export type DefBlogs = {
   style: string;
   blogs: Blogs[];
 };
+

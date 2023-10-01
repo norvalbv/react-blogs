@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
 import { ThemeProvider } from '@emotion/react';
-import * as themes from 'styles/Themes';
-import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
-import { Themes } from './types';
+import React, { ReactElement } from 'react';
+import * as themes from 'types/themes'
+import { Theme } from 'types';
 
+import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
 
 type BlogProps = {
-  theme?: Themes;
+  theme?: Theme;
 } & BlogsPageProps;
 
 const Blog = ({ paramKey = 'title', theme = 'DARK_THEME', ...props }: BlogProps): ReactElement => {
@@ -24,4 +24,4 @@ const Blog = ({ paramKey = 'title', theme = 'DARK_THEME', ...props }: BlogProps)
 };
 
 export default Blog;
-export * from 'types/index'
+export * from 'types/index';

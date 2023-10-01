@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import Header, { HeaderProps } from 'components/Header';
+import Header from 'components/Header';
 import React, { ReactElement } from 'react';
 import { DefBlogs } from 'types';
 import { convertToDate } from 'utils/date';
@@ -53,8 +53,8 @@ const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => 
               text: blog.title.text,
               level: 2,
             }}
-            {...(blog.subtitle ? {subtitle: { ...blog.subtitle } }: {} )}
-            {...(blog.description ? {description: { ...blog.description } }: {} )}
+            {...(blog.subtitle ? { subtitle: { ...blog.subtitle } } : {})}
+            {...(blog.description ? { description: { ...blog.description } } : {})}
           />
           {blog.metadata && (
             <p
