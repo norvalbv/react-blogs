@@ -9,4 +9,3 @@ export const LIGHT_THEME: Theme = {
   metadata: 'green',
   header: 'text-gray-700',
 };
-

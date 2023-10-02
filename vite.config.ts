@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, TransformResult } from 'vite';
 import dts from 'vite-plugin-dts';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
+import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
 
 export default defineConfig({
   plugins: [
@@ -18,11 +19,13 @@ export default defineConfig({
         return null;
       },
     },
+    mdPlugin({ mode: [Mode.HTML, Mode.REACT] }),
     react({ include: /\.(ts|tsx)$/ }),
     viteTsconfigPaths(),
     dts({ rollupTypes: true }),
   ],
-  assetsInclude: ['**/*.md'],
+  // resolve
+  assetsInclude: [/\.md$/, '**/*.md', '.md'],
   build: {
     lib: { entry: './src/index.tsx', name: 'react-blogs', fileName: 'index' },
     rollupOptions: {

@@ -23,7 +23,7 @@ export type Metadata = {
 
 export type KeyIsMetadata<K extends string> = K extends keyof Metadata ? true : false;
 
-type Blogs = {
+export type Blogs = {
   readonly id: Lowercase<string>;
   file: string | URL;
   url: string;
@@ -37,4 +37,3 @@ export type DefBlogs = {
   style: string;
   blogs: Blogs[];
 };
-
