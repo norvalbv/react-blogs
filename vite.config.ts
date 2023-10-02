@@ -19,7 +19,7 @@ export default defineConfig({
         return null;
       },
     },
-    mdPlugin({ mode: [Mode.HTML, Mode.REACT] }),
+    mdPlugin({ mode: [Mode.HTML] }),
     react({ include: /\.(ts|tsx)$/ }),
     viteTsconfigPaths(),
     dts({ rollupTypes: true }),

@@ -166,6 +166,8 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
 
   if (!blog) return <></>;
 
+  console.log(blog);
+
   return (
     <div>Blog Found</div>
     // <section>
