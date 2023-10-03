@@ -1,35 +1,51 @@
-const praseFrontMatter = (str): unknown => {
-  const obj = {};
-  let currentKey = null;
+export type FrontMatter = {
+  Aliases: string[] | null;
+  'date created': string | null;
+  'date modified': string | null;
+  'review-frequency': string | null;
+  tags: string[] | null;
+  title: string | null;
+  'read time': string | null;
+};
 
-  const lines = str.split('\n').filter((line) => line.trim() !== '---' && line.trim() !== '');
+export const praseFrontMatter = (lines: string[]): FrontMatter => {
+  const obj: FrontMatter = {
+    Aliases: [],
+    'date created': null,
+    'date modified': null,
+    'review-frequency': null,
+    tags: [],
+    title: null,
+    'read time': null,
+  };
+
+  let currentKey: keyof FrontMatter;
 
   lines.forEach((line) => {
-    const trimmedLine = line.trim();
-
-    if (trimmedLine.startsWith('-')) {
-      if (currentKey) {
-        obj[currentKey].push(trimmedLine.slice(1).trim());
-      }
+    if (line.startsWith('---')) {
+      // Skip the delimiter lines
       return;
     }
 
-    const [key, value] = line.split(':').map((s) => s.trim());
+    // splitLine will produce more than one value in an array if there is a key value pair, i.e., the only option that doesn't produce this is values for tags or aliases.
+    const splitLine = line.split(':');
 
-    if (value === undefined) return; // Skip malformed lines
+    if (splitLine.length > 1) {
+      // The Key is always 0th index.
+      currentKey = splitLine[0].trim() as keyof FrontMatter;
+      const value = splitLine.slice(1).join(':').trim();
 
-    if (value === '') {
-      obj[key] = [];
-      currentKey = key;
-    } else if (value === 'true' || value === 'false') {
-      obj[key] = value === 'true';
-      currentKey = null;
-    } else if (!isNaN(Number(value))) {
-      obj[key] = Number(value);
-      currentKey = null;
-    } else {
-      obj[key] = value;
-      currentKey = null;
+      if (value.startsWith('[' || !value)) {
+        // Initialize an array for later
+        obj[currentKey] = null;
+      } else if (value) {
+        (obj[currentKey] as string) = value;
+      }
+    } else if (currentKey && Array.isArray(obj[currentKey])) {
+      const listItem = line.replace(/^-/, '').trim();
+      if (listItem) {
+        (obj[currentKey] as string[]).push(listItem);
+      }
     }
   });
 

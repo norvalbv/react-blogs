@@ -1,10 +1,9 @@
 import { ThemeProvider } from '@emotion/react';
-import React, { ReactElement } from 'react';
-import * as themes from 'types/themes';
-import { Theme } from 'types';
-
-import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
 import BlogPage from 'components/BlogPage';
+import React, { ReactElement } from 'react';
+import { Theme } from 'types';
+import * as themes from 'types/themes';
+import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
 
 type BlogProps = {
   theme?: Theme;
