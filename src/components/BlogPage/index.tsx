@@ -92,7 +92,7 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
            */
           const frontMatterLength = frontMatter.join().length;
 
-          const processedLinks = processLink({ allBlogs, blog: res });
+          const processedLinks = processLink({ allBlogs, blog: res, paramKey });
 
           setBlog({
             blog: processedLinks.slice(frontMatterLength),

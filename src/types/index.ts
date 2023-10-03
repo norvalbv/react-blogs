@@ -24,7 +24,7 @@ export type Metadata = {
 export type KeyIsMetadata<K extends string> = K extends keyof Metadata ? true : false;
 
 export type Blogs = {
-  readonly id: Lowercase<string>;
+  readonly id: string;
   file: string | URL;
   url: string;
   accessor?: ReactNode;
