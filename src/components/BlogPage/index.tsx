@@ -1,3 +1,4 @@
+import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { Blogs } from 'types';
@@ -187,50 +188,49 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
       >
         {currentBlog?.title.text}
       </h1>
-      {/* //   <article>
-    //     <div */}
-      {/* //       className={classNames( */}
-      {/* //         'flex',
-    //         currentBlog?.frontMatterPosition === 'top' ? 'flex-col' : 'flex-col-reverse'
-    //       )}
-    //     >
-    //       <section className="my-6 flex flex-col gap-2 text-xs md:gap-4">
-    //         {frontMatter?.tags?.length ? (
-    //           <div className="flex flex-wrap items-center gap-4">
-    //             Tags:
-    //             {frontMatter?.tags.map((tag) => <Badge tag={tag} key={tag} />)}
-    //           </div>
-    //         ) : null}
-    //         {frontMatter?.['date modified'] && (
-    //           <p>
-    //             Last Modified:{' '}
-    //             <span className="italic">
-    //               {frontMatter['date modified'].slice(
-    //                 0,
-    //                 frontMatter['date modified'].lastIndexOf(',')
-    //               )}
-    //             </span>
-    //           </p>
-    //         )}
-    //         {frontMatter?.Aliases?.length ? (
-    //           <div className="flex items-center gap-2">
-    //             Aliases:
-    //             {frontMatter?.Aliases.map((tag, i, a) => (
-    //               <div key={tag} className="flex items-center gap-2">
-    //                 {tag}
-    //                 {i < a.length - 1 && ','}
-    //               </div>
-    //             ))}
-    //           </div>
-    //         ) : null}
-    //         {frontMatter?.['read time'] ? (
-    //           <div className="capitalize">
-    //             Read Time:&nbsp;
-    //             {frontMatter?.['read time']}
-    //           </div>
-    //         ) : null}
-    //       </section>
-    //       <section> */}
+      <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
+        {blog.frontMatter?.tags?.length ? (
+          <div
+            css={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: '4px',
+            }}
+          >
+            Tags:
+            {blog.frontMatter?.tags.map((tag) => <Badge tag={tag} key={tag} />)}
+          </div>
+        ) : null}
+        {blog.frontMatter?.['read time'] ? (
+          <div className="capitalize">
+            Read Time:&nbsp;
+            {blog.frontMatter?.['read time']}
+          </div>
+        ) : null}
+        {blog.frontMatter?.Aliases?.length ? (
+          <div className="flex items-center gap-2">
+            Aliases:
+            {blog.frontMatter?.Aliases.map((tag, i, a) => (
+              <div key={tag} className="flex items-center gap-2">
+                {tag}
+                {i < a.length - 1 && ','}
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {blog.frontMatter?.['date modified'] && (
+          <p>
+            Last Modified:{' '}
+            <span className="italic">
+              {blog.frontMatter['date modified'].slice(
+                0,
+                blog.frontMatter['date modified'].lastIndexOf(',')
+              )}
+            </span>
+          </p>
+        )}
+      </section>
       <Markdown
         options={{
           wrapper: React.Fragment,

@@ -63,7 +63,10 @@ const processLink = ({ allBlogs, blog }: Props): string => {
     const currentUrl = window.location.href;
 
     // If KEY is not in blogs, remove brackets.
-    if (!allBlogs.map((b) => b.id).includes(linkKey) || currentUrl.includes(url || '')) {
+    if (
+      !allBlogs.map((b) => b.id).includes(linkKey as Lowercase<string>) ||
+      currentUrl.includes(url || '')
+    ) {
       // Use NAME if there is one, else use key.
       return linkName || linkKey;
     }
