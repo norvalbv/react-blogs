@@ -1,7 +1,7 @@
 import Markdown from 'markdown-to-jsx';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { Blogs } from 'types';
-// import processLink from 'utils/processLinks';
+import processLink from 'utils/processLinks';
 
 type FrontMatter = {
   Aliases: string[] | null;
@@ -133,9 +133,13 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
         if (currentBlog?.containsFrontMatter) {
           const lines = res.split('\n');
 
-          // Due to the syntax, there will always be three dashed lines in front matter.
-          const frontMatterIndexes = lines.flatMap((line, i) => (line === '---' ? i : []));
-          const frontMatter = lines.slice(0, frontMatterIndexes[2] + 1);
+          // faster than flatMap((line, i) => line === '---' ? i : []);
+          const frontMatterIndexes = lines
+            .map((line, i) => (line === '---' ? i : undefined))
+            .filter((i): i is number => i !== undefined);
+
+          const frontMatter = lines.slice(0, frontMatterIndexes[1] + 1);
+
           /*
            * It's easier to obtain the length of the front matter instead of joining the array back together,
            * By slicing the response in res, you keep the formatting of the markdown.
@@ -144,13 +148,11 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
 
           setFrontMatter(processFrontMatter(frontMatter));
 
-          // const processedLinks = processLink(res);
+          const processedLinks = processLink({ allBlogs, blog: res });
 
           // const lastIndexOfDivide = processedLinks.lastIndexOf('---');
 
-          setBlog(res);
-
-          // setBlog(processedLinks.slice(frontMatterLength, lastIndexOfDivide));
+          setBlog(processedLinks.slice(frontMatterLength));
         } else {
           setBlog(res);
         }
@@ -166,16 +168,27 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
 
   if (!blog) return <></>;
 
-  console.log(blog);
-
   return (
-    <div>Blog Found</div>
-    // <section>
-    //   <article>
-    //     <h1 className="text-2xl capitalize underline md:text-4xl">{currentBlog?.title}</h1>
-    //     <div
-    //       className={classNames(
-    //         'flex',
+    <article>
+      <h1
+        css={{
+          fontSize: '1.75rem',
+          lineHeight: '2rem',
+          textTransform: 'capitalize',
+          textDecoration: 'underline',
+          marginBottom: '0.5rem',
+          '@media (min-width: 768px)': {
+            fontSize: '2.25rem',
+            lineHeight: '2.5rem',
+          },
+        }}
+      >
+        {currentBlog?.title.text}
+      </h1>
+      {/* //   <article>
+    //     <div */}
+      {/* //       className={classNames( */}
+      {/* //         'flex',
     //         currentBlog?.frontMatterPosition === 'top' ? 'flex-col' : 'flex-col-reverse'
     //       )}
     //     >
@@ -215,33 +228,33 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
     //           </div>
     //         ) : null}
     //       </section>
-    //       <section>
-    //         <Markdown
-    //           options={{
-    //             wrapper: React.Fragment,
-    //             overrides: {
-    //               h1: { props: { className: 'text-2xl md:text-4xl text-accent-main' } },
-    //               h2: {
-    //                 props: {
-    //                   className: 'my-4 md:my-6 text-xl md:text-2xl underline text-accent-main/90',
-    //                 },
-    //               },
-    //               h3: { props: { className: 'my-4 text-lg md:text-xl text-accent-main/75' } },
-    //               h4: { props: { className: 'my-4 text-md md:text-lg text-accent-secondary/60' } },
-    //               p: { props: { className: 'my-3 text-sm leading-6' } },
-    //               a: { props: { className: 'text-accent-secondary underline' } },
-    //               strong: { props: { className: 'text-accent-tertiary font-semibold' } },
-    //               em: { props: { className: 'text-accent-tertiary/75' } },
-    //               ul: { component: UnorderedListComponent, props: { className: 'my-2' } },
-    //               li: { component: ListComponent, props: { className: 'text-sm my-2' } },
-    //               code: { component: CodeComponent },
-    //               blockquote: { props: { className: 'ml-4 border-l pl-4 italic' } },
-    //             },
-    //           }}
-    //         >
-    //           {blog}
-    //         </Markdown>
-    //       </section>
+    //       <section> */}
+      <Markdown
+        options={{
+          wrapper: React.Fragment,
+          overrides: {
+            h1: { props: { className: 'text-2xl md:text-4xl text-accent-main' } },
+            h2: {
+              props: {
+                className: 'my-4 md:my-6 text-xl md:text-2xl underline text-accent-main/90',
+              },
+            },
+            h3: { props: { className: 'my-4 text-lg md:text-xl text-accent-main/75' } },
+            h4: { props: { className: 'my-4 text-md md:text-lg text-accent-secondary/60' } },
+            p: { props: { className: 'my-3 text-sm leading-6' } },
+            a: { props: { className: 'text-accent-secondary underline' } },
+            strong: { props: { className: 'text-accent-tertiary font-semibold' } },
+            em: { props: { className: 'text-accent-tertiary/75' } },
+            ul: { component: UnorderedListComponent, props: { className: 'my-2' } },
+            li: { component: ListComponent, props: { className: 'text-sm my-2' } },
+            code: { component: CodeComponent },
+            blockquote: { props: { className: 'ml-4 border-l pl-4 italic' } },
+          },
+        }}
+      >
+        {blog}
+      </Markdown>
+    </article>
     //     </div>
     //   </article>
     // </section>

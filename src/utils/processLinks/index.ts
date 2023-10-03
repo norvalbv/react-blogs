@@ -1,5 +1,3 @@
-import blogs from 'constants/blogs';
-
 /*
  * Using regex find the obsidian links, e.g., [[CPU]]
  * Obtain the full link including the brackets.]
@@ -15,6 +13,8 @@ import blogs from 'constants/blogs';
  * If the KEY is not in a list of current blogs and contains a NAME. Replace with NAME e.g., [[how-a-cpu-works|cpu]] -> cpu
  * If the KEY is not in a list of current blogs and contains an optional ANCHOR. Replace with KEY e.g., [[how-a-cpu-works]] -> how-a-cpu-works, [[how-a-cpu-works#cpu]] -> how-a-cpu-works
  */
+
+import { Blogs } from 'types';
 
 /**
  * TEST EXAMPLES
@@ -39,7 +39,12 @@ const regexForLinkName = /\|(.*?)\]\]/;
 const regexForLinkAnchor = /#(.*?)(?=\||\]\])/;
 const regexForlinkKey = /\[\[(.*?)(?=\||#|\]\])/;
 
-const processLink = (blog: string): string => {
+type Props = {
+  allBlogs: Blogs[];
+  blog: string;
+};
+
+const processLink = ({ allBlogs, blog }: Props): string => {
   const processedLinks = blog.replaceAll(regexWithBrackets, (val, group) => {
     const linkWithoutBrackets = group as string;
 
@@ -54,11 +59,11 @@ const processLink = (blog: string): string => {
     const hash = val.match(regexForLinkAnchor);
     const linkAnchor = hash ? hash[1] : null;
 
-    const url = blogs.find((b) => b.id === linkKey)?.url;
+    const url = allBlogs.find((b) => b.id === linkKey)?.url;
     const currentUrl = window.location.href;
 
     // If KEY is not in blogs, remove brackets.
-    if (!blogs.map((b) => b.id).includes(linkKey) || currentUrl.includes(url || '')) {
+    if (!allBlogs.map((b) => b.id).includes(linkKey) || currentUrl.includes(url || '')) {
       // Use NAME if there is one, else use key.
       return linkName || linkKey;
     }
