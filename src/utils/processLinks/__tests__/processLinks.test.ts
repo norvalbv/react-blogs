@@ -4,16 +4,16 @@ import { Blogs } from 'types';
 
 const blogs: Blogs[] = [
   {
-    id: 'memory',
+    id: 'Memory (RAM)',
     file: 'memory',
     title: { text: 'What is RAM?' },
     url: 'how-memory-works',
   },
   {
-    id: 'CPU',
-    file: 'cpu',
-    title: { text: 'What is the CPU?' },
-    url: 'what-is-the-cpu',
+    id: 'Memory Heap',
+    file: 'memory-heap',
+    title: { text: 'What is the memory heap?' },
+    url: 'what-is-the-memory-heap',
   },
 ];
 
@@ -38,19 +38,19 @@ const blogs: Blogs[] = [
 describe('processLink', () => {
   test('should handle simple blog link', () => {
     expect(processLink({ allBlogs: blogs, blog: '[[Memory (RAM)]]', paramKey: 'blog' })).toBe(
-      '[Memory (RAM)](/blog/how-memory-works)'
+      '[Memory (RAM)](?blog=how-memory-works)'
     );
   });
 
   test('should handle blog link with anchor', () => {
     expect(
       processLink({ paramKey: 'blog', allBlogs: blogs, blog: '[[Memory (RAM)#memory]]' })
-    ).toBe('[Memory (RAM)](/blog/how-memory-works#memory)');
+    ).toBe('[Memory (RAM)](?blog=how-memory-works#memory)');
   });
 
   test('should handle blog link with name override', () => {
     expect(processLink({ paramKey: 'blog', allBlogs: blogs, blog: '[[Memory (RAM)|CPU2]]' })).toBe(
-      '[CPU2](/blog/how-memory-works)'
+      '[CPU2](?blog=how-memory-works)'
     );
   });
 
@@ -61,7 +61,7 @@ describe('processLink', () => {
         allBlogs: blogs,
         blog: '[[Memory (RAM)#Hierarchical Nature of Storage|CPU cache (L1, L2, L3 cache)]]',
       })
-    ).toBe('[CPU cache (L1, L2, L3 cache)](/blog/how-memory-works#Hierarchical Nature of Storage)');
+    ).toBe('[CPU cache (L1, L2, L3 cache)](?blog=how-memory-works#Hierarchical Nature of Storage)');
   });
 
   test('should handle non-blog link', () => {

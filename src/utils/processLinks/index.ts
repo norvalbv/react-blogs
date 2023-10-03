@@ -25,37 +25,46 @@
 
 import { Blogs } from 'types';
 
+// Matches text within double brackets, e.g., "this-would-be-truthy" in [[this-would-be-truthy]]
 const regexWithBrackets = /\[\[(.*?)\]\]/g;
+
+// Matches text between a pipe "|" and double closing brackets "]]", e.g., "this-would-pass" in |this-would-pass]]
 const regexForLinkName = /\|(.*?)\]\]/;
+
+// Matches text between a hash "#" and either a pipe "|" or double closing brackets "]]", e.g., "this-would-be-truthy" in #this-would-be-truthy|
 const regexForLinkAnchor = /#(.*?)(?=\||\]\])/;
+
+// Matches text within double brackets until it hits a pipe "|", hash "#", or double closing brackets "]]", e.g., "this-would-be-truthy" in [[this-would-be-truthy|...]]
 const regexForlinkKey = /\[\[(.*?)(?=\||#|\]\])/;
 
 type Props = {
   allBlogs: Blogs[];
+  /**
+   * As we can replace all, we can simply replace all instances of links in one function call.
+   */
   blog: string;
   paramKey: string;
 };
 
 const processLink = ({ allBlogs, blog, paramKey }: Props): string => {
   const processedLinks = blog.replaceAll(regexWithBrackets, (val, group) => {
-    const linkWithoutBrackets = group as string;
+    const linkWithoutBrackets = group;
 
     const name = val.match(regexForLinkName);
     const linkName = name ? name[1] : null;
 
     // Use link name else full value without brackets.
     const key = val.match(regexForlinkKey);
-    const lKey = key ? key[1] : null;
-    const linkKey = lKey || linkWithoutBrackets;
+    const linkKey = key ? key[1] : linkWithoutBrackets;
 
-    const hash = val.match(regexForLinkAnchor);
-    const linkAnchor = hash ? hash[1] : null;
+    const anchor = val.match(regexForLinkAnchor);
+    const linkAnchor = anchor ? anchor[1] : null;
 
-    const url = allBlogs.find((b) => b.id === linkKey)?.url;
+    const url = allBlogs.find((blog) => blog.id === linkKey)?.url;
     const currentUrl = window.location.href;
 
     // If KEY is not in allBlogs simply remove brackets.
-    if (!allBlogs.map((b) => b.id).includes(linkKey) || currentUrl.includes(url || '')) {
+    if (!url || currentUrl.includes(url || '')) {
       // Use NAME if there is one, else use key.
       return linkName || linkKey;
     }
