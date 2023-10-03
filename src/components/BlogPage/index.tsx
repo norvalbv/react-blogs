@@ -103,14 +103,17 @@ type BlogProps = {
 };
 
 const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => {
-  const [blog, setBlog] = useState<string | null>(null);
-  const [frontMatter, setFrontMatter] = useState<FrontMatter | null>(null);
+  const [blog, setBlog] = useState<{ blog: string | null; frontMatter: FrontMatter | null }>({
+    blog: null,
+    frontMatter: null,
+  });
 
   const blogParam = new URLSearchParams(window.location.search).get(paramKey) || '';
 
   const currentBlogIndex = allBlogs.findIndex((b) => blogParam.includes(b.url));
 
   const currentBlog = currentBlogIndex >= 0 ? allBlogs[currentBlogIndex] : null;
+
   /**
    * Dynamically import blogs based on the current blog URL.
    */
@@ -146,27 +149,26 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
            */
           const frontMatterLength = frontMatter.join().length;
 
-          setFrontMatter(processFrontMatter(frontMatter));
-
           const processedLinks = processLink({ allBlogs, blog: res });
 
           // const lastIndexOfDivide = processedLinks.lastIndexOf('---');
 
-          setBlog(processedLinks.slice(frontMatterLength));
+          setBlog({
+            blog: processedLinks.slice(frontMatterLength),
+            frontMatter: processFrontMatter(frontMatter),
+          });
         } else {
-          setBlog(res);
+          setBlog({ blog: res, frontMatter: null });
         }
       })
       .catch((e) => {
         // eslint-disable-next-line no-console
         console.error(e);
       });
-    // )
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentBlogIndex, currentBlog]);
 
-  if (!blog) return <></>;
+  if (!blog.blog) return <></>;
 
   return (
     <article>
@@ -252,7 +254,7 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
           },
         }}
       >
-        {blog}
+        {blog.blog}
       </Markdown>
     </article>
     //     </div>
