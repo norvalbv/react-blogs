@@ -2,7 +2,6 @@ import { useTheme } from '@emotion/react';
 import Header from 'components/Header';
 import React, { ReactElement } from 'react';
 import { DefBlogs } from 'types';
-import { convertToDate } from 'utils/date';
 
 export type BlogsPageProps = {
   allBlogs: DefBlogs;
@@ -11,29 +10,6 @@ export type BlogsPageProps = {
 
 const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => {
   const theme = useTheme();
-
-  const extractMetadata = (key: string, value: number | Date | string): string | number => {
-    if (key === 'date processed' && typeof value === 'number') {
-      return convertToDate({
-        timestamp: value,
-        format: {
-          type: 'custom',
-          customValues: { day: 'numeric', month: 'long', year: 'numeric' },
-        },
-      });
-    }
-    if (value instanceof Date) {
-      return convertToDate({
-        timestamp: value.getTime(),
-        format: {
-          type: 'custom',
-          customValues: { day: 'numeric', month: 'long', year: 'numeric' },
-        },
-      });
-    }
-
-    return value;
-  };
 
   return (
     <section css={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -62,7 +38,7 @@ const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => 
             >
               {Object.entries(blog.metadata).map(([key, value], i, arr) => (
                 <>
-                  <span key={key}>{`${key}: ${extractMetadata(key, value)}`}</span>
+                  <span key={key}>{`${key}: ${value}`}</span>
                   {i < arr.length - 1 && <span>•</span>}
                 </>
               ))}
