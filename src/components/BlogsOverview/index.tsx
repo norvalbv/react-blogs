@@ -11,11 +11,6 @@ export type BlogsPageProps = {
 
 const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => {
   const theme = useTheme();
-  const sortedBlogs = [...allBlogs.blogs].sort((a, b) => {
-    const dateA = new Date(a.metadata?.['date posted'] ?? 0);
-    const dateB = new Date(b.metadata?.['date posted'] ?? 0);
-    return dateB.getTime() - dateA.getTime();
-  });
 
   const extractMetadata = (key: string, value: number | Date | string): string | number => {
     if (key === 'date processed' && typeof value === 'number') {
@@ -42,7 +37,7 @@ const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => 
 
   return (
     <section css={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      {sortedBlogs.map((blog) => (
+      {allBlogs.blogs.map((blog) => (
         <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
           <Header
             css={{ marginBottom: '8px' }}
