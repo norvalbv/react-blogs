@@ -9,8 +9,8 @@ export type HeaderProps = {
   // Own props
   className?: string;
   title?: Omit<TitleProps, 'children'> & { text: string };
-  subtitle?: Omit<SubtitleProps, 'children'> & { text: string | JSX.Element };
-  description?: Omit<DescriptionProps, 'children'> & { text: string | JSX.Element };
+  subtitle?: Omit<SubtitleProps, 'children'> & { text: string | ReactElement };
+  description?: Omit<DescriptionProps, 'children'> & { text: string | ReactElement };
 };
 
 const Header = ({ className, description, subtitle, title }: HeaderProps): ReactElement | null => {

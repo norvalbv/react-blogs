@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 export type TitleProps = {
-  children?: string | JSX.Element;
+  children?: string | ReactElement;
   className?: string;
   /**
    * Default 2.
