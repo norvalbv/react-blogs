@@ -13,7 +13,6 @@ export type Blogs = {
   url: string;
   accessor?: ReactNode;
   showFrontMatter?: boolean;
-  frontMatterPosition?: 'top' | 'bottom';
   metadata?: { 'date posted': DatePostedType } & Record<string, string | number>;
 } & Require<HeaderProps, 'title'>;
 

@@ -37,9 +37,6 @@ const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => 
       });
     }
 
-    if (key === 'read time' && typeof value === 'number') {
-      return `${value} minutes`;
-    }
     return value;
   };
 
