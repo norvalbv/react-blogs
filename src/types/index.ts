@@ -5,23 +5,7 @@ import { Require } from './utils';
 
 export type Theme = 'DARK_THEME' | 'LIGHT_THEME';
 
-type MetadataKeys = 'date posted' | 'read time' | 'level';
-
 type DatePostedType = Date | number | string;
-type ReadTimeType = number | string;
-type LevelType = string;
-
-// prettier-ignore
-export type Metadata = {
-  [K in MetadataKeys]: (
-    K extends 'date posted' ? DatePostedType :
-    K extends 'read time' ? ReadTimeType :
-    K extends 'level' ? LevelType :
-    string
-  )
-};
-
-export type KeyIsMetadata<K extends string> = K extends keyof Metadata ? true : false;
 
 export type Blogs = {
   readonly id: string;
@@ -30,7 +14,7 @@ export type Blogs = {
   accessor?: ReactNode;
   showFrontMatter?: boolean;
   frontMatterPosition?: 'top' | 'bottom';
-  metadata?: Partial<Metadata> & Record<string, string | number | Date>;
+  metadata?: { 'date posted': DatePostedType } & Record<string, string | number>;
 } & Require<HeaderProps, 'title'>;
 
 export type DefBlogs = {
