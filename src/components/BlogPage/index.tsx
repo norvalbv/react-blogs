@@ -1,8 +1,8 @@
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import React, { ReactElement, useEffect, useState } from 'react';
-import { Blogs } from 'types';
-import praseFrontMatter, { FrontMatter } from 'utils/parseFrontMatter';
+import { Blogs, FrontMatter } from 'types';
+import praseFrontMatter from 'utils/parseFrontMatter';
 import processLink from 'utils/processLinks';
 
 const UnorderedListComponent = ({
@@ -46,7 +46,10 @@ type BlogProps = {
 };
 
 const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => {
-  const [blog, setBlog] = useState<{ blog: string | null; frontMatter: FrontMatter | null }>({
+  const [blog, setBlog] = useState<{
+    blog: string | null;
+    frontMatter: FrontMatter | null;
+  }>({
     blog: null,
     frontMatter: null,
   });
@@ -76,31 +79,11 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
         return res.text();
       })
       .then((res) => {
-        if (currentBlog?.containsFrontMatter) {
-          const lines = res.split('\n');
+        const processedLinks = processLink({ allBlogs, blog: res, paramKey });
 
-          // faster than flatMap((line, i) => line === '---' ? i : []);
-          const frontMatterIndexes = lines
-            .map((line, i) => (line === '---' ? i : undefined))
-            .filter((i): i is number => i !== undefined);
+        const { blog, frontMatter } = praseFrontMatter(processedLinks);
 
-          const frontMatter = lines.slice(0, frontMatterIndexes[1] + 1);
-
-          /*
-           * It's easier to obtain the length of the front matter instead of joining the array back together,
-           * By slicing the response in res, you keep the formatting of the markdown.
-           */
-          const frontMatterLength = frontMatter.join().length;
-
-          const processedLinks = processLink({ allBlogs, blog: res, paramKey });
-
-          setBlog({
-            blog: processedLinks.slice(frontMatterLength),
-            frontMatter: praseFrontMatter(frontMatter),
-          });
-        } else {
-          setBlog({ blog: res, frontMatter: null });
-        }
+        setBlog({ blog, frontMatter: currentBlog?.showFrontMatter ? frontMatter : null });
       })
       .catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -125,7 +108,7 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
       >
         {currentBlog?.title.text}
       </h1>
-      <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
+      {/* <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
         {blog.frontMatter?.tags?.length ? (
           <div
             css={{
@@ -167,7 +150,7 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
             </span>
           </p>
         )}
-      </section>
+      </section> */}
       <Markdown
         options={{
           wrapper: React.Fragment,

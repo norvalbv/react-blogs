@@ -32,7 +32,7 @@ const blogs: Blogs[] = [
  * [[memory]] -> memory
  * [[memory#memory1]] -> memory
  * [[memory|memory2]] -> memory2
- * [[memory#memory1|memory2]] -> memory
+ * [[memory#memory1|memory2]] -> memory2
  */
 
 describe('processLink', () => {

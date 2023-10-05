@@ -28,7 +28,7 @@ export type Blogs = {
   file: string | URL;
   url: string;
   accessor?: ReactNode;
-  containsFrontMatter?: boolean;
+  showFrontMatter?: boolean;
   frontMatterPosition?: 'top' | 'bottom';
   metadata?: Partial<Metadata> & Record<string, string | number | Date>;
 } & Require<HeaderProps, 'title'>;
@@ -37,3 +37,8 @@ export type DefBlogs = {
   style: string;
   blogs: Blogs[];
 };
+
+export type FrontMatter = Record<
+  string,
+  number | string | Date | (number | string | Date)[]
+> | null;
