@@ -11,7 +11,7 @@ type Props = {
   callback?: () => void;
   style?: keyof typeof prismThemes;
   allBlogs: DefBlogs;
-  paramKey: Lowercase<string>;
+  paramKey?: Lowercase<string>;
 };
 
 const Blog = ({

@@ -8,7 +8,7 @@ export type Theme = 'DARK_THEME' | 'LIGHT_THEME';
 export type Blogs = {
   accessor?: ReactNode;
   file: string | URL;
-  metadata?: Record<string, string | number>;
+  metadata?: Record<string, string>;
   readonly id: string;
   showFrontMatter?: boolean;
   url: string;
