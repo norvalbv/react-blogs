@@ -1,23 +1,25 @@
 import { ThemeProvider } from '@emotion/react';
 import BlogPage from 'components/BlogPage';
 import React, { ReactElement } from 'react';
-import { Theme } from 'types';
+import { DefBlogs, Theme } from 'types';
 import * as themes from 'types/themes';
-import BlogsOverview, { BlogsPageProps } from './components/BlogsOverview';
+import BlogsOverview from './components/BlogsOverview';
 import { themes as prismThemes } from 'prism-react-renderer';
 
-type BlogProps = {
+type Props = {
   theme?: Theme;
   callback?: () => void;
   style?: keyof typeof prismThemes;
-} & BlogsPageProps;
+  allBlogs: DefBlogs;
+  paramKey: Lowercase<string>;
+};
 
 const Blog = ({
   paramKey = 'blog',
   theme = 'DARK_THEME',
   style,
   ...props
-}: BlogProps): ReactElement => {
+}: Props): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
   return (

@@ -3,12 +3,12 @@ import Header from 'components/Header';
 import React, { ReactElement } from 'react';
 import { DefBlogs } from 'types';
 
-export type BlogsPageProps = {
+type Props = {
   allBlogs: DefBlogs;
   paramKey: Lowercase<string>;
 };
 
-const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => {
+const BlogsOverview = ({ allBlogs, paramKey }: Props): ReactElement => {
   const theme = useTheme();
 
   return (
