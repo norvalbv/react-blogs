@@ -1,3 +1,4 @@
+import { useTheme } from '@emotion/react';
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
@@ -33,7 +34,7 @@ const CodeComponent = ({
   const isMultiline = /\n/.test(children);
 
   return isMultiline ? (
-    <Highlight theme={themes[props.theme || 'dracula']} language={'tsx' || ''} code={children}>
+    <Highlight theme={themes[props.theme || 'vsDark']} language={'tsx' || ''} code={children}>
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <pre
           style={style}
@@ -65,10 +66,11 @@ type BlogProps = {
   allBlogs: Blogs[];
   paramKey: Lowercase<string>;
   callback?: () => void;
-  theme?: keyof typeof themes;
 };
 
-const BlogPage = ({ allBlogs, paramKey, callback, theme }: BlogProps): ReactElement => {
+const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => {
+  const theme = useTheme();
+
   const [blog, setBlog] = useState<{
     blog: string | null;
     frontMatter: FrontMatter | null;
@@ -178,7 +180,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme }: BlogProps): ReactElem
         options={{
           wrapper: React.Fragment,
           overrides: {
-            h1: { props: { className: 'text-2xl md:text-4xl text-accent-main' } },
+            h1: { props: { css: theme.metadata } },
             h2: {
               props: {
                 className: 'my-4 md:my-6 text-xl md:text-2xl underline text-accent-main/90',

@@ -2,12 +2,12 @@ import { FrontMatter } from 'types';
 
 const frontMatterRegex = /(?:= yaml =|---)/i;
 
-const praseFrontMatter = (
-  str: string
-): {
+type ReturnValue = {
   blog: string;
   frontMatter: FrontMatter;
-} => {
+};
+
+const praseFrontMatter = (str: string): ReturnValue => {
   const containsFrontMatter = frontMatterRegex.test(str);
 
   // Contains no front matter

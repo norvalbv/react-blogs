@@ -2,10 +2,12 @@ import { Theme } from '@emotion/react';
 
 export const DARK_THEME: Theme = {
   metadata: 'gray',
-  header: 'text-gray-300',
+  header: 'text-red-300',
+  code: 'dracula',
 };
 
 export const LIGHT_THEME: Theme = {
   metadata: 'green',
-  header: 'text-gray-700',
+  header: 'text-blue-700',
+  code: 'duotoneLight',
 };
