@@ -6,18 +6,15 @@ import { Require } from './utils';
 export type Theme = 'DARK_THEME' | 'LIGHT_THEME';
 
 export type Blogs = {
-  readonly id: string;
-  file: string | URL;
-  url: string;
   accessor?: ReactNode;
-  showFrontMatter?: boolean;
+  file: string | URL;
   metadata?: Record<string, string | number>;
+  readonly id: string;
+  showFrontMatter?: boolean;
+  url: string;
 } & Require<HeaderProps, 'title'>;
 
-export type DefBlogs = {
-  style: string;
-  blogs: Blogs[];
-};
+export type DefBlogs = Blogs[];
 
 export type FrontMatter = Record<
   string,

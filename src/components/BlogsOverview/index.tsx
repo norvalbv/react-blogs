@@ -13,7 +13,7 @@ const BlogsOverview = ({ allBlogs, paramKey }: BlogsPageProps): ReactElement => 
 
   return (
     <section css={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      {allBlogs.blogs.map((blog) => (
+      {allBlogs.map((blog) => (
         <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
           <Header
             css={{ marginBottom: '8px' }}

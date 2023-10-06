@@ -1,5 +1,6 @@
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
+import { Highlight, themes } from 'prism-react-renderer';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { Blogs, FrontMatter } from 'types';
 import praseFrontMatter from 'utils/parseFrontMatter';
@@ -19,21 +20,42 @@ const ListComponent = ({ children, ...props }: { children: ReactElement[] }): Re
   </li>
 );
 
-const CodeComponent = ({ children, ...props }: { children: string }): ReactElement => {
+const CodeComponent = ({
+  children,
+  ...props
+}: {
+  children: string;
+  className?: string;
+  theme?: keyof typeof themes;
+}): ReactElement => {
+  const language = 'language-javascript';
+
   const isMultiline = /\n/.test(children);
 
   return isMultiline ? (
-    <pre
-      css={{
-        borderRadius: '8px',
-        boxShadow: '2px 6px 3px #00646630',
-        backgroundColor: '#111',
-        margin: '8px 0 8px 0',
-        fontSize: '1rem',
-      }}
-    >
-      <code>{children}</code>
-    </pre>
+    <Highlight theme={themes[props.theme || 'dracula']} language={'tsx' || ''} code={children}>
+      {({ style, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          style={style}
+          css={{
+            borderRadius: '8px',
+            margin: '8px 0 8px 0',
+            fontSize: '.85rem',
+            overflowX: 'scroll',
+            padding: '.5rem .75rem',
+          }}
+        >
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line })}>
+              <span css={{ marginRight: '.5rem' }}>{i + 1}.</span>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
   ) : (
     <code>{children}</code>
   );
@@ -43,9 +65,10 @@ type BlogProps = {
   allBlogs: Blogs[];
   paramKey: Lowercase<string>;
   callback?: () => void;
+  theme?: keyof typeof themes;
 };
 
-const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => {
+const BlogPage = ({ allBlogs, paramKey, callback, theme }: BlogProps): ReactElement => {
   const [blog, setBlog] = useState<{
     blog: string | null;
     frontMatter: FrontMatter | null;
@@ -169,7 +192,7 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
             em: { props: { className: 'text-accent-tertiary/75' } },
             ul: { component: UnorderedListComponent, props: { className: 'my-2' } },
             li: { component: ListComponent, props: { className: 'text-sm my-2' } },
-            code: { component: CodeComponent },
+            code: { component: CodeComponent, props: { theme } },
             blockquote: { props: { className: 'ml-4 border-l pl-4 italic' } },
           },
         }}
