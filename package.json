@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
-    "highlight.js": "^11.8.0",
     "markdown-to-jsx": "^7.3.2",
     "prism-react-renderer": "^2.1.0"
   },
