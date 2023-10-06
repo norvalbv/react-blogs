@@ -10,7 +10,7 @@ type BlogProps = {
   callback?: () => void;
 } & BlogsPageProps;
 
-const Blog = ({ paramKey = 'title', theme = 'DARK_THEME', ...props }: BlogProps): ReactElement => {
+const Blog = ({ paramKey = 'blog', theme = 'DARK_THEME', ...props }: BlogProps): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
   return (
