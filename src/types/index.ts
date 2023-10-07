@@ -1,9 +1,9 @@
 import { HeaderProps } from 'components/Header';
 import { ReactNode } from 'react';
+import { themes } from 'prism-react-renderer';
 
 import { Require } from './utils';
-
-export type Theme = 'DARK_THEME' | 'LIGHT_THEME';
+import { MarkdownToJSX } from 'markdown-to-jsx';
 
 export type Blogs = {
   accessor?: ReactNode;
@@ -20,3 +20,10 @@ export type FrontMatter = Record<
   string,
   number | string | Date | (number | string | Date)[]
 > | null;
+
+export type DefTheme = {
+  theme?: 'DARK_THEME' | 'LIGHT_THEME';
+  metadata?: string; // color
+  code?: keyof typeof themes;
+  overrides?: MarkdownToJSX.Overrides;
+};

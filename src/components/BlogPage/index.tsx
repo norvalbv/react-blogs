@@ -1,9 +1,10 @@
-import { useTheme } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
-import React, { ReactElement, useEffect, useState } from 'react';
-import { Blogs, FrontMatter } from 'types';
+import { Fragment, ReactElement, useEffect, useState } from 'react';
+import { Blogs, DefTheme, FrontMatter } from 'types';
+import { defaults } from 'types/themes';
 import praseFrontMatter from 'utils/parseFrontMatter';
 import processLink from 'utils/processLinks';
 
@@ -66,9 +67,10 @@ type BlogProps = {
   allBlogs: Blogs[];
   paramKey: Lowercase<string>;
   callback?: () => void;
+  theme?: DefTheme;
 };
 
-const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => {
+const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps): ReactElement => {
   const theme = useTheme();
 
   const [blog, setBlog] = useState<{
@@ -116,23 +118,11 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
 
   if (!blog.blog) return <></>;
 
+  console.log(defTheme);
+
   return (
     <article>
-      <h1
-        css={{
-          fontSize: '1.75rem',
-          lineHeight: '2rem',
-          textTransform: 'capitalize',
-          textDecoration: 'underline',
-          marginBottom: '0.5rem',
-          '@media (min-width: 768px)': {
-            fontSize: '2.25rem',
-            lineHeight: '2.5rem',
-          },
-        }}
-      >
-        {currentBlog?.title.text}
-      </h1>
+      <h1 css={css(defaults.h1, { color: theme.h1 })}>{currentBlog?.title.text}</h1>
       {/* <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
         {blog.frontMatter?.tags?.length ? (
           <div
@@ -178,24 +168,40 @@ const BlogPage = ({ allBlogs, paramKey, callback }: BlogProps): ReactElement => 
       </section> */}
       <Markdown
         options={{
-          wrapper: React.Fragment,
+          wrapper: Fragment,
           overrides: {
-            h1: { props: { css: theme.metadata } },
-            h2: {
-              props: {
-                className: 'my-4 md:my-6 text-xl md:text-2xl underline text-accent-main/90',
-              },
+            h1: defTheme?.overrides?.h1 || { props: { css: theme.metadata } },
+            h2: defTheme?.overrides?.h2 || {
+              component: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
+              props: { css: defaults.h2 },
             },
-            h3: { props: { className: 'my-4 text-lg md:text-xl text-accent-main/75' } },
-            h4: { props: { className: 'my-4 text-md md:text-lg text-accent-secondary/60' } },
-            p: { props: { className: 'my-3 text-sm leading-6' } },
-            a: { props: { className: 'text-accent-secondary underline' } },
-            strong: { props: { className: 'text-accent-tertiary font-semibold' } },
-            em: { props: { className: 'text-accent-tertiary/75' } },
-            ul: { component: UnorderedListComponent, props: { className: 'my-2' } },
-            li: { component: ListComponent, props: { className: 'text-sm my-2' } },
-            code: { component: CodeComponent, props: { theme } },
-            blockquote: { props: { className: 'ml-4 border-l pl-4 italic' } },
+            h3: defTheme?.overrides?.h3 || {
+              props: { css: defaults.h3 },
+            },
+            h4: defTheme?.overrides?.h4 || { props: { css: defaults.h4 } },
+            p: defTheme?.overrides?.p || { props: { css: defaults.p } },
+            ul: defTheme?.overrides?.ul || {
+              component: UnorderedListComponent,
+              props: { css: defaults.ul },
+            },
+            li: defTheme?.overrides?.li || {
+              component: ListComponent,
+              props: { css: defaults.li },
+            },
+            code: {
+              component: CodeComponent,
+              props: { theme: defTheme?.code || theme.code },
+            },
+            a: defTheme?.overrides?.a || {
+              props: { css: defaults.a },
+            },
+            strong: defTheme?.overrides?.strong || {
+              props: { css: defaults.strong },
+            },
+            em: defTheme?.overrides?.em || { props: { css: defaults.em } },
+            blockquote: defTheme?.overrides?.blockquote || {
+              props: { css: defaults.blockquote },
+            },
           },
         }}
       >
