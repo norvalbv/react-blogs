@@ -1,8 +1,8 @@
-import { css, useTheme } from '@emotion/react';
+import { css, jsx, useTheme } from '@emotion/react';
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
-import { Fragment, ReactElement, useEffect, useState } from 'react';
+import { Fragment, ReactElement, createElement, useEffect, useState } from 'react';
 import { Blogs, DefTheme, FrontMatter } from 'types';
 import { defaults } from 'types/themes';
 import praseFrontMatter from 'utils/parseFrontMatter';
@@ -118,11 +118,14 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
 
   if (!blog.blog) return <></>;
 
-  console.log(defTheme);
-
   return (
     <article>
-      <h1 css={css(defaults.h1, { color: theme.h1 })}>{currentBlog?.title.text}</h1>
+      <h1
+        css={css(defaults.h1, { color: theme.h1 })}
+        // className={defTheme?.overrides?.h1?.className || ''}
+      >
+        {currentBlog?.title.text}
+      </h1>
       {/* <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
         {blog.frontMatter?.tags?.length ? (
           <div
@@ -168,18 +171,18 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
       </section> */}
       <Markdown
         options={{
+          createElement: (type, props, children) => jsx(type, props, children),
           wrapper: Fragment,
           overrides: {
-            h1: defTheme?.overrides?.h1 || { props: { css: theme.metadata } },
+            h1: defTheme?.overrides?.h1 || { props: { css: css(defaults.h1) } },
             h2: defTheme?.overrides?.h2 || {
-              component: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
-              props: { css: defaults.h2 },
+              props: { css: css(defaults.h2) },
             },
             h3: defTheme?.overrides?.h3 || {
-              props: { css: defaults.h3 },
+              props: { css: css(defaults.h3) },
             },
-            h4: defTheme?.overrides?.h4 || { props: { css: defaults.h4 } },
-            p: defTheme?.overrides?.p || { props: { css: defaults.p } },
+            h4: defTheme?.overrides?.h4 || { props: { css: css(defaults.h4) } },
+            p: defTheme?.overrides?.p || { props: { css: css(defaults.p) } },
             ul: defTheme?.overrides?.ul || {
               component: UnorderedListComponent,
               props: { css: defaults.ul },
@@ -193,14 +196,14 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
               props: { theme: defTheme?.code || theme.code },
             },
             a: defTheme?.overrides?.a || {
-              props: { css: defaults.a },
+              props: { css: css(defaults.a) },
             },
             strong: defTheme?.overrides?.strong || {
-              props: { css: defaults.strong },
+              props: { css: css(defaults.strong) },
             },
-            em: defTheme?.overrides?.em || { props: { css: defaults.em } },
+            em: defTheme?.overrides?.em || { props: { css: css(defaults.em) } },
             blockquote: defTheme?.overrides?.blockquote || {
-              props: { css: defaults.blockquote },
+              props: { css: css(defaults.blockquote) },
             },
           },
         }}

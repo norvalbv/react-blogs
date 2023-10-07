@@ -73,10 +73,3 @@ export const LIGHT_THEME: Theme = {
   h1: 'blue',
   code: 'vsLight',
 };
-
-// customise their own style?
-// or extend existing?
-// or both?
-
-// Customise components in markdown,
-// Should the user be able to customise every element or just markdown
