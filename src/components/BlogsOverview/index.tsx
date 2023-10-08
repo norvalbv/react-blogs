@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react';
 import Header from 'components/Header';
 import React, { ReactElement } from 'react';
 import { DefBlogs } from 'types';
@@ -9,14 +8,12 @@ type Props = {
 };
 
 const BlogsOverview = ({ allBlogs, paramKey }: Props): ReactElement => {
-  const theme = useTheme();
-
   return (
-    <section css={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <section style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {allBlogs.map((blog) => (
         <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
           <Header
-            css={{ marginBottom: '8px' }}
+            // className={{ marginBottom: '8px' }}
             title={{
               text: blog.title.text,
               level: 2,
@@ -26,14 +23,14 @@ const BlogsOverview = ({ allBlogs, paramKey }: Props): ReactElement => {
           />
           {blog.metadata && (
             <p
-              css={{
+              style={{
                 display: 'flex',
                 gap: '0.5rem',
                 fontSize: '0.75rem',
                 textTransform: 'capitalize',
                 fontStyle: 'italic',
                 flexWrap: 'wrap',
-                color: theme.metadata,
+                // color: theme.metadata,
               }}
             >
               {Object.entries(blog.metadata).map(([key, value], i, arr) => (

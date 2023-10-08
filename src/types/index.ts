@@ -23,7 +23,7 @@ export type FrontMatter = Record<
 
 export type DefTheme = {
   theme?: 'DARK_THEME' | 'LIGHT_THEME';
-  metadata?: string; // color
+  metadata?: string;
   code?: keyof typeof themes;
   overrides?: MarkdownToJSX.Overrides;
 };

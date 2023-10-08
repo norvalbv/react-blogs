@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
@@ -66,8 +65,6 @@ type BlogProps = {
 };
 
 const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps): ReactElement => {
-  const theme = useTheme();
-
   const [blog, setBlog] = useState<{
     blog: string | null;
     frontMatter: FrontMatter | null;
@@ -182,7 +179,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
             },
             code: {
               component: CodeComponent,
-              props: { theme: defTheme?.code || theme.code },
+              props: { theme: defTheme?.code },
             },
             a: defTheme?.overrides?.a || {
               props: { className: styles.a },
