@@ -7,12 +7,14 @@ function isOverrideWithProps(
   return typeof value === 'object' && 'props' in value;
 }
 
-const getClassName = (tag: string, defTheme?: DefTheme): string => {
+const getClassName = (tag: string, defTheme?: DefTheme): string | undefined => {
   const override = defTheme?.overrides?.[tag];
   if (override && isOverrideWithProps(override) && 'className' in override.props) {
     return override.props.className as string;
   }
-  return '';
+
+  // Return undefined is it cannot find an override with the current tag
+  return undefined;
 };
 
 export default getClassName;

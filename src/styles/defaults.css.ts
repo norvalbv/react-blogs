@@ -6,7 +6,7 @@ export const defaults = {
     lineHeight: '2rem',
     textTransform: 'capitalize',
     textDecoration: 'underline',
-    marginBottom: '0.5rem',
+    marginBottom: '2rem',
     '@media': {
       'screen and (min-width: 768px)': {
         fontSize: '2rem',
@@ -15,35 +15,31 @@ export const defaults = {
     },
   }),
   h2: style({
-    fontSize: '1.25rem',
-    lineHeight: '1.75rem',
+    fontSize: '1.75rem',
+    lineHeight: '2rem',
     textTransform: 'capitalize',
     textDecoration: 'underline',
-    margin: '1rem 0',
+    margin: '1.5rem 0 .5rem',
   }),
   h3: style({
     fontSize: '1.125rem',
     lineHeight: '1.75rem',
-    margin: '1rem 0',
+    margin: '1rem 0 .5rem',
     '@media': {
       'screen and (min-width: 768px)': { fontSize: '1.5rem', lineHeight: '1.75rem' },
     },
   }),
   h4: style({
-    margin: '1rem 0',
+    margin: '.25rem 0',
     '@media': {
       'screen and (min-width: 768px)': { fontSize: '1.125rem', lineHeight: '1.75rem' },
     },
   }),
   p: style({
-    margin: '0.75rem 0',
-    lineHeight: '1.5rem',
+    margin: '.5rem 0',
   }),
   ul: style({
     margin: '.5rem 0',
-  }),
-  li: style({
-    margin: '.25rem 0',
   }),
   a: style({
     textDecoration: 'underline',
@@ -71,5 +67,13 @@ export const defaults = {
     borderRadius: '8px',
     fontSize: '.85rem',
     padding: '.4rem .7rem',
+  }),
+  metadata: style({
+    display: 'flex',
+    gap: '0.5rem',
+    fontSize: '0.75rem',
+    textTransform: 'capitalize',
+    fontStyle: 'italic',
+    flexWrap: 'wrap',
   }),
 };

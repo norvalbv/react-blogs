@@ -1,5 +1,5 @@
 import { HeaderProps } from 'components/Header';
-import { ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
 import { themes } from 'prism-react-renderer';
 
 import { Require } from './utils';
@@ -23,7 +23,6 @@ export type FrontMatter = Record<
 
 export type DefTheme = {
   theme?: 'DARK_THEME' | 'LIGHT_THEME';
-  metadata?: string;
   code?: keyof typeof themes;
-  overrides?: MarkdownToJSX.Overrides;
+  overrides?: MarkdownToJSX.Overrides & { metadata?: { component: ElementType; props: Object } };
 };

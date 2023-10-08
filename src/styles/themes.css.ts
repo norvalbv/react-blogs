@@ -11,7 +11,7 @@ const themeContract = createThemeContract({
   h3: { color: null },
   h4: { color: null },
   li: { color: null },
-  metadata: { color: null },
+
   p: { color: null },
   strong: { color: null },
   ul: { color: null },
@@ -26,7 +26,7 @@ type Themes = {
 };
 export const themes: Themes = {
   DARK_THEME: {
-    prismTheme: 'vsDark',
+    prismTheme: 'dracula',
     nodes: createTheme(themeContract, {
       a: { color: '' },
       blockquote: { color: '' },
@@ -36,7 +36,6 @@ export const themes: Themes = {
       h3: { color: '' },
       h4: { color: '' },
       li: { color: '' },
-      metadata: { color: 'green' },
       p: { color: '' },
       strong: { color: '' },
       ul: { color: '' },
@@ -44,7 +43,7 @@ export const themes: Themes = {
     }),
   },
   LIGHT_THEME: {
-    prismTheme: 'vsLight',
+    prismTheme: 'oneLight',
     nodes: createTheme(themeContract, {
       a: { color: '' },
       blockquote: { color: '' },
@@ -54,7 +53,6 @@ export const themes: Themes = {
       h3: { color: '' },
       h4: { color: '' },
       li: { color: '' },
-      metadata: { color: 'blue' },
       p: { color: '' },
       strong: { color: '' },
       ul: { color: '' },
@@ -64,18 +62,18 @@ export const themes: Themes = {
 };
 
 export const styles = {
-  a: style([defaults.a, { color: themeContract.a.color }]),
-  blockquote: style([defaults.blockquote, { color: themeContract.blockquote.color }]),
-  em: style([defaults.em, { color: themeContract.em.color }]),
-  h1: style([defaults.h1, { color: themeContract.h1.color }]),
-  h2: style([defaults.h2, { color: themeContract.h2.color }]),
-  h3: style([defaults.h3, { color: themeContract.h3.color }]),
-  h4: style([defaults.h4, { color: themeContract.h4.color }]),
-  li: style([defaults.li, { color: themeContract.li.color }]),
-  metadata: style({ color: themeContract.metadata.color }),
-  p: style([defaults.p, { color: themeContract.p.color }]),
-  strong: style([defaults.strong, { color: themeContract.strong.color }]),
-  ul: style([defaults.ul, { color: themeContract.ul.color }]),
+  a: style([defaults.a, { ...themeContract.a }]),
+  blockquote: style([defaults.blockquote, { ...themeContract.blockquote }]),
   code: defaults.code,
+  em: style([defaults.em, { ...themeContract.em }]),
+  h1: style([defaults.h1, { ...themeContract.h1 }]),
+  h2: style([defaults.h2, { ...themeContract.h2 }]),
+  h3: style([defaults.h3, { ...themeContract.h3 }]),
+  h4: style([defaults.h4, { ...themeContract.h4 }]),
   inlinecode: defaults.inlinecode,
+  li: style([{ ...themeContract.li }]),
+  metadata: defaults.metadata,
+  p: style([defaults.p, { ...themeContract.p }]),
+  strong: style([defaults.strong, { ...themeContract.strong }]),
+  ul: style([defaults.ul, { ...themeContract.ul }]),
 };
