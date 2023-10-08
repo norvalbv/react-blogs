@@ -32,5 +32,3 @@ const Blog = ({ paramKey = 'blog', ...props }: Props): ReactElement => {
 
 export default Blog;
 export * from 'types/index';
-
-// export the emotion.d.ts themes so use can define their own theme.

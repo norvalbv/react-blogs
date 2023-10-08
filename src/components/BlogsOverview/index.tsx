@@ -1,13 +1,16 @@
 import Header from 'components/Header';
 import React, { ReactElement } from 'react';
-import { DefBlogs } from 'types';
+import { styles } from 'styles/themes.css';
+import { DefBlogs, DefTheme } from 'types';
+import getClassName from 'utils/getClassName';
 
 type Props = {
   allBlogs: DefBlogs;
   paramKey: Lowercase<string>;
+  theme: DefTheme;
 };
 
-const BlogsOverview = ({ allBlogs, paramKey }: Props): ReactElement => {
+const BlogsOverview = ({ allBlogs, paramKey, theme }: Props): ReactElement => {
   return (
     <section style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {allBlogs.map((blog) => (
@@ -17,9 +20,15 @@ const BlogsOverview = ({ allBlogs, paramKey }: Props): ReactElement => {
             title={{
               text: blog.title.text,
               level: 2,
+              // Set to h2 as level is 2
+              className: getClassName('h2', theme),
             }}
-            {...(blog.subtitle ? { subtitle: { ...blog.subtitle } } : {})}
-            {...(blog.description ? { description: { ...blog.description } } : {})}
+            {...(blog.subtitle
+              ? { subtitle: { ...blog.subtitle, className: getClassName('h4', theme) } }
+              : {})}
+            {...(blog.description
+              ? { description: { ...blog.description, className: getClassName('p', theme) } }
+              : {})}
           />
           {blog.metadata && (
             <p
@@ -30,8 +39,8 @@ const BlogsOverview = ({ allBlogs, paramKey }: Props): ReactElement => {
                 textTransform: 'capitalize',
                 fontStyle: 'italic',
                 flexWrap: 'wrap',
-                // color: theme.metadata,
               }}
+              className={styles.metadata}
             >
               {Object.entries(blog.metadata).map(([key, value], i, arr) => (
                 <>

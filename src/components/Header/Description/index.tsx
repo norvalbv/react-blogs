@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { styles } from 'styles/themes.css';
 
 export type DescriptionProps = {
   children?: string | ReactElement;
@@ -13,7 +14,7 @@ const Description = ({ children, className, testId }: DescriptionProps): ReactEl
 
   if (typeof children === 'string') {
     return (
-      <p className={className} data-testid={testId || `${children} Description`}>
+      <p className={className || styles.p} data-testid={testId || `${children} Description`}>
         {children}
       </p>
     );

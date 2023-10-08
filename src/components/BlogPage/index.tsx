@@ -3,7 +3,7 @@ import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
 import { styles } from 'styles/themes.css';
 import { Blogs, DefTheme, FrontMatter } from 'types';
-import getClassName from 'types/getClassName';
+import getClassName from 'utils/getClassName';
 import praseFrontMatter from 'utils/parseFrontMatter';
 import processLink from 'utils/processLinks';
 

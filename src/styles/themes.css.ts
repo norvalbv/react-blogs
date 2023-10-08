@@ -1,7 +1,7 @@
 import { createTheme, createThemeContract, style } from '@vanilla-extract/css';
 import { defaults } from './defaults.css';
 
-const r = createThemeContract({
+const themeContract = createThemeContract({
   a: { color: null },
   blockquote: { color: null },
   em: { color: null },
@@ -10,13 +10,14 @@ const r = createThemeContract({
   h3: { color: null },
   h4: { color: null },
   li: { color: null },
+  metadata: { color: null },
   p: { color: null },
   strong: { color: null },
   ul: { color: null },
 });
 
 export const themes = {
-  DARK_THEME: createTheme(r, {
+  DARK_THEME: createTheme(themeContract, {
     a: { color: '' },
     blockquote: { color: '' },
     em: { color: '' },
@@ -25,12 +26,13 @@ export const themes = {
     h3: { color: '' },
     h4: { color: '' },
     li: { color: '' },
+    metadata: { color: 'green' },
     p: { color: '' },
     strong: { color: '' },
     ul: { color: '' },
   }),
 
-  LIGHT_THEME: createTheme(r, {
+  LIGHT_THEME: createTheme(themeContract, {
     a: { color: '' },
     blockquote: { color: '' },
     em: { color: '' },
@@ -39,6 +41,7 @@ export const themes = {
     h3: { color: '' },
     h4: { color: '' },
     li: { color: '' },
+    metadata: { color: 'blue' },
     p: { color: '' },
     strong: { color: '' },
     ul: { color: '' },
@@ -46,17 +49,18 @@ export const themes = {
 };
 
 export const styles = {
-  a: style([defaults.a, { color: r.a.color }]),
-  blockquote: style([defaults.blockquote, { color: r.blockquote.color }]),
-  em: style([defaults.em, { color: r.em.color }]),
-  h1: style([defaults.h1, { color: r.h1.color }]),
-  h2: style([defaults.h2, { color: r.h2.color }]),
-  h3: style([defaults.h3, { color: r.h3.color }]),
-  h4: style([defaults.h4, { color: r.h4.color }]),
-  li: style([defaults.li, { color: r.li.color }]),
-  p: style([defaults.p, { color: r.p.color }]),
-  strong: style([defaults.strong, { color: r.strong.color }]),
-  ul: style([defaults.ul, { color: r.ul.color }]),
+  a: style([defaults.a, { color: themeContract.a.color }]),
+  blockquote: style([defaults.blockquote, { color: themeContract.blockquote.color }]),
+  em: style([defaults.em, { color: themeContract.em.color }]),
+  h1: style([defaults.h1, { color: themeContract.h1.color }]),
+  h2: style([defaults.h2, { color: themeContract.h2.color }]),
+  h3: style([defaults.h3, { color: themeContract.h3.color }]),
+  h4: style([defaults.h4, { color: themeContract.h4.color }]),
+  li: style([defaults.li, { color: themeContract.li.color }]),
+  metadata: style({ color: themeContract.metadata.color }),
+  p: style([defaults.p, { color: themeContract.p.color }]),
+  strong: style([defaults.strong, { color: themeContract.strong.color }]),
+  ul: style([defaults.ul, { color: themeContract.ul.color }]),
   code: defaults.code,
   inlinecode: defaults.inlinecode,
 };

@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { styles } from 'styles/themes.css';
 
 export type TitleProps = {
   children?: string | ReactElement;
@@ -7,26 +8,17 @@ export type TitleProps = {
    * Default 2.
    */
   level?: 1 | 2 | 3;
+  testId?: string;
 };
 
-const Title = ({ children, className, level = 2 }: TitleProps): ReactElement | null => {
+const Title = ({ children, className, level = 2, testId }: TitleProps): ReactElement | null => {
   if (!children) {
     return null;
   }
 
   if (level === 1) {
     return (
-      <h1
-        css={{
-          marginBottom: '4.5rem',
-          width: 'max-content',
-          bordeBottom: '1px solid',
-          paddingBottom: '0.5rem',
-          fontSize: '3rem',
-          fontWeight: 600,
-        }}
-        className={className}
-      >
+      <h1 className={className || styles.h1} data-testid={testId || `${children} Subtitle`}>
         {children}
       </h1>
     );
@@ -34,30 +26,14 @@ const Title = ({ children, className, level = 2 }: TitleProps): ReactElement | n
 
   if (level === 2) {
     return (
-      <h2
-        css={{
-          textDecoration: 'underline',
-          textUnderlineOffset: '8px',
-          marginBottom: '1rem',
-          fontSize: '2rem',
-          fontWeight: 600,
-        }}
-        className={className}
-      >
+      <h2 className={className || styles.h2} data-testid={testId || `${children} Subtitle`}>
         {children}
       </h2>
     );
   }
 
   return (
-    <h3
-      css={{
-        marginBottom: '2.5rem',
-        fontSize: '1.75rem',
-        fontWeight: 600,
-      }}
-      className={className}
-    >
+    <h3 className={className || styles.h3} data-testid={testId || `${children} Subtitle`}>
       {children}
     </h3>
   );
