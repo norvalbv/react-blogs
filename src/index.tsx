@@ -4,6 +4,7 @@ import React, { ReactElement } from 'react';
 import { DefBlogs, DefTheme } from 'types';
 import * as themes from 'types/themes';
 import BlogsOverview from './components/BlogsOverview';
+import { themes as c } from 'styles/themes.css';
 
 type Props = {
   theme?: DefTheme;
@@ -17,16 +18,18 @@ const Blog = ({ paramKey = 'blog', ...props }: Props): ReactElement => {
 
   return (
     <ThemeProvider theme={themes[props.theme?.theme || 'DARK_THEME']}>
-      {hasTitle ? (
-        <BlogPage
-          allBlogs={props.allBlogs}
-          paramKey={paramKey}
-          callback={props.callback}
-          theme={props.theme}
-        />
-      ) : (
-        <BlogsOverview paramKey={paramKey} {...props} />
-      )}
+      <div className={c[props.theme?.theme || 'DARK_THEME']}>
+        {hasTitle ? (
+          <BlogPage
+            allBlogs={props.allBlogs}
+            paramKey={paramKey}
+            callback={props.callback}
+            theme={props.theme}
+          />
+        ) : (
+          <BlogsOverview paramKey={paramKey} {...props} />
+        )}
+      </div>
     </ThemeProvider>
   );
 };

@@ -1,10 +1,10 @@
-import { css, jsx, useTheme } from '@emotion/react';
-import Badge from 'components/Badge';
+import { useTheme } from '@emotion/react';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
-import { Fragment, ReactElement, createElement, useEffect, useState } from 'react';
+import { Fragment, ReactElement, useEffect, useState } from 'react';
+import { styles } from 'styles/themes.css';
 import { Blogs, DefTheme, FrontMatter } from 'types';
-import { defaults } from 'types/themes';
+import getClassName from 'types/getClassName';
 import praseFrontMatter from 'utils/parseFrontMatter';
 import processLink from 'utils/processLinks';
 
@@ -30,26 +30,15 @@ const CodeComponent = ({
   className?: string;
   theme?: keyof typeof themes;
 }): ReactElement => {
-  const language = 'language-javascript';
-
   const isMultiline = /\n/.test(children);
 
   return isMultiline ? (
     <Highlight theme={themes[props.theme || 'vsDark']} language={'tsx' || ''} code={children}>
       {({ style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          style={style}
-          css={{
-            borderRadius: '8px',
-            margin: '8px 0 8px 0',
-            fontSize: '.85rem',
-            overflowX: 'scroll',
-            padding: '.5rem .75rem',
-          }}
-        >
+        <pre style={style} className={styles.code}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
-              <span css={{ marginRight: '.5rem' }}>{i + 1}.</span>
+              <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
               {line.map((token, key) => (
                 <span key={key} {...getTokenProps({ token })} />
               ))}
@@ -59,7 +48,13 @@ const CodeComponent = ({
       )}
     </Highlight>
   ) : (
-    <code>{children}</code>
+    <Highlight theme={themes[props.theme || 'vsDark']} language={'tsx' || ''} code={children}>
+      {({ style }) => (
+        <code style={style} className={styles.inlinecode}>
+          {children}
+        </code>
+      )}
+    </Highlight>
   );
 };
 
@@ -120,12 +115,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
 
   return (
     <article>
-      <h1
-        css={css(defaults.h1, { color: theme.h1 })}
-        // className={defTheme?.overrides?.h1?.className || ''}
-      >
-        {currentBlog?.title.text}
-      </h1>
+      <h1 className={getClassName('h1', defTheme) || styles.h1}>{currentBlog?.title.text}</h1>
       {/* <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
         {blog.frontMatter?.tags?.length ? (
           <div
@@ -171,39 +161,38 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
       </section> */}
       <Markdown
         options={{
-          createElement: (type, props, children) => jsx(type, props, children),
           wrapper: Fragment,
           overrides: {
-            h1: defTheme?.overrides?.h1 || { props: { css: css(defaults.h1) } },
+            h1: defTheme?.overrides?.h1 || { props: { className: styles.h1 } },
             h2: defTheme?.overrides?.h2 || {
-              props: { css: css(defaults.h2) },
+              props: { className: styles.h2 },
             },
             h3: defTheme?.overrides?.h3 || {
-              props: { css: css(defaults.h3) },
+              props: { className: styles.h3 },
             },
-            h4: defTheme?.overrides?.h4 || { props: { css: css(defaults.h4) } },
-            p: defTheme?.overrides?.p || { props: { css: css(defaults.p) } },
+            h4: defTheme?.overrides?.h4 || { props: { className: styles.h4 } },
+            p: defTheme?.overrides?.p || { props: { className: styles.p } },
             ul: defTheme?.overrides?.ul || {
               component: UnorderedListComponent,
-              props: { css: defaults.ul },
+              props: { className: styles.ul },
             },
             li: defTheme?.overrides?.li || {
               component: ListComponent,
-              props: { css: defaults.li },
+              props: { className: styles.li },
             },
             code: {
               component: CodeComponent,
               props: { theme: defTheme?.code || theme.code },
             },
             a: defTheme?.overrides?.a || {
-              props: { css: css(defaults.a) },
+              props: { className: styles.a },
             },
             strong: defTheme?.overrides?.strong || {
-              props: { css: css(defaults.strong) },
+              props: { className: styles.strong },
             },
-            em: defTheme?.overrides?.em || { props: { css: css(defaults.em) } },
+            em: defTheme?.overrides?.em || { props: { className: styles.em } },
             blockquote: defTheme?.overrides?.blockquote || {
-              props: { css: css(defaults.blockquote) },
+              props: { className: styles.blockquote },
             },
           },
         }}

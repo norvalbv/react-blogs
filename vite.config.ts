@@ -1,11 +1,15 @@
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig, TransformResult } from 'vite';
 import dts from 'vite-plugin-dts';
-import viteTsconfigPaths from 'vite-tsconfig-paths';
 import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 export default defineConfig({
   plugins: [
+    cssInjectedByJsPlugin(),
+    vanillaExtractPlugin(),
     {
       name: 'add-emotion-jsx-pragma',
       enforce: 'pre',
@@ -24,7 +28,6 @@ export default defineConfig({
     viteTsconfigPaths(),
     dts({ rollupTypes: true }),
   ],
-  // resolve
   assetsInclude: [/\.md$/, '**/*.md', '.md'],
   build: {
     lib: { entry: './src/index.tsx', name: 'react-blogs', fileName: 'index' },
