@@ -2,7 +2,7 @@ import BlogPage from 'components/BlogPage';
 import React, { ReactElement } from 'react';
 import { DefBlogs, DefTheme } from 'types';
 import BlogsOverview from './components/BlogsOverview';
-import { themes as c } from 'styles/themes.css';
+import { themes } from 'styles/themes.css';
 
 type Props = {
   theme?: DefTheme;
@@ -15,14 +15,9 @@ const Blog = ({ paramKey = 'blog', ...props }: Props): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
   return (
-    <div className={c[props.theme?.theme || 'DARK_THEME']}>
+    <div className={themes[props.theme?.theme || 'DARK_THEME'].nodes}>
       {hasTitle ? (
-        <BlogPage
-          allBlogs={props.allBlogs}
-          paramKey={paramKey}
-          callback={props.callback}
-          theme={props.theme}
-        />
+        <BlogPage paramKey={paramKey} {...props} />
       ) : (
         <BlogsOverview paramKey={paramKey} {...props} />
       )}

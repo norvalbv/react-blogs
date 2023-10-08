@@ -1,7 +1,7 @@
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
-import { styles } from 'styles/themes.css';
+import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { Blogs, DefTheme, FrontMatter } from 'types';
 import getClassName from 'utils/getClassName';
 import praseFrontMatter from 'utils/parseFrontMatter';
@@ -27,19 +27,29 @@ const CodeComponent = ({
 }: {
   children: string;
   className?: string;
-  theme?: keyof typeof themes;
+  theme?: DefTheme;
 }): ReactElement => {
   const isMultiline = /\n/.test(children);
 
   return isMultiline ? (
-    <Highlight theme={themes[props.theme || 'vsDark']} language={'tsx' || ''} code={children}>
+    <Highlight
+      theme={
+        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'DARK_THEME'].prismTheme]
+      }
+      language={'tsx' || ''}
+      code={children}
+    >
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <pre style={style} className={styles.code}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
               <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
               {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
+                <span
+                  key={key}
+                  {...getTokenProps({ token })}
+                  className={defaultTheme['DARK_THEME'].nodes}
+                />
               ))}
             </div>
           ))}
@@ -47,7 +57,13 @@ const CodeComponent = ({
       )}
     </Highlight>
   ) : (
-    <Highlight theme={themes[props.theme || 'vsDark']} language={'tsx' || ''} code={children}>
+    <Highlight
+      theme={
+        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'DARK_THEME'].prismTheme]
+      }
+      language={'tsx' || ''}
+      code={children}
+    >
       {({ style }) => (
         <code style={style} className={styles.inlinecode}>
           {children}
@@ -179,7 +195,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
             },
             code: {
               component: CodeComponent,
-              props: { theme: defTheme?.code },
+              props: { theme: defTheme },
             },
             a: defTheme?.overrides?.a || {
               props: { className: styles.a },

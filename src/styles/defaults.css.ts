@@ -70,7 +70,6 @@ export const defaults = {
   inlinecode: style({
     borderRadius: '8px',
     fontSize: '.85rem',
-    overflowX: 'scroll',
     padding: '.4rem .7rem',
   }),
 };

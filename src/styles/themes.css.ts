@@ -1,4 +1,5 @@
 import { createTheme, createThemeContract, style } from '@vanilla-extract/css';
+import { themes as prismThemes } from 'prism-react-renderer';
 import { defaults } from './defaults.css';
 
 const themeContract = createThemeContract({
@@ -14,38 +15,52 @@ const themeContract = createThemeContract({
   p: { color: null },
   strong: { color: null },
   ul: { color: null },
+  code: { prismTheme: null },
 });
 
-export const themes = {
-  DARK_THEME: createTheme(themeContract, {
-    a: { color: '' },
-    blockquote: { color: '' },
-    em: { color: '' },
-    h1: { color: 'rgb(67 56 202)' },
-    h2: { color: 'rgb(79 70 229)' },
-    h3: { color: '' },
-    h4: { color: '' },
-    li: { color: '' },
-    metadata: { color: 'green' },
-    p: { color: '' },
-    strong: { color: '' },
-    ul: { color: '' },
-  }),
-
-  LIGHT_THEME: createTheme(themeContract, {
-    a: { color: '' },
-    blockquote: { color: '' },
-    em: { color: '' },
-    h1: { color: '#6366f1)' },
-    h2: { color: '#818cf8' },
-    h3: { color: '' },
-    h4: { color: '' },
-    li: { color: '' },
-    metadata: { color: 'blue' },
-    p: { color: '' },
-    strong: { color: '' },
-    ul: { color: '' },
-  }),
+type Themes = {
+  [themeKey: string]: {
+    prismTheme: keyof typeof prismThemes;
+    nodes: string;
+  };
+};
+export const themes: Themes = {
+  DARK_THEME: {
+    prismTheme: 'vsDark',
+    nodes: createTheme(themeContract, {
+      a: { color: '' },
+      blockquote: { color: '' },
+      em: { color: '' },
+      h1: { color: 'rgb(67 56 202)' },
+      h2: { color: 'rgb(79 70 229)' },
+      h3: { color: '' },
+      h4: { color: '' },
+      li: { color: '' },
+      metadata: { color: 'green' },
+      p: { color: '' },
+      strong: { color: '' },
+      ul: { color: '' },
+      code: { prismTheme: 'vsDark' },
+    }),
+  },
+  LIGHT_THEME: {
+    prismTheme: 'vsLight',
+    nodes: createTheme(themeContract, {
+      a: { color: '' },
+      blockquote: { color: '' },
+      em: { color: '' },
+      h1: { color: '#6366f1)' },
+      h2: { color: '#818cf8' },
+      h3: { color: '' },
+      h4: { color: '' },
+      li: { color: '' },
+      metadata: { color: 'blue' },
+      p: { color: '' },
+      strong: { color: '' },
+      ul: { color: '' },
+      code: { prismTheme: 'vsLight' },
+    }),
+  },
 };
 
 export const styles = {

@@ -7,7 +7,7 @@ import getClassName from 'utils/getClassName';
 type Props = {
   allBlogs: DefBlogs;
   paramKey: Lowercase<string>;
-  theme: DefTheme;
+  theme?: DefTheme;
 };
 
 const BlogsOverview = ({ allBlogs, paramKey, theme }: Props): ReactElement => {
