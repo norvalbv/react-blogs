@@ -10,12 +10,12 @@ const themeContract = createThemeContract({
   h2: { color: null },
   h3: { color: null },
   h4: { color: null },
+  h5: { color: null },
+  h6: { color: null },
   li: { color: null },
-
   p: { color: null },
   strong: { color: null },
   ul: { color: null },
-  code: { prismTheme: null },
 });
 
 type Themes = {
@@ -25,38 +25,58 @@ type Themes = {
   };
 };
 export const themes: Themes = {
-  DARK_THEME: {
+  PLAIN_DARK: {
     prismTheme: 'dracula',
     nodes: createTheme(themeContract, {
       a: { color: '' },
       blockquote: { color: '' },
       em: { color: '' },
-      h1: { color: 'rgb(67 56 202)' },
-      h2: { color: 'rgb(79 70 229)' },
-      h3: { color: '' },
-      h4: { color: '' },
+      h1: { color: '#3c42c4' },
+      h2: { color: '#6366f1' },
+      h3: { color: '#a3a5f7' },
+      h4: { color: '#c1a5f5' },
+      h5: { color: '#e4a6ed' },
+      h6: { color: '#90c7de' },
       li: { color: '' },
       p: { color: '' },
       strong: { color: '' },
       ul: { color: '' },
-      code: { prismTheme: 'vsDark' },
     }),
   },
-  LIGHT_THEME: {
+  SHADES_OF_PURPLE: {
+    prismTheme: 'shadesOfPurple',
+    nodes: createTheme(themeContract, {
+      a: { color: '' },
+      blockquote: { color: '' },
+      em: { color: '#afacf7' },
+      h1: { color: '#3c42c4' },
+      h2: { color: '#6366f1' },
+      h3: { color: '#a3a5f7' },
+      h4: { color: '#c1a5f5' },
+      h5: { color: '#e4a6ed' },
+      h6: { color: '#90c7de' },
+      li: { color: '' },
+      p: { color: '#bfe8ff' },
+      strong: { color: '#ad86f1' },
+      ul: { color: '' },
+    }),
+  },
+  PLAIN_LIGHT: {
     prismTheme: 'oneLight',
     nodes: createTheme(themeContract, {
       a: { color: '' },
       blockquote: { color: '' },
       em: { color: '' },
-      h1: { color: '#6366f1)' },
-      h2: { color: '#818cf8' },
-      h3: { color: '' },
-      h4: { color: '' },
+      h1: { color: '#222222' },
+      h2: { color: '#3f3e3e' },
+      h3: { color: '#36363a' },
+      h4: { color: '#7f7b7f' },
+      h5: { color: '#858389' },
+      h6: { color: '#7a7d84' },
       li: { color: '' },
-      p: { color: '' },
+      p: { color: '#686e70' },
       strong: { color: '' },
       ul: { color: '' },
-      code: { prismTheme: 'vsLight' },
     }),
   },
 };
@@ -70,6 +90,8 @@ export const styles = {
   h2: style([defaults.h2, { ...themeContract.h2 }]),
   h3: style([defaults.h3, { ...themeContract.h3 }]),
   h4: style([defaults.h4, { ...themeContract.h4 }]),
+  h5: style([defaults.h4, { ...themeContract.h4 }]),
+  h6: style([defaults.h4, { ...themeContract.h4 }]),
   inlinecode: defaults.inlinecode,
   li: style([{ ...themeContract.li }]),
   metadata: defaults.metadata,

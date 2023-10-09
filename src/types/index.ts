@@ -22,7 +22,7 @@ export type FrontMatter = Record<
 > | null;
 
 export type DefTheme = {
-  theme?: 'DARK_THEME' | 'LIGHT_THEME';
+  theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE';
   code?: keyof typeof themes;
   overrides?: MarkdownToJSX.Overrides & { metadata?: { component: ElementType; props: Object } };
 };

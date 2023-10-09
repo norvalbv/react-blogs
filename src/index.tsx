@@ -15,7 +15,7 @@ const Blog = ({ paramKey = 'blog', ...props }: Props): ReactElement => {
   const hasTitle = new URLSearchParams(window.location.search).get(paramKey);
 
   return (
-    <div className={themes[props.theme?.theme || 'DARK_THEME'].nodes}>
+    <div className={themes[props.theme?.theme || 'PLAIN_DARK'].nodes}>
       {hasTitle ? (
         <BlogPage paramKey={paramKey} {...props} />
       ) : (

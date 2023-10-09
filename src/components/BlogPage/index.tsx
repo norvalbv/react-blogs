@@ -34,7 +34,7 @@ const CodeComponent = ({
   return isMultiline ? (
     <Highlight
       theme={
-        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'DARK_THEME'].prismTheme]
+        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'PLAIN_DARK'].prismTheme]
       }
       language={'tsx' || ''}
       code={children}
@@ -48,7 +48,7 @@ const CodeComponent = ({
                 <span
                   key={key}
                   {...getTokenProps({ token })}
-                  className={defaultTheme['DARK_THEME'].nodes}
+                  className={defaultTheme['PLAIN_DARK'].nodes}
                 />
               ))}
             </div>
@@ -59,7 +59,7 @@ const CodeComponent = ({
   ) : (
     <Highlight
       theme={
-        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'DARK_THEME'].prismTheme]
+        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'PLAIN_DARK'].prismTheme]
       }
       language={'tsx' || ''}
       code={children}

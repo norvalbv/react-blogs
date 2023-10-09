@@ -14,12 +14,11 @@ const BlogsOverview = ({ allBlogs, paramKey, theme }: Props): ReactElement => {
   const MetadataComponent = theme?.overrides?.metadata?.component;
   return (
     <section style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      {allBlogs.map((blog) => (
+      {allBlogs.map((blog, i) => (
         <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
           <Header
-            // className={{ marginBottom: '8px' }}
             title={{
-              text: blog.title.text,
+              text: `${i + 1}) ${blog.title.text}`,
               level: 2,
               // Set to h2 as level is 2
               className: getClassName('h2', theme),
