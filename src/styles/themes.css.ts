@@ -61,6 +61,24 @@ export const themes: Themes = {
       ul: { color: '' },
     }),
   },
+  SHADES_OF_GREEN: {
+    prismTheme: 'github',
+    nodes: createTheme(themeContract, {
+      a: { color: '' },
+      blockquote: { color: '' },
+      em: { color: '#547f7c' },
+      h1: { color: '#0A5C36' },
+      h2: { color: '#216229' },
+      h3: { color: '#236f4c' },
+      h4: { color: '#167e8c' },
+      h5: { color: '#9ca585' },
+      h6: { color: '#869f88' },
+      li: { color: '' },
+      p: { color: '#849bb3' },
+      strong: { color: '#547f7c' },
+      ul: { color: '' },
+    }),
+  },
   PLAIN_LIGHT: {
     prismTheme: 'oneLight',
     nodes: createTheme(themeContract, {

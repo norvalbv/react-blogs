@@ -1,12 +1,13 @@
 {
+  "version": "0.0.0",
   "name": "react-blogs",
   "type": "module",
   "files": [
     "dist/**/*"
   ],
-  "private": true,
-  "version": "0.0.0",
-  "author": "Benji",
+  "private": false,
+  "author": "Benjamin Norval",
+  "git repository": "https://github.com/norvalbv/react-blogs",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
