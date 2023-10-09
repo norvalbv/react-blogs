@@ -128,7 +128,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
 
   return (
     <article>
-      <h1 className={getClassName('h1', defTheme) || styles.h1}>{currentBlog?.title.text}</h1>
+      <h1 className={getClassName('h1', defTheme) || styles.h1}>{currentBlog?.title.label}</h1>
       {/* <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
         {blog.frontMatter?.tags?.length ? (
           <div
