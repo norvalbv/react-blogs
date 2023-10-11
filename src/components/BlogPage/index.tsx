@@ -1,12 +1,10 @@
-import { frontMatterDeeplyNested } from '__mocks__/frontMatterMockData';
+import { frontMatterBasic, frontMatterWithTypes } from '__mocks__/frontMatterMockData';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { Blogs, DefTheme, FrontMatter } from 'types';
-import getClassName from 'utils/getClassName';
-import praseFrontMatter from 'utils/parseFrontMatter';
-import processLink from 'utils/processLinks';
+import { getClassName, processBlog, processLinks } from 'utils';
 
 const UnorderedListComponent = ({
   children,
@@ -115,11 +113,12 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         return res.text();
       })
       .then((res) => {
-        const blogWithProcessedLinks = processLink({ allBlogs, blog: res, paramKey });
+        const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
-        const { blog, frontMatter } = praseFrontMatter({
-          blog: frontMatterDeeplyNested,
+        const { blog, frontMatter } = processBlog({
+          blog: frontMatterBasic,
           delimeter: currentBlog.frontMatter?.delimeter,
+          showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
         setBlog({

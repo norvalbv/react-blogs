@@ -1,3 +1,9 @@
+export const frontMatterBasic = `
+    ---
+    title: yaml
+    ---
+`;
+
 export const frontMatterJSON = `
     ---
     {
@@ -7,12 +13,6 @@ export const frontMatterJSON = `
     ---
 
     # This page has JSON front matter!
-`;
-
-export const frontMatterBasic = `
-    ---
-    title: to YAML
-    ---
 `;
 
 export const frontMatterBasicWithContent = `
@@ -44,4 +44,4 @@ export const frontMatterIncomplete = `
 
 export const frontMatterEmpty = '';
 
-export const frontMatterVoid = 'Not Front Matter';
+export const frontMatterVoid = 'No Front Matter';

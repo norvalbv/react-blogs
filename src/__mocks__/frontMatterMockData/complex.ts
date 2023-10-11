@@ -24,6 +24,20 @@ export const frontMatterDeeplyNested = `
     Content
 `;
 
+export const frontMatterWithTypes = `
+    ---
+    title: Users
+    user: BenjiTheGreat
+        group: admin
+            permissions: all
+            access areas: all
+            access areas: all : 123 
+        timezone: GMT
+        current time: "Thursday, December 22nd 2022, 10:09:55 pm"
+    ---
+    Content
+`;
+
 export const frontMatterComplex = `
     ---
     # =============================================
