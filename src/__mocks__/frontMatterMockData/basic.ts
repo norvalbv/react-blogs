@@ -1,6 +1,7 @@
 export const frontMatterBasic = `
     ---
     title: yaml
+    job: software engineer
     ---
 `;
 

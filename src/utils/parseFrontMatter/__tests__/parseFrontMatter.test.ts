@@ -56,20 +56,28 @@ describe('parseFrontMatter', () => {
   test('should output data correctly with a basic yaml input', () => {
     expect(praseFrontMatter({ frontMatter: frontMatterBasic })).toStrictEqual({
       title: 'yaml',
+      job: 'software engineer',
     });
+  });
+  // ! need to update tests so we don't need to deal with stupid indentation for blogs...
+  test('should output data correctly with a basic yaml input', () => {
+    expect(processBlog({ blog: frontMatterBasicWithContent, showFrontMatter: true })).toStrictEqual(
+      {
+        blog: `
+    Content
+`,
+        frontMatter: {
+          title: 'RAM',
+          user: 'BenjiTheGreat',
+        },
+      }
+    );
   });
 
   // test('should output data correctly with a basic json input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterJSON, delimeter: '---' })).toBe({
   //     title: 'yaml',
   //     description: 'Front Matter',
-  //   });
-  // });
-
-  // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterBasicWithContent, delimeter: '---' })).toBe({
-  //     title: 'RAM',
-  //     user: 'BenjiTheGreat',
   //   });
   // });
 
