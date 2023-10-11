@@ -85,8 +85,6 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
     .filter((l) => l)
     .slice(1, -1);
 
-  console.log(splitLines, splitLines[0].search(/\S/));
-
   const indentationLevel = splitLines[0].search(/\S/);
 
   // Basic parsing to ensure front matter is formatted correctly at a high level.
@@ -94,14 +92,21 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
     return { error: 'Front Matter Not Formatted Correctly.' };
   }
 
-  // const processedFrontMatter = splitLines.reduce((obj, line, index, arr) => {
-  /**
-   * Check if front matter is valid.
-   */
+  const processedFrontMatter = splitLines.reduce((obj, line, index, arr) => {
+    const processedLine = line.trim();
 
-  //   const processedLine = line.trim();
+    if (isValidYAMLLine(processedLine) && line.search(/\S/) === indentationLevel) {
+      const [key, value] = line.split(/:\s*/);
+      (obj as Record<string, any>)[key.trim()] = value.replace(/^["']|["']$/g, '').trim();
+      return obj;
+    }
 
-  //   if (processedLine === delimeter) return obj;
+    console.log(arr, 'arr');
+
+    return obj;
+  }, {});
+
+  console.log(processedFrontMatter);
 
   //   /**
   //    * Checks the indentation against the first value (excluding delimeter)
@@ -112,14 +117,6 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
   //    * Used for removing the colon (if it ends with it)
   //    */
   //   const removedLastChar = processedLine.slice(0, -1);
-
-  //   console.log(processedLine, keyValueRegex.test(processedLine));
-
-  //   if (isValidYAMLLine(processedLine) && line.search(/\S/) === indentationLevel) {
-  //     const [key, value] = line.split(/:\s*/);
-  //     (obj as Record<string, any>)[key.trim()] = value.replace(/^["']|["']$/g, '').trim();
-  //     return obj;
-  //   }
 
   /**
    * The current line is a clear key / value and is not indented
@@ -152,11 +149,6 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
   //   return key;
   // }
 
-  // return obj;
-  // }, {});
-
-  // console.log(processedFrontMatter);
-
   // splitLine will produce more than one value in an array if there is a key value pair, i.e., the only option that doesn't produce this is values for tags or aliases.
   // const splitLine = line.split(':');
 
@@ -179,7 +171,7 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
   // }
   // });
 
-  return { thisIsRight: 'right' };
+  return processedFrontMatter;
 };
 
 export default praseFrontMatter;

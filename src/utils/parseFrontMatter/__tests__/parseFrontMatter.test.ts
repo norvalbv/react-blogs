@@ -53,11 +53,11 @@ describe('parseFrontMatter', () => {
     });
   });
 
-  // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterBasic, delimeter: '---' })).toBe({
-  //     title: 'yaml',
-  //   });
-  // });
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterBasic })).toStrictEqual({
+      title: 'yaml',
+    });
+  });
 
   // test('should output data correctly with a basic json input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterJSON, delimeter: '---' })).toBe({
