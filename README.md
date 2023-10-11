@@ -35,8 +35,9 @@ import Blog, { DefBlogs } from 'react-blogs';
     {
       id: 'Memory (RAM)',
       file: '/src/assets/blogs/memory.md',
-      title: { text: 'How Memory (RAM) Works' },
-      subtitle: { text: 'A deep insight to what RAM is and how it interacts with the computer.' },
+      title: { label: 'How Memory (RAM) Works' },
+      subtitle: { label: "The computer's short-term memory." },
+      description: { label: 'A deep insight to what RAM is and how it interacts with the computer.' },
       url: 'how-memory-works',
       showFrontMatter: true,
       metadata: {
@@ -134,9 +135,9 @@ Example of using `defBlogs`:
     {
       id: 'Memory (RAM)',
       file: '/src/assets/blogs/memory.md',
-      title: { text: 'How Memory (RAM) Works' },
-      subtitle: { text: 'A deep insight to what RAM is and how it interacts with the computer.' },
-      description: { text: 'A deep insight to what RAM is and how it interacts with the computer.' },
+      title: { label: 'How Memory (RAM) Works' },
+      subtitle: { label: "The computer's short-term memory." },
+      description: { label: 'A deep insight to what RAM is and how it interacts with the computer.' },
       url: 'how-memory-works',
       showFrontMatter: true,
       metadata: {

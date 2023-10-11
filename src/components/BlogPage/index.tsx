@@ -1,3 +1,4 @@
+import { frontMatterDeeplyNested } from '__mocks__/frontMatterMockData';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
@@ -114,11 +115,17 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         return res.text();
       })
       .then((res) => {
-        const processedLinks = processLink({ allBlogs, blog: res, paramKey });
+        const blogWithProcessedLinks = processLink({ allBlogs, blog: res, paramKey });
 
-        const { blog, frontMatter } = praseFrontMatter(processedLinks);
+        const { blog, frontMatter } = praseFrontMatter({
+          blog: frontMatterDeeplyNested,
+          delimeter: currentBlog.frontMatter?.delimeter,
+        });
 
-        setBlog({ blog, frontMatter: currentBlog?.showFrontMatter ? frontMatter : null });
+        setBlog({
+          blog,
+          frontMatter: currentBlog?.frontMatter?.showFrontMatter ? frontMatter : null,
+        });
       })
       .catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps

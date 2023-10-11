@@ -10,7 +10,10 @@ export type Blogs = {
   file: string | URL;
   metadata?: Record<string, string>;
   readonly id: string;
-  showFrontMatter?: boolean;
+  frontMatter?: {
+    showFrontMatter?: boolean;
+    delimeter?: string;
+  };
   url: string;
 } & Require<HeaderProps, 'title'>;
 

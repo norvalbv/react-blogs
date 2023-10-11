@@ -6,13 +6,13 @@ const blogs: Blogs[] = [
   {
     id: 'Memory (RAM)',
     file: 'memory',
-    title: { text: 'What is RAM?' },
+    title: { label: 'What is RAM?' },
     url: 'how-memory-works',
   },
   {
     id: 'Memory Heap',
     file: 'memory-heap',
-    title: { text: 'What is the memory heap?' },
+    title: { label: 'What is the memory heap?' },
     url: 'what-is-the-memory-heap',
   },
 ];
