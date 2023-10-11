@@ -3,8 +3,6 @@ export const frontMatterWithSemiColonDelim = `
     title: RAM
     user: BenjiTheGreat
     ;;;
-
-    # This page has JSON front matter!
 `;
 
 export const frontMatterWithYAMLDelim = `
@@ -12,8 +10,6 @@ export const frontMatterWithYAMLDelim = `
     title: RAM
     user: BenjiTheGreat
     -- YAML --
-
-    # This page has JSON front matter!
 `;
 
 export const frontMatterWithTildeDelim = `

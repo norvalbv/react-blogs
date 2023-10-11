@@ -66,7 +66,7 @@ const isValidYAMLLine = (line: string) => {
 
 const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boolean => {
   return lines.every((line) =>
-    line.includes(':') || line.startsWith('-') || line.search(/\S'/) > indentationLevel
+    line.includes(':') || line.trim().startsWith('-') || line.search(/\S'/) > indentationLevel
       ? true
       : false
   );
@@ -94,6 +94,7 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
 
   const processedFrontMatter = splitLines.reduce((obj, line, index, arr) => {
     const processedLine = line.trim();
+    const lineEndsWithColon = processedLine.endsWith(':');
 
     if (isValidYAMLLine(processedLine) && line.search(/\S/) === indentationLevel) {
       const [key, value] = line.split(/:\s*/);
@@ -101,7 +102,21 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
       return obj;
     }
 
-    console.log(arr, 'arr');
+    /**
+     * The current line is a clear key / value and is not indented
+     */
+
+    // if ()
+
+    /**
+     * Sets the key
+     */
+    // if (lineEndsWithColon) {
+    //   key[removedLastChar] = undefined;
+    //   return key;
+    // }
+
+    // console.log(arr, 'arr');
 
     return obj;
   }, {});
@@ -109,28 +124,10 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
   console.log(processedFrontMatter);
 
   //   /**
-  //    * Checks the indentation against the first value (excluding delimeter)
-  //    */
-
-  //   const lineEndsWithColon = processedLine.endsWith(':');
-  //   /**
   //    * Used for removing the colon (if it ends with it)
   //    */
   //   const removedLastChar = processedLine.slice(0, -1);
 
-  /**
-   * The current line is a clear key / value and is not indented
-   */
-
-  // if ()
-
-  /**
-   * Sets the key
-   */
-  // if (lineEndsWithColon) {
-  //   key[removedLastChar] = undefined;
-  //   return key;
-  // }
   // // console.log(processedLine, index, arr[index - 1]);
 
   // // If previous index within the array is a key (ends with colon)

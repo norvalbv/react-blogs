@@ -1,5 +1,6 @@
 import {
   frontMatterBasic,
+  frontMatterBasicListHyphenated,
   frontMatterBasicWithContent,
   frontMatterWithTypes,
 } from '__mocks__/frontMatterMockData';
@@ -120,7 +121,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: frontMatterBasicWithContent,
+          blog: frontMatterBasicListHyphenated,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });

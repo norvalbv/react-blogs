@@ -32,7 +32,7 @@ const processBlog = ({ blog, delimeter = '---', showFrontMatter }: Props): Retur
 
   if (!showFrontMatter || frontMatter.length <= 5) {
     return {
-      blog: processedBlog,
+      blog: processedBlog.trim(),
       frontMatter: null,
     };
   }

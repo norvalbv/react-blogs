@@ -24,6 +24,33 @@ export const frontMatterBasicWithContent = `
     Content
 `;
 
+export const frontMatterBasicListHyphenated = `
+    ---
+    title: RAM
+    users:
+    - BenjiTheGreat
+    - Steve_The_Great
+    - John The Great
+    ---
+`;
+
+export const frontMatterIndented = `
+    ---
+    title: RAM
+    users:
+      BenjiTheGreat
+      Steve_The_Great
+      John The Great
+    ---
+`;
+
+// What special characters are valid in yaml / front matter?
+export const frontMatterSpecialCharacters = `
+    ---
+    title: !@£$%^&*()_+-=[]{};'/:"|,./<>?\`~
+    ---
+`;
+
 export const frontMatterIncorrectFormat = `
     ---
     title: hello

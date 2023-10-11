@@ -1,10 +1,13 @@
 import {
   frontMatterBasic,
+  frontMatterBasicListHyphenated,
   frontMatterBasicWithContent,
   frontMatterEmpty,
   frontMatterIncomplete,
   frontMatterIncorrectFormat,
+  frontMatterIndented,
   frontMatterJSON,
+  frontMatterSpecialCharacters,
   frontMatterVoid,
 } from '__mocks__/frontMatterMockData';
 import praseFrontMatter from '..';
@@ -39,12 +42,15 @@ describe('parseFrontMatter', () => {
   });
 
   test('should output data correctly with a basic yaml input', () => {
-    expect(processBlog({ blog: frontMatterIncomplete }).blog.trim()).toBe(
-      `---
+    expect(processBlog({ blog: frontMatterIncomplete })).toStrictEqual({
+      blog: `
+    ---
     one: foo
     two: bar
-    three: baz`.trim()
-    );
+    three: baz
+`,
+      frontMatter: null,
+    });
   });
 
   test('should output data correctly with a basic yaml input', () => {
@@ -59,7 +65,7 @@ describe('parseFrontMatter', () => {
       job: 'software engineer',
     });
   });
-  // ! need to update tests so we don't need to deal with stupid indentation for blogs...
+
   test('should output data correctly with a basic yaml input', () => {
     expect(processBlog({ blog: frontMatterBasicWithContent, showFrontMatter: true })).toStrictEqual(
       {
@@ -74,16 +80,31 @@ describe('parseFrontMatter', () => {
     );
   });
 
-  // test('should output data correctly with a basic json input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterJSON, delimeter: '---' })).toBe({
-  //     title: 'yaml',
-  //     description: 'Front Matter',
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
+      title: 'RAM',
+      users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
+    });
+  });
+
+  // test('should output data correctly with a basic yaml input', () => {
+  //   expect(praseFrontMatter({ frontMatter: frontMatterBasicListHyphenated })).toStrictEqual({
+  //     title: 'RAM',
+  //     users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
   //   });
   // });
 
   // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterEmpty, delimeter: '---' })).toBe({
+  //   expect(praseFrontMatter({ frontMatter: frontMatterIndented })).toStrictEqual({
+  //     title: 'RAM',
+  //     users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
+  //   });
+  // });
+
+  // test('should output data correctly with a basic json input', () => {
+  //   expect(praseFrontMatter({ frontMatter: frontMatterJSON, delimeter: '---' })).toBe({
   //     title: 'yaml',
+  //     description: 'Front Matter',
   //   });
   // });
 });
