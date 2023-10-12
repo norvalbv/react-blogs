@@ -57,6 +57,16 @@ export const frontMatterNumerousIndented = `
     ---
 `;
 
+export const frontMatterWithComments = `
+    ---
+    # =============================================
+    # User List
+    # =============================================
+    title: Admins
+    users: BenjiTheGreat
+    ---
+`;
+
 // What special characters are valid in yaml / front matter?
 // ! Works without Quotes, is this a problem?
 export const frontMatterSpecialCharacters = `

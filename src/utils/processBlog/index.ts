@@ -83,7 +83,7 @@ const processBlog = ({ blog, delimeter = '---', showFrontMatter = true }: Props)
     );
   } catch (e) {
     // If it is not able to be parsed and it's not JSON, we need to process it ourself.
-    processedFrontMatter = parseFrontMatter({ frontMatter });
+    processedFrontMatter = parseFrontMatter(frontMatter);
   }
 
   return { blog: processedBlog, frontMatter: processedFrontMatter };

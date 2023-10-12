@@ -41,15 +41,20 @@ const isValidYAMLLine = (line: string) => {
   const value = match[2].trim();
   console.log(/:/.test(value), value);
   // if (/:/.test(value)) {
-  //   // If value contains a colon, it must be enclosed in quotes or escaped
+  //
   //   return /^["'].*[:].*["']$/.test(value);
   // }
   return true;
 };
 
+// If value contains a colon, it must be enclosed in quotes or escaped
+
 const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boolean => {
   return lines.every((line) =>
-    line.includes(':') || line.trim().startsWith('-') || line.search(/\S/) > indentationLevel
+    line.includes(':') ||
+    line.trim().startsWith('-') ||
+    line.search(/\S/) > indentationLevel ||
+    line.trim().startsWith('#')
       ? true
       : false
   );
@@ -81,7 +86,10 @@ const praseFrontMatter = (frontMatter: string): FrontMatter => {
   const processedFrontMatter = splitLines.reduce((obj, line, index, arr) => {
     const processedLine = line.trim();
     const startsWithHyphen = line.trim().startsWith('-');
+    const isAComment = line.trim().startsWith('#');
     const indentationLevel = line.search(/\S/);
+
+    if (isAComment) return obj;
 
     /**
      * Checks if the values are surrounded by quotes, otherwise it'll be counted as a voice line.
@@ -89,6 +97,8 @@ const praseFrontMatter = (frontMatter: string): FrontMatter => {
      */
     if (indentationLevel === rootIndentationLevel && !startsWithHyphen) {
       const [key, value] = line.split(KeyValueMatch);
+
+      console.log(key, value);
 
       (obj as Record<string, any>)[key.trim()] = value.replace(/^["']|["']$/g, '').trim();
 

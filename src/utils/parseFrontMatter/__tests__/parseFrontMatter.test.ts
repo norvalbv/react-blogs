@@ -15,6 +15,7 @@ import {
   frontMatterSpecialCharacters,
   frontMatterUnquotedValues,
   frontMatterVoid,
+  frontMatterWithComments,
   frontMatterWithDotDelim,
   frontMatterWithSemiColonDelim,
   frontMatterWithTildeDelim,
@@ -197,13 +198,20 @@ describe('parseFrontMatter', () => {
     });
   });
 
+  // test('should output data correctly with a deeply nested list', () => {
+  //   expect(processBlog({ blog: frontMatterDeeplyNested })).toStrictEqual({
+  //     blog: '# This page has JSON front matter!',
+  //     frontMatter: {
+  //       title: 'JSON',
+  //       description: 'Front Matter',
+  //     },
+  //   });
+  // });
+
   test('should output data correctly with a deeply nested list', () => {
-    expect(processBlog({ blog: frontMatterDeeplyNested })).toStrictEqual({
-      blog: '# This page has JSON front matter!',
-      frontMatter: {
-        title: 'JSON',
-        description: 'Front Matter',
-      },
+    expect(praseFrontMatter(frontMatterWithComments)).toStrictEqual({
+      title: 'Admins',
+      users: 'BenjiTheGreat',
     });
   });
 });

@@ -24,6 +24,18 @@ export const frontMatterDeeplyNested = `
     Content
 `;
 
+export const frontMatterDeeplyNestedWithHyphens = `
+    ---
+    title: Users
+    user: BenjiTheGreat
+        group: admin
+        -  permissions: all
+        -  access areas: all
+        timezone: GMT    
+    ---
+    Content
+`;
+
 export const frontMatterWithTypes = `
     ---
     title: Users
