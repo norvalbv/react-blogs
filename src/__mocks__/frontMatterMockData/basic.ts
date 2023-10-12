@@ -18,7 +18,7 @@ export const frontMatterJSON = `
 
 export const frontMatterBasicWithContent = `
     ---
-    title: RAM
+    title: Admin
     user: BenjiTheGreat
     ---
     Content
@@ -26,7 +26,7 @@ export const frontMatterBasicWithContent = `
 
 export const frontMatterBasicListHyphenated = `
     ---
-    title: RAM
+    title: Members
     users:
     - BenjiTheGreat
     - Steve_The_Great
@@ -36,11 +36,24 @@ export const frontMatterBasicListHyphenated = `
 
 export const frontMatterIndented = `
     ---
-    title: RAM
+    title: Members
     users:
       BenjiTheGreat
       Steve_The_Great
       John The Great
+    ---
+`;
+
+export const frontMatterNumerousIndented = `
+    ---
+    title: Members
+    users:
+      BenjiTheGreat
+      Steve_The_Great
+      John The Great
+    permissions:
+      members area
+      chat
     ---
 `;
 

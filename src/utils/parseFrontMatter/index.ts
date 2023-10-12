@@ -61,7 +61,7 @@ const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boole
  * Indentation matters, if nothing is indented, count is a void and return no front matter.
  */
 
-const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter => {
+const praseFrontMatter = (frontMatter: string): FrontMatter => {
   // clean up front matter, removing whitespace around it and removing delimeters.
   const splitLines = frontMatter
     .split('\n')
