@@ -38,6 +38,30 @@ export const frontMatterWithTypes = `
     Content
 `;
 
+export const frontMatterComplexJSON = `
+    ---
+    {
+        "cascade": [
+           {
+              "_target": {
+                 "kind": "page",
+                 "lang": "en",
+                 "path": "/blog/**"
+              },
+              "background": "yosemite.jpg"
+           },
+           {
+              "_target": {
+                 "kind": "section"
+              },
+              "background": "goldenbridge.jpg"
+           }
+        ],
+        "title": "Blog"
+     }
+    ---
+`;
+
 export const frontMatterComplex = `
     ---
     # =============================================

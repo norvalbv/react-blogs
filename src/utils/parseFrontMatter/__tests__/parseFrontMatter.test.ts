@@ -2,6 +2,7 @@ import {
   frontMatterBasic,
   frontMatterBasicListHyphenated,
   frontMatterBasicWithContent,
+  frontMatterComplexJSON,
   frontMatterEmpty,
   frontMatterIncomplete,
   frontMatterIncorrectFormat,
@@ -136,10 +137,38 @@ describe('parseFrontMatter', () => {
   //   });
   // });
 
-  // test('should output data correctly with a basic json input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterJSON, delimeter: '---' })).toBe({
-  //     title: 'yaml',
-  //     description: 'Front Matter',
-  //   });
-  // });
+  test('should output data correctly with a basic json input', () => {
+    expect(processBlog({ blog: frontMatterJSON })).toStrictEqual({
+      blog: '# This page has JSON front matter!',
+      frontMatter: {
+        title: 'JSON',
+        description: 'Front Matter',
+      },
+    });
+  });
+
+  test('should output data correctly with a basic json input', () => {
+    expect(processBlog({ blog: frontMatterComplexJSON })).toStrictEqual({
+      blog: '',
+      frontMatter: {
+        cascade: [
+          {
+            _target: {
+              kind: 'page',
+              lang: 'en',
+              path: '/blog/**',
+            },
+            background: 'yosemite.jpg',
+          },
+          {
+            _target: {
+              kind: 'section',
+            },
+            background: 'goldenbridge.jpg',
+          },
+        ],
+        title: 'Blog',
+      },
+    });
+  });
 });
