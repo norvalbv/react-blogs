@@ -10,7 +10,7 @@ Listed benefits:
 - Easy set up
 - Default styling and easy overrides
 - Automatic link processing
-- Automatic front matter parser
+- Automatic front matter parser (coming soon)
 - Typescript ready
 
 # Installation
@@ -39,7 +39,10 @@ import Blog, { DefBlogs } from 'react-blogs';
       subtitle: { label: "The computer's short-term memory." },
       description: { label: 'A deep insight to what RAM is and how it interacts with the computer.' },
       url: 'how-memory-works',
-      showFrontMatter: true,
+      frontMatter: {
+        showFrontMatter: true;
+        delimeter: '-- YAML --';
+      };
       metadata: {
         'read time': '20 minutes',
         level: '🧠🧠',
@@ -75,7 +78,7 @@ React Blogs is a heavily abstracted version of [markdown-to-jsx](https://www.npm
 ```tsx
     string
 ```
-Usage for keys around the package. If you are connecting blogs that use double-bracket links such as [[link-here]], the key inside the link is used as a comparison against the ID to check if it should be rendered as a link or not. For example, [[CPU#What-Is-CPU|cpu]] the key CPU is checked against all of your blog IDs and if it's present, it will be rendered as a link.
+If you are linking blogs that use double-bracket links such as [[link-here]], the key inside the link is used as a comparison against the ID to check if it should be rendered as a link or not. For example, [[CPU#What-Is-CPU|a CPU insight]] the key CPU is checked against all of your blog IDs and if it's present, it will be rendered as a link.
 
 - file *(required)*:
 ```tsx
@@ -85,26 +88,32 @@ The link to your markdown file. **Note**: This must be an absolute link, not rel
 
 - title *(required)*:
 ```tsx
+{
   label: string | ReactElement;
   className?: string; // Overrides any of the default styles for that title 
   level?: 1 | 2 | 3; // Convays the level of the heading node (h1, h2, or h3)
   testId?: string; // Optional test ID
+}
 ```
 A title component that renders the title for your react blog. Renders either a h1, h2, or h3 element and default styles can be overriden by passing styles to the `className` prop. 
 
 - subtitle *(optional)*:
 ```tsx
+{
   label?: string | ReactElement;
   className?: string; // Overrides any of the default styles for that subtitle 
   testId?: string; // Optional test ID
+}
 ```
 A subtitle component that renders the title for your react blog. Renders a h4 element and default styles can be overriden by passing styles to the `className` prop. 
 
 - description *(optional)*:
 ```tsx
+{
   label?: string | ReactElement;
   className?: string; // Overrides any of the default styles for that description 
   testId?: string; // Optional test ID
+}
 ```
 A description component that renders the title for your react blog. Renders p element and default styles can be overriden by passing styles to the `className` prop. 
 
@@ -114,11 +123,21 @@ A description component that renders the title for your react blog. Renders p el
 ```
 This is the URL for that blog.
 
-- showFrontMatter *(optional)* - default false:
+- frontMatter *(optional)*: (COMING SOON)
 ```tsx
-    string
+{ 
+  showFrontMatter?: boolean; // Optional - Default false
+  /**
+   * Optional delimeter for your front matter, for example '---', '-- YAML --', or ';;;'
+   * 
+   * Default '---'
+   */
+  delimeter?: string;
+}
 ```
-If your markdown file contains any front matter, it will automatically get parsed, processed, and styled. If you do not want to render any front matter for that blog, simply set this to false. See our front matter overview for guidance on how to use this.
+If your blog contains front matter React Blogs allows you parse it and render out the data inside your blog, each component that you can customise. This is perfect if you are wanting to display this data at the top of your blog, for example, reading time, date created, list of users, etc. For more information about how to work with your front matter in React Blogs, see our more detailed front matter section. 
+
+NOTE: The ability to render front matter in components and style it is coming soon, this feature is NOT implemented yet.
 
 
 - metadata *(optional)*:
@@ -139,7 +158,10 @@ Example of using `defBlogs`:
       subtitle: { label: "The computer's short-term memory." },
       description: { label: 'A deep insight to what RAM is and how it interacts with the computer.' },
       url: 'how-memory-works',
-      showFrontMatter: true,
+      frontMatter: {
+        showFrontMatter: true;
+        delimeter: '---';
+      };
       metadata: {
         'read time': '20 minutes',
         level: '🧠🧠',

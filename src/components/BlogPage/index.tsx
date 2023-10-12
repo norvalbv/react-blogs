@@ -1,8 +1,3 @@
-import {
-  frontMatterBasicListHyphenated,
-  frontMatterDeeplyNestedWithHyphens,
-  frontMatterIndented,
-} from '__mocks__/frontMatterMockData';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
@@ -119,15 +114,15 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
       .then((res) => {
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
-        const { blog, frontMatter } = processBlog({
-          blog: frontMatterDeeplyNestedWithHyphens,
+        const { blog } = processBlog({
+          blog: blogWithProcessedLinks,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
         setBlog({
           blog,
-          frontMatter: currentBlog?.frontMatter?.showFrontMatter ? frontMatter : null,
+          frontMatter: null,
         });
       })
       .catch(() => {});
