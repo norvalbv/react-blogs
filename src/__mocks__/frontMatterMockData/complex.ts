@@ -3,10 +3,24 @@ export const frontMatterVariousDelim = `
     title: 'CSON'
     description: '''
     Front matter
-    '''
+        '''
     categories: '''
     front matter cson
-    '''
+        '''
+    ---
+
+    # This page has cson front matter!
+`;
+
+// ? Do I need a colon to define the end of the line / list in yaml front matter? is below valid?
+
+export const isValid = `
+    ---
+    title: users1
+    users
+        benji
+        bob
+        mike
     ---
 
     # This page has cson front matter!
@@ -21,7 +35,6 @@ export const frontMatterDeeplyNested = `
             access areas: all
         timezone: GMT    
     ---
-    Content
 `;
 
 export const frontMatterDeeplyNestedWithHyphens = `
@@ -33,7 +46,17 @@ export const frontMatterDeeplyNestedWithHyphens = `
         -  access areas: all
         timezone: GMT    
     ---
-    Content
+`;
+
+export const frontMatterIncorrectlyFormatedDeepList = `
+    ---
+    title: Users
+    user: BenjiTheGreat
+        group: admin
+        -  permissions: all
+        -  access areas: all
+        timezone: GMT    
+    ---
 `;
 
 export const frontMatterWithTypes = `

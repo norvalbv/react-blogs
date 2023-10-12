@@ -4,16 +4,19 @@ import {
   frontMatterBasicWithContent,
   frontMatterComplexJSON,
   frontMatterDeeplyNested,
+  frontMatterDeeplyNestedWithHyphens,
   frontMatterEmpty,
   frontMatterEscapedChars,
   frontMatterIncomplete,
   frontMatterIncorrectFormat,
+  frontMatterIncorrectlyFormatedDeepList,
   frontMatterIndented,
   frontMatterJSON,
   frontMatterNumerousIndented,
   frontMatterQuotedValues,
   frontMatterSpecialCharacters,
   frontMatterUnquotedValues,
+  frontMatterVariousDelim,
   frontMatterVoid,
   frontMatterWithComments,
   frontMatterWithDotDelim,
@@ -199,16 +202,44 @@ describe('parseFrontMatter', () => {
   });
 
   // test('should output data correctly with a deeply nested list', () => {
-  //   expect(processBlog({ blog: frontMatterDeeplyNested })).toStrictEqual({
-  //     blog: '# This page has JSON front matter!',
-  //     frontMatter: {
-  //       title: 'JSON',
-  //       description: 'Front Matter',
+  //   expect(praseFrontMatter(frontMatterDeeplyNested)).toStrictEqual({
+  //      title: 'JSON',
+  //      description: 'Front Matter',
+  //   });
+  // });
+
+  // test('should output data correctly with a deeply nested list with hyphens', () => {
+  //   expect(praseFrontMatter(frontMatterDeeplyNestedWithHyphens)).toStrictEqual({
+  //     title: 'Users',
+  //     user: {
+  //       group: [{ permissions: 'all' }, { 'access areas': 'all' }],
+  //       timezone: 'GMT',
   //     },
   //   });
   // });
 
-  test('should output data correctly with a deeply nested list', () => {
+  // test('should output data correctly with a deeply nested list with hyphens', () => {
+  //   expect(praseFrontMatter(frontMatterVariousDelim)).toStrictEqual({
+  //     title: 'Users',
+  //     user: {
+  //       group: [{ permissions: 'all' }, { 'access areas': 'all' }],
+  //       timezone: 'GMT',
+  //     },
+  //   });
+  // });
+
+  // test('should output data correctly with a deeply nested list', () => {
+  //   expect(praseFrontMatter(frontMatterIncorrectlyFormatedDeepList)).toStrictEqual({
+  //     title: "Users"
+  //     user: "BenjiTheGreat",
+  //         group: admin
+  //         -  permissions: all
+  //         -  access areas: all
+  //         timezone: GMT
+  //   });
+  // });
+
+  test('should output front matter correctly with comments', () => {
     expect(praseFrontMatter(frontMatterWithComments)).toStrictEqual({
       title: 'Admins',
       users: 'BenjiTheGreat',

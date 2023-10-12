@@ -26,7 +26,6 @@ import { FrontMatter } from 'types';
 
 const KeyValueAllMatch = /^([^:]+):\s*(.*)$/;
 const KeyValueMatch = /:\s*(.*)$/;
-const keyValueRegex = /^(.*?):\s*(?:(?:"(.*?)")|(?:'(.*?)')|([^"\n]*))(?:\n|$)/m;
 
 const isValidYAMLLine = (line: string) => {
   /**
@@ -127,52 +126,19 @@ const praseFrontMatter = (frontMatter: string): FrontMatter => {
     return obj;
   }, {});
 
-  console.log(processedFrontMatter);
-
-  //   /**
-  //    * Used for removing the colon (if it ends with it)
-  //    */
-  //   const removedLastChar = processedLine.slice(0, -1);
-
-  // // console.log(processedLine, index, arr[index - 1]);
-
   // // If previous index within the array is a key (ends with colon)
   // if (arr[index - 1] && arr[index - 1].trim().endsWith(':') && !lineEndsWithColon) {
   //   if (processedLine.startsWith('-')) {
   //     const removeHyphen = processedLine.slice(1).trim();
-  //     // ! This would keep replacing the value, we need a way of iterating and ensuring that the values are added within an array.
-  //     // ? Check next value to see if it's a value and not a key or key value?
-  //     // console.log(key, processedLine, arr[index - 1].trim(), arr[index - 1].trim().slice(0, -1));
+  // ! This would keep replacing the value, we need a way of iterating and ensuring that the values are added within an array.
+  // ? Check next value to see if it's a value and not a key or key value?
 
   //     key[arr[index - 1].trim().slice(0, -1)] = removeHyphen;
   //     return key;
   //   }
   //   key[removedLastChar] = processedLine;
-  //   // console.log('called');
   //   return key;
   // }
-
-  // splitLine will produce more than one value in an array if there is a key value pair, i.e., the only option that doesn't produce this is values for tags or aliases.
-  // const splitLine = line.split(':');
-
-  // if (splitLine.length > 1) {
-  //   // The Key is always 0th index.
-  //   currentKey = splitLine[0].trim() as keyof FrontMatter;
-  //   const value = splitLine.slice(1).join(':').trim();
-
-  //   if (value.startsWith('[' || !value)) {
-  //     // Initialize an array for later
-  //     obj[currentKey] = null;
-  //   } else if (value) {
-  //     (obj[currentKey] as string) = value;
-  //   }
-  // } else if (currentKey && Array.isArray(obj[currentKey])) {
-  //   const listItem = line.replace(/^-/, '').trim();
-  //   if (listItem) {
-  //     (obj[currentKey] as string[]).push(listItem);
-  //   }
-  // }
-  // });
 
   return processedFrontMatter;
 };
