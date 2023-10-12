@@ -128,11 +128,11 @@ describe('parseFrontMatter', () => {
     });
   });
 
-  // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
-  //     title: "!@£$%^&*()[]{};':|,./<>?`~",
-  //   });
-  // });
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
+      title: "!@£$%^&*()[]{};':|,./<>?`~",
+    });
+  });
 
   // test('should output data correctly with a basic yaml input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterBasicListHyphenated })).toStrictEqual({
