@@ -4,6 +4,7 @@ import {
   frontMatterBasicWithContent,
   frontMatterWithDotDelim,
   frontMatterWithTypes,
+  frontMatterWithYAMLDelim,
 } from '__mocks__/frontMatterMockData';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
@@ -122,8 +123,8 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: frontMatterWithDotDelim,
-          delimeter: '...',
+          blog: frontMatterWithYAMLDelim,
+          delimeter: '-- YAML --',
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 

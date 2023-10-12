@@ -109,12 +109,12 @@ describe('parseFrontMatter', () => {
     });
   });
 
-  // test('should output no front matter with a empty string', () => {
-  //   expect(processBlog({ blog: frontMatterWithYAMLDelim, delimeter: '-- YAML --' })).toStrictEqual({
-  //     blog: '',
-  //     frontMatter: null,
-  //   });
-  // });
+  test('should output no front matter with a empty string', () => {
+    expect(processBlog({ blog: frontMatterWithYAMLDelim, delimeter: '-- YAML --' })).toStrictEqual({
+      blog: '',
+      frontMatter: { title: 'YAML', user: 'BenjiTheGreat' },
+    });
+  });
 
   // test('should output data correctly with a basic yaml input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
