@@ -68,49 +68,54 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
     .filter((l) => l)
     .slice(1, -1);
 
-  const indentationLevel = splitLines[0].search(/\S/);
+  const rootIndentationLevel = splitLines[0].search(/\S/);
 
   // Basic parsing to ensure front matter is formatted correctly at a high level.
-  if (!frontMatterBasicCheck(splitLines, indentationLevel)) {
+  if (!frontMatterBasicCheck(splitLines, rootIndentationLevel)) {
     return { error: 'Front Matter Not Formatted Correctly.' };
   }
 
+  let currentKey: string = '';
+  let currentList: string[] = [];
+
   const processedFrontMatter = splitLines.reduce((obj, line, index, arr) => {
     const processedLine = line.trim();
-    const lineEndsWithColon = processedLine.endsWith(':');
+    const startsWithHyphen = line.trim().startsWith('-');
+    const indentationLevel = line.search(/\S/);
 
     /**
      * Checks if the values are surrounded by quotes, otherwise it'll be counted as a voice line.
      * As we're only checking for key - values pairs on a single line ( title: bob ) it checks against their indentation level
      */
-    if (line.search(/\S/) === indentationLevel) {
+    if (indentationLevel === rootIndentationLevel && !startsWithHyphen) {
       const [key, value] = line.split(KeyValueMatch);
 
-      console.log(line);
       (obj as Record<string, any>)[key.trim()] = value.replace(/^["']|["']$/g, '').trim();
+
+      currentKey = key.trim();
+      currentList = [];
+
       return obj;
     }
 
-    /**
-     * The current line is a clear key / value and is not indented
-     */
+    if (
+      (indentationLevel === rootIndentationLevel && startsWithHyphen) ||
+      indentationLevel > rootIndentationLevel
+    ) {
+      const val = startsWithHyphen ? processedLine.slice(2) : processedLine;
+      currentList.push(val);
 
-    // if ()
+      if (currentList.length && currentKey) {
+        (obj as Record<string, any>)[currentKey] = currentList;
 
-    /**
-     * Sets the key
-     */
-    // if (lineEndsWithColon) {
-    //   key[removedLastChar] = undefined;
-    //   return key;
-    // }
+        currentKey = '';
+      }
 
-    // console.log(arr, 'arr');
+      return obj;
+    }
 
     return obj;
   }, {});
-
-  // console.log(processedFrontMatter);
 
   //   /**
   //    * Used for removing the colon (if it ends with it)

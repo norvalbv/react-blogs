@@ -134,12 +134,12 @@ describe('parseFrontMatter', () => {
     });
   });
 
-  // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterBasicListHyphenated })).toStrictEqual({
-  //     title: 'RAM',
-  //     users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
-  //   });
-  // });
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterBasicListHyphenated })).toStrictEqual({
+      title: 'RAM',
+      users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
+    });
+  });
 
   // test('should output data correctly with a basic yaml input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterIndented })).toStrictEqual({
