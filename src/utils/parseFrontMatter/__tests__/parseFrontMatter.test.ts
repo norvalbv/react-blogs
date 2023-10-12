@@ -4,11 +4,14 @@ import {
   frontMatterBasicWithContent,
   frontMatterComplexJSON,
   frontMatterEmpty,
+  frontMatterEscapedChars,
   frontMatterIncomplete,
   frontMatterIncorrectFormat,
   frontMatterIndented,
   frontMatterJSON,
+  frontMatterQuotedValues,
   frontMatterSpecialCharacters,
+  frontMatterUnquotedValues,
   frontMatterVoid,
   frontMatterWithDotDelim,
   frontMatterWithSemiColonDelim,
@@ -17,19 +20,6 @@ import {
 } from '__mocks__/frontMatterMockData';
 import praseFrontMatter from '..';
 import processBlog from 'utils/processBlog';
-
-// Test/
-// categories-hello asd: hello:hi123 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123 = fail
-// access areas: all : 123  = fail
-// categories-hello asd: "hello:hi123 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123" = pass
-// categories-hello asd: 'hello:hi123 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123' = fail
-// categories-hello asd: 'hello:hi123 : 123 12£: :123:123:123:123 \'\'123\'123\'123\'123\'123\'123' = pass
-// permissions: all = pass
-// current time: "Thursday, December 22nd 2022, 10:09:55 pm" = pass
-// user: BenjiTheGreat = pass
-// current time: "Thursday,--------December 22nd 2022, 10:09:55 pm" = pass
-// current time: Thursday,--------December 22nd 2022, 10:09:55 pm = fail
-// current time: 'Thursday,--------December 22nd 2022, 10:09:55 pm' = pass
 
 describe('parseFrontMatter', () => {
   test('should output no front matter with a void yaml input', () => {
@@ -116,6 +106,27 @@ describe('parseFrontMatter', () => {
       frontMatter: { title: 'YAML', user: 'BenjiTheGreat' },
     });
   });
+
+  // test('should output data correctly with a basic yaml input', () => {
+  //   expect(praseFrontMatter({ frontMatter: frontMatterUnquotedValues })).toStrictEqual({
+  //     error: 'Front Matter Not Formatted Correctly.',
+  //   });
+  // });
+
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterEscapedChars })).toStrictEqual({
+      'more-random-chars': "hello:hi123 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123",
+    });
+  });
+
+  // test('should output data correctly with a basic yaml input', () => {
+  //   expect(praseFrontMatter({ frontMatter: frontMatterQuotedValues })).toStrictEqual({
+  //     'with-random-chars': 'this-is-a-test 123 : 456: abc - 890!',
+  //     'current time': 'Thursday, December 22nd 2022, 10:09:55 pm',
+  //     'time tomorrow': 'Friday,--------December 23nd 2022, 10:09:55 pm',
+  //     'access areas': 'all : 123',
+  //   });
+  // });
 
   // test('should output data correctly with a basic yaml input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({

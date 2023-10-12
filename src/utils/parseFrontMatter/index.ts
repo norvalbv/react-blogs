@@ -1,6 +1,3 @@
-// Front matter is not truly strict on formation.
-// Syntax can vary
-
 import { FrontMatter } from 'types';
 
 /**
@@ -27,40 +24,26 @@ import { FrontMatter } from 'types';
  * { title: 'hello', categories: { subcategories: ['dogs', 'cats', 'dolphins', 'tigers'] } };
  */
 
-const KeyUpToColon = /^([^;]+);/;
-/**
- * Checks for key value pairs inlcuding colons.
- * 
- * For example:
- * 
- * 
- * Would Pass:
- `
-    title: Users
-    user: BenjiTheGreat
-    url: "http://www.some-site.example/"
-     current time: "Thursday, December 22nd 2022, 10:09:55 pm"
-  `;
-
-  * Would Fail:
-
-  `
-      title: Users
-      user: BenjiTheGreat
-      url: "http://www.some-site.example/"
-      current time: "Thursday, December 22nd 2022, 10:09:55 pm"
-  `;
- */
+const KeyValueAllMatch = /^([^:]+):\s*(.*)$/;
+const KeyValueMatch = /:\s*(.*)$/;
 const keyValueRegex = /^(.*?):\s*(?:(?:"(.*?)")|(?:'(.*?)')|([^"\n]*))(?:\n|$)/m;
 
 const isValidYAMLLine = (line: string) => {
-  const match = line.match(/^([^:]+):\s*(.*)$/);
+  /**
+   * Matches the following in a the shape of [string, string, string]
+   *
+   * The full string of characters that match.
+   * The portion of the string matched by the first capturing group (text before the colon (THE KEY)).
+   * The portion of the string matched by the second capturing group (text after the colon, leading whitespace (THE VALUE)).
+   */
+  const match = line.match(KeyValueAllMatch);
   if (!match) return false;
   const value = match[2].trim();
-  if (/:/.test(value)) {
-    // If value contains a colon, it must be enclosed in quotes
-    return /^["'].*[:].*["']$/.test(value);
-  }
+  console.log(/:/.test(value), value);
+  // if (/:/.test(value)) {
+  //   // If value contains a colon, it must be enclosed in quotes or escaped
+  //   return /^["'].*[:].*["']$/.test(value);
+  // }
   return true;
 };
 
@@ -96,8 +79,14 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
     const processedLine = line.trim();
     const lineEndsWithColon = processedLine.endsWith(':');
 
-    if (isValidYAMLLine(processedLine) && line.search(/\S/) === indentationLevel) {
-      const [key, value] = line.split(/:\s*/);
+    /**
+     * Checks if the values are surrounded by quotes, otherwise it'll be counted as a voice line.
+     * As we're only checking for key - values pairs on a single line ( title: bob ) it checks against their indentation level
+     */
+    if (line.search(/\S/) === indentationLevel) {
+      const [key, value] = line.split(KeyValueMatch);
+
+      console.log(line);
       (obj as Record<string, any>)[key.trim()] = value.replace(/^["']|["']$/g, '').trim();
       return obj;
     }
@@ -121,7 +110,7 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
     return obj;
   }, {});
 
-  console.log(processedFrontMatter);
+  // console.log(processedFrontMatter);
 
   //   /**
   //    * Used for removing the colon (if it ends with it)

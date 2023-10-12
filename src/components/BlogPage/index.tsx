@@ -4,6 +4,7 @@ import {
   frontMatterBasicWithContent,
   frontMatterComplexJSON,
   frontMatterJSON,
+  frontMatterQuotedValues,
   frontMatterWithDotDelim,
   frontMatterWithTypes,
   frontMatterWithYAMLDelim,
@@ -125,7 +126,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: frontMatterBasicWithContent,
+          blog: frontMatterQuotedValues,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
