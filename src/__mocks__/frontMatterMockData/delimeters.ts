@@ -1,13 +1,13 @@
 export const frontMatterWithSemiColonDelim = `
     ;;;
-    title: RAM
+    title: custom-delim
     user: BenjiTheGreat
     ;;;
 `;
 
 export const frontMatterWithYAMLDelim = `
     -- YAML --
-    title: RAM
+    title: YAML
     user: BenjiTheGreat
     -- YAML --
 `;

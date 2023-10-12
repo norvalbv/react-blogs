@@ -47,7 +47,7 @@ export const frontMatterIndented = `
 // What special characters are valid in yaml / front matter?
 export const frontMatterSpecialCharacters = `
     ---
-    title: !@£$%^&*()_+-=[]{};'/:"|,./<>?\`~
+    title: "!@£$%^&*()[]{};\':|,./<>?\`~"
     ---
 `;
 

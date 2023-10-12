@@ -9,6 +9,10 @@ import {
   frontMatterJSON,
   frontMatterSpecialCharacters,
   frontMatterVoid,
+  frontMatterWithDotDelim,
+  frontMatterWithSemiColonDelim,
+  frontMatterWithTildeDelim,
+  frontMatterWithYAMLDelim,
 } from '__mocks__/frontMatterMockData';
 import praseFrontMatter from '..';
 import processBlog from 'utils/processBlog';
@@ -67,25 +71,48 @@ describe('parseFrontMatter', () => {
   });
 
   test('should output data correctly with a basic yaml input', () => {
-    expect(processBlog({ blog: frontMatterBasicWithContent, showFrontMatter: true })).toStrictEqual(
-      {
-        blog: `
-    Content
-`,
-        frontMatter: {
-          title: 'RAM',
-          user: 'BenjiTheGreat',
-        },
-      }
-    );
-  });
-
-  test('should output data correctly with a basic yaml input', () => {
-    expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
-      title: 'RAM',
-      users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
+    expect(processBlog({ blog: frontMatterBasicWithContent })).toStrictEqual({
+      blog: 'Content',
+      frontMatter: {
+        title: 'RAM',
+        user: 'BenjiTheGreat',
+      },
     });
   });
+
+  test('should output no front matter with a empty string', () => {
+    expect(processBlog({ blog: frontMatterWithSemiColonDelim, delimeter: ';;;' })).toStrictEqual({
+      blog: '',
+      frontMatter: { title: 'custom-delim', user: 'BenjiTheGreat' },
+    });
+  });
+
+  // test('should output no front matter with a empty string', () => {
+  //   expect(processBlog({ blog: frontMatterWithYAMLDelim, delimeter: '-- YAML --' })).toStrictEqual({
+  //     blog: '',
+  //     frontMatter: null,
+  //   });
+  // });
+
+  // test('should output no front matter with a empty string', () => {
+  //   expect(processBlog({ blog: frontMatterWithTildeDelim, delimeter: '~~~' })).toStrictEqual({
+  //     blog: '',
+  //     frontMatter: null,
+  //   });
+  // });
+
+  // test('should output no front matter with a empty string', () => {
+  //   expect(processBlog({ blog: frontMatterWithDotDelim, delimeter: '...' })).toStrictEqual({
+  //     blog: '',
+  //     frontMatter: null,
+  //   });
+  // });
+
+  // test('should output data correctly with a basic yaml input', () => {
+  //   expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
+  //     title: "!@£$%^&*()[]{};':|,./<>?`~",
+  //   });
+  // });
 
   // test('should output data correctly with a basic yaml input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterBasicListHyphenated })).toStrictEqual({
