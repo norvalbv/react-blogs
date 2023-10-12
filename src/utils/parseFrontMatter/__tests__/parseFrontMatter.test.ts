@@ -87,22 +87,30 @@ describe('parseFrontMatter', () => {
     });
   });
 
+  test('should output no front matter with a empty string', () => {
+    expect(processBlog({ blog: frontMatterWithTildeDelim, delimeter: '~~~' })).toStrictEqual({
+      blog: '',
+      frontMatter: {
+        title: 'custom-delims',
+        foo: 'bar',
+        version: '2',
+      },
+    });
+  });
+
+  test('should output no front matter with a empty string', () => {
+    expect(processBlog({ blog: frontMatterWithDotDelim, delimeter: '...' })).toStrictEqual({
+      blog: '',
+      frontMatter: {
+        foo: 'bar',
+        title: 'custom-delims',
+        version: '2',
+      },
+    });
+  });
+
   // test('should output no front matter with a empty string', () => {
   //   expect(processBlog({ blog: frontMatterWithYAMLDelim, delimeter: '-- YAML --' })).toStrictEqual({
-  //     blog: '',
-  //     frontMatter: null,
-  //   });
-  // });
-
-  // test('should output no front matter with a empty string', () => {
-  //   expect(processBlog({ blog: frontMatterWithTildeDelim, delimeter: '~~~' })).toStrictEqual({
-  //     blog: '',
-  //     frontMatter: null,
-  //   });
-  // });
-
-  // test('should output no front matter with a empty string', () => {
-  //   expect(processBlog({ blog: frontMatterWithDotDelim, delimeter: '...' })).toStrictEqual({
   //     blog: '',
   //     frontMatter: null,
   //   });

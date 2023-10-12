@@ -2,6 +2,7 @@ import {
   frontMatterBasic,
   frontMatterBasicListHyphenated,
   frontMatterBasicWithContent,
+  frontMatterWithDotDelim,
   frontMatterWithTypes,
 } from '__mocks__/frontMatterMockData';
 import Markdown from 'markdown-to-jsx';
@@ -121,8 +122,8 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: frontMatterBasicListHyphenated,
-          delimeter: currentBlog.frontMatter?.delimeter,
+          blog: frontMatterWithDotDelim,
+          delimeter: '...',
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
