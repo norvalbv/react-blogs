@@ -119,14 +119,14 @@ describe('parseFrontMatter', () => {
     });
   });
 
-  // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterQuotedValues })).toStrictEqual({
-  //     'with-random-chars': 'this-is-a-test 123 : 456: abc - 890!',
-  //     'current time': 'Thursday, December 22nd 2022, 10:09:55 pm',
-  //     'time tomorrow': 'Friday,--------December 23nd 2022, 10:09:55 pm',
-  //     'access areas': 'all : 123',
-  //   });
-  // });
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterQuotedValues })).toStrictEqual({
+      'with-random-chars': 'this-is-a-test 123 : 456: abc - 890!',
+      'current time': 'Thursday, December 22nd 2022, 10:09:56 pm',
+      'time tomorrow': 'Friday,--------December 23nd 2022, 10:09:55 pm',
+      'access areas': 'all : 123',
+    });
+  });
 
   // test('should output data correctly with a basic yaml input', () => {
   //   expect(praseFrontMatter({ frontMatter: frontMatterSpecialCharacters })).toStrictEqual({
