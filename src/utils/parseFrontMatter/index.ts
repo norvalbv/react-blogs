@@ -49,7 +49,7 @@ const isValidYAMLLine = (line: string) => {
 
 const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boolean => {
   return lines.every((line) =>
-    line.includes(':') || line.trim().startsWith('-') || line.search(/\S'/) > indentationLevel
+    line.includes(':') || line.trim().startsWith('-') || line.search(/\S/) > indentationLevel
       ? true
       : false
   );
@@ -116,6 +116,8 @@ const praseFrontMatter = ({ frontMatter }: { frontMatter: string }): FrontMatter
 
     return obj;
   }, {});
+
+  console.log(processedFrontMatter);
 
   //   /**
   //    * Used for removing the colon (if it ends with it)

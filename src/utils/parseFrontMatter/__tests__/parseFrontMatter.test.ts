@@ -141,12 +141,12 @@ describe('parseFrontMatter', () => {
     });
   });
 
-  // test('should output data correctly with a basic yaml input', () => {
-  //   expect(praseFrontMatter({ frontMatter: frontMatterIndented })).toStrictEqual({
-  //     title: 'RAM',
-  //     users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
-  //   });
-  // });
+  test('should output data correctly with a basic yaml input', () => {
+    expect(praseFrontMatter({ frontMatter: frontMatterIndented })).toStrictEqual({
+      title: 'RAM',
+      users: ['BenjiTheGreat', 'Steve_The_Great', 'John The Great'],
+    });
+  });
 
   test('should output data correctly with a basic json input', () => {
     expect(processBlog({ blog: frontMatterJSON })).toStrictEqual({
