@@ -1,3 +1,4 @@
+import { frontMatterBasic } from '__mocks__/frontMatterMockData';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
@@ -115,7 +116,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog } = processBlog({
-          blog: blogWithProcessedLinks,
+          blog: frontMatterBasic,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });

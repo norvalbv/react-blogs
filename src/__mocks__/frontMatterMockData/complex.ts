@@ -1,29 +1,62 @@
-export const frontMatterVariousDelim = `
-    ---
-    title: 'CSON'
-    description: '''
-    Front matter
-        '''
-    categories: '''
-    front matter cson
-        '''
-    ---
+// You can always use https://www.yamllint.com/ to check the validity of the yaml.
 
-    # This page has cson front matter!
+export const frontMatterVariousDelim = `
+---
+title: 'CSON'
+description: '''
+Front matter
+    '''
+categories: '''
+front matter cson
+    '''
+---
+
+# This page has cson front matter!
 `;
 
 // ? Do I need a colon to define the end of the line / list in yaml front matter? is below valid?
 
 export const isValid = `
-    ---
-    title: users1
-    users
-        benji
-        bob
-        mike
-    ---
+---
+title: users1
+users
+    benji
+    bob
+    mike
+---
 
-    # This page has cson front matter!
+# This page has cson front matter!
+`;
+
+export const frontMatterFoldedBlockScalar = `
+    ---
+    fold_newlines: >
+      this is really a
+      single line of text
+      despite appearances
+    ---
+`;
+
+export const frontMatterLiteralBlockScalar = `
+    ---
+    include_newlines: |
+        exactly as you see
+        will appear these three
+        lines of poetry
+    ---
+`;
+
+export const frontMatterEnforceNewLine = `
+    ---
+    fold_same_newlines: "a b\nc d\n  e\nf\n"
+    ---
+`;
+
+export const frontMatterPreFormatted = `
+    ---
+    title: { label: 'hello', color: 'red' }
+    users: [ benji, bob, mike ]
+    ---
 `;
 
 export const frontMatterDeeplyNested = `

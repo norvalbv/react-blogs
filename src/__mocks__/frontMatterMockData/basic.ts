@@ -2,6 +2,8 @@ export const frontMatterBasic = `
     ---
     title: yaml
     job: software engineer
+    doesProgram: true
+    number: 10
     ---
 `;
 

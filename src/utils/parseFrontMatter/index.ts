@@ -59,6 +59,17 @@ const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boole
   );
 };
 
+const returnTrueValue = (value: string): boolean | string | number => {
+  const processVal = value.toLowerCase();
+  if (processVal === 'true' || processVal === 'false') {
+    return value === 'true';
+  } else if (!isNaN(Number(value))) {
+    return Number(value);
+  } else {
+    return value;
+  }
+};
+
 /**
  * The YAML can be placed anywhere in the documentation (although it should and is commonly placed at the top)
  * YAML keys can contain more than one word - it is up to place where it was created to determine the correct syntax
@@ -97,9 +108,9 @@ const praseFrontMatter = (frontMatter: string): FrontMatter => {
     if (indentationLevel === rootIndentationLevel && !startsWithHyphen) {
       const [key, value] = line.split(KeyValueMatch);
 
-      console.log(key, value);
-
-      (obj as Record<string, any>)[key.trim()] = value.replace(/^["']|["']$/g, '').trim();
+      (obj as Record<string, any>)[key.trim()] = returnTrueValue(
+        value.replace(/^["']|["']$/g, '').trim()
+      );
 
       currentKey = key.trim();
       currentList = [];

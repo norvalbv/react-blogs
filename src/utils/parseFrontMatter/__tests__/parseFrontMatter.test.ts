@@ -67,6 +67,8 @@ describe('parseFrontMatter', () => {
     expect(praseFrontMatter(frontMatterBasic)).toStrictEqual({
       title: 'yaml',
       job: 'software engineer',
+      doesProgram: true,
+      number: 10,
     });
   });
 
@@ -93,7 +95,7 @@ describe('parseFrontMatter', () => {
       frontMatter: {
         title: 'custom-delims',
         foo: 'bar',
-        version: '2',
+        version: 2,
       },
     });
   });
@@ -104,7 +106,7 @@ describe('parseFrontMatter', () => {
       frontMatter: {
         foo: 'bar',
         title: 'custom-delims',
-        version: '2',
+        version: 2,
       },
     });
   });
