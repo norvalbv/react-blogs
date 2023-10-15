@@ -19,10 +19,10 @@ export type Blogs = {
 
 export type DefBlogs = Blogs[];
 
-export type FrontMatter = Record<
-  string,
-  number | string | Date | (number | string | Date)[]
-> | null;
+export type FrontMatter =
+  | Record<string, number | string | boolean | (number | string | boolean)[]>
+  | (number | string | boolean)[]
+  | null;
 
 export type DefTheme = {
   theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';

@@ -1,4 +1,9 @@
 import { frontMatterBasicWithStringTypes } from '__mocks__/frontMatterMockData';
+import {
+  frontMatterPreFormattedArray,
+  frontMatterPreFormattedObject,
+} from '__mocks__/frontMatterMockData/preFormatted';
+import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
@@ -116,14 +121,14 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog } = processBlog({
-          blog: frontMatterBasicWithStringTypes,
+          blog: blogWithProcessedLinks,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
         setBlog({
           blog,
-          frontMatter: null,
+          frontMatter: frontMatterPreFormattedObject,
         });
       })
       .catch(() => {});
@@ -132,56 +137,51 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
 
   if (!blog.blog) return <></>;
 
+  const frontmatter = Array.isArray(blog.frontMatter)
+    ? blog.frontMatter
+    : blog.frontMatter && Object.entries(blog.frontMatter);
+
   return (
     <article>
       <h1 className={getClassName('h1', defTheme) || styles.h1}>{currentBlog?.title.label}</h1>
-      {/* <section css={{ display: 'flex', flexDirection: 'column', gap: '4px', margin: '1rem 0' }}>
-        {blog.frontMatter?.tags?.length ? (
-          <div
-            css={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              gap: '4px',
-            }}
-          >
-            Tags:
-            {blog.frontMatter?.tags.map((tag) => <Badge tag={tag} key={tag} />)}
-          </div>
-        ) : null}
-        {blog.frontMatter?.['read time'] ? (
-          <div className="capitalize">
-            Read Time:&nbsp;
-            {blog.frontMatter?.['read time']}
-          </div>
-        ) : null}
-        {blog.frontMatter?.Aliases?.length ? (
-          <div className="flex items-center gap-2">
-            Aliases:
-            {blog.frontMatter?.Aliases.map((tag, i, a) => (
-              <div key={tag} className="flex items-center gap-2">
-                {tag}
-                {i < a.length - 1 && ','}
-              </div>
-            ))}
-          </div>
-        ) : null}
-        {blog.frontMatter?.['date modified'] && (
-          <p>
-            Last Modified:{' '}
-            <span className="italic">
-              {blog.frontMatter['date modified'].slice(
-                0,
-                blog.frontMatter['date modified'].lastIndexOf(',')
-              )}
-            </span>
-          </p>
-        )}
-      </section> */}
+      {blog.frontMatter && (
+        <section>
+          {frontmatter &&
+            frontmatter.map((entry, i) => {
+              console.log(entry);
+
+              const isKeyValue = Array.isArray(entry);
+              return (
+                // index is fine as key as the array is static.
+                <Fragment key={i}>
+                  {isKeyValue ? (
+                    <div style={{ display: 'flex', gap: '4px' }}>
+                      <span style={{ color: 'blue' }}>{entry[0]}:</span>{' '}
+                      {Array.isArray(entry[1]) ? (
+                        <div style={{ display: 'flex', gap: '4px' }}>
+                          {entry[1].map((entry) => (
+                            <Badge tag={entry.toString()} />
+                          ))}
+                        </div>
+                      ) : (
+                        entry[1]
+                      )}
+                    </div>
+                  ) : (
+                    <span>
+                      {entry} {i !== frontmatter.length - 1 && '• '}
+                    </span>
+                  )}
+                </Fragment>
+              );
+            })}
+        </section>
+      )}
       <Markdown
         options={{
           wrapper: Fragment,
           overrides: {
+            ...defTheme?.overrides,
             h1: defTheme?.overrides?.h1 || { props: { className: styles.h1 } },
             h2: defTheme?.overrides?.h2 || {
               props: { className: styles.h2 },
