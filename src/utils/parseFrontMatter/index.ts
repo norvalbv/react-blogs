@@ -86,7 +86,7 @@ const returnTrueValue = (value: string): boolean | string | number => {
  * Indentation matters, if nothing is indented, count is a void and return no front matter.
  */
 
-const praseFrontMatter = (frontMatter: string): FrontMatter => {
+const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
   // clean up front matter, removing whitespace around it and removing delimeters.
   const splitLines = frontMatter
     .split('\n')
@@ -98,6 +98,10 @@ const praseFrontMatter = (frontMatter: string): FrontMatter => {
   // Basic parsing to ensure front matter is formatted correctly at a high level.
   if (!frontMatterBasicCheck(splitLines, rootIndentationLevel)) {
     return { error: 'Front Matter Not Formatted Correctly.' };
+  }
+
+  if (splitLines.every((line) => line.trim().startsWith('-'))) {
+    return splitLines.map((line) => line.trim().slice(2));
   }
 
   let currentKey: string = '';

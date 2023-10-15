@@ -14,6 +14,14 @@ export const frontMatterBasicWithStringTypes = `
     ---
 `;
 
+export const frontMatterNoKey = `
+    ---
+    - apple
+    - banana
+    - carrot
+    ---
+`;
+
 export const frontMatterJSON = `
     ---
     {

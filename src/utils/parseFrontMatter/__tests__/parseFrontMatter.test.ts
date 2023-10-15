@@ -10,6 +10,7 @@ import {
   frontMatterIncorrectIndentation,
   frontMatterIndented,
   frontMatterJSON,
+  frontMatterNoKey,
   frontMatterNumerousIndented,
   frontMatterQuotedValues,
   frontMatterSpecialCharacters,
@@ -57,6 +58,10 @@ describe('parseFrontMatter', () => {
     expect(praseFrontMatter(frontMatterIncorrectIndentation)).toStrictEqual({
       error: 'Front Matter Not Formatted Correctly.',
     });
+  });
+
+  test('should output error for incorrectly formatted front matter', () => {
+    expect(praseFrontMatter(frontMatterNoKey)).toStrictEqual(['apple', 'banana', 'carrot']);
   });
 
   test('should output data correctly with a basic front matter input of various types', () => {
