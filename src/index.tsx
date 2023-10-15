@@ -1,8 +1,8 @@
 import BlogPage from 'components/BlogPage';
 import React, { ReactElement } from 'react';
+import { themes } from 'styles/themes.css';
 import { DefBlogs, DefTheme } from 'types';
 import BlogsOverview from './components/BlogsOverview';
-import { themes } from 'styles/themes.css';
 
 type Props = {
   theme?: DefTheme;

@@ -2,7 +2,7 @@ import { frontMatterPreFormattedObject } from '__mocks__/frontMatterMockData/pre
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
-import { Fragment, ReactElement, useEffect, useState } from 'react';
+import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { Blogs, DefTheme, FrontMatter } from 'types';
 import { getClassName, processBlog, processLinks } from 'utils';
@@ -39,7 +39,7 @@ const CodeComponent = ({
       language={'tsx' || ''}
       code={children}
     >
-      {({ style, tokens, getLineProps, getTokenProps }) => (
+      {({ style, tokens, getLineProps, getTokenProps }): ReactElement => (
         <pre style={style} className={styles.code}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
@@ -48,7 +48,7 @@ const CodeComponent = ({
                 <span
                   key={key}
                   {...getTokenProps({ token })}
-                  className={defaultTheme['PLAIN_DARK'].nodes}
+                  className={defaultTheme.PLAIN_DARK.nodes}
                 />
               ))}
             </div>
@@ -64,7 +64,7 @@ const CodeComponent = ({
       language={'tsx' || ''}
       code={children}
     >
-      {({ style }) => (
+      {({ style }): ReactElement => (
         <code style={style} className={styles.inlinecode}>
           {children}
         </code>
@@ -80,7 +80,12 @@ type BlogProps = {
   theme?: DefTheme;
 };
 
-const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps): ReactElement => {
+const BlogPage = ({
+  allBlogs,
+  paramKey,
+  callback,
+  theme: defTheme,
+}: BlogProps): ReactElement | null => {
   const [blog, setBlog] = useState<{
     blog: string | null;
     frontMatter: FrontMatter | null;
@@ -131,7 +136,7 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentBlogIndex, currentBlog]);
 
-  if (!blog.blog) return <></>;
+  if (!blog.blog) return null;
 
   const frontmatter = Array.isArray(blog.frontMatter)
     ? blog.frontMatter
