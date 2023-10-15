@@ -83,3 +83,10 @@ export const frontMatterWithComments = `
     users: BenjiTheGreat
     ---
 `;
+
+export const frontMatterWithArrayAsKey = `
+    ---
+    - work on YAML.py:
+      - work on Store 
+    ---
+`;

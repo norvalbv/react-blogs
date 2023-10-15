@@ -13,10 +13,3 @@ front matter cson
 
 # This page has cson front matter!
 `;
-
-export const frontMatterPreFormatted = `
-    ---
-    title: { label: 'hello', color: 'red' }
-    users: [ benji, bob, mike ]
-    ---
-`;

@@ -98,6 +98,40 @@ export const frontMatterDeeplyNested = `
     ---
 `;
 
+export const frontMatterArraysAndObjects = `
+    ---
+    foo: whatever
+    bar:
+      -
+        fruit: apple
+        name: steve
+        sport: baseball
+      - more
+      -
+        python: rocks
+        perl: papers
+        ruby: scissorses
+   ---
+`;
+
+export const frontMatterPreFormatted = `
+    ---
+    title: { label: 'hello', color: 'red' }
+    users: [ benji, bob, mike ]
+    ---
+`;
+
+export const frontMatterArrayParagraph = `
+    ---
+    - What's Yaml?
+    - It's for writing data structures in plain text.
+    - And?
+    - And what? That's not good enough for you?
+    - No, I mean, "And what about Yaml?"
+    - Oh, oh yeah. Uh.. Yaml for Ruby.
+    ---
+`;
+
 export const frontMatterComplex = `
     ---
     # =============================================

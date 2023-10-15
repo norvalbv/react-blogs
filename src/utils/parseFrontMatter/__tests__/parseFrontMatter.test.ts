@@ -1,4 +1,6 @@
 import {
+  frontMatterArrayParagraph,
+  frontMatterArraysAndObjects,
   frontMatterBasicListHyphenated,
   frontMatterBasicWithContent,
   frontMatterBasicWithStringTypes,
@@ -12,9 +14,11 @@ import {
   frontMatterJSON,
   frontMatterNoKey,
   frontMatterNumerousIndented,
+  frontMatterPreFormatted,
   frontMatterQuotedValues,
   frontMatterSpecialCharacters,
   frontMatterVoid,
+  frontMatterWithArrayAsKey,
   frontMatterWithComments,
   frontMatterWithDotDelim,
   frontMatterWithSemiColonDelim,
@@ -60,9 +64,52 @@ describe('parseFrontMatter', () => {
     });
   });
 
+  // test('should output error for incorrectly formatted front matter', () => {
+  //   expect(praseFrontMatter(frontMatterArraysAndObjects)).toStrictEqual({
+  //     foo: 'whatever',
+  //     bar: [
+  //       {
+  //         fruit: 'apple',
+  //         name: 'steve',
+  //         sport: 'baseball',
+  //       },
+  //       'more',
+  //       {
+  //         python: 'rocks',
+  //         perl: 'papers',
+  //         ruby: 'scissorses',
+  //       },
+  //     ],
+  //   });
+  // });
+
+  // test('should output error for incorrectly formatted front matter', () => {
+  //   expect(praseFrontMatter(frontMatterWithArrayAsKey)).toStrictEqual([
+  //     { 'work on YAML.py': ['work on Store'] },
+  //   ]);
+  // });
+
   test('should output error for incorrectly formatted front matter', () => {
     expect(praseFrontMatter(frontMatterNoKey)).toStrictEqual(['apple', 'banana', 'carrot']);
   });
+
+  test('should output error for incorrectly formatted front matter', () => {
+    expect(praseFrontMatter(frontMatterArrayParagraph)).toStrictEqual([
+      "What's Yaml?",
+      "It's for writing data structures in plain text.",
+      'And?',
+      "And what? That's not good enough for you?",
+      'No, I mean, "And what about Yaml?"',
+      'Oh, oh yeah. Uh.. Yaml for Ruby.',
+    ]);
+  });
+
+  // test('should output error for incorrectly formatted front matter', () => {
+  //   expect(praseFrontMatter(frontMatterPreFormatted)).toStrictEqual({
+  //     title: { label: 'hello', color: 'red' },
+  //     users: ['benji', 'bob', 'mike'],
+  //   });
+  // });
 
   test('should output data correctly with a basic front matter input of various types', () => {
     expect(praseFrontMatter(frontMatterBasicWithVariousTypes)).toStrictEqual({
