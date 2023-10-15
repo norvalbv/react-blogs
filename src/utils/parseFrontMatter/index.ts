@@ -60,13 +60,23 @@ const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boole
 };
 
 const returnTrueValue = (value: string): boolean | string | number => {
-  const processVal = value.toLowerCase();
-  if (processVal === 'true' || processVal === 'false') {
-    return value === 'true';
+  const processVal = value.toLowerCase().trim();
+
+  if (
+    (value.startsWith("'") && value.endsWith("'")) ||
+    (value.startsWith('"') && value.endsWith('"'))
+  ) {
+    return value.replace(/^["']|["']$/g, '').trim();
+  }
+
+  if (processVal === 'true' || processVal === 'yes') {
+    return true;
+  } else if (processVal === 'false' || processVal === 'no') {
+    return false;
   } else if (!isNaN(Number(value))) {
     return Number(value);
   } else {
-    return value;
+    return value.trim();
   }
 };
 
@@ -108,9 +118,8 @@ const praseFrontMatter = (frontMatter: string): FrontMatter => {
     if (indentationLevel === rootIndentationLevel && !startsWithHyphen) {
       const [key, value] = line.split(KeyValueMatch);
 
-      (obj as Record<string, any>)[key.trim()] = returnTrueValue(
-        value.replace(/^["']|["']$/g, '').trim()
-      );
+      console.log(value);
+      (obj as Record<string, any>)[key.trim()] = returnTrueValue(value);
 
       currentKey = key.trim();
       currentList = [];

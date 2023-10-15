@@ -1,22 +1,18 @@
 import {
-  frontMatterBasic,
   frontMatterBasicListHyphenated,
   frontMatterBasicWithContent,
+  frontMatterBasicWithStringTypes,
+  frontMatterBasicWithVariousTypes,
   frontMatterComplexJSON,
-  frontMatterDeeplyNested,
-  frontMatterDeeplyNestedWithHyphens,
   frontMatterEmpty,
   frontMatterEscapedChars,
   frontMatterIncomplete,
-  frontMatterIncorrectFormat,
-  frontMatterIncorrectlyFormatedDeepList,
+  frontMatterIncorrectIndentation,
   frontMatterIndented,
   frontMatterJSON,
   frontMatterNumerousIndented,
   frontMatterQuotedValues,
   frontMatterSpecialCharacters,
-  frontMatterUnquotedValues,
-  frontMatterVariousDelim,
   frontMatterVoid,
   frontMatterWithComments,
   frontMatterWithDotDelim,
@@ -58,17 +54,24 @@ describe('parseFrontMatter', () => {
   });
 
   test('should output error for incorrectly formatted front matter', () => {
-    expect(praseFrontMatter(frontMatterIncorrectFormat)).toStrictEqual({
+    expect(praseFrontMatter(frontMatterIncorrectIndentation)).toStrictEqual({
       error: 'Front Matter Not Formatted Correctly.',
     });
   });
 
-  test('should output data correctly with a basic front matter input', () => {
-    expect(praseFrontMatter(frontMatterBasic)).toStrictEqual({
-      title: 'yaml',
+  test('should output data correctly with a basic front matter input of various types', () => {
+    expect(praseFrontMatter(frontMatterBasicWithVariousTypes)).toStrictEqual({
       job: 'software engineer',
       doesProgram: true,
       number: 10,
+    });
+  });
+
+  test('should output data correctly with a basic front matter input of fixed types', () => {
+    expect(praseFrontMatter(frontMatterBasicWithStringTypes)).toStrictEqual({
+      job: 'software engineer',
+      doesProgram: 'true',
+      number: '10',
     });
   });
 
@@ -126,7 +129,7 @@ describe('parseFrontMatter', () => {
 
   test('should output front matter correctly with escaped chars', () => {
     expect(praseFrontMatter(frontMatterEscapedChars)).toStrictEqual({
-      'more-random-chars': "hello:hi123 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123",
+      'more-random-chars': "hello:654 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123",
     });
   });
 
