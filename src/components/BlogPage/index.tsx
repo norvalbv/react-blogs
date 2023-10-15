@@ -1,8 +1,4 @@
-import { frontMatterBasicWithStringTypes } from '__mocks__/frontMatterMockData';
-import {
-  frontMatterPreFormattedArray,
-  frontMatterPreFormattedObject,
-} from '__mocks__/frontMatterMockData/preFormatted';
+import { frontMatterPreFormattedObject } from '__mocks__/frontMatterMockData/preFormatted';
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
@@ -141,83 +137,94 @@ const BlogPage = ({ allBlogs, paramKey, callback, theme: defTheme }: BlogProps):
     ? blog.frontMatter
     : blog.frontMatter && Object.entries(blog.frontMatter);
 
+  const FrontMatterOverrideComponent = defTheme?.overrides?.frontmatter?.component;
+
   return (
     <article>
       <h1 className={getClassName('h1', defTheme) || styles.h1}>{currentBlog?.title.label}</h1>
-      {blog.frontMatter && (
+      <div {...(false ? { style: { display: 'flex', flexDirection: 'column-reverse' } } : {})}>
+        {blog.frontMatter && FrontMatterOverrideComponent ? (
+          <FrontMatterOverrideComponent
+            frontmatter={blog.frontMatter}
+            // className={getClassName('frontmatter', theme) || styles.metadata}
+            {...defTheme?.overrides?.metadata?.props}
+          />
+        ) : (
+          frontmatter && (
+            <section>
+              {frontmatter.map((entry, i) => {
+                const isKeyValue = Array.isArray(entry);
+                return (
+                  // index is fine as key as the array is static.
+                  <Fragment key={i}>
+                    {isKeyValue ? (
+                      <div style={{ display: 'flex', gap: '4px' }}>
+                        <span style={{ color: 'blue' }}>{entry[0]}:</span>{' '}
+                        {Array.isArray(entry[1]) ? (
+                          <div style={{ display: 'flex', gap: '4px' }}>
+                            {entry[1].map((entry) => (
+                              <Badge tag={entry.toString()} />
+                            ))}
+                          </div>
+                        ) : (
+                          entry[1]
+                        )}
+                      </div>
+                    ) : (
+                      <span>
+                        {entry} {i !== frontmatter.length - 1 && '• '}
+                      </span>
+                    )}
+                  </Fragment>
+                );
+              })}
+            </section>
+          )
+        )}
         <section>
-          {frontmatter &&
-            frontmatter.map((entry, i) => {
-              console.log(entry);
-
-              const isKeyValue = Array.isArray(entry);
-              return (
-                // index is fine as key as the array is static.
-                <Fragment key={i}>
-                  {isKeyValue ? (
-                    <div style={{ display: 'flex', gap: '4px' }}>
-                      <span style={{ color: 'blue' }}>{entry[0]}:</span>{' '}
-                      {Array.isArray(entry[1]) ? (
-                        <div style={{ display: 'flex', gap: '4px' }}>
-                          {entry[1].map((entry) => (
-                            <Badge tag={entry.toString()} />
-                          ))}
-                        </div>
-                      ) : (
-                        entry[1]
-                      )}
-                    </div>
-                  ) : (
-                    <span>
-                      {entry} {i !== frontmatter.length - 1 && '• '}
-                    </span>
-                  )}
-                </Fragment>
-              );
-            })}
+          <Markdown
+            options={{
+              wrapper: Fragment,
+              overrides: {
+                ...defTheme?.overrides,
+                h1: defTheme?.overrides?.h1 || { props: { className: styles.h1 } },
+                h2: defTheme?.overrides?.h2 || {
+                  props: { className: styles.h2 },
+                },
+                h3: defTheme?.overrides?.h3 || {
+                  props: { className: styles.h3 },
+                },
+                h4: defTheme?.overrides?.h4 || { props: { className: styles.h4 } },
+                p: defTheme?.overrides?.p || { props: { className: styles.p } },
+                ul: defTheme?.overrides?.ul || {
+                  component: UnorderedListComponent,
+                  props: { className: styles.ul },
+                },
+                li: defTheme?.overrides?.li || {
+                  component: ListComponent,
+                  props: { className: styles.li },
+                },
+                code: {
+                  component: CodeComponent,
+                  props: { theme: defTheme },
+                },
+                a: defTheme?.overrides?.a || {
+                  props: { className: styles.a },
+                },
+                strong: defTheme?.overrides?.strong || {
+                  props: { className: styles.strong },
+                },
+                em: defTheme?.overrides?.em || { props: { className: styles.em } },
+                blockquote: defTheme?.overrides?.blockquote || {
+                  props: { className: styles.blockquote },
+                },
+              },
+            }}
+          >
+            {blog.blog}
+          </Markdown>
         </section>
-      )}
-      <Markdown
-        options={{
-          wrapper: Fragment,
-          overrides: {
-            ...defTheme?.overrides,
-            h1: defTheme?.overrides?.h1 || { props: { className: styles.h1 } },
-            h2: defTheme?.overrides?.h2 || {
-              props: { className: styles.h2 },
-            },
-            h3: defTheme?.overrides?.h3 || {
-              props: { className: styles.h3 },
-            },
-            h4: defTheme?.overrides?.h4 || { props: { className: styles.h4 } },
-            p: defTheme?.overrides?.p || { props: { className: styles.p } },
-            ul: defTheme?.overrides?.ul || {
-              component: UnorderedListComponent,
-              props: { className: styles.ul },
-            },
-            li: defTheme?.overrides?.li || {
-              component: ListComponent,
-              props: { className: styles.li },
-            },
-            code: {
-              component: CodeComponent,
-              props: { theme: defTheme },
-            },
-            a: defTheme?.overrides?.a || {
-              props: { className: styles.a },
-            },
-            strong: defTheme?.overrides?.strong || {
-              props: { className: styles.strong },
-            },
-            em: defTheme?.overrides?.em || { props: { className: styles.em } },
-            blockquote: defTheme?.overrides?.blockquote || {
-              props: { className: styles.blockquote },
-            },
-          },
-        }}
-      >
-        {blog.blog}
-      </Markdown>
+      </div>
     </article>
   );
 };

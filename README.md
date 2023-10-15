@@ -127,6 +127,7 @@ This is the URL for that blog.
 ```tsx
 { 
   showFrontMatter?: boolean; // Optional - Default false
+  position?: 'top' | 'bottom' // Optional - default undefined (setting position to top)
   /**
    * Optional delimeter for your front matter, for example '---', '-- YAML --', or ';;;'
    * 
@@ -214,6 +215,10 @@ Example of using `defTheme`:
       },
       metadata: {
         component: ({...props}) => <p {...props}>{props.metadata}</p>,
+        props: { className: 'text-[14px] my-4 tracking-wider' },
+      },
+      frontmatter: {
+        component: ({...props}) => <section {...props}>{props.frontmatter}</section>,
         props: { className: 'text-[14px] my-4 tracking-wider' },
       },
     },

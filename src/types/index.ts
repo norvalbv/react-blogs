@@ -13,6 +13,7 @@ export type Blogs = {
   frontMatter?: {
     showFrontMatter?: boolean;
     delimeter?: string;
+    position?: 'start' | 'end';
   };
   url: string;
 } & Require<HeaderProps, 'title'>;
@@ -27,5 +28,7 @@ export type FrontMatter =
 export type DefTheme = {
   theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';
   code?: keyof typeof themes;
-  overrides?: MarkdownToJSX.Overrides & { metadata?: { component: ElementType; props: Object } };
+  overrides?: MarkdownToJSX.Overrides & { metadata?: { component: ElementType; props: Object } } & {
+    frontmatter?: { component: ElementType; props: Object };
+  };
 };
