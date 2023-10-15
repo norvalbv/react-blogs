@@ -201,7 +201,9 @@ Example of using `defTheme`:
   import { DefBlogs } from 'react-blogs';
   import useTheme from 'hooks/useTheme';
 
-  const MyParagraph = ({ children, ...props }) => <div {...props}>{children}</div>
+  // Overridden components must be kept outside of function to avoid errors.
+  const MetadataComponent = ({...props}) => <p {...props}>{props.metadata}</p>;
+  const FrontMatterComponent = ({...props}) => <section {...props}>{props.frontmatter}</section>;
 
   const { isDarkMode } = useTheme();
 
@@ -209,16 +211,12 @@ Example of using `defTheme`:
     theme: isDarkMode ? 'SHADES_OF_GREEN' : 'SHADES_OF_PURPLE',
     code: isDarkMode ? 'dracula' : 'oneLight',
     overrides: {
-      p: {
-        component: MyParagraph,
-        props: { className: 'text-[14px] my-4 tracking-wider' },
-      },
       metadata: {
-        component: ({...props}) => <p {...props}>{props.metadata}</p>,
+        component: MetadataComponent,
         props: { className: 'text-[14px] my-4 tracking-wider' },
       },
       frontmatter: {
-        component: ({...props}) => <section {...props}>{props.frontmatter}</section>,
+        component: FrontMatterComponent,
         props: { className: 'text-[14px] my-4 tracking-wider' },
       },
     },
