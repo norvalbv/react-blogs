@@ -6,10 +6,13 @@ import {
   frontMatterBasicWithStringTypes,
   frontMatterBasicWithVariousTypes,
   frontMatterComplexJSON,
+  frontMatterDeeplyNested,
+  frontMatterDeeplyNestedWithHyphens,
   frontMatterEmpty,
   frontMatterEscapedChars,
   frontMatterIncomplete,
   frontMatterIncorrectIndentation,
+  frontMatterIncorrectlyFormatedDeepList,
   frontMatterIndented,
   frontMatterJSON,
   frontMatterNoKey,
@@ -260,8 +263,15 @@ describe('parseFrontMatter', () => {
 
   // test('should output data correctly with a deeply nested list', () => {
   //   expect(praseFrontMatter(frontMatterDeeplyNested)).toStrictEqual({
-  //      title: 'JSON',
-  //      description: 'Front Matter',
+  //     users: [
+  //       {
+  //         BenjiTheGreat: {
+  //           timezone: 'GMT',
+  //           permissions: ['login', 'logout', 'chat', 'access control'],
+  //         },
+  //       },
+  //     ],
+  //     title: 'Users',
   //   });
   // });
 
@@ -275,25 +285,8 @@ describe('parseFrontMatter', () => {
   //   });
   // });
 
-  // test('should output data correctly with a deeply nested list with hyphens', () => {
-  //   expect(praseFrontMatter(frontMatterVariousDelim)).toStrictEqual({
-  //     title: 'Users',
-  //     user: {
-  //       group: [{ permissions: 'all' }, { 'access areas': 'all' }],
-  //       timezone: 'GMT',
-  //     },
-  //   });
-  // });
-
   // test('should output data correctly with a deeply nested list', () => {
-  //   expect(praseFrontMatter(frontMatterIncorrectlyFormatedDeepList)).toStrictEqual({
-  //     title: "Users"
-  //     user: "BenjiTheGreat",
-  //         group: admin
-  //         -  permissions: all
-  //         -  access areas: all
-  //         timezone: GMT
-  //   });
+  //   expect(praseFrontMatter(frontMatterIncorrectlyFormatedDeepList)).toStrictEqual({});
   // });
 
   test('should output front matter correctly with comments', () => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 export const frontMatterFoldedBlockScalar = `
     ---
     fold_newlines: >
@@ -87,8 +88,8 @@ export const frontMatterDeeplyNestedWithHyphens = `
 export const frontMatterDeeplyNested = `
     ---
     title: Users
-    user: BenjiTheGreat
-        group: admin
+    users: 
+    - BenjiTheGreat:
         permissions:
           login
           logout

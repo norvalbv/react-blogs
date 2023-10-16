@@ -76,7 +76,7 @@ const returnTrueValue = (value: string): boolean | string | number => {
   if (processVal === 'false' || processVal === 'no') {
     return false;
   }
-  if (!Number.isNaN(value)) {
+  if (Number(value) || Number(value) === 0) {
     return Number(value);
   }
   return value.trim();

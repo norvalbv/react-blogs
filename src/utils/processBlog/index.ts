@@ -15,15 +15,15 @@ type Props = {
 const matchOutsideStrings = (input: string, regex: RegExp): number[] => {
   let inSingleQuoteString = false;
   let inDoubleQuoteString = false;
-  let matches: number[] = [];
+  const matches: number[] = [];
   let match;
 
   if (matches && matches.length >= 2) {
     return matches;
   }
 
-  const isInString = (index: number) => {
-    for (let i = 0; i < index; i++) {
+  const isInString = (index: number): boolean => {
+    for (let i = 0; i < index; i += 1) {
       if (input[i] === "'" && (i === 0 || input[i - 1] !== '\\')) {
         inSingleQuoteString = !inSingleQuoteString;
       } else if (input[i] === '"' && (i === 0 || input[i - 1] !== '\\')) {
@@ -33,6 +33,7 @@ const matchOutsideStrings = (input: string, regex: RegExp): number[] => {
     return inSingleQuoteString || inDoubleQuoteString;
   };
 
+  // eslint-disable-next-line no-cond-assign
   while ((match = regex.exec(input)) !== null) {
     if (!isInString(match.index)) {
       matches.push(match.index);
@@ -75,7 +76,7 @@ const processBlog = ({ blog, delimeter = '---', showFrontMatter = true }: Props)
     };
   }
 
-  let processedFrontMatter;
+  let processedFrontMatter: FrontMatter | string[];
   try {
     // Check if the front matter is able to be parsed as JSON, if so simply return the parsed verson of it.
     processedFrontMatter = JSON.parse(
