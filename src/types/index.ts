@@ -1,9 +1,8 @@
 import { HeaderProps } from 'components/Header';
-import { ElementType, ReactNode } from 'react';
 import { themes } from 'prism-react-renderer';
-
-import { Require } from './utils';
+import { ElementType, ReactNode } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
+import { Require } from './utils';
 
 export type Blogs = {
   accessor?: ReactNode;

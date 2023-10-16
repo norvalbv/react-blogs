@@ -1,5 +1,5 @@
 import { FrontMatter } from 'types';
-import { parseFrontMatter } from 'utils';
+// import { parseFrontMatter } from 'utils';
 
 type ReturnValue = {
   blog: string;
@@ -66,28 +66,28 @@ const processBlog = ({ blog, delimeter = '---', showFrontMatter = true }: Props)
     };
   }
 
-  const frontMatter = blog.slice(0, (frontMatterIndexes[1] || 0) + delimeter.length);
+  // const frontMatter = blog.slice(0, (frontMatterIndexes[1] || 0) + delimeter.length);
   const processedBlog = blog.slice((frontMatterIndexes[1] || 0) + delimeter.length).trim();
 
-  if (!showFrontMatter || frontMatter.length <= 5) {
-    return {
-      blog: processedBlog,
-      frontMatter: null,
-    };
-  }
+  // if (!showFrontMatter || frontMatter.length <= 5) {
+  return {
+    blog: processedBlog,
+    frontMatter: null,
+  };
+  // }
 
-  let processedFrontMatter: FrontMatter | string[];
-  try {
-    // Check if the front matter is able to be parsed as JSON, if so simply return the parsed verson of it.
-    processedFrontMatter = JSON.parse(
-      frontMatter.trim().slice(delimeter.length, -delimeter.length)
-    );
-  } catch (e) {
-    // If it is not able to be parsed and it's not JSON, we need to process it ourself.
-    processedFrontMatter = parseFrontMatter(frontMatter);
-  }
+  // let processedFrontMatter: FrontMatter | string[];
+  // try {
+  //   // Check if the front matter is able to be parsed as JSON, if so simply return the parsed verson of it.
+  //   processedFrontMatter = JSON.parse(
+  //     frontMatter.trim().slice(delimeter.length, -delimeter.length)
+  //   );
+  // } catch (e) {
+  //   // If it is not able to be parsed and it's not JSON, we need to process it ourself.
+  //   processedFrontMatter = parseFrontMatter(frontMatter);
+  // }
 
-  return { blog: processedBlog, frontMatter: null };
+  // return { blog: processedBlog, frontMatter: null };
 };
 
 export default processBlog;

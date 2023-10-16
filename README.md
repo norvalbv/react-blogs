@@ -63,7 +63,7 @@ import Blog, { DefBlogs } from 'react-blogs';
   };
 
 // Render Blog
-return <Blog allBlogs={allBlogs} theme={theme} />
+return <Blog allBlogs={allBlogs} theme={theme} paramkey="title" />
 ```
 
 # A Deeper Dive
@@ -234,8 +234,14 @@ You can pass your blogs and theme to the `Blog` component.
 
     // definition of blogs and theme omitted for brevity.
 
-    return <Blog allBlogs={allBlogs} theme={theme} />
+    return <Blog allBlogs={allBlogs} theme={theme} paramkey="title" />
 ```
+
+- paramKey *(optional)* - default blog:
+```
+  string
+```
+The parameter key in the URL for the current blog. For example, `title=my-blog`
 
 # Roadmap
 - [ ] Add more themes
