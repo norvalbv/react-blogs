@@ -70,23 +70,6 @@ Use the following keys for comments, as per the [Better Comments](https://market
 
 ## Typing
 
-### Use types over interfaces
-Use TypeScript `type` for defining types, props, and state, rather than `interface`, to prevent accidental type reopening, which can cause runtime and compile-time errors.
-
-👍 **Good Example**
-```tsx
-type Props = {
-  name: string;
-};
-```
-
-👎 **Bad Example**
-```tsx
-interface Props {
-  name: string;
-}
-```
-
 ### No usage of FC in React
 The usage of `FC` or `FunctionComponent` in React TypeScript is considered outdated. It can lead to various issues, as outlined [here](https://medium.com/raccoons-group/why-you-probably-shouldnt-use-react-fc-to-type-your-react-components-37ca1243dd13).
 
@@ -370,23 +353,3 @@ const textColor = "#d2ff9d";
 
 const textColor = 'rgb(236, 199, 240)'
 ```
-
---- 
-
-## Testing
-
-### Testing small to medium-sized UI components (bricks).
-
-Snapshot tests are well-suited for testing small to medium-sized UI components or "bricks" in the app. These components are typically stateless and primarily responsible for rendering UI elements based on input props.
-
-### Components with relatively static rendering.
-
-Snapshot tests are most effective when you expect the output of a component to be relatively static. In other words, if a component's rendering logic doesn't change frequently, snapshot tests can help catch unexpected changes.
-
-### Visual regression testing to ensure UI consistency.
-
-Snapshot tests are excellent for visual regression testing. They capture a snapshot of the rendered component output and can alert you to any unintended visual changes. This is particularly valuable for ensuring UI consistency across updates.
-
-### Complement other tests for dynamic components.
-
-Snapshot tests are less suitable for components that render dynamic content or have frequent changes in their rendering output. For dynamic components, consider other testing methods like e2e test using `cypress` and `gherkin`.
