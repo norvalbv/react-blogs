@@ -18,7 +18,10 @@ const BlogsOverview = ({ allBlogs, paramKey, theme }: Props): ReactElement => {
         <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
           <Header
             title={{
-              label: `${i + 1}) ${blog.title.label}`,
+              label:
+                typeof blog.title.label === 'string'
+                  ? `${i + 1}) ${blog.title.label}`
+                  : blog.title.label,
               level: 2,
               // Set to h2 as level is 2
               className: getClassName('h2', theme),
