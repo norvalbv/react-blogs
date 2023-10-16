@@ -76,4 +76,9 @@ export const defaults = {
     fontStyle: 'italic',
     flexWrap: 'wrap',
   }),
+  badge: style({
+    borderRadius: '0.5rem',
+    padding: '0 0.5rem',
+    width: 'auto',
+  }),
 };

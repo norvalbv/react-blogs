@@ -16,6 +16,7 @@ const themeContract = createThemeContract({
   p: { color: null },
   strong: { color: null },
   ul: { color: null },
+  badge: { backgroundColor: null },
 });
 
 type Themes = {
@@ -41,6 +42,7 @@ export const themes: Themes = {
       p: { color: '' },
       strong: { color: '' },
       ul: { color: '' },
+      badge: { backgroundColor: '#90c7de' },
     }),
   },
   SHADES_OF_PURPLE: {
@@ -59,6 +61,7 @@ export const themes: Themes = {
       p: { color: '#bfe8ff' },
       strong: { color: '#ad86f1' },
       ul: { color: '' },
+      badge: { backgroundColor: '#90c7de' },
     }),
   },
   SHADES_OF_GREEN: {
@@ -77,6 +80,7 @@ export const themes: Themes = {
       p: { color: '#849bb3' },
       strong: { color: '#547f7c' },
       ul: { color: '' },
+      badge: { backgroundColor: '#869f88' },
     }),
   },
   PLAIN_LIGHT: {
@@ -95,6 +99,7 @@ export const themes: Themes = {
       p: { color: '#686e70' },
       strong: { color: '' },
       ul: { color: '' },
+      badge: { backgroundColor: '#7a7d84' },
     }),
   },
 };
@@ -116,4 +121,5 @@ export const styles = {
   p: style([defaults.p, { ...themeContract.p }]),
   strong: style([defaults.strong, { ...themeContract.strong }]),
   ul: style([defaults.ul, { ...themeContract.ul }]),
+  badge: style([defaults.badge, { ...themeContract.badge }]),
 };

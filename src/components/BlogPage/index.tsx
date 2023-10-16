@@ -42,11 +42,11 @@ const CodeComponent = ({
       {({ style, tokens, getLineProps, getTokenProps }): ReactElement => (
         <pre style={style} className={styles.code}>
           {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
+            <div key={line.toString() + i.toString()} {...getLineProps({ line })}>
               <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
-              {line.map((token, key) => (
+              {line.map((token) => (
                 <span
-                  key={key}
+                  key={token.content}
                   {...getTokenProps({ token })}
                   className={defaultTheme.PLAIN_DARK.nodes}
                 />
@@ -156,19 +156,26 @@ const BlogPage = ({
           />
         ) : (
           frontmatter && (
-            <section>
+            <section
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '.25rem',
+              }}
+            >
               {frontmatter.map((entry, i) => {
                 const isKeyValue = Array.isArray(entry);
                 return (
-                  // index is fine as key as the array is static.
-                  <Fragment key={i}>
+                  <Fragment key={entry.toString() + i.toString()}>
                     {isKeyValue ? (
                       <div style={{ display: 'flex', gap: '4px' }}>
-                        <span style={{ color: 'blue' }}>{entry[0]}:</span>{' '}
+                        <strong className={styles.strong} style={{ textTransform: 'capitalize' }}>
+                          {entry[0]}:
+                        </strong>
                         {Array.isArray(entry[1]) ? (
                           <div style={{ display: 'flex', gap: '4px' }}>
-                            {entry[1].map((entry) => (
-                              <Badge tag={entry.toString()} />
+                            {entry[1].map((entry, i) => (
+                              <Badge tag={entry.toString()} key={entry + i.toString()} />
                             ))}
                           </div>
                         ) : (
