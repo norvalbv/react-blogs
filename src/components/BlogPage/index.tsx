@@ -147,7 +147,11 @@ const BlogPage = ({
   return (
     <article>
       <h1 className={getClassName('h1', defTheme) || styles.h1}>{currentBlog?.title.label}</h1>
-      <div {...(false ? { style: { display: 'flex', flexDirection: 'column-reverse' } } : {})}>
+      <div
+        {...(currentBlog?.frontMatter?.position === 'end'
+          ? { style: { display: 'flex', flexDirection: 'column-reverse' } }
+          : {})}
+      >
         {blog.frontMatter && FrontMatterOverrideComponent ? (
           <FrontMatterOverrideComponent
             frontmatter={blog.frontMatter}
