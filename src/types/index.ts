@@ -24,6 +24,7 @@ export type FrontMatter =
   | (number | string | boolean)[]
   | null;
 
+// for prec-ommit test
 export type DefTheme = {
   theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';
   code?: keyof typeof themes;
