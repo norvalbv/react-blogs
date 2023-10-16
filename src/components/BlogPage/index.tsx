@@ -1,4 +1,8 @@
-import { frontMatterDeeplyNested, frontMatterPreFormatted } from '__mocks__/frontMatterMockData';
+import {
+  frontMatterDeeplyNested,
+  frontMatterPreFormatted,
+  frontMatterWithArrayAsKey,
+} from '__mocks__/frontMatterMockData';
 import { frontMatterPreFormattedObject } from '__mocks__/frontMatterMockData/preFormatted';
 import Badge from 'components/Badge';
 import Markdown from 'markdown-to-jsx';
@@ -123,7 +127,7 @@ const BlogPage = ({
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: frontMatterDeeplyNested,
+          blog: frontMatterWithArrayAsKey,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });

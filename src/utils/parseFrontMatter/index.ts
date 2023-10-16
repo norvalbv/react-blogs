@@ -1,29 +1,5 @@
 import { FrontMatter } from 'types';
 
-/**
- *
- * Using this example:
- *
- * ---
- * title: hello
- * categories:
- *  subcategories:
- *  - dogs
- *    cats
- *    dolphins
- *  - tigers
- * ---
- *
- * Front matter guidance: https://gohugo.io/content-management/front-matter/
- * - From the above, if there is no indentation, it should be its own key,
- * - If each subsequent line that is indented ends with a colon, that should be a key within the above object
- * - if values are indentend and do not end with a colon, they should be placed within an array (or a string/number/etc if only one value) as the value for that key.
- *
- * The expected output for the above example is like so:
- *
- * { title: 'hello', categories: { subcategories: ['dogs', 'cats', 'dolphins', 'tigers'] } };
- */
-
 // const KeyValueAllMatch = /^([^:]+):\s*(.*)$/;
 const KeyValueMatch = /:\s*(.*)$/;
 
@@ -102,7 +78,11 @@ const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
     return { error: 'Front Matter Not Formatted Correctly.' };
   }
 
-  if (splitLines.every((line) => line.trim().startsWith('-'))) {
+  if (
+    splitLines.every(
+      (line) => line.trim().startsWith('-') && line.search(/\S/) === rootIndentationLevel
+    )
+  ) {
     return splitLines.map((line) => line.trim().slice(2));
   }
 
@@ -137,6 +117,17 @@ const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
       (indentationLevel === rootIndentationLevel && startsWithHyphen) ||
       indentationLevel > rootIndentationLevel
     ) {
+      if (!currentKey) {
+        const processedT = line.trim().slice(2);
+
+        // eslint-disable-next-line no-param-reassign
+        (obj as Record<string, unknown>)[processedT] = undefined;
+
+        currentKey = processedT;
+
+        return obj;
+      }
+
       const val = startsWithHyphen ? processedLine.slice(2) : processedLine;
       currentList.push(val);
 
@@ -152,20 +143,6 @@ const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
 
     return obj;
   }, {});
-
-  // // If previous index within the array is a key (ends with colon)
-  // if (arr[index - 1] && arr[index - 1].trim().endsWith(':') && !lineEndsWithColon) {
-  //   if (processedLine.startsWith('-')) {
-  //     const removeHyphen = processedLine.slice(1).trim();
-  // ! This would keep replacing the value, we need a way of iterating and ensuring that the values are added within an array.
-  // ? Check next value to see if it's a value and not a key or key value?
-
-  //     key[arr[index - 1].trim().slice(0, -1)] = removeHyphen;
-  //     return key;
-  //   }
-  //   key[removedLastChar] = processedLine;
-  //   return key;
-  // }
 
   return processedFrontMatter;
 };

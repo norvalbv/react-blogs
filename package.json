@@ -5,7 +5,6 @@
   "files": [
     "dist/**/*"
   ],
-  "private": false,
   "author": "Benjamin Norval",
   "git repository": "https://github.com/norvalbv/react-blogs",
   "homepage": "https://github.com/norvalbv/react-blogs",

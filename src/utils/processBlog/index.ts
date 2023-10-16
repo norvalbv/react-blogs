@@ -87,7 +87,7 @@ const processBlog = ({ blog, delimeter = '---', showFrontMatter = true }: Props)
     processedFrontMatter = parseFrontMatter(frontMatter);
   }
 
-  return { blog: processedBlog, frontMatter: processedFrontMatter };
+  return { blog: processedBlog, frontMatter: null };
 };
 
 export default processBlog;

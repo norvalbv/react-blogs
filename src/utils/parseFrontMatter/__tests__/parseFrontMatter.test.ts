@@ -86,11 +86,11 @@ describe('parseFrontMatter', () => {
   //   });
   // });
 
-  // test('should output error for incorrectly formatted front matter', () => {
-  //   expect(praseFrontMatter(frontMatterWithArrayAsKey)).toStrictEqual([
-  //     { 'work on YAML.py': ['work on Store'] },
-  //   ]);
-  // });
+  test('should output error for incorrectly formatted front matter', () => {
+    expect(praseFrontMatter(frontMatterWithArrayAsKey)).toStrictEqual([
+      { 'work on YAML.py': ['work on Store'] },
+    ]);
+  });
 
   test('should output error for incorrectly formatted front matter', () => {
     expect(praseFrontMatter(frontMatterNoKey)).toStrictEqual(['apple', 'banana', 'carrot']);
