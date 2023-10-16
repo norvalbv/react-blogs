@@ -20,11 +20,9 @@ const Header = ({ className, description, subtitle, title }: HeaderProps): React
 
   return (
     <header className={className}>
-      <section className="flex w-full flex-col gap-1">
-        <Title {...title}>{title?.label}</Title>
-        <Subtitle {...subtitle}>{subtitle?.label}</Subtitle>
-        <Description {...description}>{description?.label}</Description>
-      </section>
+      <Title {...title}>{title?.label}</Title>
+      <Subtitle {...subtitle}>{subtitle?.label}</Subtitle>
+      <Description {...description}>{description?.label}</Description>
     </header>
   );
 };
