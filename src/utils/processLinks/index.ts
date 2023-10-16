@@ -48,7 +48,7 @@ type Props = {
 
 const processLink = ({ allBlogs, blog, paramKey }: Props): string => {
   const processedLinks = blog.replaceAll(regexWithBrackets, (val, group) => {
-    const linkWithoutBrackets = group;
+    const linkWithoutBrackets = group as string;
 
     const name = val.match(regexForLinkName);
     const linkName = name ? name[1] : null;

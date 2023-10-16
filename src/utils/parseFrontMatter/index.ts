@@ -24,38 +24,39 @@ import { FrontMatter } from 'types';
  * { title: 'hello', categories: { subcategories: ['dogs', 'cats', 'dolphins', 'tigers'] } };
  */
 
-const KeyValueAllMatch = /^([^:]+):\s*(.*)$/;
+// const KeyValueAllMatch = /^([^:]+):\s*(.*)$/;
 const KeyValueMatch = /:\s*(.*)$/;
 
-const isValidYAMLLine = (line: string) => {
-  /**
-   * Matches the following in a the shape of [string, string, string]
-   *
-   * The full string of characters that match.
-   * The portion of the string matched by the first capturing group (text before the colon (THE KEY)).
-   * The portion of the string matched by the second capturing group (text after the colon, leading whitespace (THE VALUE)).
-   */
-  const match = line.match(KeyValueAllMatch);
-  if (!match) return false;
-  const value = match[2].trim();
-  console.log(/:/.test(value), value);
-  // if (/:/.test(value)) {
-  //
-  //   return /^["'].*[:].*["']$/.test(value);
-  // }
-  return true;
-};
+// const isValidYAMLLine = (line: string) => {
+//   /**
+//    * Matches the following in a the shape of [string, string, string]
+//    *
+//    * The full string of characters that match.
+//    * The portion of the string matched by the first capturing group (text before the colon (THE KEY)).
+//    * The portion of the string matched by the second capturing group (text after the colon, leading whitespace (THE VALUE)).
+//    */
+//   const match = line.match(KeyValueAllMatch);
+//   if (!match) return false;
+//   const value = match[2].trim();
+//   console.log(/:/.test(value), value);
+//   // if (/:/.test(value)) {
+//   //
+//   //   return /^["'].*[:].*["']$/.test(value);
+//   // }
+//   return true;
+// };
 
 // If value contains a colon, it must be enclosed in quotes or escaped
 
 const frontMatterBasicCheck = (lines: string[], indentationLevel: number): boolean => {
-  return lines.every((line) =>
-    line.includes(':') ||
-    line.trim().startsWith('-') ||
-    line.search(/\S/) > indentationLevel ||
-    line.trim().startsWith('#')
-      ? true
-      : false
+  return lines.every(
+    (line) =>
+      !!(
+        line.includes(':') ||
+        line.trim().startsWith('-') ||
+        line.search(/\S/) > indentationLevel ||
+        line.trim().startsWith('#')
+      )
   );
 };
 
@@ -71,13 +72,14 @@ const returnTrueValue = (value: string): boolean | string | number => {
 
   if (processVal === 'true' || processVal === 'yes') {
     return true;
-  } else if (processVal === 'false' || processVal === 'no') {
-    return false;
-  } else if (!isNaN(Number(value))) {
-    return Number(value);
-  } else {
-    return value.trim();
   }
+  if (processVal === 'false' || processVal === 'no') {
+    return false;
+  }
+  if (!Number.isNaN(value)) {
+    return Number(value);
+  }
+  return value.trim();
 };
 
 /**
@@ -107,7 +109,7 @@ const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
   let currentKey: string = '';
   let currentList: string[] = [];
 
-  const processedFrontMatter = splitLines.reduce((obj, line, index, arr) => {
+  const processedFrontMatter = splitLines.reduce((obj, line) => {
     const processedLine = line.trim();
     const startsWithHyphen = line.trim().startsWith('-');
     const isAComment = line.trim().startsWith('#');
@@ -122,8 +124,8 @@ const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
     if (indentationLevel === rootIndentationLevel && !startsWithHyphen) {
       const [key, value] = line.split(KeyValueMatch);
 
-      console.log(value);
-      (obj as Record<string, any>)[key.trim()] = returnTrueValue(value);
+      // eslint-disable-next-line no-param-reassign
+      (obj as Record<string, unknown>)[key.trim()] = returnTrueValue(value);
 
       currentKey = key.trim();
       currentList = [];
@@ -139,7 +141,8 @@ const praseFrontMatter = (frontMatter: string): FrontMatter | string[] => {
       currentList.push(val);
 
       if (currentList.length && currentKey) {
-        (obj as Record<string, any>)[currentKey] = currentList;
+        // eslint-disable-next-line no-param-reassign
+        (obj as Record<string, unknown>)[currentKey] = currentList;
 
         currentKey = '';
       }
