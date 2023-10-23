@@ -1,18 +1,6 @@
 import * as yaml from 'js-yaml';
 import { FrontMatter } from 'types';
 
-type ReturnValue = {
-  blog: string;
-  frontMatter: FrontMatter;
-};
-
-type Props = {
-  blog: string;
-  delimeter?: string;
-  showFrontMatter?: boolean;
-  metadata?: Record<string, string>;
-};
-
 const matchOutsideStrings = (input: string, regex: RegExp): number[] => {
   let inSingleQuoteString = false;
   let inDoubleQuoteString = false;
@@ -25,6 +13,11 @@ const matchOutsideStrings = (input: string, regex: RegExp): number[] => {
 
   const isInString = (index: number): boolean => {
     for (let i = 0; i < index; i += 1) {
+      if (/\n/.test(input[i])) {
+        inSingleQuoteString = false;
+        inDoubleQuoteString = false;
+      }
+
       if (input[i] === "'" && (i === 0 || input[i - 1] !== '\\')) {
         inSingleQuoteString = !inSingleQuoteString;
       } else if (input[i] === '"' && (i === 0 || input[i - 1] !== '\\')) {
@@ -51,6 +44,18 @@ const escapeRegExp = (str: string): string => {
   return str.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 };
 
+type ReturnValue = {
+  blog: string;
+  frontMatter: FrontMatter;
+};
+
+type Props = {
+  blog: string;
+  delimeter?: string;
+  showFrontMatter?: boolean;
+  metadata?: Record<string, string>;
+};
+
 const processBlog = ({
   blog,
   delimeter = '---',
@@ -66,8 +71,6 @@ const processBlog = ({
   // Used to only match delimeters that are not inside strings.
   const frontMatterIndexes = matchOutsideStrings(blog, new RegExp(encodedDelimeter, 'g'));
 
-  // console.log(frontMatterIndexes, blog);
-
   // Contains no front matter, fall back to metadata
   if (frontMatterIndexes.length < 2) {
     return {
@@ -79,8 +82,6 @@ const processBlog = ({
   const frontMatter = blog.slice(0, (frontMatterIndexes[1] || 0) + delimeter.length);
 
   const processedBlog = blog.slice((frontMatterIndexes[1] || 0) + delimeter.length).trim();
-
-  // console.log(frontMatter);
 
   if (frontMatter.length <= delimeter.length * 2) {
     return {
@@ -95,8 +96,6 @@ const processBlog = ({
       frontMatter: null,
     };
   }
-
-  // console.log(frontMatter);
 
   let processedFrontMatter: FrontMatter;
   try {

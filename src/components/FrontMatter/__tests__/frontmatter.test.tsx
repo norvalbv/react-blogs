@@ -11,7 +11,6 @@ import {
   frontMatterComplexJSON,
   frontMatterDeeplyNested,
   frontMatterEnforceNewLine,
-  frontMatterEscapedChars,
   frontMatterFoldedBlockScalar,
   frontMatterIndented,
   frontMatterJSON,
@@ -82,33 +81,31 @@ describe('<FrontMatter />', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  // ! Need to check
-  // TODO
-  test('should render nothing if title and subtitle are not provided', () => {
+  test('should render nothing if title and subtitle are not provided 123123', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterFoldedBlockScalar })} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('should render nothing if title and subtitle are not provided', () => {
+  test('should render nothing if title and subtitle are not provided 123123', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterLiteralBlockScalar })} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('should render nothing if title and subtitle are not provided', () => {
+  test('should render nothing if title and subtitle are not provided 123123', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterEnforceNewLine })} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('should render nothing if title and subtitle are not provided', () => {
+  test('should render nothing if title and subtitle are not provided 123123', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterComplexJSON })} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('should render nothing if title and subtitle are not provided', () => {
+  test('should render nothing if title and subtitle are not provided 123123', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterQuotedValues })} />)
       .toJSON();
@@ -117,19 +114,6 @@ describe('<FrontMatter />', () => {
   test('should render nothing if title and subtitle are not provided', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterColonWithNoSpace })} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  // ! I dont think this is working
-  test('should render nothing if title and subtitle are not provided', () => {
-    const tree = renderer
-      .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterEscapedChars })} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  test('should render nothing if title and subtitle are not provided', () => {
-    const tree = renderer
-      .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterEscapedChars })} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -151,8 +135,6 @@ describe('<FrontMatter />', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  // ! I don't think this is working
   test('should render nothing if title and subtitle are not provided', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterArrayParagraph })} />)

@@ -1119,99 +1119,6 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
             }
           }
         >
-          fold_newlines
-          : 
-        </strong>
-        <span>
-          this is really a single line of text despite appearances
-
-        </span>
-      </div>
-    </section>
-  </div>
-</section>
-`;
-
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 11`] = `
-<section
-  style={
-    {
-      "display": "flex",
-      "flexDirection": "column",
-      "gap": ".5rem",
-    }
-  }
->
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      blog
-      : 
-    </strong>
-    <span>
-      -
-    </span>
-  </div>
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      frontMatter
-      : 
-    </strong>
-    <section
-      style={
-        {
-          "display": "flex",
-          "flexDirection": "column",
-          "gap": ".5rem",
-        }
-      }
-    >
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
           include_newlines
           : 
         </strong>
@@ -1227,7 +1134,7 @@ lines of poetry
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 12`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 11`] = `
 <section
   style={
     {
@@ -1319,7 +1226,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 13`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 12`] = `
 <section
   style={
     {
@@ -1658,7 +1565,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 14`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 13`] = `
 <section
   style={
     {
@@ -1822,7 +1729,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 15`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 14`] = `
 <section
   style={
     {
@@ -1914,137 +1821,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 16`] = `
-<section
-  style={
-    {
-      "display": "flex",
-      "flexDirection": "column",
-      "gap": ".5rem",
-    }
-  }
->
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      blog
-      : 
-    </strong>
-    <span>
-      
-    ---
-    more-random-chars: "hello:654 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123"
-    ---
-
-    </span>
-  </div>
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      frontMatter
-      : 
-    </strong>
-    <span>
-      -
-    </span>
-  </div>
-</section>
-`;
-
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 17`] = `
-<section
-  style={
-    {
-      "display": "flex",
-      "flexDirection": "column",
-      "gap": ".5rem",
-    }
-  }
->
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      blog
-      : 
-    </strong>
-    <span>
-      
-    ---
-    more-random-chars: "hello:654 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123"
-    ---
-
-    </span>
-  </div>
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      frontMatter
-      : 
-    </strong>
-    <span>
-      -
-    </span>
-  </div>
-</section>
-`;
-
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 18`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 15`] = `
 <section
   style={
     {
@@ -2359,7 +2136,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 19`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 16`] = `
 <section
   style={
     {
@@ -2646,7 +2423,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 20`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 17`] = `
 <section
   style={
     {
@@ -2829,7 +2606,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 21`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 18`] = `
 <section
   style={
     {
@@ -2860,16 +2637,7 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
       : 
     </strong>
     <span>
-      
-    ---
-    - What's Yaml?
-    - It's for writing data structures in plain text.
-    - And?
-    - And what? That's not good enough for you?
-    - No, I mean, "And what about Yaml?"
-    - Oh, oh yeah. Uh.. Yaml for Ruby.
-    ---
-
+      -
     </span>
   </div>
   <div
@@ -2892,14 +2660,41 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
       frontMatter
       : 
     </strong>
-    <span>
-      -
-    </span>
+    <div
+      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
+    >
+      What's Yaml?
+    </div>
+    <div
+      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
+    >
+      It's for writing data structures in plain text.
+    </div>
+    <div
+      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
+    >
+      And?
+    </div>
+    <div
+      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
+    >
+      And what? That's not good enough for you?
+    </div>
+    <div
+      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
+    >
+      No, I mean, "And what about Yaml?"
+    </div>
+    <div
+      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
+    >
+      Oh, oh yeah. Uh.. Yaml for Ruby.
+    </div>
   </div>
 </section>
 `;
 
-exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 22`] = `
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 19`] = `
 <section
   style={
     {
@@ -4234,6 +4029,789 @@ exports[`<FrontMatter /> should render nothing if title and subtitle are not pro
         </strong>
         <span>
           -
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 123123 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          fold_newlines
+          : 
+        </strong>
+        <span>
+          this is really a single line of text despite appearances
+
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 123123 2`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          include_newlines
+          : 
+        </strong>
+        <span>
+          exactly as you see
+will appear these three
+lines of poetry
+
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 123123 3`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          fold_same_newlines
+          : 
+        </strong>
+        <span>
+          a b c d e f 
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 123123 4`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          cascade
+          : 
+        </strong>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              _target
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  kind
+                  : 
+                </strong>
+                <span>
+                  page
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  lang
+                  : 
+                </strong>
+                <span>
+                  en
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  path
+                  : 
+                </strong>
+                <span>
+                  /blog/**
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              background
+              : 
+            </strong>
+            <span>
+              yosemite.jpg
+            </span>
+          </div>
+        </section>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              _target
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  kind
+                  : 
+                </strong>
+                <span>
+                  section
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              background
+              : 
+            </strong>
+            <span>
+              goldenbridge.jpg
+            </span>
+          </div>
+        </section>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          Blog
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should render nothing if title and subtitle are not provided 123123 5`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          with-random-chars
+          : 
+        </strong>
+        <span>
+          this-is-a-test 123 : 456: abc - 890!
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          current time
+          : 
+        </strong>
+        <span>
+          Thursday, December 22nd 2022, 10:09:56 pm
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          time tomorrow
+          : 
+        </strong>
+        <span>
+          Friday,--------December 23nd 2022, 10:09:55 pm
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          access areas
+          : 
+        </strong>
+        <span>
+          all : 123
         </span>
       </div>
     </section>

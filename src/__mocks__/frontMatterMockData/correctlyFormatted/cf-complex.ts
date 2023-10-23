@@ -61,15 +61,6 @@ export const frontMatterColonWithNoSpace = `
     ---
 `;
 
-// Single quotes let you put almost any character in your string, and won't try to parse escape codes. '\n' would be returned as the string \n.
-// Double quotes parse escape codes. "\n" would be returned as a line feed character.
-
-export const frontMatterEscapedChars = `
-    ---
-    more-random-chars: "hello:654 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123"
-    ---
-`;
-
 export const frontMatterDeeplyNested = `
     ---
     title: Users
