@@ -10,6 +10,7 @@ type Props = {
   blog: string;
   delimeter?: string;
   showFrontMatter?: boolean;
+  metadata?: Record<string, string>;
 };
 
 const matchOutsideStrings = (input: string, regex: RegExp): number[] => {
@@ -50,7 +51,12 @@ const escapeRegExp = (str: string): string => {
   return str.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 };
 
-const processBlog = ({ blog, delimeter = '---', showFrontMatter = true }: Props): ReturnValue => {
+const processBlog = ({
+  blog,
+  delimeter = '---',
+  showFrontMatter = true,
+  metadata,
+}: Props): ReturnValue => {
   // Encode the delimeter to ensure it doesn't mess up in the regex search.
   const encodedDelimeter = escapeRegExp(delimeter);
 
@@ -62,20 +68,28 @@ const processBlog = ({ blog, delimeter = '---', showFrontMatter = true }: Props)
 
   // console.log(frontMatterIndexes, blog);
 
-  // Contains no front matter
+  // Contains no front matter, fall back to metadata
   if (frontMatterIndexes.length < 2) {
     return {
       blog,
-      frontMatter: null,
+      frontMatter: metadata ?? null,
     };
   }
 
   const frontMatter = blog.slice(0, (frontMatterIndexes[1] || 0) + delimeter.length);
+
   const processedBlog = blog.slice((frontMatterIndexes[1] || 0) + delimeter.length).trim();
 
   // console.log(frontMatter);
 
-  if (!showFrontMatter || frontMatter.length <= 5) {
+  if (frontMatter.length <= delimeter.length * 2) {
+    return {
+      blog,
+      frontMatter: metadata ?? null,
+    };
+  }
+
+  if (!showFrontMatter) {
     return {
       blog: processedBlog,
       frontMatter: null,

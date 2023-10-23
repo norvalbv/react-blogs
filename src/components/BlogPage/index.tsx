@@ -3,6 +3,7 @@ import {
   frontMatterComplex,
   frontMatterEscapedChars,
   frontMatterSpecialCharacters,
+  frontMatterVoid,
 } from '__mocks__/frontMatterMockData';
 import FrontMatter from 'components/FrontMatter';
 import Markdown from 'markdown-to-jsx';
@@ -127,13 +128,14 @@ const BlogPage = ({
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: frontMatterColonWithNoSpace,
+          metadata: currentBlog.metadata,
+          blog: frontMatterVoid,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
         setBlog({
-          blog: 'hi',
+          blog,
           frontMatter,
         });
       })
