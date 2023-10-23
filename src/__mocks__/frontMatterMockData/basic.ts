@@ -2,6 +2,6 @@
 // ! Works without Quotes, is this a problem?
 export const frontMatterSpecialCharacters = `
     ---
-    title: "!@£$%^&*()[]{};\':|,./<>?\`~"
+    title: "!@£$%^&*()[]{};':|,./<>?\`~"
     ---
 `;

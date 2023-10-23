@@ -18,7 +18,10 @@ const Title = ({ children, className, level = 2, testId }: TitleProps): ReactEle
 
   if (level === 1) {
     return (
-      <h1 className={className || styles.h1} data-testid={testId || `${children} Subtitle`}>
+      <h1
+        className={className || styles.h1}
+        data-testid={testId || `${typeof children === 'string' ? children : ''} Subtitle`}
+      >
         {children}
       </h1>
     );
@@ -26,14 +29,20 @@ const Title = ({ children, className, level = 2, testId }: TitleProps): ReactEle
 
   if (level === 2) {
     return (
-      <h2 className={className || styles.h2} data-testid={testId || `${children} Subtitle`}>
+      <h2
+        className={className || styles.h2}
+        data-testid={testId || `${typeof children === 'string' ? children : ''} Subtitle`}
+      >
         {children}
       </h2>
     );
   }
 
   return (
-    <h3 className={className || styles.h3} data-testid={testId || `${children} Subtitle`}>
+    <h3
+      className={className || styles.h3}
+      data-testid={testId || `${typeof children === 'string' ? children : ''} Subtitle`}
+    >
       {children}
     </h3>
   );
