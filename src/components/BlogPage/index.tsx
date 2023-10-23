@@ -1,7 +1,6 @@
 import {
-  frontMatterEmpty,
-  frontMatterSpecialCharacters,
-  frontMatterVoid,
+  frontMatterIncomplete,
+  frontMatterIncorrectIndentation,
 } from '__mocks__/frontMatterMockData';
 import FrontMatter from 'components/FrontMatter';
 import Markdown from 'markdown-to-jsx';
@@ -127,13 +126,13 @@ const BlogPage = ({
 
         const { blog, frontMatter } = processBlog({
           metadata: currentBlog.metadata,
-          blog: frontMatterSpecialCharacters,
+          blog: frontMatterIncorrectIndentation,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
         setBlog({
-          blog: 'hi',
+          blog,
           frontMatter,
         });
       })

@@ -1882,6 +1882,1541 @@ exports[`<FrontMatter /> should handle folded block scalars correctly 1`] = `
 </section>
 `;
 
+exports[`<FrontMatter /> should handle incomplete front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      
+    ---
+    one: foo
+    two: bar
+    three: baz
+
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle incorrect indentation in front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          error
+          : 
+        </strong>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              name
+              : 
+            </strong>
+            <span>
+              YAMLException
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              reason
+              : 
+            </strong>
+            <span>
+              can not read a block mapping entry; a multiline key may not be an implicit key
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              mark
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  name
+                  : 
+                </strong>
+                <span>
+                  -
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  buffer
+                  : 
+                </strong>
+                <span>
+                  
+    title: hello
+    categories:
+    subcategories:
+    - dogs
+    cats
+    dolphins
+    - tigers
+    
+
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  position
+                  : 
+                </strong>
+                <span>
+                  98
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  line
+                  : 
+                </strong>
+                <span>
+                  7
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  column
+                  : 
+                </strong>
+                <span>
+                  12
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  snippet
+                  : 
+                </strong>
+                <span>
+                   5 |     - dogs
+ 6 |     cats
+ 7 |     dolphins
+ 8 |     - tigers
+-----------------^
+ 9 |     
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              message
+              : 
+            </strong>
+            <span>
+              can not read a block mapping entry; a multiline key may not be an implicit key (8:13)
+
+ 5 |     - dogs
+ 6 |     cats
+ 7 |     dolphins
+ 8 |     - tigers
+-----------------^
+ 9 |     
+            </span>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle incorrect indentation in front matter correctly 2`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          error
+          : 
+        </strong>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              name
+              : 
+            </strong>
+            <span>
+              YAMLException
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              reason
+              : 
+            </strong>
+            <span>
+              can not read a block mapping entry; a multiline key may not be an implicit key
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              mark
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  name
+                  : 
+                </strong>
+                <span>
+                  -
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  buffer
+                  : 
+                </strong>
+                <span>
+                  
+    title: hello
+    categories:
+    subcategories:
+    - dogs
+    cats
+    dolphins
+    - tigers
+    
+
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  position
+                  : 
+                </strong>
+                <span>
+                  98
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  line
+                  : 
+                </strong>
+                <span>
+                  7
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  column
+                  : 
+                </strong>
+                <span>
+                  12
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  snippet
+                  : 
+                </strong>
+                <span>
+                   5 |     - dogs
+ 6 |     cats
+ 7 |     dolphins
+ 8 |     - tigers
+-----------------^
+ 9 |     
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              message
+              : 
+            </strong>
+            <span>
+              can not read a block mapping entry; a multiline key may not be an implicit key (8:13)
+
+ 5 |     - dogs
+ 6 |     cats
+ 7 |     dolphins
+ 8 |     - tigers
+-----------------^
+ 9 |     
+            </span>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle incorrect indentation in front matter correctly 3`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          error
+          : 
+        </strong>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              name
+              : 
+            </strong>
+            <span>
+              YAMLException
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              reason
+              : 
+            </strong>
+            <span>
+              can not read a block mapping entry; a multiline key may not be an implicit key
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              mark
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  name
+                  : 
+                </strong>
+                <span>
+                  -
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  buffer
+                  : 
+                </strong>
+                <span>
+                  
+    title: hello
+    categories:
+    subcategories:
+    - dogs
+    cats
+    dolphins
+    - tigers
+    
+
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  position
+                  : 
+                </strong>
+                <span>
+                  98
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  line
+                  : 
+                </strong>
+                <span>
+                  7
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  column
+                  : 
+                </strong>
+                <span>
+                  12
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  snippet
+                  : 
+                </strong>
+                <span>
+                   5 |     - dogs
+ 6 |     cats
+ 7 |     dolphins
+ 8 |     - tigers
+-----------------^
+ 9 |     
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              message
+              : 
+            </strong>
+            <span>
+              can not read a block mapping entry; a multiline key may not be an implicit key (8:13)
+
+ 5 |     - dogs
+ 6 |     cats
+ 7 |     dolphins
+ 8 |     - tigers
+-----------------^
+ 9 |     
+            </span>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle incorrectly formatted deep list in front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          error
+          : 
+        </strong>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              name
+              : 
+            </strong>
+            <span>
+              YAMLException
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              reason
+              : 
+            </strong>
+            <span>
+              bad indentation of a mapping entry
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              mark
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  name
+                  : 
+                </strong>
+                <span>
+                  -
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  buffer
+                  : 
+                </strong>
+                <span>
+                  
+    title: Users
+    user: BenjiTheGreat
+        group: admin
+        -  permissions: all
+        -  access areas: all
+        timezone: GMT    
+    
+
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  position
+                  : 
+                </strong>
+                <span>
+                  55
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  line
+                  : 
+                </strong>
+                <span>
+                  3
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  column
+                  : 
+                </strong>
+                <span>
+                  13
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  snippet
+                  : 
+                </strong>
+                <span>
+                   1 | 
+ 2 |     title: Users
+ 3 |     user: BenjiTheGreat
+ 4 |         group: admin
+------------------^
+ 5 |         -  permissions: all
+ 6 |         -  access areas: all
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              message
+              : 
+            </strong>
+            <span>
+              bad indentation of a mapping entry (4:14)
+
+ 1 | 
+ 2 |     title: Users
+ 3 |     user: BenjiTheGreat
+ 4 |         group: admin
+------------------^
+ 5 |         -  permissions: all
+ 6 |         -  access areas: all
+            </span>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
 exports[`<FrontMatter /> should handle indented front matter correctly 1`] = `
 <section
   style={
@@ -2776,6 +4311,190 @@ exports[`<FrontMatter /> should handle special characters in front matter correc
 </section>
 `;
 
+exports[`<FrontMatter /> should handle special characters in front matter correctly 2`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          !@£$%^&*()[]{};':|,./&lt;&gt;?\`~
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle special characters in front matter correctly 3`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          !@£$%^&*()[]{};':|,./&lt;&gt;?\`~
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
 exports[`<FrontMatter /> should handle string types correctly 1`] = `
 <section
   style={
@@ -3026,6 +4745,368 @@ exports[`<FrontMatter /> should handle tilde delimiters correctly 1`] = `
         <span>
           norvalbv
         </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle unquoted values in front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -----December 22nd 2022, 10:09:55 pm
+    access areas: all : 123
+    ---
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          error
+          : 
+        </strong>
+        <section
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              name
+              : 
+            </strong>
+            <span>
+              YAMLException
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              reason
+              : 
+            </strong>
+            <span>
+              bad indentation of a mapping entry
+            </span>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              mark
+              : 
+            </strong>
+            <section
+              style={
+                {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": ".5rem",
+                }
+              }
+            >
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  name
+                  : 
+                </strong>
+                <span>
+                  -
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  buffer
+                  : 
+                </strong>
+                <span>
+                  
+    categories-hello asd: hello:hi123 : 456 12£: :123:123:123:123 ''123'123'123'123'123'123
+    more-random-chars: 'hello:654 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123'
+    current time: Thursday,
+
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  position
+                  : 
+                </strong>
+                <span>
+                  39
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  line
+                  : 
+                </strong>
+                <span>
+                  1
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  column
+                  : 
+                </strong>
+                <span>
+                  38
+                </span>
+              </div>
+              <div
+                style={
+                  {
+                    "flexWrap": "wrap",
+                    "gap": "4px",
+                    "paddingLeft": "1rem",
+                  }
+                }
+              >
+                <strong
+                  className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+                  style={
+                    {
+                      "textTransform": "capitalize",
+                    }
+                  }
+                >
+                  snippet
+                  : 
+                </strong>
+                <span>
+                   1 |  ... 
+ 2 |  ... egories-hello asd: hello:hi123 : 456 12£: :123:123:123:123 ''12 ...
+-----------------------------------------^
+ 3 |  ... e-random-chars: 'hello:654 : 123 12£: :123:123:123:123 ''123'12 ...
+ 4 |  ... rent time: Thursday,
+                </span>
+              </div>
+            </section>
+          </div>
+          <div
+            style={
+              {
+                "flexWrap": "wrap",
+                "gap": "4px",
+                "paddingLeft": "1rem",
+              }
+            }
+          >
+            <strong
+              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+              style={
+                {
+                  "textTransform": "capitalize",
+                }
+              }
+            >
+              message
+              : 
+            </strong>
+            <span>
+              bad indentation of a mapping entry (2:39)
+
+ 1 |  ... 
+ 2 |  ... egories-hello asd: hello:hi123 : 456 12£: :123:123:123:123 ''12 ...
+-----------------------------------------^
+ 3 |  ... e-random-chars: 'hello:654 : 123 12£: :123:123:123:123 ''123'12 ...
+ 4 |  ... rent time: Thursday,
+            </span>
+          </div>
+        </section>
       </div>
     </section>
   </div>
