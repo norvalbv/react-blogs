@@ -248,3 +248,7 @@ The parameter key in the URL for the current blog. For example, `title=my-blog`
 - [ ] Better customisation for the react-blogs homepage
 - [ ] Ability to add custom components inside each blog, for example rendering a hero
 - [ ] Add better accessibility to rendered JSX nodes
+
+
+# License
+This project is licensed under the terms of the MIT license. See our [LICENSE](./LICENSE) for more information.
