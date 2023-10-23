@@ -6,7 +6,7 @@ export default (): Config => {
     preset: 'ts-jest',
     testEnvironment: 'jsdom',
     transform: {
-      '^.+\\.tsx?$': 'ts-jest',
+      '\\.css\\.ts$': '@vanilla-extract/jest-transform',
     },
     moduleDirectories: ['node_modules', 'src'],
   };

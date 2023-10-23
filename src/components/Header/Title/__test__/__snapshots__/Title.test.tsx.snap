@@ -3,6 +3,7 @@
 exports[`<Title /> should render correctly with all props 1`] = `
 <h1
   className="text-h2"
+  data-testid="Test ID"
 >
   Test title
 </h1>
