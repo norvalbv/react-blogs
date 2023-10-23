@@ -14,7 +14,7 @@ export const frontMatterBasicWithStringTypes = `
     ---
 `;
 
-export const frontMatterNoKey = `
+export const frontMatterArray = `
     ---
     - apple
     - banana
@@ -41,7 +41,7 @@ export const frontMatterBasicWithContent = `
     Content
 `;
 
-export const frontMatterBasicListHyphenated = `
+export const frontMatterBasicList = `
     ---
     title: Members
     users:
@@ -61,19 +61,6 @@ export const frontMatterIndented = `
     ---
 `;
 
-export const frontMatterNumerousIndented = `
-    ---
-    title: Members
-    users:
-      BenjiTheGreat
-      Steve_The_Great
-      John The Great
-    permissions:
-      members area
-      chat
-    ---
-`;
-
 export const frontMatterWithComments = `
     ---
     # =============================================
@@ -90,3 +77,25 @@ export const frontMatterWithArrayAsKey = `
       - work on Store 
     ---
 `;
+
+export const frontMatterPreFormatted = `
+    ---
+    title: { label: 'hello', color: 'red' }
+    users: [ benji, bob, mike ]
+    ---
+`;
+
+export const frontMatterArrayParagraph = `
+    ---
+    - What's Yaml?
+    - It's for writing data structures in plain text.
+    - And?
+    - And what? That's not good enough for you?
+    - No, I mean, "And what about Yaml?"
+    - Oh, oh yeah. Uh.. Yaml for Ruby.
+    ---
+`;
+
+export const frontMatterEmpty = '';
+
+export const frontMatterVoid = 'No Front Matter';

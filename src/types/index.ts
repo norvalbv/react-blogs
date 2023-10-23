@@ -19,15 +19,12 @@ export type Blogs = {
 
 export type DefBlogs = Blogs[];
 
-export type FrontMatter =
-  | Record<string, number | string | boolean | (number | string | boolean)[]>
-  | (number | string | boolean)[]
-  | null;
+export type FrontMatter = Record<string, unknown> | unknown[] | null;
 
 export type DefTheme = {
   theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';
   code?: keyof typeof themes;
-  overrides?: MarkdownToJSX.Overrides & { metadata?: { component: ElementType; props: Object } } & {
-    frontmatter?: { component: ElementType; props: Object };
+  overrides?: MarkdownToJSX.Overrides & { metadata?: { component: ElementType; props: object } } & {
+    frontmatter?: { component: ElementType; props: object };
   };
 };

@@ -79,6 +79,8 @@ export const defaults = {
   badge: style({
     borderRadius: '0.5rem',
     padding: '0 0.5rem',
-    width: 'auto',
+    width: 'max-content',
+    display: 'inline-block',
+    margin: '0 0.25rem',
   }),
 };

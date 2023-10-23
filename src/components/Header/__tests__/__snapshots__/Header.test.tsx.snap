@@ -4,82 +4,46 @@ exports[`<Header /> should render correctly with all props 1`] = `
 <header
   className="grid grid-cols-1 gap-1"
 >
-  <section
-    className="flex w-full flex-col gap-1"
+  <h2
+    className="text-2xl"
+    data-testid="Test title Subtitle"
   >
-    <h2
-      className="text-h2"
-    >
-      Test title
-    </h2>
-    <h4
-      className="text-sm"
-      data-testid="Test subtitle Subtitle"
-    >
-      Test subtitle
-    </h4>
-    <p
-      className="text-neutral-N00"
-      data-testid="Test Description Description"
-    >
-      Test Description
-    </p>
-  </section>
+    Test title
+  </h2>
+  <h4
+    className="text-sm"
+    data-testid="Test subtitle Subtitle"
+  >
+    Test subtitle
+  </h4>
+  <p
+    className="text-neutral-500"
+    data-testid="Test Description Description"
+  >
+    Test Description
+  </p>
 </header>
 `;
 
 exports[`<Header /> should render correctly with subtitle provided 1`] = `
 <header>
-  <section
-    className="flex w-full flex-col gap-1"
+  <h4
+    className="themes_styles_h4__xd3hr9o defaults_defaults_h4__cxs0rs3"
+    data-testid="Test subtitle Subtitle"
   >
-    <h1
-      className="mb-[4.5rem] w-max border-b pb-2 text-5xl font-semibold md:text-6xl"
-    >
-      H
-      e
-      l
-      l
-      o
-       
-      W
-      o
-      r
-      l
-      d
-      !
-    </h1>
-    <h4
-      data-testid="Test subtitle Subtitle"
-    >
-      Test subtitle
-    </h4>
-  </section>
+    Test subtitle
+  </h4>
 </header>
 `;
 
 exports[`<Header /> should render correctly with title provided 1`] = `
 <header>
-  <section
-    className="flex w-full flex-col gap-1"
+  <h2
+    className="themes_styles_h2__xd3hr9m defaults_defaults_h2__cxs0rs1"
+    data-testid="Test title Subtitle"
   >
-    <h1
-      className="mb-[4.5rem] w-max border-b pb-2 text-5xl font-semibold md:text-6xl"
-    >
-      H
-      e
-      l
-      l
-      o
-       
-      W
-      o
-      r
-      l
-      d
-      !
-    </h1>
-  </section>
+    Test title
+  </h2>
 </header>
 `;
 

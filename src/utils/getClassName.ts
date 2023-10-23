@@ -3,7 +3,7 @@ import { DefTheme } from 'types';
 
 function isOverrideWithProps(
   value: MarkdownToJSX.Override
-): value is { component?: React.ElementType; props: Object } {
+): value is { component?: React.ElementType; props: object } {
   return typeof value === 'object' && 'props' in value;
 }
 

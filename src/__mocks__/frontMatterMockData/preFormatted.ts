@@ -11,3 +11,5 @@ export const frontMatterPreFormattedObject: FrontMatter = {
 };
 
 export const frontMatterPreFormattedArray: FrontMatter = ['apple', 'banana', 'carrot'];
+
+export const frontMatterPreFormattedDeeplyNested: FrontMatter = [[['apple', 'banana', 'carrot']]];

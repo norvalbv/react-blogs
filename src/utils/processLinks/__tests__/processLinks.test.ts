@@ -1,6 +1,5 @@
-import processLink from '..';
-
 import { Blogs } from 'types';
+import processLink from '..';
 
 const blogs: Blogs[] = [
   {
