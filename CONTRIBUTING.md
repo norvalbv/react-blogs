@@ -54,3 +54,7 @@ This section guides you through submitting an enhancement suggestion for CONTRIB
 ## Styleguides
 
 Before committing, ensure you have followed our [STYLEGUIDE](/STYLEGUIDE.md)
+
+## License
+
+We use the MIT license for React Blogs, for more information reaed our [LICENSE](./LICENSE) file.
