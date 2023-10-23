@@ -182,7 +182,7 @@ describe('<FrontMatter />', () => {
     const tree = renderer
       .create(
         <FrontMatter
-          frontmatter={processBlog({ blog: frontMatterWithSemiColonDelim, delimeter: ';;;' })}
+          frontmatter={processBlog({ blog: frontMatterWithSemiColonDelim, delimiter: ';;;' })}
         />
       )
       .toJSON();
@@ -192,7 +192,7 @@ describe('<FrontMatter />', () => {
     const tree = renderer
       .create(
         <FrontMatter
-          frontmatter={processBlog({ blog: frontMatterWithYAMLDelim, delimeter: '-- YAML --' })}
+          frontmatter={processBlog({ blog: frontMatterWithYAMLDelim, delimiter: '-- YAML --' })}
         />
       )
       .toJSON();
@@ -202,7 +202,7 @@ describe('<FrontMatter />', () => {
     const tree = renderer
       .create(
         <FrontMatter
-          frontmatter={processBlog({ blog: frontMatterWithTildeDelim, delimeter: '~~~' })}
+          frontmatter={processBlog({ blog: frontMatterWithTildeDelim, delimiter: '~~~' })}
         />
       )
       .toJSON();
@@ -212,7 +212,7 @@ describe('<FrontMatter />', () => {
     const tree = renderer
       .create(
         <FrontMatter
-          frontmatter={processBlog({ blog: frontMatterWithDotDelim, delimeter: '...' })}
+          frontmatter={processBlog({ blog: frontMatterWithDotDelim, delimiter: '...' })}
         />
       )
       .toJSON();

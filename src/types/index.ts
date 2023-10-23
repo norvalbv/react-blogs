@@ -11,7 +11,7 @@ export type Blogs = {
   readonly id: string;
   frontMatter?: {
     showFrontMatter?: boolean;
-    delimeter?: string;
+    delimiter?: string;
     position?: 'start' | 'end';
   };
   url: string;

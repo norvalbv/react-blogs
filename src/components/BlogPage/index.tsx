@@ -123,7 +123,7 @@ const BlogPage = ({
         const { blog, frontMatter } = processBlog({
           metadata: currentBlog.metadata,
           blog: blogWithProcessedLinks,
-          delimeter: currentBlog.frontMatter?.delimeter,
+          delimiter: currentBlog.frontMatter?.delimiter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 

@@ -34,7 +34,6 @@ These are some of the VS Code extensions that we use on a daily basis to help ai
 - [Colour Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight): `naumovs.color-highlight`
 - [Jest Snapshot Testing Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=tlent.jest-snapshot-language-support) `tlent.jest-snapshot-language-support`
 - [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors): `yoavbls.pretty-ts-errors`
-- [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss): `bradlc.vscode-tailwindcss`
 
 ---
 
