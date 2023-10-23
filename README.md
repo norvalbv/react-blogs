@@ -248,4 +248,4 @@ The parameter key in the URL for the current blog. For example, `title=my-blog`
 
 
 # License
-This project is licensed under the terms of the MIT license. See our [LICENSE](./LICENSE) for more information.
+This project is licensed under the terms of the MIT license. See our [LICENSE](https://github.com/norvalbv/react-blogs/blob/main/LICENSE) for more information.

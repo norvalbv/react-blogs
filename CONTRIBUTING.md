@@ -57,4 +57,4 @@ Before committing, ensure you have followed our [STYLEGUIDE](/STYLEGUIDE.md)
 
 ## License
 
-We use the MIT license for React Blogs, for more information reaed our [LICENSE](./LICENSE) file.
+We use the MIT license for React Blogs, for more information reaed our [LICENSE](https://github.com/norvalbv/react-blogs/blob/main/LICENSE) file.
