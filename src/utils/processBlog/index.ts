@@ -80,7 +80,6 @@ const processBlog = ({
   }
 
   const frontMatter = blog.slice(0, (frontMatterIndexes[1] || 0) + delimeter.length);
-
   const processedBlog = blog.slice((frontMatterIndexes[1] || 0) + delimeter.length).trim();
 
   if (frontMatter.length <= delimeter.length * 2) {
@@ -103,7 +102,7 @@ const processBlog = ({
       frontMatter.trim().slice(delimeter.length, -delimeter.length)
     ) as FrontMatter;
   } catch (error) {
-    processedFrontMatter = { error } as FrontMatter;
+    processedFrontMatter = { error: 'Incorrectly formatted Front Matter' } as FrontMatter;
   }
 
   return { blog: processedBlog, frontMatter: processedFrontMatter };
