@@ -10,7 +10,7 @@ Listed benefits:
 - Easy set up
 - Default styling and easy overrides
 - Automatic link processing
-- Automatic front matter parser (coming soon)
+- Automatic front matter parser
 - Typescript ready
 
 # Installation
@@ -123,10 +123,10 @@ A description component that renders the title for your react blog. Renders p el
 ```
 This is the URL for that blog.
 
-- frontMatter *(optional)*: (COMING SOON)
+- frontMatter *(optional)*:
 ```tsx
 { 
-  showFrontMatter?: boolean; // Optional - Default false
+  showFrontMatter?: boolean; // Optional - Default true
   position?: 'top' | 'bottom' // Optional - default undefined (setting position to top)
   /**
    * Optional delimeter for your front matter, for example '---', '-- YAML --', or ';;;'
@@ -136,10 +136,7 @@ This is the URL for that blog.
   delimeter?: string;
 }
 ```
-If your blog contains front matter React Blogs allows you parse it and render out the data inside your blog, each component that you can customise. This is perfect if you are wanting to display this data at the top of your blog, for example, reading time, date created, list of users, etc. For more information about how to work with your front matter in React Blogs, see our more detailed front matter section. 
-
-NOTE: The ability to render front matter in components and style it is coming soon, this feature is NOT implemented yet.
-
+If your blog contains front matter, React Blogs allows you parse it and render out the data inside your blog. You can optionally override and customise the styling from inside your overrides section. This is perfect if you are wanting to display data in blog, for example, reading time, date created, list of users, etc. If no front matter is present, React Blogs will use the data defined in your metadata to render front matter. Lastly, if no front matter or metadata is provided, nothing will be renderered here. You can not display either your front matter or metadata by simply setting `showFrontMatter` to false.
 
 - metadata *(optional)*:
 ```tsx
