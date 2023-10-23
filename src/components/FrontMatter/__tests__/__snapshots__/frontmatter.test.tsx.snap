@@ -1181,1348 +1181,6 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
 </section>
 `;
 
-exports[`<FrontMatter /> should handle complex front matter correctly 1`] = `
-<section
-  style={
-    {
-      "display": "flex",
-      "flexDirection": "column",
-      "gap": ".5rem",
-    }
-  }
->
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      blog
-      : 
-    </strong>
-    <span>
-      &lt;span class="alert alert-info"&gt;This is an alert&lt;/span&gt;
-
-    ## YAML Front Matter
-    Add YAML front matter to documents to extend the metadata that is supplied to your project's templates.
-
-    \`\`\`yaml
-    ---
-    username: jonschlinkert
-    ---
-    \`\`\`
-    This is probably most useful when:
-    1. You need to use the same or similar templates on a number of different projects
-    1. You want to supply data to the templates that won't typically be found in package.json
-    </span>
-  </div>
-  <div
-    style={
-      {
-        "flexWrap": "wrap",
-        "gap": "4px",
-        "paddingLeft": undefined,
-      }
-    }
-  >
-    <strong
-      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-      style={
-        {
-          "textTransform": "capitalize",
-        }
-      }
-    >
-      frontMatter
-      : 
-    </strong>
-    <section
-      style={
-        {
-          "display": "flex",
-          "flexDirection": "column",
-          "gap": ".5rem",
-        }
-      }
-    >
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          root
-          : 
-        </strong>
-        <span>
-          _gh_pages
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          dest
-          : 
-        </strong>
-        <span>
-          &lt;%= site.root %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          assets
-          : 
-        </strong>
-        <span>
-          &lt;%= site.dest %&gt;/assets
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          date
-          : 
-        </strong>
-        <span>
-          &lt;%= new Date() %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          data
-          : 
-        </strong>
-        <span>
-          data
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          templates
-          : 
-        </strong>
-        <span>
-          templates
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          pages
-          : 
-        </strong>
-        <span>
-          &lt;%= site.templates %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          includes
-          : 
-        </strong>
-        <span>
-          &lt;%= site.templates %&gt;/includes
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          layouts
-          : 
-        </strong>
-        <span>
-          &lt;%= site.templates %&gt;/layouts
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          layoutext
-          : 
-        </strong>
-        <span>
-          .hbs
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          layout
-          : 
-        </strong>
-        <span>
-          default
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          styles
-          : 
-        </strong>
-        <span>
-          styles
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          components
-          : 
-        </strong>
-        <span>
-          &lt;%= site.styles %&gt;/components
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          helpers
-          : 
-        </strong>
-        <span>
-          &lt;%= site.templates %&gt;/helpers
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          plugins
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          brand
-          : 
-        </strong>
-        <span>
-          ASSEMBLE
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          title
-          : 
-        </strong>
-        <span>
-          BOILERPLATE
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          lead
-          : 
-        </strong>
-        <span>
-          The most awe inspiring static site boilerplate in Northern Kentucky.
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          version
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.version %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          author
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.author.name %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          name
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.name %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          description
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.description %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          url
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          homepage
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.homepage %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          repo
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.homepage %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          issues
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.bugs.url %&gt;?state=open
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          ghpages
-          : 
-        </strong>
-        <span>
-          https://&lt;%= site.username %&gt;.github.io/&lt;%= pkg.name %&gt;/
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          domain
-          : 
-        </strong>
-        <span>
-          http://assemble.io/
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          about
-          : 
-        </strong>
-        <span>
-          &lt;%= site.url.domain %&gt;/about/
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          blog
-          : 
-        </strong>
-        <span>
-          &lt;%= site.url.domain %&gt;/blog/
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          download
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          source
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.homepage %&gt;/archive/master.zip
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          latest
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.homepage %&gt;/master/dist/&lt;%= pkg.name %&gt;-&lt;%= pkg.version %&gt;.min.js
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          analytics
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          alexa
-          : 
-        </strong>
-        <span>
-          lpTeh1awA400OE
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          google
-          : 
-        </strong>
-        <section
-          style={
-            {
-              "display": "flex",
-              "flexDirection": "column",
-              "gap": ".5rem",
-            }
-          }
-        >
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              id
-              : 
-            </strong>
-            <span>
-              UA-XXXXXXXX-YY
-            </span>
-          </div>
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              domain
-              : 
-            </strong>
-            <span>
-              assemble.github.io
-            </span>
-          </div>
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              siteid
-              : 
-            </strong>
-            <span>
-              -
-            </span>
-          </div>
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              tags
-              : 
-            </strong>
-            <span>
-              FOO-012345
-            </span>
-          </div>
-        </section>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          disqus
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          enabled
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          shortname
-          : 
-        </strong>
-        <span>
-          &lt;%= pkg.name %&gt;
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          social
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          twitter
-          : 
-        </strong>
-        <section
-          style={
-            {
-              "display": "flex",
-              "flexDirection": "column",
-              "gap": ".5rem",
-            }
-          }
-        >
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              via
-              : 
-            </strong>
-            <span>
-              jonschlinkert
-            </span>
-          </div>
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              username
-              : 
-            </strong>
-            <span>
-              jonschlinkert
-            </span>
-          </div>
-          <div
-            style={
-              {
-                "flexWrap": "wrap",
-                "gap": "4px",
-                "paddingLeft": "1rem",
-              }
-            }
-          >
-            <strong
-              className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-              style={
-                {
-                  "textTransform": "capitalize",
-                }
-              }
-            >
-              related
-              : 
-            </strong>
-            <span>
-              jonschlinkert:Assemble core team.
-            </span>
-          </div>
-        </section>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          facebook
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          linkedin
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          gplus
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-      <div
-        style={
-          {
-            "flexWrap": "wrap",
-            "gap": "4px",
-            "paddingLeft": "1rem",
-          }
-        }
-      >
-        <strong
-          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
-          style={
-            {
-              "textTransform": "capitalize",
-            }
-          }
-        >
-          hn
-          : 
-        </strong>
-        <span>
-          -
-        </span>
-      </div>
-    </section>
-  </div>
-</section>
-`;
-
 exports[`<FrontMatter /> should handle custom YAML delimiters correctly 1`] = `
 <section
   style={
@@ -3066,6 +1724,67 @@ exports[`<FrontMatter /> should handle dot delimiters correctly 1`] = `
         </span>
       </div>
     </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle empty front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      No Front Matter
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <span>
+      -
+    </span>
   </div>
 </section>
 `;
@@ -3965,6 +2684,98 @@ exports[`<FrontMatter /> should handle semicolon delimiters correctly 1`] = `
 </section>
 `;
 
+exports[`<FrontMatter /> should handle special characters in front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          !@£$%^&*()[]{};':|,./&lt;&gt;?\`~
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
 exports[`<FrontMatter /> should handle string types correctly 1`] = `
 <section
   style={
@@ -4357,6 +3168,67 @@ exports[`<FrontMatter /> should handle various basic types correctly 1`] = `
         </span>
       </div>
     </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle void front matter correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <span>
+      -
+    </span>
   </div>
 </section>
 `;

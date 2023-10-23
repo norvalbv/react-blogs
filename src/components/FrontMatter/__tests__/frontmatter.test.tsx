@@ -7,9 +7,9 @@ import {
   frontMatterBasicWithStringTypes,
   frontMatterBasicWithVariousTypes,
   frontMatterColonWithNoSpace,
-  frontMatterComplex,
   frontMatterComplexJSON,
   frontMatterDeeplyNested,
+  frontMatterEmpty,
   frontMatterEnforceNewLine,
   frontMatterFoldedBlockScalar,
   frontMatterIndented,
@@ -17,6 +17,8 @@ import {
   frontMatterLiteralBlockScalar,
   frontMatterPreFormatted,
   frontMatterQuotedValues,
+  frontMatterSpecialCharacters,
+  frontMatterVoid,
   frontMatterWithArrayAsKey,
   frontMatterWithComments,
   frontMatterWithDotDelim,
@@ -145,12 +147,6 @@ describe('<FrontMatter />', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('should handle complex front matter correctly', () => {
-    const tree = renderer
-      .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterComplex })} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
   test('should handle semicolon delimiters correctly', () => {
     const tree = renderer
       .create(
@@ -188,6 +184,24 @@ describe('<FrontMatter />', () => {
           frontmatter={processBlog({ blog: frontMatterWithDotDelim, delimeter: '...' })}
         />
       )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle void front matter correctly', () => {
+    const tree = renderer
+      .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterEmpty })} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle empty front matter correctly', () => {
+    const tree = renderer
+      .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterVoid })} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle special characters in front matter correctly', () => {
+    const tree = renderer
+      .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterSpecialCharacters })} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

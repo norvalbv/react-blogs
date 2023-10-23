@@ -10,7 +10,6 @@ users
 # This page has cson front matter!
 `;
 
-// are hyphens allowed as keys?
 export const frontMatterUnquotedValues = `
     ---
     categories-hello asd: hello:hi123 : 456 12£: :123:123:123:123 ''123'123'123'123'123'123

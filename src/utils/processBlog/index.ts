@@ -106,7 +106,7 @@ const processBlog = ({
     processedFrontMatter = { error } as FrontMatter;
   }
 
-  return { blog: processedBlog || '-', frontMatter: processedFrontMatter };
+  return { blog: processedBlog, frontMatter: processedFrontMatter };
 };
 
 export default processBlog;

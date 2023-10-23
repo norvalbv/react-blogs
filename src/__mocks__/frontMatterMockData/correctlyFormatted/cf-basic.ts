@@ -95,3 +95,7 @@ export const frontMatterArrayParagraph = `
     - Oh, oh yeah. Uh.. Yaml for Ruby.
     ---
 `;
+
+export const frontMatterEmpty = '';
+
+export const frontMatterVoid = 'No Front Matter';
