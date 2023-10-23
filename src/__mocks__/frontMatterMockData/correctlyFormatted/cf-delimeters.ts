@@ -1,29 +1,27 @@
 export const frontMatterWithSemiColonDelim = `
     ;;;
     title: custom-delim
-    user: BenjiTheGreat
+    user: norvalbv
     ;;;
 `;
 
 export const frontMatterWithYAMLDelim = `
     -- YAML --
-    title: YAML
-    user: BenjiTheGreat
+    title: custom-delim
+    user: norvalbv
     -- YAML --
 `;
 
 export const frontMatterWithTildeDelim = `
     ~~~
-    title: custom-delims
-    foo: bar
-    version: 2
+    title: custom-delim
+    user: norvalbv
     ~~~
 `;
 
 export const frontMatterWithDotDelim = `
     ...
-    title: custom-delims
-    foo: bar
-    version: 2
+    title: custom-delim
+    user: norvalbv
     ...
 `;

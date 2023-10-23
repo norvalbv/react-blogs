@@ -19,6 +19,10 @@ import {
   frontMatterQuotedValues,
   frontMatterWithArrayAsKey,
   frontMatterWithComments,
+  frontMatterWithDotDelim,
+  frontMatterWithSemiColonDelim,
+  frontMatterWithTildeDelim,
+  frontMatterWithYAMLDelim,
 } from '__mocks__/frontMatterMockData';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -144,6 +148,46 @@ describe('<FrontMatter />', () => {
   test('should handle complex front matter correctly', () => {
     const tree = renderer
       .create(<FrontMatter frontmatter={processBlog({ blog: frontMatterComplex })} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle semicolon delimiters correctly', () => {
+    const tree = renderer
+      .create(
+        <FrontMatter
+          frontmatter={processBlog({ blog: frontMatterWithSemiColonDelim, delimeter: ';;;' })}
+        />
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle custom YAML delimiters correctly', () => {
+    const tree = renderer
+      .create(
+        <FrontMatter
+          frontmatter={processBlog({ blog: frontMatterWithYAMLDelim, delimeter: '-- YAML --' })}
+        />
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle tilde delimiters correctly', () => {
+    const tree = renderer
+      .create(
+        <FrontMatter
+          frontmatter={processBlog({ blog: frontMatterWithTildeDelim, delimeter: '~~~' })}
+        />
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should handle dot delimiters correctly', () => {
+    const tree = renderer
+      .create(
+        <FrontMatter
+          frontmatter={processBlog({ blog: frontMatterWithDotDelim, delimeter: '...' })}
+        />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

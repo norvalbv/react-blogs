@@ -2523,6 +2523,122 @@ exports[`<FrontMatter /> should handle complex front matter correctly 1`] = `
 </section>
 `;
 
+exports[`<FrontMatter /> should handle custom YAML delimiters correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          custom-delim
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          user
+          : 
+        </strong>
+        <span>
+          norvalbv
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
 exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
 <section
   style={
@@ -2832,6 +2948,122 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
             </section>
           </div>
         </section>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle dot delimiters correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          custom-delim
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          user
+          : 
+        </strong>
+        <span>
+          norvalbv
+        </span>
       </div>
     </section>
   </div>
@@ -3617,6 +3849,122 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
 </section>
 `;
 
+exports[`<FrontMatter /> should handle semicolon delimiters correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          custom-delim
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          user
+          : 
+        </strong>
+        <span>
+          norvalbv
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
 exports[`<FrontMatter /> should handle string types correctly 1`] = `
 <section
   style={
@@ -3750,6 +4098,122 @@ exports[`<FrontMatter /> should handle string types correctly 1`] = `
         </strong>
         <span>
           10
+        </span>
+      </div>
+    </section>
+  </div>
+</section>
+`;
+
+exports[`<FrontMatter /> should handle tilde delimiters correctly 1`] = `
+<section
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": ".5rem",
+    }
+  }
+>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      blog
+      : 
+    </strong>
+    <span>
+      -
+    </span>
+  </div>
+  <div
+    style={
+      {
+        "flexWrap": "wrap",
+        "gap": "4px",
+        "paddingLeft": undefined,
+      }
+    }
+  >
+    <strong
+      className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+      style={
+        {
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      frontMatter
+      : 
+    </strong>
+    <section
+      style={
+        {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": ".5rem",
+        }
+      }
+    >
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          title
+          : 
+        </strong>
+        <span>
+          custom-delim
+        </span>
+      </div>
+      <div
+        style={
+          {
+            "flexWrap": "wrap",
+            "gap": "4px",
+            "paddingLeft": "1rem",
+          }
+        }
+      >
+        <strong
+          className="themes_styles_strong__xd3hr9t defaults_defaults_strong__cxs0rs7"
+          style={
+            {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+          user
+          : 
+        </strong>
+        <span>
+          norvalbv
         </span>
       </div>
     </section>
