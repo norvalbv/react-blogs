@@ -65,9 +65,9 @@ export const frontMatterNumerousIndented = `
     ---
     title: Members
     users:
-      BenjiTheGreat
-      Steve_The_Great
-      John The Great
+    - BenjiTheGreat
+    - Steve_The_Great
+    - John The Great
     permissions:
       members area
       chat

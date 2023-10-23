@@ -1,15 +1,9 @@
-import {
-  frontMatterDeeplyNested,
-  frontMatterPreFormatted,
-  frontMatterWithArrayAsKey,
-} from '__mocks__/frontMatterMockData';
-import { frontMatterPreFormattedObject } from '__mocks__/frontMatterMockData/preFormatted';
-import Badge from 'components/Badge';
+import FrontMatter from 'components/FrontMatter';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
-import { Blogs, DefTheme, FrontMatter } from 'types';
+import { Blogs, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { getClassName, processBlog, processLinks } from 'utils';
 
 const UnorderedListComponent = ({
@@ -41,7 +35,7 @@ const CodeComponent = ({
       theme={
         themes[props.theme?.code || defaultTheme[props.theme?.theme || 'PLAIN_DARK'].prismTheme]
       }
-      language={'tsx' || ''}
+      language="tsx"
       code={children}
     >
       {({ style, tokens, getLineProps, getTokenProps }): ReactElement => (
@@ -66,7 +60,7 @@ const CodeComponent = ({
       theme={
         themes[props.theme?.code || defaultTheme[props.theme?.theme || 'PLAIN_DARK'].prismTheme]
       }
-      language={'tsx' || ''}
+      language="tsx"
       code={children}
     >
       {({ style }): ReactElement => (
@@ -93,7 +87,7 @@ const BlogPage = ({
 }: BlogProps): ReactElement | null => {
   const [blog, setBlog] = useState<{
     blog: string | null;
-    frontMatter: FrontMatter | null;
+    frontMatter: FrontMatterType | null;
   }>({
     blog: null,
     frontMatter: null,
@@ -117,9 +111,9 @@ const BlogPage = ({
     }
     const { file } = currentBlog;
 
-    const fileLink2 = new URL(file, import.meta.url);
+    const fileLink = new URL(file, import.meta.url);
 
-    fetch(fileLink2)
+    fetch(fileLink)
       .then((res) => {
         return res.text();
       })
@@ -143,10 +137,6 @@ const BlogPage = ({
 
   if (!blog.blog) return null;
 
-  const frontmatter = Array.isArray(blog.frontMatter)
-    ? blog.frontMatter
-    : blog.frontMatter && Object.entries(blog.frontMatter);
-
   const FrontMatterOverrideComponent = defTheme?.overrides?.frontmatter?.component;
 
   return (
@@ -164,43 +154,7 @@ const BlogPage = ({
             {...defTheme?.overrides?.metadata?.props}
           />
         ) : (
-          frontmatter && (
-            <section
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '.25rem',
-              }}
-            >
-              {frontmatter.map((entry, i) => {
-                const isKeyValue = Array.isArray(entry);
-                return (
-                  <Fragment key={entry.toString() + i.toString()}>
-                    {isKeyValue ? (
-                      <div style={{ display: 'flex', gap: '4px' }}>
-                        <strong className={styles.strong} style={{ textTransform: 'capitalize' }}>
-                          {entry[0]}:
-                        </strong>
-                        {Array.isArray(entry[1]) ? (
-                          <div style={{ display: 'flex', gap: '4px' }}>
-                            {entry[1].map((entry, i) => (
-                              <Badge tag={entry.toString()} key={entry + i.toString()} />
-                            ))}
-                          </div>
-                        ) : (
-                          entry[1]
-                        )}
-                      </div>
-                    ) : (
-                      <span>
-                        {entry} {i !== frontmatter.length - 1 && '• '}
-                      </span>
-                    )}
-                  </Fragment>
-                );
-              })}
-            </section>
-          )
+          <FrontMatter frontmatter={blog.frontMatter} />
         )}
         <section>
           <Markdown

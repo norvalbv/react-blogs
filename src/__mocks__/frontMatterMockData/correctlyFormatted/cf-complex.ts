@@ -67,7 +67,7 @@ export const frontMatterColonWithNoSpace = `
 
 export const frontMatterEscapedChars = `
     ---
-    more-random-chars: 'hello:654 : 123 12£: :123:123:123:123 \'\'123\'123\'123\'123\'123\'123'
+    more-random-chars: "hello:654 : 123 12£: :123:123:123:123 ''123'123'123'123'123'123"
     ---
 `;
 
@@ -75,13 +75,13 @@ export const frontMatterDeeplyNestedWithHyphens = `
     ---
     title: Users
     user: BenjiTheGreat
-        group: admin
-        permissions:
-        - login
-        - logout
-        - chat
-        - access control
-        timezone: GMT    
+    group: admin
+    permissions:
+    - login
+    - logout
+    - chat
+    - access control
+    timezone: GMT    
     ---
 `;
 
@@ -95,7 +95,12 @@ export const frontMatterDeeplyNested = `
           logout
           chat
           access control
-        timezone: GMT    
+        timezone: GMT
+    - SnakeTheBate:
+        permissions:
+          login
+          logout
+        timezone: EST   
     ---
 `;
 
@@ -238,15 +243,6 @@ export const frontMatterComplex = `
     linkedin:       false
     gplus:          false
     hn:             false
-    google:         false
-
-    # Sharing
-    sharing:
-    twitter:        false
-    facebook:       false
-    gplus:          false
-    hn:             false
-    google:         false
     ---
 
     <span class="alert alert-info">This is an alert</span>
