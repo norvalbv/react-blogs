@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 export const frontMatterFoldedBlockScalar = `
     ---
     fold_newlines: >
@@ -58,7 +57,7 @@ export const frontMatterQuotedValues = `
 
 export const frontMatterColonWithNoSpace = `
     ---
-    windows_path: c:\windows
+    windows_path: c:\\windows
     ---
 `;
 
@@ -71,35 +70,21 @@ export const frontMatterEscapedChars = `
     ---
 `;
 
-export const frontMatterDeeplyNestedWithHyphens = `
-    ---
-    title: Users
-    user: BenjiTheGreat
-    group: admin
-    permissions:
-    - login
-    - logout
-    - chat
-    - access control
-    timezone: GMT    
-    ---
-`;
-
 export const frontMatterDeeplyNested = `
     ---
     title: Users
     users: 
     - BenjiTheGreat:
         permissions:
-          login
-          logout
-          chat
-          access control
+        -  login
+        -  logout
+        -  chat
+        -  access control
         timezone: GMT
     - SnakeTheBate:
         permissions:
-          login
-          logout
+        -  login
+        -  logout
         timezone: EST   
     ---
 `;
@@ -113,29 +98,12 @@ export const frontMatterArraysAndObjects = `
         name: steve
         sport: baseball
       - more
+      - info
       -
         python: rocks
         perl: papers
         ruby: scissorses
    ---
-`;
-
-export const frontMatterPreFormatted = `
-    ---
-    title: { label: 'hello', color: 'red' }
-    users: [ benji, bob, mike ]
-    ---
-`;
-
-export const frontMatterArrayParagraph = `
-    ---
-    - What's Yaml?
-    - It's for writing data structures in plain text.
-    - And?
-    - And what? That's not good enough for you?
-    - No, I mean, "And what about Yaml?"
-    - Oh, oh yeah. Uh.. Yaml for Ruby.
-    ---
 `;
 
 export const frontMatterComplex = `

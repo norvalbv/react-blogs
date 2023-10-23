@@ -1,3 +1,9 @@
+import {
+  frontMatterColonWithNoSpace,
+  frontMatterComplex,
+  frontMatterEscapedChars,
+  frontMatterSpecialCharacters,
+} from '__mocks__/frontMatterMockData';
 import FrontMatter from 'components/FrontMatter';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
@@ -121,13 +127,13 @@ const BlogPage = ({
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          blog: blogWithProcessedLinks,
+          blog: frontMatterColonWithNoSpace,
           delimeter: currentBlog.frontMatter?.delimeter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
 
         setBlog({
-          blog,
+          blog: 'hi',
           frontMatter,
         });
       })
