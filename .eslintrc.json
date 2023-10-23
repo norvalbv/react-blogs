@@ -31,7 +31,8 @@
       {
         "devDependencies": [
           "src/globals.d.ts",
-          "**/*.config.{js,ts}" // configs
+          "**/*.config.{js,ts}", // configs
+          "**/*.test.tsx" // test files
         ],
         "optionalDependencies": false
       }
