@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
 import Header, { HeaderProps } from '..';
@@ -25,19 +24,17 @@ describe('<Header />', () => {
   test('should render correctly with all props', () => {
     const tree = renderer
       .create(
-        <BrowserRouter>
-          <HeaderWithAllProps
-            className="grid grid-cols-1 gap-1"
-            title="Test title"
-            titleClassName="text-h2"
-            subtitle="Test subtitle"
-            subtitleClassName="text-sm"
-            description="Test Description"
-            descriptionClassName="text-neutral-N00"
-            animation={false}
-            level={2}
-          />
-        </BrowserRouter>
+        <HeaderWithAllProps
+          className="grid grid-cols-1 gap-1"
+          title="Test title"
+          titleClassName="text-h2"
+          subtitle="Test subtitle"
+          subtitleClassName="text-sm"
+          description="Test Description"
+          descriptionClassName="text-neutral-N00"
+          animation={false}
+          level={2}
+        />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
