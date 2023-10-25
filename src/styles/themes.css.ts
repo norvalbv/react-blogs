@@ -2,7 +2,7 @@ import { createTheme, createThemeContract, style } from '@vanilla-extract/css';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { defaults } from './defaults.css';
 
-const themeContract = createThemeContract({
+export const themeContract = createThemeContract({
   a: { color: null },
   blockquote: { color: null },
   em: { color: null },
@@ -109,7 +109,7 @@ export const styles = {
   blockquote: style([defaults.blockquote, { ...themeContract.blockquote }]),
   code: defaults.code,
   em: style([defaults.em, { ...themeContract.em }]),
-  h1: style([defaults.h1, { ...themeContract.h1 }]),
+  h1: style([defaults.h1, { color: themeContract.h1.color }]),
   h2: style([defaults.h2, { ...themeContract.h2 }]),
   h3: style([defaults.h3, { ...themeContract.h3 }]),
   h4: style([defaults.h4, { ...themeContract.h4 }]),

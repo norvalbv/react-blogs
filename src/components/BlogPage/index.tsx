@@ -72,7 +72,7 @@ const CodeComponent = ({
   );
 };
 
-type BlogProps = {
+export type BlogProps = {
   allBlogs: Blogs[];
   paramKey: Lowercase<string>;
   callback?: () => void;

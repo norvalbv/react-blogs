@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
-import { styles } from 'styles/themes.css';
+import { styles, themes } from 'styles/themes.css';
+import { getClassName } from 'utils';
 
 export type TitleProps = {
   children?: string | ReactElement;
@@ -8,10 +9,15 @@ export type TitleProps = {
    * Default 2.
    */
   level?: 1 | 2 | 3;
-  testId?: string;
+  props?: unknown;
 };
 
-const Title = ({ children, className, level = 2, testId }: TitleProps): ReactElement | null => {
+export const Title = ({
+  children,
+  className,
+  level = 2,
+  ...props
+}: TitleProps): ReactElement | null => {
   if (!children) {
     return null;
   }
@@ -19,8 +25,10 @@ const Title = ({ children, className, level = 2, testId }: TitleProps): ReactEle
   if (level === 1) {
     return (
       <h1
-        className={className || styles.h1}
-        data-testid={testId || `${typeof children === 'string' ? children : ''} Subtitle`}
+        className={
+          className || getClassName('h1') || `${themes.SHADES_OF_GREEN.nodes} ${styles.h1}`
+        }
+        {...props}
       >
         {children}
       </h1>
@@ -30,8 +38,10 @@ const Title = ({ children, className, level = 2, testId }: TitleProps): ReactEle
   if (level === 2) {
     return (
       <h2
-        className={className || styles.h2}
-        data-testid={testId || `${typeof children === 'string' ? children : ''} Subtitle`}
+        className={
+          className || getClassName('h2') || `${themes.SHADES_OF_GREEN.nodes} ${styles.h2}`
+        }
+        {...props}
       >
         {children}
       </h2>
@@ -40,12 +50,10 @@ const Title = ({ children, className, level = 2, testId }: TitleProps): ReactEle
 
   return (
     <h3
-      className={className || styles.h3}
-      data-testid={testId || `${typeof children === 'string' ? children : ''} Subtitle`}
+      className={className || getClassName('h3') || `${themes.SHADES_OF_GREEN.nodes} ${styles.h3}`}
+      {...props}
     >
       {children}
     </h3>
   );
 };
-
-export default Title;
