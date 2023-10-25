@@ -1,17 +1,17 @@
-import { Blogs } from 'types';
+import { Blog } from 'types';
 import processLink from '..';
 
-const blogs: Blogs[] = [
+const blogs: Blog[] = [
   {
     id: 'Memory (RAM)',
     file: 'memory',
-    title: { label: 'What is RAM?' },
+    title: 'What is RAM?',
     url: 'how-memory-works',
   },
   {
     id: 'Memory Heap',
     file: 'memory-heap',
-    title: { label: 'What is the memory heap?' },
+    title: 'What is the memory heap?',
     url: 'what-is-the-memory-heap',
   },
 ];

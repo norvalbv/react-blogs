@@ -3,7 +3,7 @@ import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
-import { Blogs, DefTheme, FrontMatter as FrontMatterType } from 'types';
+import { Blog, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { getClassName, processBlog, processLinks } from 'utils';
 
 const UnorderedListComponent = ({
@@ -73,13 +73,13 @@ const CodeComponent = ({
 };
 
 export type BlogProps = {
-  allBlogs: Blogs[];
+  allBlogs: Blog[];
   paramKey: Lowercase<string>;
   callback?: () => void;
   theme?: DefTheme;
 };
 
-const BlogPage = ({
+export const BlogPage = ({
   allBlogs,
   paramKey,
   callback,
@@ -143,7 +143,7 @@ const BlogPage = ({
   return (
     <article>
       <h1 className={getClassName({ tag: 'h1', theme: defTheme }) || styles.h1}>
-        {currentBlog?.title.label}
+        {currentBlog?.title}
       </h1>
       <div
         {...(currentBlog?.frontMatter?.position === 'end'
@@ -206,5 +206,3 @@ const BlogPage = ({
     </article>
   );
 };
-
-export default BlogPage;

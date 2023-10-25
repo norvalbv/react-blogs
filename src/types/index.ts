@@ -4,10 +4,10 @@ import { ElementType, ReactNode } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
 import { Require } from './utils';
 
-export type Blogs = {
+export type Blog = {
   accessor?: ReactNode;
   file: string | URL;
-  metadata?: Record<string, string>;
+  metadata?: { data: Record<string, string> };
   readonly id: string;
   frontMatter?: {
     showFrontMatter?: boolean;
@@ -17,7 +17,7 @@ export type Blogs = {
   url: string;
 } & Require<HeaderProps, 'title'>;
 
-export type DefBlogs = Blogs[];
+export type DefBlogs = Blog[];
 
 export type FrontMatter = Record<string, unknown> | unknown[] | null;
 

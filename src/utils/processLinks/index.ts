@@ -23,7 +23,7 @@
  * And contains an optional ANCHOR. Replace with KEY e.g., [[how-a-cpu-works]] -> how-a-cpu-works, [[how-a-cpu-works#cpu]] -> how-a-cpu-works
  */
 
-import { Blogs } from 'types';
+import { Blog } from 'types';
 
 // Matches text within double brackets, e.g., "this-would-be-truthy" in [[this-would-be-truthy]]
 const regexWithBrackets = /\[\[(.*?)\]\]/g;
@@ -38,7 +38,7 @@ const regexForLinkAnchor = /#(.*?)(?=\||\]\])/;
 const regexForlinkKey = /\[\[(.*?)(?=\||#|\]\])/;
 
 type Props = {
-  allBlogs: Blogs[];
+  allBlogs: Blog[];
   /**
    * As we can replace all, we can simply replace all instances of links in one function call.
    */

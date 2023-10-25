@@ -1,5 +1,5 @@
 import { MarkdownToJSX } from 'markdown-to-jsx';
-import { styles, themes } from 'styles/themes.css';
+import { Styles, styles, themes } from 'styles/themes.css';
 import { DefTheme } from 'types';
 
 function isOverrideWithProps(
@@ -8,7 +8,7 @@ function isOverrideWithProps(
   return typeof value === 'object' && 'props' in value;
 }
 
-type Props = { tag: string; theme?: DefTheme; className?: string };
+type Props = { tag: keyof Styles; theme?: DefTheme; className?: string };
 
 export const getClassName = ({ tag, theme, className }: Props): string | undefined => {
   if (className) return className;
@@ -18,7 +18,7 @@ export const getClassName = ({ tag, theme, className }: Props): string | undefin
     return override.props.className as string;
   }
 
-  if (!theme || styles[tag]) return undefined;
+  if (!theme || !styles[tag]) return undefined;
 
   return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag]}`;
 };

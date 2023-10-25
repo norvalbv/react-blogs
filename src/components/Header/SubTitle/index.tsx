@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { DefTheme } from 'types';
 import { getClassName, isLabelInProps } from 'utils';
 
-export type SubtitleProps = {
+type SubtitleProps = {
   children?: string | ReactElement;
   className?: string;
   theme?: DefTheme;

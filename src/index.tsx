@@ -1,4 +1,4 @@
-import BlogPage from 'components/BlogPage';
+import { BlogPage } from 'components/BlogPage';
 import React, { ReactElement } from 'react';
 import { themes } from 'styles/themes.css';
 import { DefBlogs, DefTheme } from 'types';
@@ -28,5 +28,5 @@ const Blog = ({ paramKey = 'blog', ...props }: Props): ReactElement => {
 export default Blog;
 export * from 'types/index';
 export * from 'hooks/useBlogs';
-// export * from 'components/BlogPage';
 export * from 'components/Header/Title';
+// export * from 'components/Header';

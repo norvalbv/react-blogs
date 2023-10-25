@@ -104,7 +104,27 @@ export const themes: Themes = {
   },
 };
 
-export const styles = {
+export type Styles = {
+  a: string;
+  blockquote: string;
+  code: string;
+  em: string;
+  h1: string;
+  h2: string;
+  h3: string;
+  h4: string;
+  h5: string;
+  h6: string;
+  inlinecode: string;
+  li: string;
+  metadata: string;
+  p: string;
+  strong: string;
+  ul: string;
+  badge: string;
+};
+
+export const styles: Styles = {
   a: style([defaults.a, { ...themeContract.a }]),
   blockquote: style([defaults.blockquote, { ...themeContract.blockquote }]),
   code: defaults.code,

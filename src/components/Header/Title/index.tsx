@@ -13,7 +13,7 @@ export type TitleProps = {
   props?: unknown;
 };
 
-export const Title = ({
+const Title = ({
   children,
   className,
   level = 2,
@@ -46,3 +46,5 @@ export const Title = ({
     </h3>
   );
 };
+
+export default Title;

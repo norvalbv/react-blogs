@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import renderer from 'react-test-renderer';
 
-import { TitleProps, Title } from '..';
+import Title, { TitleProps } from '..';
 
 const TitleWithAllProps: FC<Required<TitleProps>> = Title;
 
