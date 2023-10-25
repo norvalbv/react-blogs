@@ -14,7 +14,16 @@ describe('<Title />', () => {
   test('should render correctly with all props', () => {
     const tree = renderer
       .create(
-        <TitleWithAllProps className="text-h2" level={1} props={{ testId: 'hi' }}>
+        <TitleWithAllProps
+          className="text-h2"
+          level={1}
+          theme={{
+            theme: undefined,
+            code: undefined,
+            overrides: undefined,
+          }}
+          props={{ testId: 'hi' }}
+        >
           Test title
         </TitleWithAllProps>
       )

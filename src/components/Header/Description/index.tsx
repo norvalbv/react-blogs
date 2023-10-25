@@ -1,24 +1,27 @@
 import React, { ReactElement } from 'react';
-import { styles, themes } from 'styles/themes.css';
-import { getClassName } from 'utils';
+import { DefTheme } from 'types';
+import { getClassName, isLabelInProps } from 'utils';
 
 export type DescriptionProps = {
   children?: string | ReactElement;
   className?: string;
   props?: unknown;
+  theme?: DefTheme;
 };
 
-const Description = ({ children, className, ...props }: DescriptionProps): ReactElement | null => {
+const Description = ({
+  children,
+  className,
+  theme,
+  ...props
+}: DescriptionProps): ReactElement | null => {
   if (!children) {
     return null;
   }
 
   if (typeof children === 'string') {
     return (
-      <p
-        className={className || getClassName('p') || `${themes.SHADES_OF_GREEN.nodes} ${styles.h1}`}
-        {...props}
-      >
+      <p className={getClassName({ tag: 'h1', theme, className })} {...isLabelInProps(props)}>
         {children}
       </p>
     );

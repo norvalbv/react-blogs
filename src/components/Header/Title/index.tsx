@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
-import { styles, themes } from 'styles/themes.css';
 import { DefTheme } from 'types';
-import { getClassName } from 'utils';
+import { getClassName, isLabelInProps } from 'utils';
 
 export type TitleProps = {
   children?: string | ReactElement;
@@ -10,7 +9,7 @@ export type TitleProps = {
    * Default 2.
    */
   level?: 1 | 2 | 3;
-  theme: DefTheme;
+  theme?: DefTheme;
   props?: unknown;
 };
 
@@ -27,14 +26,7 @@ export const Title = ({
 
   if (level === 1) {
     return (
-      <h1
-        className={
-          className ||
-          getClassName('h1', theme) ||
-          `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles.h1}`
-        }
-        {...props}
-      >
+      <h1 className={getClassName({ tag: 'h1', theme, className })} {...isLabelInProps(props)}>
         {children}
       </h1>
     );
@@ -42,28 +34,14 @@ export const Title = ({
 
   if (level === 2) {
     return (
-      <h2
-        className={
-          className ||
-          getClassName('h2') ||
-          `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles.h2}`
-        }
-        {...props}
-      >
+      <h2 className={getClassName({ tag: 'h2', theme, className })} {...isLabelInProps(props)}>
         {children}
       </h2>
     );
   }
 
   return (
-    <h3
-      className={
-        className ||
-        getClassName('h3') ||
-        `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles.h3}`
-      }
-      {...props}
-    >
+    <h3 className={getClassName({ tag: 'h3', theme, className })} {...isLabelInProps(props)}>
       {children}
     </h3>
   );

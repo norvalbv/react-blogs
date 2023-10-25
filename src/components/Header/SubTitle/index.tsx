@@ -1,26 +1,22 @@
 import React, { ReactElement } from 'react';
-import { styles, themes } from 'styles/themes.css';
-import { getClassName } from 'utils';
+import { DefTheme } from 'types';
+import { getClassName, isLabelInProps } from 'utils';
 
 export type SubtitleProps = {
   children?: string | ReactElement;
   className?: string;
+  theme?: DefTheme;
   props?: unknown;
 };
 
-const Subtitle = ({ children, className, ...props }: SubtitleProps): ReactElement | null => {
+const Subtitle = ({ children, className, theme, ...props }: SubtitleProps): ReactElement | null => {
   if (!children) {
     return null;
   }
 
   if (typeof children === 'string') {
     return (
-      <h4
-        className={
-          className || getClassName('h4') || `${themes.SHADES_OF_GREEN.nodes} ${styles.h1}`
-        }
-        {...props}
-      >
+      <h4 className={getClassName({ tag: 'h1', theme, className })} {...isLabelInProps(props)}>
         {children}
       </h4>
     );
