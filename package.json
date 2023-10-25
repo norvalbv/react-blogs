@@ -30,7 +30,8 @@
     "prism-react-renderer": "^2.1.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",

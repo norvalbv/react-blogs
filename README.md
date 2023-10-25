@@ -41,7 +41,7 @@ import Blog, { DefBlogs } from 'react-blogs';
       url: 'how-memory-works',
       frontMatter: {
         showFrontMatter: true;
-        delimeter: '-- YAML --';
+        delimiter: '-- YAML --';
       };
       metadata: {
         'read time': '20 minutes',
