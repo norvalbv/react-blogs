@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import renderer from 'react-test-renderer';
 
-import Title, { TitleProps } from '..';
+import { TitleProps, Title } from '..';
 
 const TitleWithAllProps: FC<Required<TitleProps>> = Title;
 
@@ -14,7 +14,7 @@ describe('<Title />', () => {
   test('should render correctly with all props', () => {
     const tree = renderer
       .create(
-        <TitleWithAllProps testId="Test ID" className="text-h2" level={1}>
+        <TitleWithAllProps className="text-h2" level={1} props={{ testId: 'hi' }}>
           Test title
         </TitleWithAllProps>
       )

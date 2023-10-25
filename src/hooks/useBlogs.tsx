@@ -1,42 +1,27 @@
-// import Header from 'components/Header';
-// import Description from 'components/Header/Description';
-// import Subtitle from 'components/Header/SubTitle';
-// import { TitleProps, Title } from 'components/Header/Title';
-// import React, { ReactElement } from 'react';
-// import { styles, themes } from 'styles/themes.css';
-// import { DefBlogs, DefTheme } from 'types';
+import { DefBlogs, DefTheme } from 'types';
 
-// export type ReturnValue = {
-//   blogs: DefBlogs;
-//   styles: object;
-//   Header: ReactElement;
-//   themes: unknown;
-//   //   Title: ReactElement;
-//   //   Description: ReactElement;
-//   //   Subtitle: ReactElement;
-// };
+export type ReturnValue = {
+  blogs: DefBlogs;
+};
 
-// const Wrapper = ({
-//   component,
-//   theme,
-// }: {
-//   component: ReactElement;
-//   theme: DefTheme;
-// }): ReactElement => {
-//   return <div className={themes[theme?.theme || 'PLAIN_DARK'].nodes}>{component}</div>;
-// };
+type Props = {
+  blogs: DefBlogs;
+  theme: DefTheme;
+};
 
-// export const useBlogs = (blogs: DefBlogs, theme: DefTheme): ReturnValue => {
-//   // const Header = <Wrapper component={<Title>Hello</Title>} theme={theme} />;
-//   const Header = Wrapper({ component: Title({ children: 'hello' }), theme });
+export const useBlogs = ({ blogs, theme }: Props): ReturnValue => {
+  const processedTheme = theme || { theme: 'PLAIN_DARK' };
+  const processedBlogs = blogs.map((blog) => {
+    return {
+      ...blog,
+      title: {
+        ...blog.title,
+        theme: processedTheme,
+      },
+    };
+  });
 
-//   return {
-//     blogs,
-//     styles,
-//     Header,
-//     themes,
-//     // Title,
-//     // Description,
-//     // Subtitle,
-//   };
-// };
+  return {
+    blogs: processedBlogs,
+  };
+};
