@@ -28,5 +28,4 @@ const Blog = ({ paramKey = 'blog', ...props }: Props): ReactElement => {
 export default Blog;
 export * from 'types/index';
 export * from 'hooks/useBlogs';
-export * from 'components/Header/Title';
-// export * from 'components/Header';
+export * from 'components';

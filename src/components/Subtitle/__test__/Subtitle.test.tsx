@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import renderer from 'react-test-renderer';
 
-import Subtitle, { SubtitleProps } from '..';
+import Subtitle, { Props } from '..';
 
-const TitleWithAllProps: FC<Required<SubtitleProps>> = Subtitle;
+const TitleWithAllProps: FC<Required<Props>> = Subtitle;
 
 describe('<Subtitle />', () => {
   test('should render nothing if subtitle is not provided', () => {

@@ -1,21 +1,22 @@
-import { HeaderProps } from 'components/Header';
 import { themes } from 'prism-react-renderer';
 import { ElementType, ReactNode } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
-import { Require } from './utils';
 
 export type Blog = {
   accessor?: ReactNode;
+  description?: string;
   file: string | URL;
-  metadata?: { data: Record<string, string> };
-  readonly id: string;
   frontMatter?: {
     showFrontMatter?: boolean;
     delimiter?: string;
     position?: 'start' | 'end';
   };
+  metadata?: { data: Record<string, string> };
+  readonly id: string;
+  subtitle?: string;
+  title: string;
   url: string;
-} & Require<HeaderProps, 'title'>;
+};
 
 export type DefBlogs = Blog[];
 

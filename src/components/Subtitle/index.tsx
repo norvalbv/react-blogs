@@ -2,14 +2,14 @@ import React, { ReactElement } from 'react';
 import { DefTheme } from 'types';
 import { getClassName, isLabelInProps } from 'utils';
 
-type SubtitleProps = {
+export type Props = {
   children?: string | ReactElement;
   className?: string;
   theme?: DefTheme;
   props?: unknown;
 };
 
-const Subtitle = ({ children, className, theme, ...props }: SubtitleProps): ReactElement | null => {
+const Subtitle = ({ children, className, theme, ...props }: Props): ReactElement | null => {
   if (!children) {
     return null;
   }
