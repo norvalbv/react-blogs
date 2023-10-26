@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import Badge from 'components/Badge';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { styles } from 'styles/themes.css';
 import { FrontMatter as FrontMatterType } from 'types';
 

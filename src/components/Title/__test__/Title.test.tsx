@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import renderer from 'react-test-renderer';
 
 import Title, { TitleProps } from '..';

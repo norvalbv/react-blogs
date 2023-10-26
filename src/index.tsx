@@ -1,6 +1,6 @@
 import { BlogPage } from 'components/BlogPage';
 import useStore from 'hooks/useStore';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { themes } from 'styles/themes.css';
 import { DefBlogs, DefTheme } from 'types';
 import BlogsOverview from './components/BlogsOverview';

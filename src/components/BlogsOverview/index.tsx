@@ -1,5 +1,5 @@
 import { Description, Metadata, Subtitle, Title } from 'components';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { DefBlogs, DefTheme } from 'types';
 import { getClassName } from 'utils';
 

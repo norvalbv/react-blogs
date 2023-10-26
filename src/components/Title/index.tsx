@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { getClassName, isLabelInProps } from 'utils';
 
 export type TitleProps = {

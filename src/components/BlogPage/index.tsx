@@ -1,7 +1,7 @@
 import FrontMatter from 'components/FrontMatter';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
-import React, { Fragment, ReactElement, useEffect, useState } from 'react';
+import { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { Blog, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { getClassName, processBlog, processLinks } from 'utils';
