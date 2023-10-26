@@ -1,4 +1,5 @@
 import { DefBlogs, DefTheme } from 'types';
+import useStore from 'hooks/useStore';
 
 type Props = {
   blogs: DefBlogs;
@@ -11,6 +12,10 @@ type ReturnValue = {
 
 export const useBlogs = ({ blogs, theme }: Props): ReturnValue => {
   const processedTheme = theme || { theme: 'PLAIN_DARK' };
+
+  const setTheme = useStore((state) => state.setTheme);
+  setTheme(theme);
+
   const processedBlogs = blogs.map((blog) => {
     return {
       ...blog,

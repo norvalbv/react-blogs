@@ -1,9 +1,9 @@
 import React, { Fragment, ReactElement } from 'react';
-import { Blog, DefTheme } from 'types';
+import { DefTheme } from 'types';
 import { getClassName } from 'utils';
 
 type Props = {
-  data: Blog;
+  data?: Record<string, unknown>;
   theme?: DefTheme;
   props?: unknown;
 };
@@ -17,12 +17,12 @@ const Metadata = ({ data, theme, ...props }: Props): ReactElement | null => {
     <>
       {MetadataComponent ? (
         <MetadataComponent
-          metadata={data.metadata}
-          className={getClassName({ tag: 'metadata', theme })}
+          metadata={data}
+          className={getClassName({ tag: 'metadata' })}
           {...theme?.overrides?.metadata?.props}
         />
       ) : (
-        <p className={getClassName({ tag: 'metadata', theme })} {...props}>
+        <p className={getClassName({ tag: 'metadata' })} {...props}>
           {Object.entries(data).map(([key, value], i, arr) => (
             <Fragment key={key}>
               <span>{`${key}: ${String(value)}`}</span>

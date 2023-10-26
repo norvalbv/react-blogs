@@ -14,14 +14,12 @@ const BlogsOverview = ({ allBlogs, paramKey, theme }: Props): ReactElement => {
     <section style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {allBlogs.map((blog) => (
         <a href={`?${paramKey}=${blog.url}`} key={blog.id}>
-          <Title level={2} className={getClassName({ tag: 'h2', theme })}>
+          <Title level={2} className={getClassName({ tag: 'h2' })}>
             {blog.title}
           </Title>
-          <Subtitle className={getClassName({ tag: 'h4', theme })}>{blog.subtitle}</Subtitle>
-          <Description className={getClassName({ tag: 'p', theme })}>
-            {blog.description}
-          </Description>
-          <Metadata data={blog} theme={theme} />
+          <Subtitle className={getClassName({ tag: 'h4' })}>{blog.subtitle}</Subtitle>
+          <Description className={getClassName({ tag: 'p' })}>{blog.description}</Description>
+          <Metadata data={blog.metadata} theme={theme} />
         </a>
       ))}
     </section>

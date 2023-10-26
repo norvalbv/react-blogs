@@ -121,7 +121,7 @@ export const BlogPage = ({
         const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
 
         const { blog, frontMatter } = processBlog({
-          metadata: currentBlog.metadata,
+          metadata: currentBlog.metadata?.data,
           blog: blogWithProcessedLinks,
           delimiter: currentBlog.frontMatter?.delimiter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
@@ -142,9 +142,7 @@ export const BlogPage = ({
 
   return (
     <article>
-      <h1 className={getClassName({ tag: 'h1', theme: defTheme }) || styles.h1}>
-        {currentBlog?.title}
-      </h1>
+      <h1 className={getClassName({ tag: 'h1' }) || styles.h1}>{currentBlog?.title}</h1>
       <div
         {...(currentBlog?.frontMatter?.position === 'end'
           ? { style: { display: 'flex', flexDirection: 'column-reverse' } }
@@ -153,7 +151,7 @@ export const BlogPage = ({
         {blog.frontMatter && FrontMatterOverrideComponent ? (
           <FrontMatterOverrideComponent
             frontmatter={blog.frontMatter}
-            // className={getClassName('frontmatter', theme) || styles.metadata}
+            // className={getClassName({ tag: 'frontmatter' }) || styles.metadata}
             {...defTheme?.overrides?.metadata?.props}
           />
         ) : (

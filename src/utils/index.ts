@@ -1,6 +1,6 @@
+import useStore from 'hooks/useStore';
 import { MarkdownToJSX } from 'markdown-to-jsx';
 import { Styles, styles, themes } from 'styles/themes.css';
-import { DefTheme } from 'types';
 
 function isOverrideWithProps(
   value: MarkdownToJSX.Override
@@ -8,10 +8,12 @@ function isOverrideWithProps(
   return typeof value === 'object' && 'props' in value;
 }
 
-type Props = { tag: keyof Styles; theme?: DefTheme; className?: string };
+type Props = { tag: keyof Styles; className?: string };
 
-export const getClassName = ({ tag, theme, className }: Props): string | undefined => {
+export const getClassName = ({ tag, className }: Props): string | undefined => {
   if (className) return className;
+
+  const theme = useStore((state) => state.theme);
 
   const override = theme?.overrides?.[tag];
   if (override && isOverrideWithProps(override) && 'className' in override.props) {
