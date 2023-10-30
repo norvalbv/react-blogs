@@ -1,6 +1,6 @@
+import useGetClassName from 'hooks/useGetClassName';
 import { Fragment, ReactElement } from 'react';
 import { DefTheme } from 'types';
-import { getClassName } from 'utils';
 
 type Props = {
   data?: Record<string, unknown>;
@@ -9,6 +9,8 @@ type Props = {
 };
 
 const Metadata = ({ data, theme, ...props }: Props): ReactElement | null => {
+  const processedClassName = useGetClassName({ tag: 'metadata' });
+
   if (!data) return null;
 
   const MetadataComponent = theme?.overrides?.metadata?.component;
@@ -18,11 +20,11 @@ const Metadata = ({ data, theme, ...props }: Props): ReactElement | null => {
       {MetadataComponent ? (
         <MetadataComponent
           metadata={data}
-          className={getClassName({ tag: 'metadata' })}
+          className={processedClassName}
           {...theme?.overrides?.metadata?.props}
         />
       ) : (
-        <p className={getClassName({ tag: 'metadata' })} {...props}>
+        <p className={processedClassName} {...props}>
           {Object.entries(data).map(([key, value], i, arr) => (
             <Fragment key={key}>
               <span>{`${key}: ${String(value)}`}</span>

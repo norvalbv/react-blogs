@@ -1,10 +1,11 @@
 import FrontMatter from 'components/FrontMatter';
+import useGetClassName from 'hooks/useGetClassName';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { Blog, DefTheme, FrontMatter as FrontMatterType } from 'types';
-import { getClassName, processBlog, processLinks } from 'utils';
+import { processBlog, processLinks } from 'utils';
 
 const UnorderedListComponent = ({
   children,
@@ -93,6 +94,8 @@ export const BlogPage = ({
     frontMatter: null,
   });
 
+  const processedClassName = useGetClassName({ tag: 'h1' });
+
   const blogParam = new URLSearchParams(window.location.search).get(paramKey) || '';
 
   const currentBlogIndex = allBlogs.findIndex((b) => blogParam.includes(b.url));
@@ -142,7 +145,7 @@ export const BlogPage = ({
 
   return (
     <article>
-      <h1 className={getClassName({ tag: 'h1' }) || styles.h1}>{currentBlog?.title}</h1>
+      <h1 className={processedClassName || styles.h1}>{currentBlog?.title}</h1>
       <div
         {...(currentBlog?.frontMatter?.position === 'end'
           ? { style: { display: 'flex', flexDirection: 'column-reverse' } }

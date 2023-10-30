@@ -1,28 +1,26 @@
-import useStore from 'hooks/useStore';
 import { MarkdownToJSX } from 'markdown-to-jsx';
-import { Styles, styles, themes } from 'styles/themes.css';
+import { DefTheme } from 'types';
 
-function isOverrideWithProps(
-  value: MarkdownToJSX.Override
-): value is { component?: React.ElementType; props: object } {
-  return typeof value === 'object' && 'props' in value;
-}
+export const storeTheme = (theme: DefTheme): void =>
+  localStorage.setItem('react-blogs-theme', JSON.stringify(theme));
 
-type Props = { tag: keyof Styles; className?: string };
+export const getTheme = (): DefTheme => {
+  const theme = localStorage.getItem('react-blogs-theme');
 
-export const getClassName = ({ tag, className }: Props): string | undefined => {
-  if (className) return className;
-
-  const theme = useStore((state) => state.theme);
-
-  const override = theme?.overrides?.[tag];
-  if (override && isOverrideWithProps(override) && 'className' in override.props) {
-    return override.props.className as string;
+  if (theme) {
+    return JSON.parse(theme) as DefTheme;
   }
 
-  if (!theme || !styles[tag]) return undefined;
+  const defaultTheme: DefTheme = {
+    theme: 'PLAIN_DARK',
+  };
+  return defaultTheme;
+};
 
-  return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag]}`;
+export const isOverrideWithProps = (
+  value: MarkdownToJSX.Override
+): value is { component?: React.ElementType; props: object } => {
+  return typeof value === 'object' && 'props' in value;
 };
 
 export const isLabelInProps = (props: object): object => {

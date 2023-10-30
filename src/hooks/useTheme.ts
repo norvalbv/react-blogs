@@ -6,9 +6,9 @@ type ThemeState = {
   setTheme: (theme: DefTheme | null) => void;
 };
 
-const useStore = create<ThemeState>()((set) => ({
+export const useTheme = create<ThemeState>()((set) => ({
   theme: null,
   setTheme: (theme: DefTheme | null): void => set({ theme }),
 }));
 
-export default useStore;
+export default useTheme;

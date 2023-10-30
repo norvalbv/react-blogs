@@ -1,5 +1,6 @@
+import useGetClassName from 'hooks/useGetClassName';
 import { ReactElement } from 'react';
-import { getClassName, isLabelInProps } from 'utils';
+import { isLabelInProps } from 'utils';
 
 export type DescriptionProps = {
   children?: string | ReactElement;
@@ -8,13 +9,15 @@ export type DescriptionProps = {
 };
 
 const Description = ({ children, className, ...props }: DescriptionProps): ReactElement | null => {
+  const processedClassName = useGetClassName({ tag: 'p' });
+
   if (!children) {
     return null;
   }
 
   if (typeof children === 'string') {
     return (
-      <p className={getClassName({ tag: 'h1', className })} {...isLabelInProps(props)}>
+      <p className={processedClassName} {...isLabelInProps(props)}>
         {children}
       </p>
     );

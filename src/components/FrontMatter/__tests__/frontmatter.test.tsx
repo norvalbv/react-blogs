@@ -30,7 +30,6 @@ import {
   frontMatterWithTildeDelim,
   frontMatterWithYAMLDelim,
 } from '__mocks__/frontMatterMockData';
-import React from 'react';
 import renderer from 'react-test-renderer';
 import { processBlog } from 'utils';
 
