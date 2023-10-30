@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   assetsInclude: [/\.md$/, '**/*.md', '.md'],
   build: {
-    lib: { entry: './src/index.tsx', name: 'react-blogs', fileName: 'index' },
+    lib: { entry: './src/index.ts', name: 'react-blogs', fileName: 'index' },
     rollupOptions: {
       external: ['react'],
       output: {

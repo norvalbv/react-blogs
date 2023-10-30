@@ -80,7 +80,7 @@ export type BlogProps = {
   theme?: DefTheme;
 };
 
-export const BlogPage = ({
+const BlogPage = ({
   allBlogs,
   paramKey,
   callback,
@@ -207,3 +207,5 @@ export const BlogPage = ({
     </article>
   );
 };
+
+export default BlogPage;
