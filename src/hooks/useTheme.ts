@@ -1,14 +1,6 @@
 import { DefTheme } from 'types';
-import { create } from 'zustand';
+import { useStore } from './useStore';
 
-type ThemeState = {
-  theme: DefTheme | null;
-  setTheme: (theme: DefTheme | null) => void;
+export const useTheme = (theme?: DefTheme): void => {
+  useStore((state) => state.setTheme)(theme || null);
 };
-
-export const useTheme = create<ThemeState>()((set) => ({
-  theme: null,
-  setTheme: (theme: DefTheme | null): void => set({ theme }),
-}));
-
-export default useTheme;

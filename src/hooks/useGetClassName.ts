@@ -1,6 +1,6 @@
 import { Styles, styles, themes } from 'styles/themes.css';
 import { isOverrideWithProps } from 'utils';
-import useStore from './useTheme';
+import { useStore } from './useStore';
 
 type Props = { tag: keyof Styles; className?: string };
 

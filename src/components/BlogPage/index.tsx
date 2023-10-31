@@ -80,16 +80,18 @@ export type BlogProps = {
   theme?: DefTheme;
 };
 
+type BlogState = {
+  blog: string | null;
+  frontMatter: FrontMatterType | null;
+};
+
 const BlogPage = ({
   allBlogs,
   paramKey,
   callback,
   theme: defTheme,
 }: BlogProps): ReactElement | null => {
-  const [blog, setBlog] = useState<{
-    blog: string | null;
-    frontMatter: FrontMatterType | null;
-  }>({
+  const [blog, setBlog] = useState<BlogState>({
     blog: null,
     frontMatter: null,
   });
