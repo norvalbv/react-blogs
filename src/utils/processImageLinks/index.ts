@@ -1,9 +1,11 @@
 type Props = {
   blog: string;
-  imagePath: string;
+  imagePath?: string;
 };
 
 const processImageLinks = ({ blog, imagePath }: Props): string => {
+  if (!imagePath) return blog;
+
   // Find all images with the typical ![[image-here]] syntax common in tools like Obsidian.
   const imageRegex = /!\[\[(.*?)\]\]/g;
 
