@@ -11,6 +11,7 @@ export type Blog = {
     delimiter?: string;
     position?: 'start' | 'end';
   };
+  imagePath?: string;
   metadata?: { data: Record<string, string> };
   readonly id: string;
   subtitle?: string;

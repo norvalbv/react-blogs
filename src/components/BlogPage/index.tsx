@@ -6,6 +6,7 @@ import { Fragment, ReactElement, useEffect, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { Blog, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { processBlog, processLinks } from 'utils';
+import processImageLinks from 'utils/processImageLinks';
 
 const UnorderedListComponent = ({
   children,
@@ -123,7 +124,16 @@ const BlogPage = ({
         return res.text();
       })
       .then((res) => {
-        const blogWithProcessedLinks = processLinks({ allBlogs, blog: res, paramKey });
+        const blogWithProcessedImageLinks = processImageLinks({
+          blog: res,
+          imagePath: currentBlog.imagePath,
+        });
+
+        const blogWithProcessedLinks = processLinks({
+          allBlogs,
+          blog: blogWithProcessedImageLinks,
+          paramKey,
+        });
 
         const { blog, frontMatter } = processBlog({
           metadata: currentBlog.metadata?.data,
