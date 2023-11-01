@@ -1,5 +1,5 @@
 import useGetClassName from 'hooks/useGetClassName';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { isLabelInProps } from 'utils';
 
 export type TitleProps = {
@@ -12,7 +12,13 @@ export type TitleProps = {
   props?: unknown;
 };
 
-const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactElement | null => {
+export const Title = ({
+  children,
+  className,
+  level = 2,
+  ...props
+}: TitleProps): ReactElement | null => {
+  const [test, setTest] = useState(false);
   const processedClassName = useGetClassName({ tag: `h${level}`, className });
 
   if (!children) {
@@ -21,7 +27,11 @@ const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactE
 
   if (level === 1) {
     return (
-      <h1 className={processedClassName} {...isLabelInProps(props)}>
+      <h1
+        className={processedClassName}
+        {...isLabelInProps(props)}
+        onClick={(): void => setTest(!test)}
+      >
         {children}
       </h1>
     );
@@ -41,5 +51,3 @@ const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactE
     </h3>
   );
 };
-
-export default Title;
