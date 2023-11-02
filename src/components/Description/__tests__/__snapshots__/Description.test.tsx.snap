@@ -2,8 +2,11 @@
 
 exports[`<Subtitle /> should render correctly with all props 1`] = `
 <p
-  className="text-sm"
-  data-testid="Custom description test id"
+  props={
+    {
+      "testId": "Test Id",
+    }
+  }
 >
   Test subtitle
 </p>

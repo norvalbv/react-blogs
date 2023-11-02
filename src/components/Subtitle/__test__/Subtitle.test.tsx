@@ -14,15 +14,7 @@ describe('<Subtitle />', () => {
   test('should render correctly with all props', () => {
     const tree = renderer
       .create(
-        <TitleWithAllProps
-          props={{ testId: 'Test Id' }}
-          theme={{
-            theme: undefined,
-            code: undefined,
-            overrides: undefined,
-          }}
-          className="text-sm"
-        >
+        <TitleWithAllProps props={{ testId: 'Test Id' }} className="text-sm">
           Test subtitle
         </TitleWithAllProps>
       )
