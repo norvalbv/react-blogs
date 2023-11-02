@@ -282,13 +282,13 @@ You can alternatively use your own element instead of any above.
 - Blog Component
 The blog component renders the individual blogs. There are two ways to render blogs, each by the same exported Blog component.
 
-If you are using tools like Obisidian to write your blogs and have syntax that relates to double brackets for linking and images (as such `[[link-here]]` or `![[image-here.png]]`) you need to pass all of your blogs and the current blog ID. This is so a comparison can be made so React Blogs knows which should be valid links. Whereas, if you want to render your blog as it currently is without any form of processing, you can just pass in a single blog.
+If you are using tools like Obisidian to write your blogs and have syntax that relates to double brackets for linking and images (as such `[[link-here]]` or `![[image-here.png]]`) you need to pass all of your blogs and the current blog ID. This is so a comparison can be made so React Blogs knows which should be valid links. Whereas, if you want to render your blog as it currently is without any form of processing, you can just pass in a single blog. Passing a blog as a single prop will take priority. Note: The front matter will still be processed in both instances.
 
 Blog Props:
 
 - allBlogs *(optional)*:
 ```tsx
-  DefBlogs[]; // See above for type
+  BlogType[];
 ```
 
 - currentBlogId *(optional)*:

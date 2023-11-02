@@ -76,8 +76,9 @@ const CodeComponent = ({
 };
 
 export type BlogProps = {
-  allBlogs: BlogType[];
-  currentBlogId: BlogType['id'];
+  allBlogs?: BlogType[];
+  blog?: BlogType;
+  currentBlogId?: BlogType['id'];
   callback?: () => void;
   paramKey?: string;
 };
@@ -87,7 +88,13 @@ type BlogState = {
   frontMatter: FrontMatterType | null;
 };
 
-const Blog = ({ allBlogs, currentBlogId, callback, paramKey }: BlogProps): ReactElement | null => {
+const Blog = ({
+  allBlogs,
+  blog: individualBlog,
+  currentBlogId,
+  callback,
+  paramKey,
+}: BlogProps): ReactElement | null => {
   const [blog, setBlog] = useState<BlogState>({
     blog: null,
     frontMatter: null,
@@ -97,9 +104,10 @@ const Blog = ({ allBlogs, currentBlogId, callback, paramKey }: BlogProps): React
 
   const defTheme = useStore((state) => state.theme);
 
-  const currentBlogIndex = allBlogs.findIndex((b) => b.id === currentBlogId);
+  const currentBlogIndex = allBlogs?.findIndex((b) => b.id === currentBlogId) || 0;
 
-  const currentBlog = currentBlogIndex >= 0 ? allBlogs[currentBlogIndex] : null;
+  const currentBlog =
+    individualBlog || (allBlogs && (currentBlogIndex >= 0 ? allBlogs[currentBlogIndex] : null));
 
   /**
    * Dynamically import blogs based on the current blog URL.
@@ -121,20 +129,34 @@ const Blog = ({ allBlogs, currentBlogId, callback, paramKey }: BlogProps): React
         return res.text();
       })
       .then((res) => {
-        const blogWithProcessedImageLinks = processImageLinks({
-          blog: res,
-          imagePath: currentBlog.imagePath,
-        });
+        if (allBlogs) {
+          const blogWithProcessedImageLinks = processImageLinks({
+            blog: res,
+            imagePath: currentBlog.imagePath,
+          });
 
-        const blogWithProcessedLinks = processLinks({
-          allBlogs,
-          blog: blogWithProcessedImageLinks,
-          paramKey,
-        });
+          const blogWithProcessedLinks = processLinks({
+            allBlogs,
+            blog: blogWithProcessedImageLinks,
+            paramKey,
+          });
+
+          const { blog, frontMatter } = processBlog({
+            metadata: currentBlog.metadata,
+            blog: blogWithProcessedLinks,
+            delimiter: currentBlog.frontMatter?.delimiter,
+            showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
+          });
+
+          return setBlog({
+            blog,
+            frontMatter,
+          });
+        }
 
         const { blog, frontMatter } = processBlog({
           metadata: currentBlog.metadata,
-          blog: blogWithProcessedLinks,
+          blog: res,
           delimiter: currentBlog.frontMatter?.delimiter,
           showFrontMatter: currentBlog.frontMatter?.showFrontMatter,
         });
