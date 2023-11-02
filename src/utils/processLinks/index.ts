@@ -23,7 +23,7 @@
  * And contains an optional ANCHOR. Replace with KEY e.g., [[how-a-cpu-works]] -> how-a-cpu-works, [[how-a-cpu-works#cpu]] -> how-a-cpu-works
  */
 
-import { Blog } from 'types';
+import { BlogType } from 'types';
 
 // Matches text within double brackets, e.g., "this-would-be-truthy" in [[this-would-be-truthy]]
 const regexWithBrackets = /\[\[(.*?)\]\]/g;
@@ -38,12 +38,12 @@ const regexForLinkAnchor = /#(.*?)(?=\||\]\])/;
 const regexForlinkKey = /\[\[(.*?)(?=\||#|\]\])/;
 
 type Props = {
-  allBlogs: Blog[];
+  allBlogs: BlogType[];
   /**
    * As we can replace all, we can simply replace all instances of links in one function call.
    */
   blog: string;
-  paramKey: string;
+  paramKey?: string;
 };
 
 const processLink = ({ allBlogs, blog, paramKey }: Props): string => {
@@ -70,10 +70,10 @@ const processLink = ({ allBlogs, blog, paramKey }: Props): string => {
     }
 
     if (linkAnchor) {
-      return `[${linkName || linkKey}](?${paramKey}=${url}#${linkAnchor})`;
+      return `[${linkName || linkKey}](${paramKey ? `?${paramKey}=` : ''}${url}#${linkAnchor})`;
     }
 
-    return `[${linkName || linkKey}](?${paramKey}=${url})`;
+    return `[${linkName || linkKey}](${paramKey ? `?${paramKey}=` : ''}${url})`;
   });
 
   return processedLinks;

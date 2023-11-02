@@ -2,7 +2,7 @@ import { themes } from 'prism-react-renderer';
 import { ElementType, ReactNode } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
 
-export type Blog = {
+export type BlogType = {
   accessor?: ReactNode;
   description?: string;
   file: string | URL;
@@ -12,14 +12,14 @@ export type Blog = {
     position?: 'start' | 'end';
   };
   imagePath?: string;
-  metadata?: { data: Record<string, string> };
-  readonly id: string;
+  metadata?: Record<string, string>;
+  id: string;
   subtitle?: string;
   title: string;
   url: string;
 };
 
-export type DefBlogs = Blog[];
+export type DefBlogs = BlogType[];
 
 export type FrontMatter = Record<string, unknown> | unknown[] | null;
 
