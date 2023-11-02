@@ -9,7 +9,7 @@ export type Props = {
 };
 
 const Subtitle = ({ children, className, ...props }: Props): ReactElement | null => {
-  const processedClassName = useGetClassName({ tag: 'h4', className });
+  const { getClassName } = useGetClassName();
 
   if (!children) {
     return null;
@@ -17,7 +17,7 @@ const Subtitle = ({ children, className, ...props }: Props): ReactElement | null
 
   if (typeof children === 'string') {
     return (
-      <h4 className={processedClassName} {...isLabelInProps(props)}>
+      <h4 className={getClassName({ tag: 'h4', className })} {...isLabelInProps(props)}>
         {children}
       </h4>
     );

@@ -9,12 +9,12 @@ type Props = {
 };
 
 const Metadata = ({ children, theme, ...props }: Props): ReactElement | null => {
-  const processedClassName = useGetClassName({ tag: 'metadata' });
+  const { getClassName } = useGetClassName();
 
   if (!children) return null;
 
   return (
-    <p className={processedClassName} {...props}>
+    <p className={getClassName({ tag: 'metadata' })} {...props}>
       {Object.entries(children).map(([key, value], i, arr) => (
         <Fragment key={key}>
           <span>{`${key}: ${String(value)}`}</span>

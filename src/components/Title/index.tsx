@@ -13,7 +13,7 @@ export type TitleProps = {
 };
 
 const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactElement | null => {
-  const processedClassName = useGetClassName({ tag: `h${level}`, className });
+  const { getClassName } = useGetClassName();
 
   if (!children) {
     return null;
@@ -21,7 +21,7 @@ const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactE
 
   if (level === 1) {
     return (
-      <h1 className={processedClassName} {...isLabelInProps(props)}>
+      <h1 className={getClassName({ tag: 'h1', className })} {...isLabelInProps(props)}>
         {children}
       </h1>
     );
@@ -29,14 +29,14 @@ const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactE
 
   if (level === 2) {
     return (
-      <h2 className={processedClassName} {...isLabelInProps(props)}>
+      <h2 className={getClassName({ tag: 'h2', className })} {...isLabelInProps(props)}>
         {children}
       </h2>
     );
   }
 
   return (
-    <h3 className={processedClassName} {...isLabelInProps(props)}>
+    <h3 className={getClassName({ tag: 'h3', className })} {...isLabelInProps(props)}>
       {children}
     </h3>
   );

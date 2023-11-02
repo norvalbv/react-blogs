@@ -9,7 +9,7 @@ export type DescriptionProps = {
 };
 
 const Description = ({ children, className, ...props }: DescriptionProps): ReactElement | null => {
-  const processedClassName = useGetClassName({ tag: 'p' });
+  const { getClassName } = useGetClassName();
 
   if (!children) {
     return null;
@@ -17,7 +17,7 @@ const Description = ({ children, className, ...props }: DescriptionProps): React
 
   if (typeof children === 'string') {
     return (
-      <p className={processedClassName} {...isLabelInProps(props)}>
+      <p className={getClassName({ tag: 'p' })} {...isLabelInProps(props)}>
         {children}
       </p>
     );

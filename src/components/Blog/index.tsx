@@ -100,7 +100,7 @@ const Blog = ({
     frontMatter: null,
   });
 
-  const processedClassName = useGetClassName({ tag: 'h1' });
+  const { getClassName } = useGetClassName();
 
   const defTheme = useStore((state) => state.theme);
 
@@ -129,7 +129,7 @@ const Blog = ({
         return res.text();
       })
       .then((res) => {
-        if (allBlogs) {
+        if (allBlogs && !individualBlog) {
           const blogWithProcessedImageLinks = processImageLinks({
             blog: res,
             imagePath: currentBlog.imagePath,
@@ -176,7 +176,7 @@ const Blog = ({
 
   return (
     <article>
-      <h1 className={processedClassName || styles.h1}>{currentBlog?.title}</h1>
+      <h1 className={getClassName({ tag: 'h1' }) || styles.h1}>{currentBlog?.title}</h1>
       <div
         {...(currentBlog?.frontMatter?.position === 'end'
           ? { style: { display: 'flex', flexDirection: 'column-reverse' } }
@@ -197,36 +197,42 @@ const Blog = ({
               wrapper: Fragment,
               overrides: {
                 ...defTheme?.overrides,
-                h1: defTheme?.overrides?.h1 || { props: { className: styles.h1 } },
+                h1: defTheme?.overrides?.h1 || {
+                  props: { className: getClassName({ tag: 'h1' }) },
+                },
                 h2: defTheme?.overrides?.h2 || {
-                  props: { className: styles.h2 },
+                  props: { className: getClassName({ tag: 'h2' }) },
                 },
                 h3: defTheme?.overrides?.h3 || {
-                  props: { className: styles.h3 },
+                  props: { className: getClassName({ tag: 'h3' }) },
                 },
-                h4: defTheme?.overrides?.h4 || { props: { className: styles.h4 } },
-                p: defTheme?.overrides?.p || { props: { className: styles.p } },
+                h4: defTheme?.overrides?.h4 || {
+                  props: { className: getClassName({ tag: 'h4' }) },
+                },
+                p: defTheme?.overrides?.p || { props: { className: getClassName({ tag: 'p' }) } },
                 ul: defTheme?.overrides?.ul || {
                   component: UnorderedListComponent,
-                  props: { className: styles.ul },
+                  props: { className: getClassName({ tag: 'ul' }) },
                 },
                 li: defTheme?.overrides?.li || {
                   component: ListComponent,
-                  props: { className: styles.li },
+                  props: { className: getClassName({ tag: 'li' }) },
                 },
                 code: {
                   component: CodeComponent,
                   props: { theme: defTheme },
                 },
                 a: defTheme?.overrides?.a || {
-                  props: { className: styles.a },
+                  props: { className: getClassName({ tag: 'a' }) },
                 },
                 strong: defTheme?.overrides?.strong || {
-                  props: { className: styles.strong },
+                  props: { className: getClassName({ tag: 'strong' }) },
                 },
-                em: defTheme?.overrides?.em || { props: { className: styles.em } },
+                em: defTheme?.overrides?.em || {
+                  props: { className: getClassName({ tag: 'em' }) },
+                },
                 blockquote: defTheme?.overrides?.blockquote || {
-                  props: { className: styles.blockquote },
+                  props: { className: getClassName({ tag: 'blockquote' }) },
                 },
               },
             }}

@@ -4,19 +4,27 @@ import { useStore } from './useStore';
 
 type Props = { tag: keyof Styles; className?: string };
 
-const useGetClassName = ({ tag, className }: Props): string | undefined => {
+type ReturnType = {
+  getClassName: (args: Props) => string | undefined;
+};
+
+const useGetClassName = (): ReturnType => {
   const theme = useStore((state) => state.theme);
 
-  if (className) return className;
+  const getClassName = ({ tag, className }: Props): string | undefined => {
+    if (className) return className;
 
-  const override = theme?.overrides?.[tag];
-  if (override && isOverrideWithProps(override) && 'className' in override.props) {
-    return override.props.className as string;
-  }
+    const override = theme?.overrides?.[tag];
+    if (override && isOverrideWithProps(override) && 'className' in override.props) {
+      return override.props.className as string;
+    }
 
-  if (!theme || !styles[tag]) return undefined;
+    if (!theme || !styles[tag]) return undefined;
 
-  return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag]}`;
+    return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag]}`;
+  };
+
+  return { getClassName };
 };
 
 export default useGetClassName;
