@@ -117,7 +117,13 @@ If you are linking blogs that use double-bracket links such as [[link-here]], th
 ```tsx
     string
 ```
-The link to your markdown file. **Note**: This must be an absolute link, not a relative one.
+The path to your markdown file. **Note**: This must be an absolute link, not a relative one.
+
+- imagePath *(optional)*:
+```tsx
+    string
+```
+The path to your images for this specific blog. **Note**: This must be an absolute link, not a relative one.
 
 - title *(required)*:
 ```tsx
