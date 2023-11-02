@@ -1,7 +1,7 @@
-import { Blog } from 'types';
+import { BlogType } from 'types';
 import processLink from '..';
 
-const blogs: Blog[] = [
+const blogs: BlogType[] = [
   {
     id: 'Memory (RAM)',
     file: 'memory',

@@ -164,7 +164,7 @@ const Blog = ({ allBlogs, currentBlogId, callback, paramKey }: BlogProps): React
           <FrontMatterOverrideComponent
             frontmatter={blog.frontMatter}
             // className={getClassName({ tag: 'frontmatter' }) || styles.metadata}
-            {...defTheme?.overrides?.metadata?.props}
+            {...defTheme?.overrides?.frontmatter?.props}
           />
         ) : (
           <FrontMatter frontmatter={blog.frontMatter} />

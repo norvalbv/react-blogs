@@ -10,6 +10,7 @@ Listed benefits:
 - Easy set up
 - Default styling and easy overrides
 - Automatic link processing
+- Automatic image processing
 - Automatic front matter parser
 - Typescript ready
 
@@ -28,20 +29,21 @@ Using Yarn:
 # Basic Usage
 
 ```tsx
-import Blog, { DefBlogs } from 'react-blogs';
+import { DefBlogs, useTheme, Blog } from 'react-blogs';
 
 // specify your blogs:
   const allBlogs: DefBlogs = [
     {
       id: 'Memory (RAM)',
       file: '/src/assets/blogs/memory.md',
-      title: { label: 'How Memory (RAM) Works' },
-      subtitle: { label: "The computer's short-term memory." },
-      description: { label: 'A deep insight into what RAM is and how it interacts with the computer.' },
+      title: 'How Memory (RAM) Works' ,
+      subtitle: "The computer's short-term memory.",
+      description: "A deep insight into what RAM is and how it interacts with the computer.",
       url: 'how-memory-works',
       frontMatter: {
         showFrontMatter: true;
         delimiter: '-- YAML --';
+        position: 'start',
       };
       metadata: {
         'read time': '20 minutes',
@@ -57,13 +59,44 @@ import Blog, { DefBlogs } from 'react-blogs';
     code: 'oneLight',
     overrides: {
       p: {
-        props: { className: 'text-[14px] my-4 tracking-wider' },
+        props: { className: 'text-sm my-4 tracking-wider' },
       },
     },
   };
 
-// Render Blog
-return <Blog allBlogs={allBlogs} theme={theme} paramkey="title" />
+  useTheme(theme);
+
+  // It is up to you how you get the current blog ID. 
+  const pathname = window.location.href;
+  
+  const id = allBlogs.find((blog) => blog.url === pathname)?.id;
+
+  const paramKey = "blog";
+  const searchParams = new URLSearchParams(this.props.location.search).get(paramKey);
+
+  // Render Blog
+  return (
+    <div className="mx-auto w-10/12 font-mono md:w-8/12">
+      {searchParams.get(paramKey) ? (
+        <Blog allBlogs={allBlogs} currentBlogId={id} paramKey={paramKey} />
+      ) : (
+        <>
+          <Header
+            title="Benji's Blogs"
+            titleClassName="w-max border-b pb-2 text-3xl font-semibold md:text-6xl mb-6"
+          />
+          {allBlogs.map((blog) => (
+            <a key={blog.id} href={`/blogs?${paramKey}=${blog.url}`} className="cursor-pointer">
+              <Title>{blog.title}</Title>
+              <Subtitle>{blog.subtitle}</Subtitle>
+              <Description>{blog.description}</Description>
+              <Metadata>{blog.metadata}</Metadata>
+            </a>
+          ))}
+        </>
+      )}
+    </div>
+  );
 ```
 
 # A Deeper Dive
@@ -88,34 +121,21 @@ The link to your markdown file. **Note**: This must be an absolute link, not a r
 
 - title *(required)*:
 ```tsx
-{
-  label: string | ReactElement;
-  className?: string; // Overrides any of the default styles for that title 
-  level?: 1 | 2 | 3; // Convays the level of the heading node (h1, h2, or h3)
-  testId?: string; // Optional test ID
-}
+    string
 ```
-A title component that renders the title for your react blog. Renders either a h1, h2, or h3 element and default styles can be overridden by passing styles to the `className` prop. 
+The title to your blog.
 
 - subtitle *(optional)*:
 ```tsx
-{
-  label?: string | ReactElement;
-  className?: string; // Overrides any of the default styles for that subtitle 
-  testId?: string; // Optional test ID
-}
+    string
 ```
-A subtitle component that renders the title for your react blog. Renders a h4 element and default styles can be overridden by passing styles to the `className` prop. 
+The subtitle to your blog.
 
-- description *(optional)*:
+- description *(description)*:
 ```tsx
-{
-  label?: string | ReactElement;
-  className?: string; // Overrides any of the default styles for that description 
-  testId?: string; // Optional test ID
-}
+    string
 ```
-A description component that renders the title for your react blog. Renders p element and default styles can be overridden by passing styles to the `className` prop. 
+The title to your blog.
 
 - url *(required)*:
 ```tsx
@@ -220,9 +240,47 @@ Example of using `defTheme`:
   };
 ```
 
-## The Blog component
+## Named components
 
-The blog component renders both the blogs dashboard and the individual blogs. Therefore, there is only one import to be concerned about.
+When defining your own blog homepage / blogs overview it's recommended to use our named exported components of Title, Subtitle, Description, and Metadata. This is as each of the components already have the appropriate styling displayed to them. The prop types are below for each:
+
+- Title Component
+```tsx
+  children: string | ReactElement;
+  className?: string; // Optional. Use this to override default styling.
+  level?: 1 | 2 | 3; // Optional. Specifies the heading level (h1, h2, or h3).
+  // Feel free to include additional standard component props as needed.
+```
+The Title component is utilized to render a heading in your React blog, corresponding to an <h1>, <h2>, or <h3> HTML element. Custom styles can be applied by using the className prop.
+
+- Subtitle Component
+```tsx
+  children?: string | ReactElement;
+  className?: string; // Optional. Use this to apply custom styling.
+  // Additional props can be included as with standard components.
+```
+The Subtitle component is designed to render a subtitle, producing an <h4> HTML element. Override the default styles by providing a custom className.
+
+- Description Component
+```tsx
+  children?: string | ReactElement;
+  className?: string; // Optional. Use this to apply custom styling.
+  // Standard component props can also be added as needed.
+```
+The Description component is exported for the purpose of rendering text content, typically within a <p> element. To customize the appearance, pass in a className with the desired styles.
+
+- Metadata Component
+```tsx
+  children?: string | ReactElement;
+  className?: string; // Optional. Use this to apply custom styling.
+  // You may include additional standard component props.
+```
+The Metadata component serves to display the metadata of your React blog posts, simply pass your metadata as a child.
+
+You can alternatively use your own element instead of any above.
+
+- Blog Component
+The blog component renders the individual blogs.
 
 You can pass your blogs and theme to the `Blog` component.
 
@@ -242,9 +300,10 @@ The parameter key in the URL for the current blog. For example, `title=my-blog`
 
 # Roadmap
 - [ ] Add more themes
-- [ ] Better customisation for the react-blogs homepage
+- [x] Better customisation for the react-blogs homepage
 - [ ] Ability to add custom components inside each blog, for example rendering a hero
 - [ ] Add better accessibility to rendered JSX nodes
+- [ ] Add video support for each blog
 
 
 # License

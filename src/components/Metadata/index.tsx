@@ -13,27 +13,15 @@ const Metadata = ({ children, theme, ...props }: Props): ReactElement | null => 
 
   if (!children) return null;
 
-  const MetadataComponent = theme?.overrides?.metadata?.component;
-
   return (
-    <>
-      {MetadataComponent ? (
-        <MetadataComponent
-          metadata={children}
-          className={processedClassName}
-          {...theme?.overrides?.metadata?.props}
-        />
-      ) : (
-        <p className={processedClassName} {...props}>
-          {Object.entries(children).map(([key, value], i, arr) => (
-            <Fragment key={key}>
-              <span>{`${key}: ${String(value)}`}</span>
-              {i < arr.length - 1 && <span>•</span>}
-            </Fragment>
-          ))}
-        </p>
-      )}
-    </>
+    <p className={processedClassName} {...props}>
+      {Object.entries(children).map(([key, value], i, arr) => (
+        <Fragment key={key}>
+          <span>{`${key}: ${String(value)}`}</span>
+          {i < arr.length - 1 && <span>•</span>}
+        </Fragment>
+      ))}
+    </p>
   );
 };
 
