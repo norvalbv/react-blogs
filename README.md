@@ -251,7 +251,7 @@ When defining your own blog homepage / blogs overview it's recommended to use ou
   level?: 1 | 2 | 3; // Optional. Specifies the heading level (h1, h2, or h3).
   // Feel free to include additional standard component props as needed.
 ```
-The Title component is utilized to render a heading in your React blog, corresponding to an <h1>, <h2>, or <h3> HTML element. Custom styles can be applied by using the className prop.
+The Title component is utilized to render a heading in your React blog, corresponding to an `<h1>`, `<h2>`, or `<h3>` HTML element. Custom styles can be applied by using the className prop.
 
 - Subtitle Component
 ```tsx
@@ -280,23 +280,55 @@ The Metadata component serves to display the metadata of your React blog posts, 
 You can alternatively use your own element instead of any above.
 
 - Blog Component
-The blog component renders the individual blogs.
+The blog component renders the individual blogs. There are two ways to render blogs, each by the same exported Blog component.
 
-You can pass your blogs and theme to the `Blog` component.
+If you are using tools like Obisidian to write your blogs and have syntax that relates to double brackets for linking and images (as such `[[link-here]]` or `![[image-here.png]]`) you need to pass all of your blogs and the current blog ID. This is so a comparison can be made so React Blogs knows which should be valid links. Whereas, if you want to render your blog as it currently is without any form of processing, you can just pass in a single blog.
+
+Blog Props:
+
+- allBlogs *(optional)*:
+```tsx
+  DefBlogs[]; // See above for type
+```
+
+- currentBlogId *(optional)*:
+```tsx
+  string
+```
+
+- callback *(optional)*:
+```tsx
+  string
+```
+If the package cannot find your current blog, it will return `null`. you can optionally pass a callback to be called instead.
+
+- blog *(optional)*:
+```tsx
+  BlogType;
+```
+
+- paramKey *(optional)*:
+```tsx
+  string
+```
+When navigating through processed internal links within the blogs, by default the link will be processed as a path, if you would like to navigate via a query string, pass a parameter key instead.
+
+For example -> link to memory would by default by `/memory`, whereas if you passed the paramKey as `blog` you would route to `?blog=memory` instead.
+
+Basic examples:
 
 ```tsx
-    import Blog from 'react-blogs';
+    import { Blog } from 'react-blogs';
 
     // definition of blogs and theme omitted for brevity.
 
-    return <Blog allBlogs={allBlogs} theme={theme} paramkey="title" />
-```
+    // processing required, all blogs and current blog ID must be passed
+    return <Blog allBlogs={allBlogs} currentBlogId={id} paramkey="title" />
 
-- paramKey *(optional)* - default blog:
+
+    // no processing required, simply pass current blog.
+    return <Blog blog={currentBlog} />
 ```
-  string
-```
-The parameter key in the URL for the current blog. For example, `title=my-blog`
 
 # Roadmap
 - [ ] Add more themes
