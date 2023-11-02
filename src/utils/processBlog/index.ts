@@ -59,7 +59,7 @@ type Props = {
 const processBlog = ({
   blog,
   delimiter = '---',
-  showFrontMatter = false,
+  showFrontMatter = true,
   metadata,
 }: Props): ReturnValue => {
   // Encode the delimiter to ensure it doesn't mess up in the regex search.

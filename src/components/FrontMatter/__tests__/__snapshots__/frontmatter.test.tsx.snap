@@ -262,34 +262,22 @@ exports[`<FrontMatter /> should handle array paragraphs correctly 1`] = `
       frontMatter
       : 
     </strong>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       What's Yaml?
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       It's for writing data structures in plain text.
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       And?
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       And what? That's not good enough for you?
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       No, I mean, "And what about Yaml?"
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       Oh, oh yeah. Uh.. Yaml for Ruby.
     </div>
   </div>
@@ -350,19 +338,13 @@ exports[`<FrontMatter /> should handle array types correctly 1`] = `
       frontMatter
       : 
     </strong>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       apple
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       banana
     </div>
-    <div
-      className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-    >
+    <div>
       carrot
     </div>
   </div>
@@ -558,14 +540,10 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             </span>
           </div>
         </section>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           more
         </div>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           info
         </div>
         <section
@@ -739,9 +717,7 @@ exports[`<FrontMatter /> should handle arrays as keys correctly 1`] = `
           work on YAML.py
           : 
         </strong>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           work on Store
         </div>
       </div>
@@ -1462,24 +1438,16 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                   permissions
                   : 
                 </strong>
-                <div
-                  className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-                >
+                <div>
                   login
                 </div>
-                <div
-                  className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-                >
+                <div>
                   logout
                 </div>
-                <div
-                  className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-                >
+                <div>
                   chat
                 </div>
-                <div
-                  className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-                >
+                <div>
                   access control
                 </div>
               </div>
@@ -1568,14 +1536,10 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                   permissions
                   : 
                 </strong>
-                <div
-                  className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-                >
+                <div>
                   login
                 </div>
-                <div
-                  className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-                >
+                <div>
                   logout
                 </div>
               </div>
@@ -2355,19 +2319,13 @@ exports[`<FrontMatter /> should handle list types correctly 1`] = `
           users
           : 
         </strong>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           BenjiTheGreat
         </div>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           Steve_The_Great
         </div>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           John The Great
         </div>
       </div>
@@ -2633,19 +2591,13 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
           users
           : 
         </strong>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           benji
         </div>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           bob
         </div>
-        <div
-          className="themes_styles_badge__xd3hr9v defaults_defaults_badge__cxs0rsd"
-        >
+        <div>
           mike
         </div>
       </div>
