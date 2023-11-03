@@ -28,8 +28,7 @@
     "js-yaml": "^4.1.0",
     "markdown-to-jsx": "^7.3.2",
     "prism-react-renderer": "^2.1.0",
-    "remove": "^0.1.5",
-    "zustand": "^4.4.5"
+    "zustand": "^4.4.6"
   },
   "peerDependencies": {
     "react": "^17.0.0",
@@ -69,7 +68,6 @@
     "vite": "^4.5.0",
     "vite-plugin-css-injected-by-js": "^3.3.0",
     "vite-plugin-dts": "^3.6.3",
-    "vite-plugin-markdown": "^2.1.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "eslintConfig": {
@@ -88,5 +86,5 @@
       "yarn lint"
     ]
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@4.0.1"
 }
