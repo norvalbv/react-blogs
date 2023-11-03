@@ -108,6 +108,7 @@ export type Styles = {
   a: string;
   blockquote: string;
   code: string;
+  clipboard: string;
   em: string;
   h1: string;
   h2: string;
@@ -128,6 +129,7 @@ export const styles: Styles = {
   a: style([defaults.a, { ...themeContract.a }]),
   blockquote: style([defaults.blockquote, { ...themeContract.blockquote }]),
   code: defaults.code,
+  clipboard: defaults.clipboard,
   em: style([defaults.em, { ...themeContract.em }]),
   h1: style([defaults.h1, { color: themeContract.h1.color }]),
   h2: style([defaults.h2, { ...themeContract.h2 }]),

@@ -24,8 +24,9 @@ export type DefBlogs = BlogType[];
 export type FrontMatter = Record<string, unknown> | unknown[] | null;
 
 export type DefTheme = {
-  code?: keyof typeof themes;
+  code?: { theme: keyof typeof themes; showNumbers?: boolean };
   overrides?: MarkdownToJSX.Overrides & {
+    clipboard?: { callback: (args?: unknown) => void; component: ElementType; show?: boolean };
     frontmatter?: { component: ElementType; props: object };
   };
   theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';

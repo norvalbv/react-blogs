@@ -1,9 +1,11 @@
 import FrontMatter from 'components/FrontMatter';
+import { ClipboardCopyIcon, ClipboardIcon } from 'components/SVG';
 import useGetClassName from 'hooks/useGetClassName';
+import useOutsideClick from 'hooks/useOutsideClick';
 import useStore from 'hooks/useStore';
 import Markdown from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
-import { Fragment, ReactElement, useEffect, useState } from 'react';
+import { Fragment, ReactElement, useEffect, useRef, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
 import { BlogType, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { processBlog, processLinks } from 'utils';
@@ -23,26 +25,55 @@ const ListComponent = ({ children, ...props }: { children: ReactElement[] }): Re
   </li>
 );
 
-const CodeComponent = ({
-  children,
-  ...props
-}: {
+type CodeComponentProps = {
   children: string;
   className?: string;
   theme?: DefTheme;
-}): ReactElement => {
+};
+
+const CodeComponent = ({ children, theme, className }: CodeComponentProps): ReactElement => {
   const isMultiline = /\n/.test(children);
+
+  const [copyToClipboard, setCopyToClipboard] = useState(false);
+  const ref = useRef<HTMLPreElement | null>(null);
+
+  useOutsideClick({ ref, onBlur: (): void => setCopyToClipboard(false) });
+
+  const clipboardOverride = theme?.overrides?.clipboard;
+
+  const copyToClipBoard = async (): Promise<void> => {
+    try {
+      await navigator.clipboard.writeText(children);
+      setCopyToClipboard(true);
+      if (clipboardOverride?.callback) {
+        clipboardOverride?.callback();
+      }
+    } catch (err) {
+      if (clipboardOverride?.callback) {
+        clipboardOverride?.callback(err);
+      }
+    }
+  };
+
+  const ClipboardOverrideComp = clipboardOverride?.component;
 
   return isMultiline ? (
     <Highlight
-      theme={
-        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'PLAIN_DARK'].prismTheme]
-      }
+      theme={themes[theme?.code?.theme || defaultTheme[theme?.theme || 'PLAIN_DARK'].prismTheme]}
       language="tsx"
       code={children}
     >
       {({ style, tokens, getLineProps, getTokenProps }): ReactElement => (
-        <pre style={style} className={styles.code}>
+        <pre style={{ ...style, position: 'relative' }} className={styles.code} ref={ref}>
+          {clipboardOverride?.show &&
+            (ClipboardOverrideComp ? (
+              <ClipboardOverrideComp />
+            ) : (
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              <div className={styles.clipboard} onClick={copyToClipBoard}>
+                {copyToClipboard ? <ClipboardCopyIcon /> : <ClipboardIcon />}
+              </div>
+            ))}
           {tokens.map((line, i) => (
             <div key={line.toString() + i.toString()} {...getLineProps({ line })}>
               <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
@@ -60,9 +91,7 @@ const CodeComponent = ({
     </Highlight>
   ) : (
     <Highlight
-      theme={
-        themes[props.theme?.code || defaultTheme[props.theme?.theme || 'PLAIN_DARK'].prismTheme]
-      }
+      theme={themes[theme?.code?.theme || defaultTheme[theme?.theme || 'PLAIN_DARK'].prismTheme]}
       language="tsx"
       code={children}
     >
