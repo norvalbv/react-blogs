@@ -233,6 +233,7 @@ const Blog = ({
         {blog.frontMatter && FrontMatterOverrideComponent ? (
           <FrontMatterOverrideComponent
             frontmatter={blog.frontMatter}
+            // TODO fix this so we can ensure users can override colours.
             // className={getClassName({ tag: 'frontmatter' }) || styles.metadata}
             {...defTheme?.overrides?.frontmatter?.props}
           />
