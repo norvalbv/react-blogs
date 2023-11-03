@@ -55,16 +55,27 @@ const CodeComponent = ({ children, theme, className }: CodeComponentProps): Reac
     }
   };
 
+  const { getClassName } = useGetClassName();
+
   const ClipboardOverrideComp = clipboardOverride?.component;
 
   return isMultiline ? (
     <Highlight
-      theme={themes[theme?.code?.theme || defaultTheme[theme?.theme || 'PLAIN_DARK'].prismTheme]}
+      theme={
+        themes[
+          theme?.overrides?.code?.theme || defaultTheme[theme?.theme || 'PLAIN_DARK'].prismTheme
+        ]
+      }
       language="tsx"
       code={children}
     >
       {({ style, tokens, getLineProps, getTokenProps }): ReactElement => (
-        <pre style={{ ...style, position: 'relative' }} className={styles.code} ref={ref}>
+        <pre
+          style={{ ...style, position: 'relative' }}
+          // TODO Abiliity to override classNames
+          className={getClassName({ tag: 'code' })}
+          ref={ref}
+        >
           {clipboardOverride?.show &&
             (ClipboardOverrideComp ? (
               <ClipboardOverrideComp />
@@ -76,7 +87,10 @@ const CodeComponent = ({ children, theme, className }: CodeComponentProps): Reac
             ))}
           {tokens.map((line, i) => (
             <div key={line.toString() + i.toString()} {...getLineProps({ line })}>
-              <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
+              {/* // TODO set show numbers by default */}
+              {theme?.overrides?.code?.showNumbers && (
+                <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
+              )}
               {line.map((token) => (
                 <span
                   key={token.content}
@@ -91,12 +105,17 @@ const CodeComponent = ({ children, theme, className }: CodeComponentProps): Reac
     </Highlight>
   ) : (
     <Highlight
-      theme={themes[theme?.code?.theme || defaultTheme[theme?.theme || 'PLAIN_DARK'].prismTheme]}
+      theme={
+        themes[
+          theme?.overrides?.code?.theme || defaultTheme[theme?.theme || 'PLAIN_DARK'].prismTheme
+        ]
+      }
       language="tsx"
       code={children}
     >
       {({ style }): ReactElement => (
-        <code style={style} className={styles.inlinecode}>
+        // TODO Abiliity to override inline classNames
+        <code style={style} className={getClassName({ tag: 'inlinecode' })}>
           {children}
         </code>
       )}
