@@ -19,9 +19,10 @@ const useGetClassName = (): ReturnType => {
       override &&
       typeof override === 'object' &&
       override.props &&
-      'className' in override.props
+      'className' in override.props &&
+      typeof override.props.className === 'string'
     ) {
-      return override.props.className as string;
+      return override.props.className;
     }
 
     if (!theme || !(tag in styles)) return undefined;

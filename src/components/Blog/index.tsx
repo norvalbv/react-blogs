@@ -30,17 +30,11 @@ type CodeComponentProps = {
   theme?: DefTheme;
 };
 
-const defaultThemeProps: DefTheme = {
-  overrides: {
-    code: { showNumbers: true },
-  },
-};
-
-const CodeComponent = ({ children, theme: passedTheme }: CodeComponentProps): ReactElement => {
-  const theme: DefTheme = {
-    ...defaultThemeProps,
-    ...passedTheme,
-  };
+const CodeComponent = ({ children, theme }: CodeComponentProps): ReactElement => {
+  const showClipboard =
+    theme?.overrides?.clipboard?.show === undefined || theme.overrides.clipboard.show;
+  const showNumbers =
+    theme?.overrides?.code?.showNumbers === undefined || theme.overrides.code?.showNumbers;
 
   const isMultiline = /\n/.test(children);
 
@@ -86,7 +80,7 @@ const CodeComponent = ({ children, theme: passedTheme }: CodeComponentProps): Re
           className={getClassName({ tag: 'code' })}
           ref={ref}
         >
-          {clipboardOverride?.show &&
+          {showClipboard &&
             (ClipboardOverrideComp ? (
               <ClipboardOverrideComp />
             ) : (
@@ -97,10 +91,7 @@ const CodeComponent = ({ children, theme: passedTheme }: CodeComponentProps): Re
             ))}
           {tokens.map((line, i) => (
             <div key={line.toString() + i.toString()} {...getLineProps({ line })}>
-              {/* // TODO set show numbers by default */}
-              {theme?.overrides?.code?.showNumbers && (
-                <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>
-              )}
+              {showNumbers && <span style={{ marginRight: '.5rem' }}>{i + 1}.</span>}
               {line.map((token) => (
                 <span
                   key={token.content}

@@ -36,13 +36,13 @@ export type JSXOverrides = Omit<Overrides, 'code'> & {
     showNumbers: boolean;
     theme: keyof typeof themes;
   }>;
-  clipboard?: {
+  clipboard?: RequireAtLeastOne<{
     callback: (args?: unknown) => void;
     component: ElementType;
     props: object;
     show: boolean;
-  };
-  frontmatter?: { component: ElementType; props?: object };
+  }>;
+  frontmatter?: RequireAtLeastOne<{ component: ElementType; props: object }>;
 };
 
 export type DefTheme = {
