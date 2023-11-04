@@ -30,7 +30,6 @@ export type FrontMatter = Record<string, unknown> | unknown[] | null;
 
 export type JSXOverrides = Omit<Overrides, 'code'> & {
   code?: RequireAtLeastOne<{
-    className: string;
     component: ElementType;
     props: object;
     showNumbers: boolean;

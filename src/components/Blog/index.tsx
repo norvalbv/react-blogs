@@ -62,8 +62,11 @@ const CodeComponent = ({ children, theme }: CodeComponentProps): ReactElement =>
   const { getClassName } = useGetClassName();
 
   const ClipboardOverrideComp = clipboardOverride?.component;
+  const CodeOverrideComp = theme?.overrides?.code?.component;
 
-  return isMultiline ? (
+  return CodeOverrideComp ? (
+    <CodeOverrideComp className={getClassName({ tag: 'code' })}>{children}</CodeOverrideComp>
+  ) : isMultiline ? (
     <Highlight
       theme={
         themes[
@@ -76,7 +79,6 @@ const CodeComponent = ({ children, theme }: CodeComponentProps): ReactElement =>
       {({ style, tokens, getLineProps, getTokenProps }): ReactElement => (
         <pre
           style={{ ...style, position: 'relative' }}
-          // TODO Abiliity to override classNames
           className={getClassName({ tag: 'code' })}
           ref={ref}
         >
@@ -85,7 +87,7 @@ const CodeComponent = ({ children, theme }: CodeComponentProps): ReactElement =>
               <ClipboardOverrideComp />
             ) : (
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
-              <div className={styles.clipboard} onClick={copyToClipBoard}>
+              <div className={getClassName({ tag: 'clipboard' })} onClick={copyToClipBoard}>
                 {copyToClipboard ? <ClipboardCopyIcon /> : <ClipboardIcon />}
               </div>
             ))}
@@ -115,7 +117,6 @@ const CodeComponent = ({ children, theme }: CodeComponentProps): ReactElement =>
       code={children}
     >
       {({ style }): ReactElement => (
-        // TODO Abiliity to override inline classNames
         <code style={style} className={styles.inlinecode}>
           {children}
         </code>
