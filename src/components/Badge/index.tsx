@@ -1,14 +1,12 @@
-import useGetClassName from 'hooks/useGetClassName';
 import { ReactElement } from 'react';
+import { styles } from 'styles/themes.css';
 
 type Props = {
   tag: string;
 };
 
 const Badge = ({ tag }: Props): ReactElement => {
-  const { getClassName } = useGetClassName();
-
-  return <div className={getClassName({ tag: 'badge' })}>{tag}</div>;
+  return <div className={styles.badge}>{tag}</div>;
 };
 
 export default Badge;
