@@ -3,7 +3,7 @@ import { ClipboardCopyIcon, ClipboardIcon } from 'components/SVG';
 import useGetClassName from 'hooks/useGetClassName';
 import useOutsideClick from 'hooks/useOutsideClick';
 import useStore from 'hooks/useStore';
-import Markdown from 'markdown-to-jsx';
+import Markdown, { MarkdownToJSX } from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useRef, useState } from 'react';
 import { themes as defaultTheme, styles } from 'styles/themes.css';
@@ -27,11 +27,21 @@ const ListComponent = ({ children, ...props }: { children: ReactElement[] }): Re
 
 type CodeComponentProps = {
   children: string;
-  className?: string;
   theme?: DefTheme;
 };
 
-const CodeComponent = ({ children, theme, className }: CodeComponentProps): ReactElement => {
+const defaultThemeProps: DefTheme = {
+  overrides: {
+    code: { showNumbers: true },
+  },
+};
+
+const CodeComponent = ({ children, theme: passedTheme }: CodeComponentProps): ReactElement => {
+  const theme: DefTheme = {
+    ...defaultThemeProps,
+    ...passedTheme,
+  };
+
   const isMultiline = /\n/.test(children);
 
   const [copyToClipboard, setCopyToClipboard] = useState(false);
@@ -115,7 +125,7 @@ const CodeComponent = ({ children, theme, className }: CodeComponentProps): Reac
     >
       {({ style }): ReactElement => (
         // TODO Abiliity to override inline classNames
-        <code style={style} className={getClassName({ tag: 'inlinecode' })}>
+        <code style={style} className={styles.inlinecode}>
           {children}
         </code>
       )}
@@ -283,7 +293,7 @@ const Blog = ({
                 blockquote: defTheme?.overrides?.blockquote || {
                   props: { className: getClassName({ tag: 'blockquote' }) },
                 },
-              },
+              } as MarkdownToJSX.Overrides,
             }}
           >
             {blog.blog}

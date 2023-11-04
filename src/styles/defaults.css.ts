@@ -119,6 +119,8 @@ export const defaults = {
   h2,
   h3,
   h4,
+  h5: h4,
+  h6: h4,
   p,
   ul,
   a,

@@ -2,7 +2,7 @@ import { createTheme, createThemeContract, style } from '@vanilla-extract/css';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { defaults } from './defaults.css';
 
-export const themeContract = createThemeContract({
+const contract = {
   a: { color: null },
   blockquote: { color: null },
   em: { color: null },
@@ -17,7 +17,9 @@ export const themeContract = createThemeContract({
   strong: { color: null },
   ul: { color: null },
   badge: { backgroundColor: null },
-});
+};
+
+export const themeContract = createThemeContract(contract);
 
 type Themes = {
   [themeKey: string]: {
@@ -25,6 +27,7 @@ type Themes = {
     nodes: string;
   };
 };
+
 export const themes: Themes = {
   PLAIN_DARK: {
     prismTheme: 'dracula',
@@ -104,26 +107,7 @@ export const themes: Themes = {
   },
 };
 
-export type Styles = {
-  a: string;
-  blockquote: string;
-  code: string;
-  clipboard: string;
-  em: string;
-  h1: string;
-  h2: string;
-  h3: string;
-  h4: string;
-  h5: string;
-  h6: string;
-  inlinecode: string;
-  li: string;
-  metadata: string;
-  p: string;
-  strong: string;
-  ul: string;
-  badge: string;
-};
+export type Styles = Partial<Record<keyof typeof defaults | keyof typeof contract, string>>;
 
 export const styles: Styles = {
   a: style([defaults.a, { ...themeContract.a }]),
@@ -135,8 +119,8 @@ export const styles: Styles = {
   h2: style([defaults.h2, { ...themeContract.h2 }]),
   h3: style([defaults.h3, { ...themeContract.h3 }]),
   h4: style([defaults.h4, { ...themeContract.h4 }]),
-  h5: style([defaults.h4, { ...themeContract.h4 }]),
-  h6: style([defaults.h4, { ...themeContract.h4 }]),
+  h5: style([defaults.h5, { ...themeContract.h5 }]),
+  h6: style([defaults.h6, { ...themeContract.h6 }]),
   inlinecode: defaults.inlinecode,
   li: style([{ ...themeContract.li }]),
   metadata: defaults.metadata,

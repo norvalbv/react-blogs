@@ -1,4 +1,3 @@
-import { MarkdownToJSX } from 'markdown-to-jsx';
 import { DefTheme } from 'types';
 
 export const storeTheme = (theme: DefTheme): void =>
@@ -15,12 +14,6 @@ export const getTheme = (): DefTheme => {
     theme: 'PLAIN_DARK',
   };
   return defaultTheme;
-};
-
-export const isOverrideWithProps = (
-  value: MarkdownToJSX.Override
-): value is { component?: React.ElementType; props: object } => {
-  return typeof value === 'object' && 'props' in value;
 };
 
 export const isLabelInProps = (props: object): object => {

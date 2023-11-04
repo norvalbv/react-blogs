@@ -1,8 +1,8 @@
 import { Styles, styles, themes } from 'styles/themes.css';
-import { isOverrideWithProps } from 'utils';
+import { JSXOverrides } from 'types';
 import { useStore } from './useStore';
 
-type Props = { tag: keyof Styles; className?: string };
+type Props = { tag: keyof JSXOverrides; className?: string };
 
 type ReturnType = {
   getClassName: (args: Props) => string | undefined;
@@ -15,13 +15,18 @@ const useGetClassName = (): ReturnType => {
     if (className) return className;
 
     const override = theme?.overrides?.[tag];
-    if (override && isOverrideWithProps(override) && 'className' in override.props) {
+    if (
+      override &&
+      typeof override === 'object' &&
+      override.props &&
+      'className' in override.props
+    ) {
       return override.props.className as string;
     }
 
-    if (!theme || !styles[tag]) return undefined;
+    if (!theme || !(tag in styles)) return undefined;
 
-    return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag]}`;
+    return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag as keyof Styles]}`;
   };
 
   return { getClassName };

@@ -1,6 +1,11 @@
 import { MarkdownToJSX } from 'markdown-to-jsx';
 import { themes } from 'prism-react-renderer';
 import { ElementType, ReactNode } from 'react';
+import { RequireAtLeastOne } from './utils';
+
+type Overrides = {
+  [tag in keyof JSX.IntrinsicElements]?: MarkdownToJSX.Override;
+};
 
 export type BlogType = {
   accessor?: ReactNode;
@@ -23,16 +28,24 @@ export type DefBlogs = BlogType[];
 
 export type FrontMatter = Record<string, unknown> | unknown[] | null;
 
-export type DefTheme = {
-  overrides?: MarkdownToJSX.Overrides & {
-    code?: { theme: keyof typeof themes; showNumbers?: boolean; className?: string };
-    clipboard?: {
-      callback: (args?: unknown) => void;
-      component: ElementType;
-      show?: boolean;
-      props?: object;
-    };
-    frontmatter?: { component: ElementType; props: object };
+export type JSXOverrides = Omit<Overrides, 'code'> & {
+  code?: RequireAtLeastOne<{
+    className: string;
+    component: ElementType;
+    props: object;
+    showNumbers: boolean;
+    theme: keyof typeof themes;
+  }>;
+  clipboard?: {
+    callback: (args?: unknown) => void;
+    component: ElementType;
+    props: object;
+    show: boolean;
   };
+  frontmatter?: { component: ElementType; props?: object };
+};
+
+export type DefTheme = {
+  overrides?: JSXOverrides;
   theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';
 };
