@@ -62,14 +62,12 @@ const WrapHeaderInAnchor = ({ children, className, level, id }: WithAnchorProps)
           {children[0]}
         </h5>
       );
-    case 6:
+    default:
       return (
         <h6 className={className} id={id}>
           {children[0]}
         </h6>
       );
-    default:
-      return <h6>{children[0]}</h6>;
   }
 };
 

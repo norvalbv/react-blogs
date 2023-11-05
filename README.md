@@ -31,6 +31,16 @@ Using Yarn:
 ```tsx
 import { DefBlogs, useTheme, Blog } from 'react-blogs';
 
+const Clipboard = () => {
+  const [copyToClipboard, setCopyToClipboard] = useState(false);
+  return (
+    <div onClick={() => setCopyToClipboard(!copyToClipboard)}>
+      {copyToClipboard ? <div>Saved</div> : <div>Save</div>}
+    </div>
+  )
+}
+
+const MyBlog = () => {
 // specify your blogs:
   const allBlogs: DefBlogs = [
     {
@@ -53,11 +63,17 @@ import { DefBlogs, useTheme, Blog } from 'react-blogs';
     },
   ];
 
-  // overriding custom themes:
+  // override themes as you wish:
   const theme: DefTheme = {
     theme: 'SHADES_OF_GREEN',
-    code: 'oneLight',
     overrides: {
+      code: {
+        theme: 'oneLight',
+        showNumbers: false,
+      },
+      clipboard: {
+        component: Clipboard,
+      },
       p: {
         props: { className: 'text-sm my-4 tracking-wider' },
       },
@@ -97,6 +113,7 @@ import { DefBlogs, useTheme, Blog } from 'react-blogs';
       )}
     </div>
   );
+};
 ```
 
 # A Deeper Dive
@@ -129,7 +146,7 @@ The path to your images for this specific blog. **Note**: This must be an absolu
 ```tsx
     string
 ```
-The title to your blog.
+The title of your blog.
 
 - subtitle *(optional)*:
 ```tsx
@@ -141,7 +158,7 @@ The subtitle to your blog.
 ```tsx
     string
 ```
-The title to your blog.
+The description of your blog.
 
 - url *(required)*:
 ```tsx
@@ -197,7 +214,7 @@ Example of using `defBlogs`:
 
 ## Defining your theme
 
-By default, if no theme is provided the app will use the custom theme of `PLAIN_DARK` which all text will be various shades of white - the elements wouldn't be seen on white backgrounds. Therefore, if you want any form of colour or you use a lighter background, you should specify a theme. You can use one of our custom ones or completely write your own.
+By default, if no theme is provided the app will use the custom theme of `PLAIN_DARK` which all text will be various shades of white - the elements wouldn't be seen on white backgrounds. Therefore, if you want any form of colour or you use a lighter background, you should specify a theme. You can use one of our custom ones or completely write your own by passing classes to your components.
 
 As React Blogs' purpose is to be a quick set-up, it's advised to use one of our default themes and override certain styles rather than defining your own entire theme.
 
@@ -206,26 +223,51 @@ As React Blogs' purpose is to be a quick set-up, it's advised to use one of our 
 - DefTheme, is an optional object that contains the following types.
 
 - theme *(optional)* - default PLAIN_DARK:
-```tsx
-   'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN'
+```ts
+   "PLAIN_DARK" | "TRUE_LOVE" | "SHADES_OF_PURPLE" | "SHADES_OF_GREEN" | "PLAIN_LIGHT" | "AUTUMN_DUSK" | "NORDIC_BLUES" | "FUNKY_TOWN" | "CANDY_CRUSH" | "GENTLE_GRAPE"
 ```
-Our current default themes. Again, it is advisable to use one of these and override each element rather than create your own entire theme. **More themes are coming soon.**
 
 - overrides *(optional)*:
 Here, you can specify overrides for any of the elements that are rendered from the React Blogs package. We use [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx#optionsoverrides---override-any-html-tags-representation) to render markdown and the shape of the overrides matches the same shape we use. You can pass any props to the rendered element and passing a className prop will completely override the styles. You can also pass a component directly to change the HTML tag or change how it is rendered out. For a more detailed description of how this works, check the markdown-to-jsx package.
 
-We also render out custom component in the overrides section. Here you can update the front matter, clipboard, and code.
+  You can also override React Blog specific components such as the front matter, code blocks, or clipboard which all have a slightly different shape from the rest of the overrides available.
 
-- code *(optional)* - default vsDark:
+
+These can be used within the override object:
+
+- code *(optional)*:
+```ts
+code?: RequireAtLeastOne<{
+    component: ElementType;
+    props: object;
+    showNumbers: boolean;
+    theme: keyof typeof themes; // default vsDark
+
+    // Options for themes: 
+    'dracula' | 'duotoneDark' | 'duotoneLight' | 'github' | 'jetwaveDark' | 'jetwaveLight' | 'nightOwl' | 'nightOwlLight' | 'oceanicNext' | 'okaidia' | 'oneDark' | 'oneLight' | 'palenight' | 'shadesOfPurple' | 'synthwave84' | 'ultramin' | 'vsDark' | 'vsLight'
+  }>;
+```
 We use [PrismJS](https://prismjs.com/) for rendering our syntax-highlighted code blocks, the themes are already pre-defined and the inputted code type must be one of the distributed PrismJs themes.
 
-- code *(optional)* - default vsDark:
+- clipboard *(optional)*:
+```ts
+  clipboard?: RequireAtLeastOne<{
+    callback: (args?: unknown) => void; // callback function for on failure or on success when copying to clipboard
+    component: ElementType; // override to define your own clipboard component
+    props: object;
+    show: boolean; // whether to prevent users from copying to clipboard
+  }>;
+```
 
-- If you would like to update your
+- frontmatter *(optional)*:
+```ts
+  frontmatter?: RequireAtLeastOne<{ component: ElementType; props: object }>;
+```
+Customise your front matter component.
 
 Example of using `defTheme`:
 ```tsx
-  import { DefBlogs } from 'react-blogs';
+  import { DefBlogs, useTheme as useReactBlogsTheme } from 'react-blogs';
   import useTheme from 'hooks/useTheme';
 
   // Overridden components must be kept outside of function to avoid errors.
@@ -242,7 +284,7 @@ Example of using `defTheme`:
         showNumbers: false,
       },
       clipboard: {
-        callback: () => console.log('copied to clipboard!'),
+        callback: (e) => console.log(e ? 'error occurred!' : 'copied to clipboard!'),
         show: true,
       },
       frontmatter: {
@@ -251,11 +293,13 @@ Example of using `defTheme`:
       },
     },
   };
+
+  useReactBlogsTheme(theme);
 ```
 
 ## Named components
 
-When defining your own blog homepage / blogs overview it's recommended to use our named exported components of Title, Subtitle, Description, and Metadata. This is as each of the components already have the appropriate styling displayed to them. The prop types are below for each:
+When defining your own blog homepage / blog overview it's recommended to use our named exported components of Title, Subtitle, Description, and Metadata. This is because each of the components already has the appropriate styling displayed to them. The prop types are below for each:
 
 - Title Component
 ```tsx
@@ -280,7 +324,7 @@ The Subtitle component is designed to render a subtitle, producing an <h4> HTML 
   className?: string; // Optional. Use this to apply custom styling.
   // Standard component props can also be added as needed.
 ```
-The Description component is exported for the purpose of rendering text content, typically within a <p> element. To customize the appearance, pass in a className with the desired styles.
+The Description component is exported to render text content, typically within a <p> element. To customize the appearance, pass in a className with the desired styles.
 
 - Metadata Component
 ```tsx
@@ -326,7 +370,7 @@ If the package cannot find your current blog, it will return `null`. you can opt
 ```
 When navigating through processed internal links within the blogs, by default the link will be processed as a path, if you would like to navigate via a query string, pass a parameter key instead.
 
-For example -> link to memory would by default by `/memory`, whereas if you passed the paramKey as `blog` you would route to `?blog=memory` instead.
+For example -> link to memory would by default be `/memory`, whereas if you passed the paramKey as `blog` you would route to `?blog=memory` instead.
 
 Basic examples:
 
@@ -339,7 +383,7 @@ Basic examples:
     return <Blog allBlogs={allBlogs} currentBlogId={id} paramkey="title" />
 
 
-    // no processing required, simply pass current blog.
+    // No processing required, simply pass the current blog.
     return <Blog blog={currentBlog} />
 ```
 

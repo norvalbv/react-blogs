@@ -43,7 +43,7 @@ type Themes = {
 
 export const themes: Themes = {
   PLAIN_DARK: {
-    prismTheme: 'ultramin',
+    prismTheme: 'vsDark',
     nodes: createTheme(themeContract, {
       a: { color: '#bdbdbd' },
       blockquote: { color: '#a9a9a9' },
@@ -119,7 +119,7 @@ export const themes: Themes = {
     }),
   },
   PLAIN_LIGHT: {
-    prismTheme: 'ultramin',
+    prismTheme: 'vsLight',
     nodes: createTheme(themeContract, {
       a: { color: '' },
       blockquote: { color: '' },
