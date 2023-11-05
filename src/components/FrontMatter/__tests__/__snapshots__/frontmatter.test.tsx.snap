@@ -20,7 +20,7 @@ exports[`<FrontMatter /> should enforce new lines where specified 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -44,7 +44,7 @@ exports[`<FrontMatter /> should enforce new lines where specified 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -73,7 +73,7 @@ exports[`<FrontMatter /> should enforce new lines where specified 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -112,7 +112,7 @@ exports[`<FrontMatter /> should handle JSON formatted data correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -136,7 +136,7 @@ exports[`<FrontMatter /> should handle JSON formatted data correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -165,7 +165,7 @@ exports[`<FrontMatter /> should handle JSON formatted data correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -189,7 +189,7 @@ exports[`<FrontMatter /> should handle JSON formatted data correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -228,7 +228,7 @@ exports[`<FrontMatter /> should handle array paragraphs correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -252,7 +252,7 @@ exports[`<FrontMatter /> should handle array paragraphs correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -263,32 +263,32 @@ exports[`<FrontMatter /> should handle array paragraphs correctly 1`] = `
       : 
     </strong>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       What's Yaml?
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       It's for writing data structures in plain text.
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       And?
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       And what? That's not good enough for you?
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       No, I mean, "And what about Yaml?"
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       Oh, oh yeah. Uh.. Yaml for Ruby.
     </div>
@@ -316,7 +316,7 @@ exports[`<FrontMatter /> should handle array types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -340,7 +340,7 @@ exports[`<FrontMatter /> should handle array types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -351,17 +351,17 @@ exports[`<FrontMatter /> should handle array types correctly 1`] = `
       : 
     </strong>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       apple
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       banana
     </div>
     <div
-      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+      className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
     >
       carrot
     </div>
@@ -389,7 +389,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -413,7 +413,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -442,7 +442,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -466,7 +466,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -495,7 +495,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -519,7 +519,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -543,7 +543,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -559,12 +559,12 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
           </div>
         </section>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           more
         </div>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           info
         </div>
@@ -587,7 +587,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -611,7 +611,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -635,7 +635,7 @@ exports[`<FrontMatter /> should handle arrays and objects correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -676,7 +676,7 @@ exports[`<FrontMatter /> should handle arrays as keys correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -700,7 +700,7 @@ exports[`<FrontMatter /> should handle arrays as keys correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -729,7 +729,7 @@ exports[`<FrontMatter /> should handle arrays as keys correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -740,7 +740,7 @@ exports[`<FrontMatter /> should handle arrays as keys correctly 1`] = `
           : 
         </strong>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           work on Store
         </div>
@@ -770,7 +770,7 @@ exports[`<FrontMatter /> should handle colon with no space correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -794,7 +794,7 @@ exports[`<FrontMatter /> should handle colon with no space correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -823,7 +823,7 @@ exports[`<FrontMatter /> should handle colon with no space correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -862,7 +862,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -886,7 +886,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -915,7 +915,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -944,7 +944,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -973,7 +973,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -997,7 +997,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1021,7 +1021,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1047,7 +1047,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -1081,7 +1081,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -1110,7 +1110,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1136,7 +1136,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -1162,7 +1162,7 @@ exports[`<FrontMatter /> should handle complex JSON data correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1201,7 +1201,7 @@ exports[`<FrontMatter /> should handle custom YAML delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1225,7 +1225,7 @@ exports[`<FrontMatter /> should handle custom YAML delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1254,7 +1254,7 @@ exports[`<FrontMatter /> should handle custom YAML delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1278,7 +1278,7 @@ exports[`<FrontMatter /> should handle custom YAML delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1317,7 +1317,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1341,7 +1341,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1370,7 +1370,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1394,7 +1394,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1423,7 +1423,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -1452,7 +1452,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1463,22 +1463,22 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                   : 
                 </strong>
                 <div
-                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
                 >
                   login
                 </div>
                 <div
-                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
                 >
                   logout
                 </div>
                 <div
-                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
                 >
                   chat
                 </div>
                 <div
-                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
                 >
                   access control
                 </div>
@@ -1493,7 +1493,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1529,7 +1529,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -1558,7 +1558,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1569,12 +1569,12 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                   : 
                 </strong>
                 <div
-                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
                 >
                   login
                 </div>
                 <div
-                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+                  className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
                 >
                   logout
                 </div>
@@ -1589,7 +1589,7 @@ exports[`<FrontMatter /> should handle deeply nested data correctly 1`] = `
                 }
               >
                 <strong
-                  className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+                  className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
                   style={
                     {
                       "textTransform": "capitalize",
@@ -1632,7 +1632,7 @@ exports[`<FrontMatter /> should handle dot delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1656,7 +1656,7 @@ exports[`<FrontMatter /> should handle dot delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1685,7 +1685,7 @@ exports[`<FrontMatter /> should handle dot delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1709,7 +1709,7 @@ exports[`<FrontMatter /> should handle dot delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1748,7 +1748,7 @@ exports[`<FrontMatter /> should handle empty front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1772,7 +1772,7 @@ exports[`<FrontMatter /> should handle empty front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1809,7 +1809,7 @@ exports[`<FrontMatter /> should handle folded block scalars correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1833,7 +1833,7 @@ exports[`<FrontMatter /> should handle folded block scalars correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1862,7 +1862,7 @@ exports[`<FrontMatter /> should handle folded block scalars correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -1902,7 +1902,7 @@ exports[`<FrontMatter /> should handle incomplete front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1931,7 +1931,7 @@ exports[`<FrontMatter /> should handle incomplete front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1968,7 +1968,7 @@ exports[`<FrontMatter /> should handle incorrect indentation in front matter cor
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -1992,7 +1992,7 @@ exports[`<FrontMatter /> should handle incorrect indentation in front matter cor
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2021,7 +2021,7 @@ exports[`<FrontMatter /> should handle incorrect indentation in front matter cor
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2060,7 +2060,7 @@ exports[`<FrontMatter /> should handle incorrectly formatted deep list in front 
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2084,7 +2084,7 @@ exports[`<FrontMatter /> should handle incorrectly formatted deep list in front 
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2113,7 +2113,7 @@ exports[`<FrontMatter /> should handle incorrectly formatted deep list in front 
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2152,7 +2152,7 @@ exports[`<FrontMatter /> should handle indented front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2176,7 +2176,7 @@ exports[`<FrontMatter /> should handle indented front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2205,7 +2205,7 @@ exports[`<FrontMatter /> should handle indented front matter correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2229,7 +2229,7 @@ exports[`<FrontMatter /> should handle indented front matter correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2268,7 +2268,7 @@ exports[`<FrontMatter /> should handle list types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2292,7 +2292,7 @@ exports[`<FrontMatter /> should handle list types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2321,7 +2321,7 @@ exports[`<FrontMatter /> should handle list types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2345,7 +2345,7 @@ exports[`<FrontMatter /> should handle list types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2356,17 +2356,17 @@ exports[`<FrontMatter /> should handle list types correctly 1`] = `
           : 
         </strong>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           BenjiTheGreat
         </div>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           Steve_The_Great
         </div>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           John The Great
         </div>
@@ -2396,7 +2396,7 @@ exports[`<FrontMatter /> should handle literal block scalars correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2420,7 +2420,7 @@ exports[`<FrontMatter /> should handle literal block scalars correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2449,7 +2449,7 @@ exports[`<FrontMatter /> should handle literal block scalars correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2491,7 +2491,7 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2515,7 +2515,7 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2544,7 +2544,7 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2573,7 +2573,7 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -2597,7 +2597,7 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
             }
           >
             <strong
-              className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+              className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
               style={
                 {
                   "textTransform": "capitalize",
@@ -2623,7 +2623,7 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2634,17 +2634,17 @@ exports[`<FrontMatter /> should handle preformatted text correctly 1`] = `
           : 
         </strong>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           benji
         </div>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           bob
         </div>
         <div
-          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr9v defaults_badge__cxs0rse"
+          className="themes_themes_PLAIN_DARK_nodes__xd3hr9e themes_styles_badge__xd3hr911 defaults_badge__cxs0rse"
         >
           mike
         </div>
@@ -2674,7 +2674,7 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2698,7 +2698,7 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2727,7 +2727,7 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2751,7 +2751,7 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2775,7 +2775,7 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2799,7 +2799,7 @@ exports[`<FrontMatter /> should handle quoted values correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2838,7 +2838,7 @@ exports[`<FrontMatter /> should handle semicolon delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2862,7 +2862,7 @@ exports[`<FrontMatter /> should handle semicolon delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2891,7 +2891,7 @@ exports[`<FrontMatter /> should handle semicolon delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2915,7 +2915,7 @@ exports[`<FrontMatter /> should handle semicolon delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -2954,7 +2954,7 @@ exports[`<FrontMatter /> should handle special characters in front matter correc
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -2978,7 +2978,7 @@ exports[`<FrontMatter /> should handle special characters in front matter correc
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3007,7 +3007,7 @@ exports[`<FrontMatter /> should handle special characters in front matter correc
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3046,7 +3046,7 @@ exports[`<FrontMatter /> should handle string types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3070,7 +3070,7 @@ exports[`<FrontMatter /> should handle string types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3099,7 +3099,7 @@ exports[`<FrontMatter /> should handle string types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3123,7 +3123,7 @@ exports[`<FrontMatter /> should handle string types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3147,7 +3147,7 @@ exports[`<FrontMatter /> should handle string types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3186,7 +3186,7 @@ exports[`<FrontMatter /> should handle tilde delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3210,7 +3210,7 @@ exports[`<FrontMatter /> should handle tilde delimiters correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3239,7 +3239,7 @@ exports[`<FrontMatter /> should handle tilde delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3263,7 +3263,7 @@ exports[`<FrontMatter /> should handle tilde delimiters correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3302,7 +3302,7 @@ exports[`<FrontMatter /> should handle unquoted values in front matter correctly
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3328,7 +3328,7 @@ exports[`<FrontMatter /> should handle unquoted values in front matter correctly
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3357,7 +3357,7 @@ exports[`<FrontMatter /> should handle unquoted values in front matter correctly
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3396,7 +3396,7 @@ exports[`<FrontMatter /> should handle various basic types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3420,7 +3420,7 @@ exports[`<FrontMatter /> should handle various basic types correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3449,7 +3449,7 @@ exports[`<FrontMatter /> should handle various basic types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3473,7 +3473,7 @@ exports[`<FrontMatter /> should handle various basic types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3497,7 +3497,7 @@ exports[`<FrontMatter /> should handle various basic types correctly 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3536,7 +3536,7 @@ exports[`<FrontMatter /> should handle void front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3560,7 +3560,7 @@ exports[`<FrontMatter /> should handle void front matter correctly 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3597,7 +3597,7 @@ exports[`<FrontMatter /> should ignore comments in front matter 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3621,7 +3621,7 @@ exports[`<FrontMatter /> should ignore comments in front matter 1`] = `
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3650,7 +3650,7 @@ exports[`<FrontMatter /> should ignore comments in front matter 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3674,7 +3674,7 @@ exports[`<FrontMatter /> should ignore comments in front matter 1`] = `
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3713,7 +3713,7 @@ exports[`<FrontMatter /> should render content with basic front matter correctly
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3737,7 +3737,7 @@ exports[`<FrontMatter /> should render content with basic front matter correctly
     }
   >
     <strong
-      className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+      className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
       style={
         {
           "textTransform": "capitalize",
@@ -3766,7 +3766,7 @@ exports[`<FrontMatter /> should render content with basic front matter correctly
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
@@ -3790,7 +3790,7 @@ exports[`<FrontMatter /> should render content with basic front matter correctly
         }
       >
         <strong
-          className="themes_styles_strong__xd3hr9t defaults_strong__cxs0rs7"
+          className="themes_styles_strong__xd3hr9z defaults_strong__cxs0rs7"
           style={
             {
               "textTransform": "capitalize",
