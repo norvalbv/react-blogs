@@ -1,6 +1,7 @@
 import { MarkdownToJSX } from 'markdown-to-jsx';
 import { themes } from 'prism-react-renderer';
 import { ElementType, ReactNode } from 'react';
+import { themes as customThemes } from 'styles/themes.css';
 import { RequireAtLeastOne } from './utils';
 
 type Overrides = {
@@ -46,5 +47,5 @@ export type JSXOverrides = Omit<Overrides, 'code'> & {
 
 export type DefTheme = {
   overrides?: JSXOverrides;
-  theme?: 'PLAIN_DARK' | 'PLAIN_LIGHT' | 'SHADES_OF_PURPLE' | 'SHADES_OF_GREEN';
+  theme?: keyof typeof customThemes;
 };

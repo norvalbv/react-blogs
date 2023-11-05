@@ -211,13 +211,17 @@ As React Blogs' purpose is to be a quick set-up, it's advised to use one of our 
 ```
 Our current default themes. Again, it is advisable to use one of these and override each element rather than create your own entire theme. **More themes are coming soon.**
 
-- code *(optional)* - default vsDark:
-We use [PrismJS](https://prismjs.com/) for rendering our syntax-highlighted code blocks, the themes are already pre-defined and the inputted code type must be one of the distributed PrismJs themes.
-
 - overrides *(optional)*:
 Here, you can specify overrides for any of the elements that are rendered from the React Blogs package. We use [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx#optionsoverrides---override-any-html-tags-representation) to render markdown and the shape of the overrides matches the same shape we use. You can pass any props to the rendered element and passing a className prop will completely override the styles. You can also pass a component directly to change the HTML tag or change how it is rendered out. For a more detailed description of how this works, check the markdown-to-jsx package.
 
-Here you can also change how the metadata is rendered, but please note that instead of passing children inside the element, you must pass metadata that comes from props.
+We also render out custom component in the overrides section. Here you can update the front matter, clipboard, and code.
+
+- code *(optional)* - default vsDark:
+We use [PrismJS](https://prismjs.com/) for rendering our syntax-highlighted code blocks, the themes are already pre-defined and the inputted code type must be one of the distributed PrismJs themes.
+
+- code *(optional)* - default vsDark:
+
+- If you would like to update your
 
 Example of using `defTheme`:
 ```tsx
@@ -232,15 +236,18 @@ Example of using `defTheme`:
 
   const theme: DefTheme = {
     theme: isDarkMode ? 'SHADES_OF_GREEN' : 'SHADES_OF_PURPLE',
-    code: isDarkMode ? 'dracula' : 'oneLight',
     overrides: {
-      metadata: {
-        component: MetadataComponent,
-        props: { className: 'text-[14px] my-4 tracking-wider' },
+      code: {
+        theme: isDarkMode ? 'dracula' : 'oneLight',
+        showNumbers: false,
+      },
+      clipboard: {
+        callback: () => console.log('copied to clipboard!'),
+        show: true,
       },
       frontmatter: {
         component: FrontMatterComponent,
-        props: { className: 'text-[14px] my-4 tracking-wider' },
+        props: { className: 'text-sm my-4 tracking-wide' },
       },
     },
   };
@@ -337,7 +344,7 @@ Basic examples:
 ```
 
 # Roadmap
-- [ ] Add more themes
+- [x] Add more themes
 - [x] Better customisation for the react-blogs homepage
 - [ ] Ability to add custom components inside each blog, for example rendering a hero
 - [ ] Add better accessibility to rendered JSX nodes
