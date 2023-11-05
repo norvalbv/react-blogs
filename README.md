@@ -46,6 +46,7 @@ const MyBlog = () => {
     {
       id: 'Memory (RAM)',
       file: '/src/assets/blogs/memory.md',
+      imagePath: 'src/assets/images/blogs/memory',
       title: 'How Memory (RAM) Works' ,
       subtitle: "The computer's short-term memory.",
       description: "A deep insight into what RAM is and how it interacts with the computer.",
@@ -195,6 +196,7 @@ Example of using `defBlogs`:
     {
       id: 'Memory (RAM)',
       file: '/src/assets/blogs/memory.md',
+      imagePath: 'src/assets/images/blogs/memory',
       title: { label: 'How Memory (RAM) Works' },
       subtitle: { label: "The computer's short-term memory." },
       description: { label: 'A deep insight into what RAM is and how it interacts with the computer.' },
