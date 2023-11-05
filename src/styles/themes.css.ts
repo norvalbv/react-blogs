@@ -228,7 +228,7 @@ export const themes: Themes = {
       li: { color: '' },
       p: { color: '#e7d7f2' },
       strong: { color: '#cfa7da' },
-      ul: { color: '' },
+      ul: { color: '#e7d7f2' },
       badge: { backgroundColor: '#7c5295' },
     }),
   },

@@ -1,5 +1,6 @@
 import { DefTheme } from 'types';
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type StoreState = {
   theme: DefTheme | null;
@@ -7,9 +8,16 @@ type StoreState = {
 };
 
 // ! Doesn't work for user if exporting store directly, the hook useTheme is essentially just a wrapper to prevent bugs.
-export const useStore = create<StoreState>()((set) => ({
-  theme: null,
-  setTheme: (theme: DefTheme | null): void => set({ theme }),
-}));
+export const useStore = create<StoreState>()(
+  persist(
+    (set, get) => ({
+      theme: null,
+      setTheme: (theme: DefTheme | null): void => set({ theme: get().theme || theme }),
+    }),
+    {
+      name: 'react-blogs-theme',
+    }
+  )
+);
 
 export default useStore;
