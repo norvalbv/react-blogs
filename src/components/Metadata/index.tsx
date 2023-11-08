@@ -2,13 +2,13 @@ import useGetClassName from 'hooks/useGetClassName';
 import { Fragment, ReactElement } from 'react';
 import { DefTheme } from 'types';
 
-type Props = {
+type MetadataProps = {
   children?: Record<string, unknown>;
   theme?: DefTheme;
   props?: unknown;
 };
 
-const Metadata = ({ children, theme, ...props }: Props): ReactElement | null => {
+const Metadata = ({ children, theme, ...props }: MetadataProps): ReactElement | null => {
   const { getClassName } = useGetClassName();
 
   if (!children) return null;

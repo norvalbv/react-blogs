@@ -1,7 +1,7 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
+// import dts from 'vite-plugin-dts';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
@@ -11,7 +11,7 @@ export default defineConfig({
     vanillaExtractPlugin(),
     react({ include: /\.(ts|tsx)$/ }),
     viteTsconfigPaths(),
-    dts({ rollupTypes: true }),
+    // dts({ rollupTypes: true }),
   ],
   build: {
     lib: { entry: './src/index.ts', name: 'react-blogs', fileName: 'index' },

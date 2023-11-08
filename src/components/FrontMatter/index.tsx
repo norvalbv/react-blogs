@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 import { styles } from 'styles/themes.css';
 import { FrontMatter as FrontMatterType } from 'types';
 
-export type Props = {
+export type FrontMatterProps = {
   frontmatter: FrontMatterType;
   requireIndent?: boolean;
   keyPrefix?: number;
@@ -14,7 +14,7 @@ const FrontMatter = ({
   frontmatter,
   requireIndent = false,
   keyPrefix = 0,
-}: Props): ReactElement | null => {
+}: FrontMatterProps): ReactElement | null => {
   if (!frontmatter) return null;
 
   if (Array.isArray(frontmatter)) {

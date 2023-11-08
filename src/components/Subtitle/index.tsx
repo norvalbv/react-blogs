@@ -2,13 +2,13 @@ import useGetClassName from 'hooks/useGetClassName';
 import { ReactElement } from 'react';
 import { isLabelInProps } from 'utils';
 
-export type Props = {
+export type SubtitleProps = {
   children?: string | ReactElement;
   className?: string;
   props?: unknown;
 };
 
-const Subtitle = ({ children, className, ...props }: Props): ReactElement | null => {
+const Subtitle = ({ children, className, ...props }: SubtitleProps): ReactElement | null => {
   const { getClassName } = useGetClassName();
 
   if (!children) {
