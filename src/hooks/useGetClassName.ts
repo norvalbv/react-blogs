@@ -1,4 +1,4 @@
-import { Styles, styles, themes } from 'styles/themes.css';
+import { Styles, styles, customThemes } from 'styles/themes.css';
 import { JSXOverrides } from 'types';
 import { useStore } from './useStore';
 
@@ -27,7 +27,7 @@ const useGetClassName = (): ReturnType => {
 
     if (!theme || !(tag in styles)) return undefined;
 
-    return `${themes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag as keyof Styles]}`;
+    return `${customThemes[theme.theme || 'PLAIN_DARK'].nodes} ${styles[tag as keyof Styles]}`;
   };
 
   return { getClassName };

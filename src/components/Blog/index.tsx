@@ -6,7 +6,7 @@ import useStore from 'hooks/useStore';
 import Markdown, { MarkdownToJSX } from 'markdown-to-jsx';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Fragment, ReactElement, useEffect, useRef, useState } from 'react';
-import { themes as defaultTheme, styles } from 'styles/themes.css';
+import { customThemes as defaultTheme, styles } from 'styles/themes.css';
 import { BlogType, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { processBlog, processLinks } from 'utils';
 import processImageLinks from 'utils/processImageLinks';

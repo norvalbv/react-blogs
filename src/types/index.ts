@@ -1,7 +1,7 @@
 import { MarkdownToJSX } from 'markdown-to-jsx';
 import { themes } from 'prism-react-renderer';
 import { ElementType, ReactNode } from 'react';
-import { themes as customThemes } from 'styles/themes.css';
+import { customThemes } from 'styles/themes.css';
 import { RequireAtLeastOne } from './utils';
 
 type Overrides = {

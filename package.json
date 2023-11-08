@@ -18,7 +18,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build && yarn bundle:dts",
     "bundle:dts": "dts-bundle-generator -o ./dist/index.d.ts src/index.ts",
     "preview": "vite preview",
     "lint": "eslint src",
@@ -76,7 +76,6 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-css-injected-by-js": "^3.3.0",
-    "vite-plugin-dts": "3.6.3",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "eslintConfig": {

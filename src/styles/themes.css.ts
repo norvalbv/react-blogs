@@ -1,5 +1,5 @@
 import { createTheme, createThemeContract, style } from '@vanilla-extract/css';
-import { themes as prismThemes } from 'prism-react-renderer';
+import { themes } from 'prism-react-renderer';
 import { defaults } from './defaults.css';
 
 const contract = {
@@ -36,12 +36,12 @@ const themeNames = [
 
 type Themes = {
   [key in (typeof themeNames)[number]]: {
-    prismTheme: keyof typeof prismThemes;
+    prismTheme: keyof typeof themes;
     nodes: string;
   };
 };
 
-export const themes: Themes = {
+export const customThemes: Themes = {
   PLAIN_DARK: {
     prismTheme: 'vsDark',
     nodes: createTheme(themeContract, {
