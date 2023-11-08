@@ -348,6 +348,9 @@ const Blog = ({
                 a: defTheme?.overrides?.a || {
                   props: { className: getClassName({ tag: 'a' }) },
                 },
+                ol: defTheme?.overrides?.ol || {
+                  props: { className: getClassName({ tag: 'ol' }) },
+                },
                 strong: defTheme?.overrides?.strong || {
                   props: { className: getClassName({ tag: 'strong' }) },
                 },

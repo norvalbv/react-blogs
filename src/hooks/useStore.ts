@@ -10,9 +10,11 @@ type StoreState = {
 // ! Doesn't work for user if exporting store directly, the hook useTheme is essentially just a wrapper to prevent bugs.
 export const useStore = create<StoreState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       theme: null,
-      setTheme: (theme: DefTheme | null): void => set({ theme: get().theme || theme }),
+      setTheme: (theme: DefTheme | null): void => {
+        return set({ theme });
+      },
     }),
     {
       name: 'react-blogs-theme',
