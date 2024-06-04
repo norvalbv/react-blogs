@@ -1,45 +1,51 @@
-import useGetClassName from 'hooks/useGetClassName';
 import { ReactElement } from 'react';
-import { isLabelInProps } from 'utils';
 
-export type TitleProps = {
-  children?: string | ReactElement;
+type Props = {
+  children: string[];
   className?: string;
-  /**
-   * Default 2.
-   */
-  level?: 1 | 2 | 3;
-  props?: unknown;
+  level: number;
+  id: string;
 };
 
-const Title = ({ children, className, level = 2, ...props }: TitleProps): ReactElement | null => {
-  const { getClassName } = useGetClassName();
-
-  if (!children) {
-    return null;
+const Title = ({ children, className, level, id }: Props): ReactElement => {
+  switch (level) {
+    case 1:
+      return (
+        <h1 className={className} id={id}>
+          {children[0]}
+        </h1>
+      );
+    case 2:
+      return (
+        <h2 className={className} id={id}>
+          {children[0]}
+        </h2>
+      );
+    case 3:
+      return (
+        <h3 className={className} id={id}>
+          {children[0]}
+        </h3>
+      );
+    case 4:
+      return (
+        <h4 className={className} id={id}>
+          {children[0]}
+        </h4>
+      );
+    case 5:
+      return (
+        <h5 className={className} id={id}>
+          {children[0]}
+        </h5>
+      );
+    default:
+      return (
+        <h6 className={className} id={id}>
+          {children[0]}
+        </h6>
+      );
   }
-
-  if (level === 1) {
-    return (
-      <h1 className={getClassName({ tag: 'h1', className })} {...isLabelInProps(props)}>
-        {children}
-      </h1>
-    );
-  }
-
-  if (level === 2) {
-    return (
-      <h2 className={getClassName({ tag: 'h2', className })} {...isLabelInProps(props)}>
-        {children}
-      </h2>
-    );
-  }
-
-  return (
-    <h3 className={getClassName({ tag: 'h3', className })} {...isLabelInProps(props)}>
-      {children}
-    </h3>
-  );
 };
 
 export default Title;

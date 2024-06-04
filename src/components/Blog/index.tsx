@@ -1,5 +1,6 @@
 import FrontMatter from 'components/FrontMatter';
 import { ClipboardCopyIcon, ClipboardIcon } from 'components/SVG';
+import AnchorWrapper from 'components/Wrappers/AnchorWrapper';
 import useGetClassName from 'hooks/useGetClassName';
 import useOutsideClick from 'hooks/useOutsideClick';
 import useStore from 'hooks/useStore';
@@ -10,66 +11,6 @@ import { customThemes as defaultTheme, styles } from 'styles/themes.css';
 import { BlogType, DefTheme, FrontMatter as FrontMatterType } from 'types';
 import { processBlog, processLinks } from 'utils';
 import processImageLinks from 'utils/processImageLinks';
-
-type WithAnchorProps = {
-  children: string[];
-  className?: string;
-  level: number;
-  id: string;
-};
-
-const WithAnchor = ({ children, className, level, id }: WithAnchorProps): ReactElement => {
-  const { origin, pathname } = window.location;
-
-  return (
-    <a href={`${origin}${pathname}#${id}`}>
-      <WrapHeaderInAnchor className={className} level={level} id={id}>
-        {children}
-      </WrapHeaderInAnchor>
-    </a>
-  );
-};
-
-const WrapHeaderInAnchor = ({ children, className, level, id }: WithAnchorProps): ReactElement => {
-  switch (level) {
-    case 1:
-      return (
-        <h1 className={className} id={id}>
-          {children[0]}
-        </h1>
-      );
-    case 2:
-      return (
-        <h2 className={className} id={id}>
-          {children[0]}
-        </h2>
-      );
-    case 3:
-      return (
-        <h3 className={className} id={id}>
-          {children[0]}
-        </h3>
-      );
-    case 4:
-      return (
-        <h4 className={className} id={id}>
-          {children[0]}
-        </h4>
-      );
-    case 5:
-      return (
-        <h5 className={className} id={id}>
-          {children[0]}
-        </h5>
-      );
-    default:
-      return (
-        <h6 className={className} id={id}>
-          {children[0]}
-        </h6>
-      );
-  }
-};
 
 const UnorderedListComponent = ({
   children,
@@ -309,27 +250,27 @@ const Blog = ({
               overrides: {
                 ...defTheme?.overrides,
                 h1: defTheme?.overrides?.h1 || {
-                  component: WithAnchor,
+                  component: AnchorWrapper,
                   props: { className: getClassName({ tag: 'h1' }), level: 1 },
                 },
                 h2: defTheme?.overrides?.h2 || {
-                  component: WithAnchor,
+                  component: AnchorWrapper,
                   props: { className: getClassName({ tag: 'h2' }), level: 2 },
                 },
                 h3: defTheme?.overrides?.h3 || {
-                  component: WithAnchor,
+                  component: AnchorWrapper,
                   props: { className: getClassName({ tag: 'h3' }), level: 3 },
                 },
                 h4: defTheme?.overrides?.h4 || {
-                  component: WithAnchor,
+                  component: AnchorWrapper,
                   props: { className: getClassName({ tag: 'h4' }), level: 4 },
                 },
                 h5: defTheme?.overrides?.h5 || {
-                  component: WithAnchor,
+                  component: AnchorWrapper,
                   props: { level: 5 },
                 },
                 h6: defTheme?.overrides?.h6 || {
-                  component: WithAnchor,
+                  component: AnchorWrapper,
                   props: { level: 6 },
                 },
                 p: defTheme?.overrides?.p || { props: { className: getClassName({ tag: 'p' }) } },
