@@ -7,7 +7,7 @@
     "node": true
   },
   "root": true,
-  "plugins": ["react", "@typescript-eslint", "custom-rules"],
+  "plugins": ["react", "@typescript-eslint"],
   "extends": [
     "airbnb",
     "airbnb-typescript",
@@ -39,7 +39,7 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/explicit-function-return-type": "error",
     "@typescript-eslint/naming-convention": [
